@@ -14,8 +14,8 @@
 
     'assets': {
         'web.assets_backend': [
-            'ps_m2m_field_attachment_preview/static/src/js/m2m_field_preview.js',
-            'ps_m2m_field_attachment_preview/static/src/xml/m2m_field_preview_template.xml',
+            'odoo_many2many_binary_preview/static/src/js/m2m_field_preview.js',
+            'odoo_many2many_binary_preview/static/src/xml/m2m_field_preview_template.xml',
         ],
     },
 
