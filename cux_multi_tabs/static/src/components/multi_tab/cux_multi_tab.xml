@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="cux_multi_tab.tab" owl="1">
+        <div class="cux_multi_tab_container">
+            <div class="cux_multi_tab">
+                <div class="cux_tab_control cux_icon_prev" t-on-click.stop="() => this._on_multi_tab_prev()">
+                    <i class="oi" data-icon="chevron_left" aria-hidden="true"></i>
+                </div>
+
+                <div class="cux_tab_control cux_icon_next" t-on-click.stop="() => this._on_multi_tab_next()">
+                    <i class="oi" data-icon="chevron_right" aria-hidden="true"></i>
+                </div>
+                <div class="cux_tab_control cux_icon_down">
+                    <DropdownGroup>
+                        <Dropdown menuClass="'cux_tabs_dropdown'">
+                            <span class="cux_tabs_settings_toggle">
+                                <i class="oi" data-icon="settings" aria-hidden="true"></i>
+                            </span>
+                            <t t-set-slot="content">
+                                <DropdownItem class="'cux_close_cur_tab'" onSelected="() => this._close_current_action()">
+                                    <t t-out="this.labels.closeTab"/>
+                                </DropdownItem>
+                                <DropdownItem class="'cux_close_other_tabs'" onSelected="() => this._close_other_action()">
+                                    <t t-out="this.labels.closeOtherTabs"/>
+                                </DropdownItem>
+                            </t>
+                        </Dropdown>
+                    </DropdownGroup>
+                </div>
+
+                <div class="cux_tab_scroll">
+                    <ul class="cux_page_items tab_container">
+                        <li t-foreach="this.props.action_infos"
+                            t-as="action_info"
+                            t-if="action_info.title"
+                            t-key="action_info.key"
+                            t-att-class="action_info.active ? 'active' : ''"
+                            t-on-click.stop="() => this._on_click_tab_item(action_info)"
+                            t-on-contextmenu="(ev) => this._on_tab_contextmenu(ev, action_info)">
+                            <span>
+                                <t t-out="action_info.title" />
+                            </span>
+                            <span class="cux_tab_close" t-on-click.stop="() => this._on_click_tab_close(action_info)">
+                                <i class="oi" data-icon="close" aria-hidden="true"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div t-if="this.contextMenuState.visible"
+                class="cux_tab_contextmenu"
+                t-att-style="'top: ' + this.contextMenuState.y + 'px; left: ' + this.contextMenuState.x + 'px;'"
+                t-on-click.stop="() => {}"
+                t-on-contextmenu.prevent.stop="() => {}">
+                <div class="cux_tab_contextmenu_item" t-on-click.stop="() => this._on_contextmenu_close_tab()">
+                    <t t-out="this.labels.closeTab"/>
+                </div>
+                <div class="cux_tab_contextmenu_item" t-on-click.stop="() => this._on_contextmenu_close_other_tabs()">
+                    <t t-out="this.labels.closeOtherTabs"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

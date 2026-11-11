@@ -1,0 +1,251 @@
+.cux_multi_tab_container {
+    line-height: 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    box-sizing: border-box;
+    // Never shrink: the bar is a fixed-height element of the action manager.
+    flex: 0 0 auto;
+    z-index: 3;
+
+    .cux_multi_tab {
+        position: relative;
+        padding: 0 80px 0 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+
+        .cux_tab_scroll {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            .cux_page_items {
+                position: relative;
+                left: 0px;
+                height: 100%;
+                flex: 1 1 auto;
+                background: rgb(255, 255, 255);
+                overflow: visible;
+                white-space: nowrap;
+                padding: 0px;
+
+                li {
+                    display: inline-block;
+                    *display: inline;
+                    *zoom: 1;
+
+                    vertical-align: middle;
+                    font-size: 14px;
+                    transition: all 0.2s;
+                    min-width: 65px;
+                    padding: 0 15px;
+                    text-align: center;
+                    cursor: pointer;
+
+                    line-height: 40px;
+                    max-width: 160px;
+                    text-overflow: ellipsis;
+                    padding-right: 40px;
+                    overflow: hidden;
+                    border-right: 1px solid #f6f6f6;
+                    vertical-align: top;
+                    position: relative;
+                    white-space: nowrap;
+                    padding: 0px 30px 0px 10px;
+                    user-select: none;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        border-radius: 0;
+                        background-color: #292b34;
+                        transition: all 0.3s;
+                    }
+
+                    &:hover {
+                        background-color: #f6f6f6;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+
+                    .cux_tab_close {
+                        position: absolute;
+                        right: 8px;
+                        top: 50%;
+                        margin: -8px 0 0 0;
+                        width: 16px;
+                        height: 16px;
+                        line-height: 16px;
+                        border-radius: 50%;
+                        font-size: 12px;
+
+                        svg {
+                            margin-top: -2px;
+                        }
+                    }
+
+                    &.active {
+                        background-color: #e9e9e9;
+                    }
+                }
+            }
+        }
+
+        .cux_tab_control {
+            width: 40px;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-sizing: border-box;
+            border-left: 1px solid #f6f6f6;
+
+            &:hover {
+                background-color: #f6f6f6;
+            }
+        }
+
+        .cux_icon_prev {
+            border-right: 1px solid #f6f6f6;
+            color: #666;
+            line-height: 40px;
+            margin: 0;
+            padding: 0;
+
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-font-smoothing: antialiased;
+            transition: all 0.3s;
+
+            font-size: 16px;
+            font-style: normal;
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 40px;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+            box-sizing: border-box;
+            border-left: none;
+            border-right: 1px solid #f6f6f6;
+        }
+
+        .cux_icon_next {
+            border-right: 1px solid #f6f6f6;
+            color: #666;
+            line-height: 40px;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-sizing: border-box;
+            border-left: 1px solid #f6f6f6;
+            right: 40px;
+        }
+
+        .cux_icon_down {
+            color: #666;
+            line-height: 40px;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            transition: all 0.3s;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+            box-sizing: border-box;
+            border-left: 1px solid #f6f6f6;
+            right: 0;
+
+            .dropdown-toggle {
+                width: 100%;
+                height: 100%;
+                background: none;
+                border: none;
+            }
+
+            // The popover is anchored on the dropdown toggler: give it the full
+            // control box so the menu opens right under the bar instead of
+            // floating 30px below the small gear glyph.
+            .cux_tabs_settings_toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        z-index: 1000;
+    }
+
+    .cux_tab_contextmenu {
+        position: fixed;
+        z-index: 1060;
+        min-width: 160px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        padding: 4px 0;
+        font-size: 14px;
+        line-height: 1.4;
+
+        .cux_tab_contextmenu_item {
+            padding: 6px 16px;
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+
+            &:hover {
+                background-color: #f6f6f6;
+            }
+        }
+    }
+}
+
+.o_home_menu_background {
+    .cux_multi_tab_container {
+        display: none !important;
+    }
+}
+
+// The menu is rendered in a popover outside the tab bar, hence the top-level
+// selector. Values match .cux_tab_contextmenu (right-click menu).
+.cux_tabs_dropdown {
+    padding: 4px 0 !important;
+    min-width: 160px;
+    line-height: 1.4;
+
+    .dropdown-item {
+        padding: 6px 16px !important;
+        line-height: 1.4;
+        font-size: 14px;
+        min-height: 0;
+        white-space: nowrap;
+    }
+}
