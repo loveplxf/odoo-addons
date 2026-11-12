@@ -1,8 +1,515 @@
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan text-primary">CUX Multi Tabs</h2>
-        <div class="oe_span12">
-            <img src="./image.jpg" class="oe_screenshot w-100">                            
-        </div>        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUX Multi Tabs — Odoo 20 Multi-Tab Navigation / 多标签页管理</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                     "Hiragino Sans GB", "Microsoft YaHei", Roboto, sans-serif;
+        line-height: 1.7;
+        color: #2c3e50;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf3 100%);
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* 中文辅助样式（作为次语言，字号更小、透明度更低） */
+    .zh-sub {
+        display: block;
+        font-size: 0.78em;
+        opacity: 0.68;
+        font-weight: 400;
+        margin-top: 3px;
+        letter-spacing: 0.2px;
+    }
+    .zh-small {
+        display: block;
+        font-size: 0.76em;
+        opacity: 0.62;
+        margin-top: 4px;
+        font-style: italic;
+    }
+    .zh-inline {
+        font-size: 0.72em;
+        opacity: 0.6;
+        font-weight: 400;
+        margin-left: 6px;
+        letter-spacing: 0.2px;
+    }
+
+    /* Hero */
+    .hero {
+        background: linear-gradient(135deg, #1a4d8c 0%, #2d7dd2 50%, #4dabf7 100%);
+        color: #fff;
+        padding: 72px 0 64px;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero::before {
+        content: "";
+        position: absolute; inset: 0;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.6;
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-inner { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .hero-icon {
+        flex-shrink: 0;
+        width: 120px; height: 120px;
+        border-radius: 28px;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        display: flex; align-items: center; justify-content: center;
+        border: 2px solid rgba(255,255,255,0.3);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    .hero-icon img { width: 72px; height: 72px; }
+    .hero-text h1 {
+        font-size: 42px; font-weight: 700; letter-spacing: -0.5px;
+        margin-bottom: 6px;
+    }
+    .hero-text h1 .zh-sub { font-weight: 500; opacity: 0.8; letter-spacing: 0.3px; margin-top: 2px; }
+    .hero-text p {
+        font-size: 17px; opacity: 0.95; max-width: 640px;
+    }
+    .hero-text p.zh-desc {
+        font-size: 14px; opacity: 0.68; margin-top: 6px; font-style: italic;
+    }
+    .hero-meta {
+        margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .badge {
+        background: rgba(255,255,255,0.18);
+        border: 1px solid rgba(255,255,255,0.35);
+        padding: 5px 14px; border-radius: 100px;
+        font-size: 13px; font-weight: 500;
+        backdrop-filter: blur(4px);
+    }
+
+    /* Section */
+    section { padding: 60px 0; }
+    .section-title {
+        text-align: center; margin-bottom: 44px;
+    }
+    .section-title h2 {
+        font-size: 30px; font-weight: 700; color: #1a2b4a;
+        margin-bottom: 4px;
+    }
+    .section-title h2 .zh-inline { color: #6b7c93; font-style: normal; }
+    .section-title p { color: #4a5a75; font-size: 15px; }
+    .section-title p.zh-sub { font-size: 13px; font-style: italic; margin-top: 2px; }
+    .section-title h2::after {
+        content: ""; display: block; width: 48px; height: 3px;
+        background: linear-gradient(90deg, #2d7dd2, #4dabf7);
+        border-radius: 2px; margin: 14px auto 0;
+    }
+
+    /* Screenshot */
+    .screenshot-wrap {
+        background: #fff;
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 20px 50px rgba(26,77,140,0.15);
+        border: 1px solid rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+    .screenshot-wrap .window-bar {
+        display: flex; gap: 8px; padding: 6px 10px 14px;
+        border-bottom: 1px solid #eef1f6;
+    }
+    .screenshot-wrap .window-bar span {
+        width: 12px; height: 12px; border-radius: 50%;
+    }
+    .screenshot-wrap .window-bar span:nth-child(1) { background: #ff5f57; }
+    .screenshot-wrap .window-bar span:nth-child(2) { background: #febc2e; }
+    .screenshot-wrap .window-bar span:nth-child(3) { background: #28c840; }
+    .screenshot-wrap img {
+        width: 100%; display: block; border-radius: 6px;
+    }
+
+    /* Features grid */
+    .features {
+        background: #fff;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+    .feature-card {
+        background: linear-gradient(145deg, #ffffff, #f8fafd);
+        border: 1px solid #eef1f6;
+        border-radius: 14px;
+        padding: 28px 24px;
+        transition: all .25s ease;
+    }
+    .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(45,125,210,0.12);
+        border-color: #c5d9f2;
+    }
+    .feature-icon {
+        width: 44px; height: 44px; border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 22px; margin-bottom: 16px;
+    }
+    .feature-card h3 {
+        font-size: 17px; font-weight: 600; margin-bottom: 6px; color: #1a2b4a;
+    }
+    .feature-card h3 .zh-inline {
+        font-size: 0.72em; font-weight: 500;
+    }
+    .feature-card p { font-size: 14px; color: #4a5a75; line-height: 1.65; }
+    .bg-blue   { background: linear-gradient(135deg,#e3f0ff,#d1e5fb); color:#1a4d8c; }
+    .bg-green  { background: linear-gradient(135deg,#e3f8ed,#c8eddb); color:#0d7a47; }
+    .bg-purple { background: linear-gradient(135deg,#efe7ff,#dccbfb); color:#5b2aa5; }
+    .bg-orange { background: linear-gradient(135deg,#fff0e0,#ffe2c2); color:#a1460b; }
+    .bg-pink   { background: linear-gradient(135deg,#ffe6ef,#ffcce0); color:#a11a5a; }
+    .bg-teal   { background: linear-gradient(135deg,#e0f7f5,#bfece6); color:#0b6a64; }
+
+    /* Usage table */
+    .usage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+    }
+    .usage-item {
+        background: #fff; border: 1px solid #eef1f6; border-radius: 10px;
+        padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px;
+    }
+    .usage-key {
+        font-family: "SF Mono", Menlo, Consolas, monospace;
+        font-size: 12px; font-weight: 600; color: #2d7dd2;
+        background: #eaf3ff; padding: 4px 10px; border-radius: 6px;
+        white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+        line-height: 1.4;
+    }
+    .usage-key .zh-small {
+        font-family: inherit;
+        font-size: 10px;
+        color: #6b9edb;
+        opacity: 1;
+        font-style: italic;
+        margin-top: 2px;
+        letter-spacing: 0.2px;
+    }
+    .usage-desc { font-size: 13.5px; color: #4a5a75; line-height: 1.55; }
+    .usage-desc .zh-small { font-size: 12px; margin-top: 3px; }
+
+    /* Install steps */
+    .install-wrap {
+        background: #fff;
+        border-radius: 16px; padding: 36px 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .steps { display: flex; flex-direction: column; gap: 0; counter-reset: step; }
+    .step {
+        display: flex; gap: 20px; padding: 18px 0;
+        border-bottom: 1px dashed #eef1f6;
+        counter-increment: step;
+    }
+    .step:last-child { border-bottom: none; }
+    .step::before {
+        content: counter(step);
+        flex-shrink: 0;
+        width: 36px; height: 36px; border-radius: 50%;
+        background: linear-gradient(135deg, #2d7dd2, #4dabf7);
+        color: #fff; font-weight: 700; font-size: 16px;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .step p { font-size: 15px; color: #3a4a65; padding-top: 8px; }
+    .step p .zh-desc {
+        display: block; font-size: 13px; opacity: 0.65;
+        font-style: italic; margin-top: 4px;
+    }
+    .step code {
+        background: #f4f7fb; border: 1px solid #e2e8f2;
+        padding: 2px 8px; border-radius: 5px;
+        font-family: "SF Mono", Menlo, Consolas, monospace;
+        font-size: 13px; color: #c0392b;
+    }
+
+    /* Technical highlight */
+    .tech-bg {
+        background: linear-gradient(135deg, #1a2b4a 0%, #2c3e6b 100%);
+        color: #eaf0fa;
+    }
+    .tech-bg .section-title h2 { color: #fff; }
+    .tech-bg .section-title h2 .zh-inline { color: #a9b6d1; }
+    .tech-bg .section-title p { color: #eaf0fa; }
+    .tech-bg .section-title p.zh-sub { color: #a9b6d1; }
+    .tech-cards {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+    .tech-card {
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 12px; padding: 24px;
+        backdrop-filter: blur(6px);
+    }
+    .tech-card h4 {
+        font-size: 16px; font-weight: 600; color: #7cc4ff;
+        margin-bottom: 6px;
+    }
+    .tech-card h4 .zh-inline { color: #c4cfe4; font-size: 0.72em; font-weight: 500; }
+    .tech-card p { font-size: 13.5px; line-height: 1.7; color: #eaf0fa; }
+    .tech-card p .zh-small { color: #a9b6d1; font-size: 12px; margin-top: 6px; opacity: 0.85; }
+
+    /* Footer */
+    footer {
+        background: #111a2e; color: #a9b6d1;
+        padding: 40px 0 36px; text-align: center;
+    }
+    footer .icon-row { margin-bottom: 14px; }
+    footer .icon-row img { width: 36px; height: 36px; vertical-align: middle; margin-right: 8px; }
+    footer .tagline { font-size: 15px; color: #eaf0fa; margin-bottom: 4px; }
+    footer .tagline .zh-sub { font-size: 13px; color: #a9b6d1; }
+    footer .meta { font-size: 13px; opacity: 0.7; }
+
+    @media (max-width: 640px) {
+        .hero { padding: 48px 0 40px; }
+        .hero-icon { width: 90px; height: 90px; }
+        .hero-icon img { width: 54px; height: 54px; }
+        .hero-text h1 { font-size: 28px; }
+        .hero-text p { font-size: 15px; }
+        section { padding: 44px 0; }
+        .section-title h2 { font-size: 24px; }
+        .install-wrap { padding: 24px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-icon">
+                <img src="./icon.png" alt="CUX Multi Tabs">
+            </div>
+            <div class="hero-text">
+                <h1>
+                    CUX Multi Tabs
+                    <span class="zh-sub">Odoo 20 多标签页导航</span>
+                </h1>
+                <p>Browser-like multi-tab navigation for the Odoo 20 backend. Every menu and action opens in its own tab — switch instantly, keep controllers mounted, never lose unsaved form input.</p>
+                <p class="zh-desc">为 Odoo 20 后端带来浏览器式多标签页导航。每个菜单、每个动作独立成页，切换快速，内容保持挂载，表单输入永不丢失。</p>
+                <div class="hero-meta">
+                    <span class="badge">Odoo 20.0</span>
+                    <span class="badge">LGPL-3</span>
+                    <span class="badge">Community &amp; Enterprise</span>
+                    <span class="badge">English / 中文</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Screenshot -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>Screenshot <span class="zh-inline">效果一览</span></h2>
+            <p>A single tab bar that holds every business context.</p>
+            <p class="zh-sub">一条标签栏，承载所有业务上下文。</p>
+        </div>
+        <div class="screenshot-wrap">
+            <div class="window-bar"><span></span><span></span><span></span></div>
+            <img src="./image.jpg" alt="Multi Tabs in action / 效果一览">
+        </div>
     </div>
 </section>
+
+<!-- Features -->
+<section class="features">
+    <div class="container">
+        <div class="section-title">
+            <h2>Key Features <span class="zh-inline">核心功能</span></h2>
+            <p>Use Odoo the way you use your browser.</p>
+            <p class="zh-sub">像使用浏览器一样使用 Odoo。</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon bg-blue">🗂️</div>
+                <h3>One tab per action <span class="zh-inline">每个动作独立成标签</span></h3>
+                <p>Menus and actions open in new tabs instead of replacing the current one. App switches keep the previous tab alive.</p>
+                <p class="zh-small">点击菜单或动作自动新开标签，不再覆盖当前页面。跨应用切换也各自保留。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon bg-green">💾</div>
+                <h3>Never lose input <span class="zh-inline">切换不丢失输入</span></h3>
+                <p>All opened tabs stay mounted. Unsaved form data is preserved when you switch away and back.</p>
+                <p class="zh-small">所有已打开的标签保持挂载。未保存的表单内容，切走再回来依然还在。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon bg-purple">🖱️</div>
+                <h3>Context &amp; gear menu <span class="zh-inline">右键 &amp; 齿轮菜单</span></h3>
+                <p>Right-click any tab to close it or close others. The gear button offers the same shortcuts.</p>
+                <p class="zh-small">标签上右键可关闭或关闭其他；右上角齿轮按钮也能一键关闭。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon bg-orange">↩️</div>
+                <h3>Prev / Next arrows <span class="zh-inline">左右箭头快速切换</span></h3>
+                <p>The ‹ › arrows at the end of the tab bar navigate between neighboring tabs faster than pointing and clicking.</p>
+                <p class="zh-small">标签栏末端的 ‹ › 按钮，在相邻标签间前后导航，更高效。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon bg-pink">🎯</div>
+                <h3>App &amp; sidebar sync <span class="zh-inline">应用与侧边栏自动同步</span></h3>
+                <p>Switching to a tab of another app updates the left menu and keeps the sidebar highlight in sync.</p>
+                <p class="zh-small">切换到另一个应用的标签时，左侧菜单自动切到对应应用并同步高亮。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon bg-teal">🏠</div>
+                <h3>Clean home menu <span class="zh-inline">主页自动隐藏标签栏</span></h3>
+                <p>The tab bar is hidden on the Home Menu, which never takes over an app tab — keeps the interface clean.</p>
+                <p class="zh-small">主页下不显示标签栏，主页本身也不占用一个应用标签。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Usage -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>Quick Reference <span class="zh-inline">操作速查</span></h2>
+            <p>Every common action is covered.</p>
+            <p class="zh-sub">所有常用动作都已就绪。</p>
+        </div>
+        <div class="usage-grid">
+            <div class="usage-item">
+                <span class="usage-key">
+                    Click menu
+                    <span class="zh-small">点击菜单</span>
+                </span>
+                <span class="usage-desc">
+                    Opens in current tab; reuses an existing tab with the same root action.
+                    <span class="zh-small">在当前标签打开；若已有同名根动作则复用。</span>
+                </span>
+            </div>
+            <div class="usage-item">
+                <span class="usage-key">
+                    Switch app
+                    <span class="zh-small">切换应用</span>
+                </span>
+                <span class="usage-desc">
+                    Opens in a new tab; the previous app tab is kept.
+                    <span class="zh-small">在新标签中打开，原应用标签保留。</span>
+                </span>
+            </div>
+            <div class="usage-item">
+                <span class="usage-key">
+                    Click tab
+                    <span class="zh-small">点击标签</span>
+                </span>
+                <span class="usage-desc">
+                    Activates the tab and syncs menu, URL and sidebar.
+                    <span class="zh-small">切换标签，同步菜单、URL 与侧边栏。</span>
+                </span>
+            </div>
+            <div class="usage-item">
+                <span class="usage-key">
+                    × button
+                    <span class="zh-small">× 按钮</span>
+                </span>
+                <span class="usage-desc">
+                    Closes the tab; goes back home when it was the last one.
+                    <span class="zh-small">关闭标签，只剩一个时返回主页。</span>
+                </span>
+            </div>
+            <div class="usage-item">
+                <span class="usage-key">
+                    Right-click
+                    <span class="zh-small">右键标签</span>
+                </span>
+                <span class="usage-desc">
+                    Context menu: Close / Close Other Tabs.
+                    <span class="zh-small">上下文菜单：关闭 / 关闭其他。</span>
+                </span>
+            </div>
+            <div class="usage-item">
+                <span class="usage-key">
+                    ‹ ›
+                    <span class="zh-small">箭头</span>
+                </span>
+                <span class="usage-desc">
+                    Switch to previous / next tab.
+                    <span class="zh-small">切换到上一个 / 下一个标签。</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technical -->
+<section class="tech-bg">
+    <div class="container">
+        <div class="section-title">
+            <h2>Technical Notes <span class="zh-inline">技术亮点</span></h2>
+            <p>Deeply adapted to Odoo 20 internals.</p>
+            <p class="zh-sub">为 Odoo 20 架构深度适配。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Install -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>Installation <span class="zh-inline">安装步骤</span></h2>
+            <p>Up and running in 4 steps.</p>
+            <p class="zh-sub">4 步即可启用。</p>
+        </div>
+        <div class="install-wrap">
+            <div class="steps">
+                <div class="step">
+                    <p>
+                        Put the <code>cux_multi_tabs</code> folder anywhere listed in <code>addons_path</code> (e.g. <code>addons_local</code>).
+                        <span class="zh-desc">将目录放入 addons_path 中任一目录（例如 addons_local）。</span>
+                    </p>
+                </div>
+                <div class="step">
+                    <p>
+                        Restart the Odoo server.
+                        <span class="zh-desc">重启 Odoo 服务。</span>
+                    </p>
+                </div>
+                <div class="step">
+                    <p>
+                        Open <em>Apps</em> → <em>Update Apps List</em>, search for <code>Multi Tabs</code> and install it.
+                        <span class="zh-desc">进入「应用」，点击「更新应用列表」，搜索并安装。</span>
+                    </p>
+                </div>
+                <div class="step">
+                    <p>
+                        Reload the browser — enjoy multi-tab navigation.
+                        <span class="zh-desc">刷新浏览器页面，开始享受多标签页体验。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="icon-row">
+            <img src="./icon.png" alt="">
+        </div>
+        <div class="tagline">
+            CUX Multi Tabs — Browser-like multi-tab navigation for Odoo 20
+            <span class="zh-sub">Odoo 20 多标签页导航</span>
+        </div>
+        <div class="meta">v20.0 · author: Hubin · license: LGPL-3</div>
+    </div>
+</footer>
+
+</body>
+</html>
