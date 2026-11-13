@@ -38,6 +38,7 @@ patch(ActionContainer.prototype, {
         this.tabs = proxy([]);
         this.blankInfo = null;
         this._pendingRoot = false;
+        this._pendingFullscreen = false;
         this._tabSeq = 0;
 
         useListener(this.env.bus, "ACTION_MANAGER:UPDATE", ({ detail: info }) => {
@@ -48,12 +49,14 @@ patch(ActionContainer.prototype, {
                 // BlankComponent transition: render it so its onMounted
                 // resolves the action manager's promise.
                 this._pendingRoot = true;
+                this._pendingFullscreen = !!info.fullscreen;
                 this.blankInfo = info;
                 render(this);
                 return;
             }
             this.blankInfo = null;
-            const isHomeMenu = info.componentProps?.action?.tag === "menu";
+            const action = info.componentProps?.action;
+            const isHomeMenu = action?.tag === "menu";
             // The controller only mounts if we render it: assign the info to
             // the target tab immediately.
             let tab;
@@ -73,15 +76,30 @@ patch(ActionContainer.prototype, {
                     title: "",
                     active: false,
                     pending: true,
+                    // Declared up front so that the reactive proxy already
+                    // tracks this key when _syncCurrentTab flips it.
+                    fullscreen: false,
                 };
                 this.tabs.push(tab);
             }
             tab.info = info;
+            // Fullscreen actions (Barcode, Shop Floor) are best identified by
+            // ACTION_MANAGER:UI-UPDATED (see _syncCurrentTab): for act_window
+            // controllers the action is not part of the props. Here only the
+            // empty transition flag and the client-action target are available,
+            // they merely avoid showing the bar for one frame. Never reset the
+            // flag to false here: _syncCurrentTab is the authority for that.
+            if (info.fullscreen || this._pendingFullscreen || action?.target === "fullscreen") {
+                tab.fullscreen = true;
+            }
+            this._pendingFullscreen = false;
             this._dropHomeMenuTabs(tab);
             this._setActiveTab(tab);
             render(this);
         });
-        useListener(this.env.bus, "ACTION_MANAGER:UI-UPDATED", () => this._syncCurrentTab());
+        useListener(this.env.bus, "ACTION_MANAGER:UI-UPDATED", ({ detail: mode }) =>
+            this._syncCurrentTab(mode)
+        );
     },
 
     // The enterprise home menu (client action "menu") must be unmounted as
@@ -93,13 +111,14 @@ patch(ActionContainer.prototype, {
     _dropHomeMenuTabs(keep) {
         for (let i = this.tabs.length - 1; i >= 0; i--) {
             const t = this.tabs[i];
-            if (t.tid !== keep.tid && t.info?.componentProps?.action?.tag === "menu") {
+            const isHomeMenu = t.info?.componentProps?.action?.tag === "menu";
+            if (isHomeMenu && (!keep || t.tid !== keep.tid)) {
                 this.tabs.splice(i, 1);
             }
         }
     },
 
-    _syncCurrentTab() {
+    _syncCurrentTab(mode) {
         const controller = this.actionService.currentController;
         let tab = this.tabs.find((t) => t.active);
         if (!controller || !tab) {
@@ -115,6 +134,7 @@ patch(ActionContainer.prototype, {
             const existing = this.tabs.find((t) => t.tid !== tab.tid && t.key === key);
             if (existing) {
                 existing.info = tab.info;
+                existing.fullscreen = !!tab.fullscreen;
                 this.tabs.splice(this.tabs.indexOf(tab), 1);
                 tab = existing;
             } else {
@@ -123,6 +143,18 @@ patch(ActionContainer.prototype, {
             tab.title = key;
             delete tab.pending;
             this._setActiveTab(tab);
+        }
+        if (mode && mode !== "new") {
+            // Authoritative fullscreen flag (also true for act_window actions
+            // with target="fullscreen", e.g. the Barcode "Operations" page).
+            this._pendingFullscreen = false;
+            tab.fullscreen = mode === "fullscreen";
+            if (tab.fullscreen) {
+                // The home menu must not stay mounted behind a fullscreen app:
+                // the home_menu service would keep `hasHomeMenu = true`, making
+                // its toggle() (the "apps" button) a no-op.
+                this._dropHomeMenuTabs(tab);
+            }
         }
         tab.state = state;
         tab.actionId = controller.action?.id;
@@ -138,6 +170,23 @@ patch(ActionContainer.prototype, {
         this.tabs.forEach((t) => {
             t.active = t.tid === tab.tid;
         });
+    },
+
+    // Tabs that may be listed in the bar: a fullscreen app (Barcode, Shop
+    // Floor) keeps its controller mounted so that its state survives, but it is
+    // never shown as a tab.
+    get visibleTabs() {
+        return this.tabs.filter((t) => !t.fullscreen);
+    },
+
+    // True when the active tab runs a fullscreen action: the bar has nothing to
+    // show then.
+    _isFullscreen() {
+        if (this._pendingFullscreen) {
+            return true;
+        }
+        const tab = this.tabs.find((t) => t.active);
+        return !!tab?.fullscreen;
     },
 
     _go_home() {
@@ -202,17 +251,16 @@ patch(ActionContainer.prototype, {
         }
     },
 
-    _on_multi_tab_next(index) {
-        const next = this.tabs[index + 1];
-        if (next) {
-            this._activate_tab(next);
+    // The bar only lists `visibleTabs`, so the neighbour is resolved there.
+    _on_multi_tab_next(tab) {
+        if (tab) {
+            this._activate_tab(tab);
         }
     },
 
-    _on_multi_tab_prev(index) {
-        const prev = this.tabs[index > 0 ? index - 1 : 0];
-        if (prev) {
-            this._activate_tab(prev);
+    _on_multi_tab_prev(tab) {
+        if (tab) {
+            this._activate_tab(tab);
         }
     },
 
@@ -242,13 +290,14 @@ patch(ActionContainer, {
         <t t-name="web.ActionContainer">
             <div class="o_action_manager d-flex flex-column">
                 <CuxMultiTab
-                    action_infos="this.tabs"
+                    action_infos="this.visibleTabs"
                     active_action="(tab) => this._activate_tab(tab)"
                     close_action="(tab) => this._on_close_action(tab)"
                     close_current_action="() => this._close_current_action()"
                     close_other_action="(tab) => this._close_other_action(tab)"
-                    multi_tab_next="(index) => this._on_multi_tab_next(index)"
-                    multi_tab_prev="(index) => this._on_multi_tab_prev(index)"/>
+                    multi_tab_next="(tab) => this._on_multi_tab_next(tab)"
+                    multi_tab_prev="(tab) => this._on_multi_tab_prev(tab)"
+                    hidden="this._isFullscreen()"/>
                 <t t-if="this.blankInfo">
                     <!-- The action manager awaits this component's onMounted,
                          which fires even when hidden, so mount it invisibly:

@@ -16,6 +16,7 @@ export class CuxMultiTab extends Component {
         close_other_action: t.function(),
         multi_tab_next: t.function(),
         multi_tab_prev: t.function(),
+        hidden: t.boolean().optional(false),
     });
 
     setup() {
@@ -88,15 +89,16 @@ export class CuxMultiTab extends Component {
         if (index < 0 || index >= infos.length - 1) {
             return;
         }
-        this.props.multi_tab_next(index);
+        this.props.multi_tab_next(infos[index + 1]);
     }
 
     _on_multi_tab_prev() {
         this._close_context_menu();
-        const index = this.props.action_infos.findIndex((info) => info.active);
+        const infos = this.props.action_infos;
+        const index = infos.findIndex((info) => info.active);
         if (index <= 0) {
             return;
         }
-        this.props.multi_tab_prev(index);
+        this.props.multi_tab_prev(infos[index - 1]);
     }
 }

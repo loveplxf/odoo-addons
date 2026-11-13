@@ -2,7 +2,7 @@
 <templates id="template" xml:space="preserve">
 
     <t t-name="cux_multi_tab.tab" owl="1">
-        <div class="cux_multi_tab_container">
+        <div class="cux_multi_tab_container" t-att-class="this.props.hidden ? 'cux_hidden' : ''">
             <div class="cux_multi_tab">
                 <div class="cux_tab_control cux_icon_prev" t-on-click.stop="() => this._on_multi_tab_prev()">
                     <i class="oi" data-icon="chevron_left" aria-hidden="true"></i>
