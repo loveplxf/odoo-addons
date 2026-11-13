@@ -4,7 +4,7 @@
     'description': """
         Multi Tabs in Odoo 20.0
     """,
-    'version': '0.1',
+    'version': '0.2',
     'depends': ['base','web'],
     "installable": True,
     "auto_install": False,
