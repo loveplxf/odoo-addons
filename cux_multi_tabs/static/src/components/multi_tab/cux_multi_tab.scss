@@ -228,6 +228,11 @@
     }
 }
 
+// Fullscreen client actions (Barcode, Shop Floor) get the whole window.
+.cux_multi_tab_container.cux_hidden {
+    display: none !important;
+}
+
 .o_home_menu_background {
     .cux_multi_tab_container {
         display: none !important;

@@ -14,10 +14,19 @@
     overflow-y: hidden;
     grid-area: 1 / 1;
     min-height: 0;
-
     &.cux_inactive {
         visibility: hidden;
         pointer-events: none;
+
+        // `visibility` is inherited but can be re-declared by any descendant.
+        // Odoo does exactly that for kanban dropdown toggles, list row
+        // controls, hover actions, etc. (e.g. `.o_kanban_record:hover
+        // .o_dropdown_kanban { visibility: visible }`), and those elements of
+        // an inactive tab would then paint on top of the active one — the
+        // "ghost" ⋮ buttons. Force it on the whole subtree.
+        * {
+            visibility: hidden !important;
+        }
     }
 
     .o_view_controller {
