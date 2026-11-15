@@ -10,6 +10,7 @@
     "auto_install": False,
     'author': 'Hubin',
     'category': 'Services',
+    'images': ['static/description/banner.gif'],
     "assets": {
         "web.assets_backend": [
            "cux_multi_tabs/static/src/**/*",
