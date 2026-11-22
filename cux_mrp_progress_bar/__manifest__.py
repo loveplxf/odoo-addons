@@ -22,6 +22,10 @@ fills up as the finished moves of the order are validated.
     'auto_install': False,
     'author': 'Hubin',
     'category': 'Supply Chain/Manufacturing',
+    "images": [
+        'static/description/image.jpg',
+        'static/description/image_2.jpg'
+    ],    
     'license': 'LGPL-3',
     'data': [
         'views/mrp_production_views.xml',
