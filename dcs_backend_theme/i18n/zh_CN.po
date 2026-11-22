@@ -1,0 +1,1397 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dcs_backend_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-09 03:26+0000\n"
+"PO-Revision-Date: 2026-11-07 22:20+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "Aa"
+msgstr "Aa"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/navigation_service.js:0
+msgid "Action"
+msgstr "操作"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Add to favorites"
+msgstr "添加到收藏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Administration"
+msgstr "管理"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "All applications"
+msgstr "所有应用"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_animation
+msgid "Animations"
+msgstr "动画"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "App"
+msgstr "应用"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_drawer_style
+msgid "App Drawer Style"
+msgstr "应用抽屉样式"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_icon_style
+msgid "App Icon Style"
+msgstr "应用图标样式"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_nav_mode__drawer
+msgid "App drawer"
+msgstr "应用抽屉"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "App icons"
+msgstr "应用图标"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Appearance"
+msgstr "外观"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Applications"
+msgstr "应用"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Applications & menus"
+msgstr "应用和菜单"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid ""
+"Applies to everyone on this database: sign-in, password reset and sign-up "
+"pages."
+msgstr ""
+"适用于此数据库的所有人：登录、重置密码和注册页面。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/navbar_patch.js:0
+msgid "Apps"
+msgstr "应用"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_chatter_position__auto
+msgid "Automatic"
+msgstr "自动"
+
+#. module: dcs_backend_theme
+#: model:ir.ui.menu,name:dcs_backend_theme.menu_theme_settings
+msgid "Backend Theme"
+msgstr "后台主题"
+
+#. module: dcs_backend_theme
+#: model:ir.model,name:dcs_backend_theme.model_cbt_theme_config
+msgid "Backend Theme Configuration"
+msgstr "后台主题配置"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Backend theme"
+msgstr "后台主题"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Background image"
+msgstr "背景图片"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__blue
+msgid "Blue"
+msgstr "蓝色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Bookmark"
+msgstr "收藏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid ""
+"Bookmark menus, views and records you use often. They follow you on every "
+"device."
+msgstr ""
+"收藏您常用的菜单、视图和记录。它们会跟随您到每一台设备。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Bookmark this page"
+msgstr "收藏此页面"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+#: code:addons/dcs_backend_theme/static/src/components/systray/systray_items.js:0
+#: code:addons/dcs_backend_theme/static/src/core/navigation_service.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_bookmarks
+msgid "Bookmarks"
+msgstr "收藏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_chatter_position__bottom
+msgid "Bottom"
+msgstr "底部"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Brand name"
+msgstr "品牌名称"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Brand panel"
+msgstr "品牌面板"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Button color"
+msgstr "按钮颜色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_drawer_style__categories
+msgid "Categories"
+msgstr "分类"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_chatter_position
+msgid "Chatter Position"
+msgstr "讨论区位置"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Chatter position"
+msgstr "讨论区位置"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_icon_style__circle
+msgid "Circle"
+msgstr "圆形"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Clear"
+msgstr "清除"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_panel.js:0
+#: code:addons/dcs_backend_theme/static/src/patches/list_split_view.js:0
+msgid "Close"
+msgstr "关闭"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Collapse sidebar"
+msgstr "折叠侧边栏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_mode__collapsed
+msgid "Collapsed"
+msgstr "折叠"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_palette
+msgid "Color Palette"
+msgstr "配色方案"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Colors must be #RRGGBB hex values."
+msgstr "颜色必须是 #RRGGBB 格式的十六进制值。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_density__comfortable
+msgid "Comfortable"
+msgstr "舒适"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_density__compact
+msgid "Compact"
+msgstr "紧凑"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_nav_mode__compact
+msgid "Compact (icon rail + top bar)"
+msgstr "紧凑（图标栏 + 顶部栏）"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_radius
+msgid "Corner Radius"
+msgstr "圆角半径"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Corners"
+msgstr "圆角"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Corporate"
+msgstr "企业"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__custom
+msgid "Custom"
+msgstr "自定义"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_primary_color
+msgid "Custom Primary Color"
+msgstr "自定义主色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Custom color"
+msgstr "自定义颜色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_theme_mode__dark
+msgid "Dark"
+msgstr "深色"
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_illustration
+msgid "Dashboard illustration"
+msgstr "仪表板插图"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_size__md
+msgid "Default"
+msgstr "默认"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Defaults to the company logo"
+msgstr "默认为公司 Logo"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Defaults to the company name"
+msgstr "默认为公司名称"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Delete"
+msgstr "删除"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_density
+msgid "Density"
+msgstr "密度"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.xml:0
+msgid "DevsCodespace"
+msgstr "DevsCodespace"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_cbt_theme_config__display_name
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_ir_http__display_name
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Drawer layout"
+msgstr "抽屉布局"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_position__end
+msgid "End"
+msgstr "末端"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.xml:0
+msgid "Enter"
+msgstr "Enter"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.xml:0
+msgid "Esc"
+msgstr "Esc"
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Everything your business runs on, in one place."
+msgstr "您的业务所需的一切，尽在一处。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Expand on hover"
+msgstr "悬停时展开"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Expand sidebar"
+msgstr "展开侧边栏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_mode__expanded
+msgid "Expanded"
+msgstr "展开"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_size__xl
+msgid "Extra large"
+msgstr "特大"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_favorite_apps
+msgid "Favorite Apps"
+msgstr "收藏的应用"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Favorites"
+msgstr "收藏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Filter menus"
+msgstr "筛选菜单"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Finance"
+msgstr "财务"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_icon_style__flat
+msgid "Flat"
+msgstr "扁平"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_font_family
+msgid "Font"
+msgstr "字体"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_font_size
+msgid "Font Size"
+msgstr "字号"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Font size"
+msgstr "字号"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Footer text"
+msgstr "页脚文本"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_animation__full
+msgid "Full"
+msgstr "完整"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Gradient"
+msgstr "渐变"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__green
+msgid "Green"
+msgstr "绿色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_drawer_style__grid
+msgid "Grid"
+msgstr "网格"
+
+#. module: dcs_backend_theme
+#: model:ir.model,name:dcs_backend_theme.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTP 路由"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Headline"
+msgstr "主标题"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Hex value"
+msgstr "十六进制值"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/navbar_patch.js:0
+msgid "Home Menu"
+msgstr "主菜单"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_nav_mode__horizontal
+msgid "Horizontal (top bar)"
+msgstr "水平（顶部栏）"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_cbt_theme_config__id
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_ir_http__id
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__id
+msgid "ID"
+msgstr "ID"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Illustration"
+msgstr "插图"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Image"
+msgstr "图片"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Images must be smaller than 4 MB."
+msgstr "图片必须小于 4 MB。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__indigo
+msgid "Indigo"
+msgstr "靛蓝"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_style__ink
+msgid "Ink"
+msgstr "墨色"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/res_users_settings.py:0
+msgid "Invalid bookmark entry."
+msgstr "收藏条目无效。"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/res_users_settings.py:0
+msgid "Invalid bookmarks."
+msgstr "收藏无效。"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/res_users_settings.py:0
+msgid "Invalid favorite applications."
+msgstr "收藏的应用无效。"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Invalid settings."
+msgstr "设置无效。"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Invalid value for %s."
+msgstr "%s 的值无效。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Keep sidebar fixed (don't expand on hover)"
+msgstr "固定侧边栏（悬停时不展开）"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Keep sidebar open (don't expand on hover)"
+msgstr "保持侧边栏展开（悬停时不展开）"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "L"
+msgstr "大"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_size__lg
+msgid "Large"
+msgstr "大"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Layout"
+msgstr "布局"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_style__light
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_theme_mode__light
+msgid "Light"
+msgstr "浅色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_drawer_style__list
+msgid "List"
+msgstr "列表"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "List + form split view"
+msgstr "列表 + 表单分屏"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_split_view
+msgid "List/Form Split View"
+msgstr "列表/表单分屏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Login page"
+msgstr "登录页"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_panel.js:0
+msgid "Login page & full settings"
+msgstr "登录页和完整设置"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Login page updated."
+msgstr "登录页已更新。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Logo"
+msgstr "Logo"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "M"
+msgstr "中"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Main navigation"
+msgstr "主导航"
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Manage Databases"
+msgstr "管理数据库"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Menu"
+msgstr "菜单"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Menus"
+msgstr "菜单"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_mode__mini
+msgid "Mini"
+msgstr "迷你"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Minimal"
+msgstr "极简"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__montserrat
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "More"
+msgstr "更多"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Motion"
+msgstr "动效"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Move down"
+msgstr "下移"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Move up"
+msgstr "上移"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "My preferences"
+msgstr "我的偏好"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_nav_mode
+msgid "Navigation"
+msgstr "导航"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Navigation style"
+msgstr "导航样式"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "No application matches your search."
+msgstr "没有匹配您搜索内容的应用。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "No bookmarks yet"
+msgstr "暂无收藏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "No matching menu"
+msgstr "没有匹配的菜单"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_animation__none
+msgid "None"
+msgstr "无"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Nothing found. Try another word."
+msgstr "未找到内容。请尝试其他关键词。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Off"
+msgstr "关闭"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Only administrators can change the login page."
+msgstr "只有管理员才能更改登录页。"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__open_sans
+msgid "Open Sans"
+msgstr "Open Sans"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/list_split_view.js:0
+msgid "Open full form"
+msgstr "打开完整表单"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Open login page"
+msgstr "打开登录页"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Open records next to the list on large screens."
+msgstr "在大屏幕上于列表旁打开记录。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Operations"
+msgstr "运营"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__orange
+msgid "Orange"
+msgstr "橙色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_icon_style__original
+msgid "Original"
+msgstr "原始"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Other"
+msgstr "其他"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Panel color"
+msgstr "面板颜色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "People"
+msgstr "人员"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid ""
+"Personal preferences are saved to your user and follow you on every device."
+msgstr ""
+"个人偏好会保存到您的用户，并跟随您到每一台设备。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Plain"
+msgstr "朴素"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Please choose an image smaller than 4 MB."
+msgstr "请选择小于 4 MB 的图片。"
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Powered by <span>Odoo</span>"
+msgstr "由 <span>Odoo</span> 提供支持"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Preview"
+msgstr "预览"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Primary color"
+msgstr "主色调"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Productivity"
+msgstr "效率"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__purple
+msgid "Purple"
+msgstr "紫色"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__raleway
+msgid "Raleway"
+msgstr "Raleway"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Recent"
+msgstr "最近"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Recent searches"
+msgstr "最近搜索"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Recently used"
+msgstr "最近使用"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+#: code:addons/dcs_backend_theme/static/src/core/navigation_service.js:0
+msgid "Record"
+msgstr "记录"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/list_split_view.js:0
+msgid "Record preview"
+msgstr "记录预览"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__red
+msgid "Red"
+msgstr "红色"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_animation__reduced
+msgid "Reduced"
+msgstr "减弱"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Remove"
+msgstr "移除"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Remove from favorites"
+msgstr "从收藏中移除"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Remove this page"
+msgstr "移除此页面"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Removed from bookmarks"
+msgstr "已从收藏中移除"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Rename"
+msgstr "重命名"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Reset to defaults"
+msgstr "恢复默认设置"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__roboto
+msgid "Roboto"
+msgstr "Roboto"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_radius__md
+msgid "Rounded"
+msgstr "圆角"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_icon_style__rounded
+msgid "Rounded tile"
+msgstr "圆角磁贴"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "S"
+msgstr "小"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Sales & CRM"
+msgstr "销售和 CRM"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Save login page"
+msgstr "保存登录页"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+#: code:addons/dcs_backend_theme/static/src/components/systray/systray_items.js:0
+msgid "Search"
+msgstr "搜索"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Search applications and menus…"
+msgstr "搜索应用和菜单…"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Search apps, menus and bookmarks…"
+msgstr "搜索应用、菜单和收藏…"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Search records and commands for"
+msgstr "搜索以下记录和命令："
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Show “Powered by Odoo”"
+msgstr "显示“由 Odoo 提供支持”"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_chatter_position__side
+msgid "Side"
+msgstr "侧边"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_sidebar_mode
+msgid "Sidebar"
+msgstr "侧边栏"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_sidebar_locked
+msgid "Sidebar Locked"
+msgstr "侧边栏已锁定"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_sidebar_position
+msgid "Sidebar Position"
+msgstr "侧边栏位置"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_sidebar_style
+msgid "Sidebar Style"
+msgstr "侧边栏样式"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Sidebar position"
+msgstr "侧边栏位置"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Sidebar style"
+msgstr "侧边栏样式"
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Sign in to continue"
+msgstr "登录以继续"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__slate
+msgid "Slate"
+msgstr "石板灰"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_size__sm
+msgid "Small"
+msgstr "小"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_radius__lg
+msgid "Soft"
+msgstr "柔和"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_density__spacious
+msgid "Spacious"
+msgstr "宽松"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Split screen"
+msgstr "分屏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_radius__none
+msgid "Square"
+msgstr "直角"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_position__start
+msgid "Start"
+msgstr "起始"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_radius__sm
+msgid "Subtle"
+msgstr "轻微"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Suggestions"
+msgstr "建议"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Supporting text"
+msgstr "辅助文本"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Switching between light and dark reloads the page once."
+msgstr "在浅色和深色之间切换会重新加载一次页面。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_theme_mode__system
+msgid "System"
+msgstr "跟随系统"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__system
+msgid "System UI"
+msgstr "系统界面"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__tajawal
+msgid "Tajawal"
+msgstr "Tajawal"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__teal
+msgid "Teal"
+msgstr "青色"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "The image could not be read."
+msgstr "无法读取该图片。"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/res_users_settings.py:0
+msgid "The primary color must be a #RRGGBB hex value."
+msgstr "主色必须是 #RRGGBB 格式的十六进制值。"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_theme_mode
+msgid "Theme Mode"
+msgstr "主题模式"
+
+#. module: dcs_backend_theme
+#: model:ir.actions.client,name:dcs_backend_theme.action_theme_settings
+msgid "Theme Settings"
+msgstr "主题设置"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Theme by"
+msgstr "主题作者"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Theme mode"
+msgstr "主题模式"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+#: code:addons/dcs_backend_theme/static/src/components/systray/systray_items.js:0
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_panel.js:0
+msgid "Theme settings"
+msgstr "主题设置"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "This page cannot be bookmarked"
+msgstr "此页面无法收藏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_style__tinted
+msgid "Tinted"
+msgstr "浅色调"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/navbar_patch.js:0
+msgid "Toggle sidebar"
+msgstr "切换侧边栏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Top bar"
+msgstr "顶部栏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Typography"
+msgstr "排版"
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Unsupported image type."
+msgstr "不支持的图片类型。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Upload"
+msgstr "上传"
+
+#. module: dcs_backend_theme
+#: model:ir.model,name:dcs_backend_theme.model_res_users_settings
+msgid "User Settings"
+msgstr "用户设置"
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_nav_mode__vertical
+msgid "Vertical (sidebar)"
+msgstr "垂直（侧边栏）"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "View"
+msgstr "视图"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Website & Marketing"
+msgstr "网站和营销"
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Welcome back"
+msgstr "欢迎回来"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "XL"
+msgstr "特大"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Your system's reduced-motion setting is always respected."
+msgstr "始终遵循系统的“减弱动态效果”设置。"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "to close"
+msgstr "关闭"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "to navigate"
+msgstr "导航"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "to open"
+msgstr "打开"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "“%s” added to bookmarks"
+msgstr "“%s”已添加到收藏"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Show logo and system name in the top-left corner"
+msgstr "在左上角显示 Logo 和系统名称"
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "System name"
+msgstr "系统名称"

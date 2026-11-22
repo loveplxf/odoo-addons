@@ -1,0 +1,144 @@
+// =============================================================================
+// List views
+// =============================================================================
+
+.o_list_renderer {
+    --o-list-cell-py: var(--cbt-row-py);
+
+    .o_list_table {
+        --table-hover-bg: var(--cbt-primary-softer);
+        background-color: var(--cbt-surface);
+
+        > thead {
+            // Odoo's list header is already sticky; we only restyle it.
+            > tr > th {
+                background-color: var(--cbt-surface-sunken);
+                border-bottom: 1px solid var(--cbt-border);
+                color: var(--cbt-text-muted);
+                font-size: .78rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: .035em;
+                padding-block: calc(var(--cbt-row-py) * .9);
+            }
+            .o_column_sortable:hover { color: var(--cbt-text-strong); }
+        }
+
+        > tbody > tr {
+            transition: background-color var(--cbt-duration) var(--cbt-ease);
+            > td {
+                border-color: var(--cbt-border);
+                padding-block: var(--cbt-row-py);
+            }
+        }
+
+        .o_data_row {
+            &:hover > td { background-color: var(--cbt-primary-softer); }
+            &.table-info > td, &.o_data_row_selected > td {
+                background-color: var(--cbt-primary-soft) !important;
+                --#{$prefix}table-bg-state: var(--cbt-primary-soft);
+                color: inherit;
+            }
+            &.o_selected_row > td {
+                background-color: var(--cbt-surface) !important;
+                box-shadow: inset 0 0 0 9999px rgba(var(--cbt-primary-rgb), .04);
+            }
+        }
+
+        .o_data_cell { color: var(--cbt-text); font-variant-numeric: tabular-nums; }
+        .o_list_number { font-variant-numeric: tabular-nums; }
+
+        // Group rows
+        .o_group_row, .o_group_header {
+            background-color: var(--cbt-surface-sunken);
+            font-weight: 600;
+            &:hover > th, &:hover > td { background-color: var(--cbt-surface-hover); }
+        }
+
+        // Footer totals
+        > tfoot > tr > td {
+            border-top: 1px solid var(--cbt-border-strong);
+            background-color: var(--cbt-surface-sunken);
+            font-weight: 650;
+        }
+
+        // Inline action buttons & checkboxes
+        .o_list_record_selector .form-check-input { cursor: pointer; }
+        .o_list_button .btn, .o_list_record_remove {
+            border-radius: var(--cbt-radius-sm);
+            opacity: .75;
+            &:hover { opacity: 1; }
+        }
+        .o_field_badge .badge, .o_field_widget .badge { border-radius: 999px; }
+
+        // Attachment / activity indicators get breathing room
+        .o_field_many2many_binary, .o_mail_activity { padding-inline: .2rem; }
+    }
+
+    // "Add a line" & no-content helper
+    .o_field_x2many_list_row_add a { color: var(--cbt-primary-text); font-weight: 500; }
+}
+
+// Odoo applies a 100% wide table: give the action area a card-like frame
+.o_list_view > .o_content > .o_list_renderer,
+.o_list_view .o_content > .o_list_renderer {
+    background-color: var(--cbt-surface);
+}
+
+// Split view (list + form) -------------------------------------------------------
+// The pane is a sibling of Odoo's <main class="o_content"> (see
+// list_split_view.xml), so whatever an app renders inside the content area
+// (dashboards, search panel, sticky headers) is left untouched. The view
+// root becomes a grid: control panel on top, content | pane below.
+.o_view_controller.cbt-split-active {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) clamp(26rem, 46%, 56rem);
+    grid-template-rows: auto minmax(0, 1fr);
+    > * { grid-column: 1 / -1; }
+    > .o_content { grid-column: 1; grid-row: 2; min-inline-size: 0; min-block-size: 0; }
+    > .cbt-split-pane { grid-column: 2; grid-row: 2; min-block-size: 0; }
+}
+// Wide app dashboards above the list (e.g. Purchase) scroll sideways
+// instead of being clipped by the narrower list column.
+.o_view_controller.cbt-split-active > .o_content { overflow-x: auto; }
+// Bootstrap's col-lg-* follow the *window* width; inside the pane the form
+// is narrow, so every group goes full width (labels and values get room).
+.cbt-split-pane .o_form_view .o_group.row > [class*="col-lg-"] {
+    flex: 0 0 100%;
+    max-inline-size: 100%;
+    inline-size: 100%;
+}
+.cbt-split-pane {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    background-color: var(--cbt-bg);
+    border-inline-start: 1px solid var(--cbt-border);
+    animation: cbt-split-in var(--cbt-duration-slow) var(--cbt-ease);
+
+    .cbt-split-pane__header {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .5rem .75rem;
+        background-color: var(--cbt-surface);
+        border-bottom: 1px solid var(--cbt-border);
+        .cbt-split-pane__title { font-weight: 600; flex: 1 1 auto; min-inline-size: 0; }
+    }
+    .cbt-split-pane__body {
+        flex: 1 1 auto;
+        overflow: auto;
+        position: relative;
+        > .o_view_controller { min-block-size: 100%; }
+        .o_form_view .o_form_sheet_bg { padding-inline: .75rem; }
+        .o_form_view .o_form_sheet { max-inline-size: none; min-inline-size: 0 !important; }
+    }
+}
+.o_data_row.cbt-split-current > td {
+    background-color: var(--cbt-primary-soft) !important;
+    &:first-child { box-shadow: inset 3px 0 0 var(--cbt-primary); }
+}
+@keyframes cbt-split-in {
+    from { opacity: 0; transform: translateX(12px); }
+    to { opacity: 1; transform: none; }
+}

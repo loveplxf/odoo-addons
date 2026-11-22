@@ -1,0 +1,205 @@
+// =============================================================================
+// Login / authentication pages (frontend bundle). Scoped to .cbt-login so it
+// never affects the public website.
+// =============================================================================
+
+body.cbt-login-body {
+    min-block-size: 100%;
+    background: #f3f4f7;
+    > #wrapwrap, > .o_main_navbar + #wrapwrap { min-block-size: 100%; }
+    main { display: block; }
+}
+
+.cbt-login {
+    --cbt-login-primary: #4f46e5;
+    --cbt-login-accent: #1e1b4b;
+    --cbt-login-radius: 18px;
+    --cbt-login-text: #1b1f29;
+    --cbt-login-muted: #687083;
+
+    display: grid;
+    min-block-size: 100vh;
+    color: var(--cbt-login-text);
+    font-family: inherit;
+
+    // Primary color across the form
+    .btn-primary {
+        --#{$prefix}btn-bg: var(--cbt-login-primary);
+        --#{$prefix}btn-border-color: var(--cbt-login-primary);
+        --#{$prefix}btn-hover-bg: color-mix(in srgb, var(--cbt-login-primary) 86%, #000);
+        --#{$prefix}btn-hover-border-color: color-mix(in srgb, var(--cbt-login-primary) 86%, #000);
+        --#{$prefix}btn-active-bg: color-mix(in srgb, var(--cbt-login-primary) 74%, #000);
+        --#{$prefix}btn-active-border-color: color-mix(in srgb, var(--cbt-login-primary) 74%, #000);
+        --#{$prefix}btn-color: #fff;
+        --#{$prefix}btn-hover-color: #fff;
+        --#{$prefix}btn-active-color: #fff;
+        padding-block: .65rem;
+        font-weight: 600;
+        border-radius: 10px;
+        // The frontend bundle bakes the website primary color into
+        // background-color; the login page follows its own setting.
+        background-color: var(--#{$prefix}btn-bg) !important;
+        border-color: var(--#{$prefix}btn-border-color) !important;
+        color: var(--#{$prefix}btn-color) !important;
+        &:hover, &:focus-visible { background-color: var(--#{$prefix}btn-hover-bg) !important; border-color: var(--#{$prefix}btn-hover-border-color) !important; }
+        &:active { background-color: var(--#{$prefix}btn-active-bg) !important; }
+    }
+    a:not(.btn), .btn-link { color: var(--cbt-login-primary) !important; }
+    .btn-link:hover, a:not(.btn):hover { color: color-mix(in srgb, var(--cbt-login-primary) 80%, #000) !important; }
+    .cbt-login__links a { color: var(--cbt-login-muted) !important; }
+    .form-control {
+        padding: .6rem .8rem;
+        border-radius: 10px;
+        border-color: #d0d5de;
+        &:focus {
+            border-color: var(--cbt-login-primary);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--cbt-login-primary) 25%, transparent);
+        }
+    }
+    .input-group > .form-control { border-start-end-radius: 0; border-end-end-radius: 0; }
+    .input-group > .btn { border-start-end-radius: 10px; border-end-end-radius: 10px; }
+    .form-label, .col-form-label { font-weight: 600; font-size: .85rem; }
+
+    // --- Brand panel ---------------------------------------------------------
+    .cbt-login__brand {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        padding: clamp(1.5rem, 4vw, 3.5rem);
+        color: #fff;
+        overflow: hidden;
+        isolation: isolate;
+        background: var(--cbt-login-accent);
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(60% 60% at 15% 10%, color-mix(in srgb, var(--cbt-login-primary) 75%, transparent) 0%, transparent 70%),
+                radial-gradient(50% 50% at 90% 85%, color-mix(in srgb, var(--cbt-login-primary) 45%, transparent) 0%, transparent 70%);
+        }
+    }
+    &.cbt-login-bg--plain .cbt-login__brand::before { display: none; }
+    &.cbt-login-bg--image .cbt-login__brand {
+        background: var(--cbt-login-accent) var(--cbt-login-image) center / cover no-repeat;
+        &::before { background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, .55)); }
+    }
+    .cbt-login__brand-inner { max-inline-size: 34rem; }
+    .cbt-login__brand-name {
+        display: inline-flex;
+        padding: .3rem .8rem;
+        margin-block-end: 1.25rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .14);
+        font-weight: 600;
+        font-size: .85rem;
+        letter-spacing: .02em;
+    }
+    .cbt-login__brand-title {
+        font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -.02em;
+        color: #fff;
+    }
+    .cbt-login__brand-text { margin-block-start: .75rem; opacity: .82; font-size: 1.05rem; }
+    .cbt-login__illustration {
+        display: block;
+        inline-size: #{"min(100%, 26rem)"};
+        margin-block-start: 2rem;
+        color: #fff;
+    }
+
+    // --- Form side -----------------------------------------------------------
+    .cbt-login__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(1rem, 4vw, 3rem);
+    }
+    .cbt-login__card {
+        inline-size: 100%;
+        max-inline-size: 26rem;
+        border-radius: var(--cbt-login-radius);
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 24px 48px -16px rgba(16, 24, 40, .18);
+        .card-body { padding: clamp(1.5rem, 3vw, 2.25rem); }
+    }
+    .cbt-login__logo {
+        display: flex;
+        justify-content: center;
+        margin-block-end: 1.25rem;
+        img { max-block-size: 64px; max-inline-size: 70%; inline-size: auto; }
+    }
+    .cbt-login__intro { text-align: center; margin-block-end: 1.5rem; }
+    .cbt-login__heading { font-size: 1.45rem; font-weight: 700; letter-spacing: -.015em; margin: 0; }
+    .cbt-login__subheading { margin: .35rem 0 0; color: var(--cbt-login-muted); }
+    .cbt-login__links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: .4rem 1rem;
+        margin-block-start: 1.5rem;
+        padding-block-start: 1rem;
+        border-block-start: 1px solid #e3e6ec;
+        font-size: .82rem;
+        a { color: var(--cbt-login-muted); }
+    }
+    .cbt-login__footnote { margin-block-start: 1.25rem; color: var(--cbt-login-muted); font-size: .82rem; text-align: center; }
+
+    // --- Layout variants -----------------------------------------------------
+    &.cbt-login--minimal {
+        background:
+            radial-gradient(80% 60% at 50% 0%, color-mix(in srgb, var(--cbt-login-primary) 12%, transparent), transparent),
+            #f3f4f7;
+    }
+
+    &.cbt-login--corporate {
+        grid-template-rows: minmax(12rem, 36vh) 1fr;
+        .cbt-login__brand {
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            padding-block-start: 2.25rem;
+        }
+        .cbt-login__main { margin-block-start: -9rem; justify-content: flex-start; }
+    }
+
+    &.cbt-login--split, &.cbt-login--illustration {
+        grid-template-columns: minmax(0, 1.1fr) minmax(24rem, 1fr);
+        background: #f6f7f9;
+        .cbt-login__card { box-shadow: none; background: transparent; }
+        .cbt-login__main { background: #fff; }
+    }
+    &.cbt-login--illustration .cbt-login__brand { align-items: center; }
+
+    @media (max-width: 991.98px) {
+        &.cbt-login--split, &.cbt-login--illustration {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+            .cbt-login__brand { padding-block: 1.5rem; }
+            .cbt-login__brand-title, .cbt-login__brand-text, .cbt-login__illustration { display: none; }
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        --cbt-login-text: #e9ecf2;
+        --cbt-login-muted: #8f98ab;
+        &.cbt-login--minimal { background: #11141b; }
+        &.cbt-login--split, &.cbt-login--illustration { background: #11141b; .cbt-login__main { background: #161a22; } }
+        &.cbt-login--corporate { background: #11141b; }
+        .cbt-login__card { background: #191d26; }
+        .form-control { background: #141820; color: #e9ecf2; border-color: #3b4251; }
+        .cbt-login__links { border-color: #2a303d; }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .cbt-login__card { animation: cbt-login-in 420ms cubic-bezier(.2, .8, .2, 1); }
+}
+@keyframes cbt-login-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+}

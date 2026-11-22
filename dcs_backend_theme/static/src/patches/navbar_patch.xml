@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_navbar_apps_menu')]" position="replace">
+            <div t-if="!this.isScopedApp" class="o_navbar_apps_menu cbt-navbar-start d-flex align-items-center">
+                <button t-if="this.cbtShowSidebarToggle" type="button" class="cbt-icon-btn cbt-sidebar-toggle"
+                        t-att-title="this.cbtLabels.sidebar" t-att-aria-label="this.cbtLabels.sidebar"
+                        t-on-click="this.cbtToggleSidebar">
+                    <i class="oi" data-icon="menu" aria-hidden="true"/>
+                </button>
+                <button t-if="this.cbtShowAppsToggle" type="button" class="cbt-apps-toggle"
+                        t-att-class="{ 'cbt-apps-toggle--system': this.cbtSystemBrand }" data-hotkey="h"
+                        t-att-title="this.cbtSystemBrand ? this.cbtSystemName : this.cbtLabels.home"
+                        t-att-aria-label="this.cbtSystemBrand ? this.cbtSystemName : this.cbtLabels.home"
+                        aria-haspopup="dialog"
+                        t-att-aria-expanded="this.cbtUi.panel === 'drawer' ? 'true' : 'false'"
+                        t-on-click="this.cbtOpenDrawer">
+                    <img t-if="this.cbtSystemBrand and this.cbtSystemLogoSrc" class="cbt-apps-toggle__logo"
+                         t-att-src="this.cbtSystemLogoSrc" t-att-alt="this.cbtSystemName"/>
+                    <span t-if="!this.cbtSystemBrand" class="cbt-apps-toggle__grid" aria-hidden="true"><i/><i/><i/><i/><i/><i/><i/><i/><i/></span>
+                    <span t-if="this.cbtSystemBrand" class="cbt-apps-toggle__name" t-out="this.cbtSystemName"/>
+                    <!-- <span class="d-none d-xl-inline" t-if="this.cbtPrefs.cbt_nav_mode !== 'vertical'" t-out="this.cbtLabels.apps"/> -->
+                </button>
+            </div>
+        </xpath>
+    </t>
+</templates>

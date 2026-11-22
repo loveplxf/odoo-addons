@@ -1,0 +1,2934 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* om_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-06 00:00+0000\n"
+"PO-Revision-Date: 2026-11-06 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: om_approval
+#: model:ir.module,name:om_approval.module_om_approval
+msgid "Approvals"
+msgstr "审批"
+
+#. module: om_approval
+#: model:ir.module,summary:om_approval.module_om_approval
+msgid "Approval flows for any app: a button waits for its approval before it runs, e.g. confirming a sale order above an amount"
+msgstr "适用于任意应用的审批流：按钮在获得批准后才执行，例如确认超过一定金额的销售订单"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_rule
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Approval Flow"
+msgstr "审批流程"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_step
+msgid "Approval Step"
+msgstr "审批步骤"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_button
+msgid "Approval Button"
+msgstr "审批按钮"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_request
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_request_id
+#: model:ir.sequence,name:om_approval.seq_om_approval_request
+msgid "Approval Request"
+msgstr "审批申请"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_line
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__name
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_state
+#: model:mail.activity.type,name:om_approval.mail_act_approval
+#: code:addons/om_approval/models/approval_flow.py:258
+#: code:addons/om_approval/models/approval_request.py:285
+#: code:addons/om_approval/models/approval_designer.py:129
+msgid "Approval"
+msgstr "审批"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_delegation
+msgid "Approval Delegation"
+msgstr "审批委托"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_mixin
+msgid "Approval Mixin"
+msgstr "审批混入"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_ask
+#: model:ir.ui.view,arch_db:om_approval.approval_ask_view_form
+#: code:addons/om_approval/models/approval_request.py:248
+msgid "Ask for Approval"
+msgstr "发起审批"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_decide
+#: model:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+msgid "Approve or Refuse"
+msgstr "批准或拒绝"
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_simulate
+#: model:ir.ui.view,arch_db:om_approval.approval_simulate_view_form
+msgid "Test an Approval Flow"
+msgstr "测试审批流程"
+
+# ── approval.rule 字段 ────────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__name
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__name
+msgid "Name"
+msgstr "名称"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__sequence
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__sequence
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__active
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__active
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_delegation__state__active
+msgid "Active"
+msgstr "启用"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__model_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__model_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__model
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__res_model
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__model
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__model_id
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_search
+msgid "Model"
+msgstr "模型"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__model
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__model
+msgid "Model Name"
+msgstr "模型名称"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__is_document
+msgid "Is Document"
+msgstr "是文档"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__button_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__button_name
+msgid "Button"
+msgstr "按钮"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__button_id
+msgid "The button stopped until the approval is given. Leave it empty on a document approved by its own Submit button, such as an HR request."
+msgstr "在获得批准前被阻止的按钮。对于由自带“提交”按钮审批的文档（如人事申请），请留空。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__method
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__method
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__method
+msgid "Method"
+msgstr "方法"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__company_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__company_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__company_id
+msgid "Empty: the flow applies to every company."
+msgstr "留空：该流程适用于所有公司。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__domain
+msgid "Applies To"
+msgstr "适用范围"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__domain
+msgid "The records the flow applies to, e.g. the sale orders above 10,000. The first matching flow is used."
+msgstr "该流程适用的记录，例如金额超过 10,000 的销售订单。使用第一个匹配的流程。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__step_ids
+msgid "Steps"
+msgstr "步骤"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__fallback_group_id
+msgid "Approvers When Nobody Is Found"
+msgstr "找不到审批人时的审批组"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__fallback_group_id
+msgid "Approve a step finding nobody, e.g. an employee without a manager."
+msgstr "批准找不到审批人的步骤，例如没有经理的员工。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__self_approve
+msgid "Requester Approves Their Steps"
+msgstr "申请人批准自己的步骤"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__self_approve
+msgid "The steps the requester is an approver of are approved as they ask, e.g. a sales manager confirming their own order. Otherwise somebody else approves them."
+msgstr "申请人同时也是审批人的步骤在其发起时即被批准，例如销售经理确认自己的订单。否则由他人批准。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__run_on_approval
+msgid "Run the Button Once Approved"
+msgstr "批准后自动执行按钮"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__run_on_approval
+msgid "Once approved, the button runs as the requester. Otherwise the requester clicks it again."
+msgstr "批准后，按钮以申请人身份自动执行。否则申请人需再次点击。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__note
+msgid "Message to the Requester"
+msgstr "给申请人的提示信息"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__note
+msgid "Shown when the button is stopped, e.g. \"Orders above 10,000 need the approval of the sales director.\""
+msgstr "按钮被阻止时显示，例如“超过 10,000 的订单需要销售总监批准。”"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__lock_record
+msgid "Lock the Record"
+msgstr "锁定记录"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__lock_record
+msgid "The record is read-only from the approval request: nobody changes it while it waits, nor once it is approved."
+msgstr "自发起审批申请起记录为只读：等待期间无人可修改，批准后亦然。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__lock_after
+msgid "Once Approved"
+msgstr "批准后"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__lock_after
+msgid "Unlock: the record is editable again once the approved button has run, as the button leaves it. Keep it locked: it stays read-only until an approval manager unlocks it."
+msgstr "解锁：批准的按钮执行完毕后记录恢复可编辑（取决于按钮的执行结果）。保持锁定：记录保持只读，直到审批管理员解锁。"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__lock_after__unlock
+msgid "Unlock Once the Button Has Run"
+msgstr "按钮执行后解锁"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__lock_after__keep
+msgid "Keep It Locked"
+msgstr "保持锁定"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__summary
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__summary
+msgid "Summary"
+msgstr "摘要"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__summary
+msgid "What the flow does, in words."
+msgstr "用文字描述该流程的作用。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__amount_field
+msgid "Amount"
+msgstr "金额"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__amount_field
+msgid "The amount the flow and its steps compare, e.g. amount_total for the total of a sale order. It is converted from the currency of the record into the currency of the flow."
+msgstr "流程及其步骤比较的金额，例如销售订单总额 amount_total。金额会从记录的币种换算为流程的币种。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__amount_min
+msgid "Above"
+msgstr "高于"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__amount_min
+msgid "The flow applies to the records whose amount is above this."
+msgstr "流程适用于金额高于此值的记录。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__amount_currency_id
+msgid "Currency"
+msgstr "币种"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__amount_currency_id
+msgid "The currency of the amounts of the flow and of its steps."
+msgstr "流程及其步骤金额所用的币种。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__request_note
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__request_note
+msgid "Requester's Note"
+msgstr "申请人备注"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__request_note
+msgid "Asked when the button is clicked: why the approval is needed, with files."
+msgstr "点击按钮时询问：需要审批的原因，可附文件。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__approve_note
+msgid "Note When Approving"
+msgstr "批准时备注"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__refuse_note
+msgid "Note When Refusing"
+msgstr "拒绝时备注"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__request_note__none
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__approve_note__none
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__refuse_note__none
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__note_mode__none
+msgid "Not Asked"
+msgstr "不要求"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__request_note__optional
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__approve_note__optional
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__refuse_note__optional
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__note_mode__optional
+msgid "Optional"
+msgstr "可选"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__request_note__required
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__approve_note__required
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__refuse_note__required
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__note_mode__required
+msgid "Required"
+msgstr "必填"
+
+# ── approval.rule 代码 ────────────────────────────────────
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:109
+msgid "When %(button)s is clicked on a %(model)s"
+msgstr "在 %(model)s 上点击 %(button)s 时"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:112
+msgid "When a %(model)s is submitted"
+msgstr "当 %(model)s 被提交时"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:114
+msgid "%(intro)s with %(conditions)s"
+msgstr "%(intro)s，且 %(conditions)s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:118
+msgid "%s, it waits for:"
+msgstr "%s，需等待："
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:120
+msgid "%(intro)s, it waits for the approval of %(group)s."
+msgstr "%(intro)s，需等待 %(group)s 批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:124
+msgid "When a step finds nobody: %s."
+msgstr "当步骤找不到审批人时：由 %s 审批。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:125
+msgid "The requester approves the steps they are an approver of."
+msgstr "申请人批准自己作为审批人的步骤。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:126
+msgid "The requester does not approve their own request."
+msgstr "申请人不批准自己的申请。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:127
+msgid "optional"
+msgstr "可选"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:127
+msgid "required"
+msgstr "必填"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:129
+msgid "The requester's note, with files: %s."
+msgstr "申请人备注（含附件）：%s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:131
+msgid "%s when approving"
+msgstr "批准时%s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:132
+msgid "%s when refusing"
+msgstr "拒绝时%s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:134
+msgid "The approver's note: %s."
+msgstr "审批人备注：%s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:137
+msgid "Once approved, %s runs by itself as the requester."
+msgstr "批准后，%s 以申请人身份自动执行。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:139
+msgid "Once approved, the requester clicks %s again."
+msgstr "批准后，申请人再次点击 %s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:141
+msgid "The record is read-only from the request on, and stays so once approved, until an approval manager unlocks it."
+msgstr "记录自申请起只读，批准后仍保持只读，直到审批管理员解锁。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:144
+msgid "The record is read-only from the request until %s has run."
+msgstr "记录自申请起只读，直到 %s 执行完毕。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:146
+msgid "The record can still be changed while it waits."
+msgstr "等待审批期间记录仍可修改。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:157
+msgid "the approval administrators"
+msgstr "审批管理员"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:166
+#: code:addons/om_approval/models/approval_flow.py:182
+#: code:addons/om_approval/models/approval_flow.py:589
+msgid "and"
+msgstr "且"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:179
+msgid "the conditions of Applies To"
+msgstr "“适用范围”的条件"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:208
+msgid "%s is set"
+msgstr "%s 已设置"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:208
+msgid "%s is not set"
+msgstr "%s 未设置"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:222
+msgid "The flow does not apply to %(record)s: it is outside Applies To, so %(action)s."
+msgstr "该流程不适用于 %(record)s：不在“适用范围”内，因此 %(action)s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:225
+msgid "%s runs without an approval"
+msgstr "%s 无需审批直接执行"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:226
+msgid "it is approved by the approval administrators"
+msgstr "由审批管理员批准"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:229
+msgid "%(other)s applies to %(record)s first: it comes before this flow in the list."
+msgstr "%(other)s 优先适用于 %(record)s：它在列表中排在本流程之前。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:240
+msgid "Skipped: %s is outside its condition."
+msgstr "跳过：%s 不在其条件范围内。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:244
+#: code:addons/om_approval/models/approval_flow.py:258
+msgid "nobody"
+msgstr "无人"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:246
+msgid "%(names)s. Approved at once: %(user)s asks and is one of them."
+msgstr "%(names)s。立即批准：%(user)s 是申请人且为审批人之一。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:249
+msgid "%s, all of them"
+msgstr "%s，所有人"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:251
+msgid "%(count)s of %(names)s"
+msgstr "%(names)s 中的 %(count)s 人"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:264
+msgid "%(field)s of %(record)s: %(amount)s."
+msgstr "%(record)s 的%(field)s：%(amount)s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:267
+msgid "If %(user)s asked for %(record)s, it would wait for:"
+msgstr "如果 %(user)s 为 %(record)s 发起申请，将等待："
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:270
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__approver_user_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approver_user_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__approver_user_ids
+msgid "Approvers"
+msgstr "审批人"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:273
+msgid "%s would be read-only from the request, and stay so once approved until an approval manager unlocks it."
+msgstr "%s 自申请起将只读，批准后仍保持只读，直到审批管理员解锁。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:275
+msgid "%(record)s would be read-only from the request until %(button)s has run."
+msgstr "%(record)s 自申请起将只读，直到 %(button)s 执行完毕。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:283
+msgid "Test %s"
+msgstr "测试 %s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:303
+msgid "%(path)s is not an amount of %(model)s."
+msgstr "%(path)s 不是 %(model)s 的金额字段。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:359
+msgid "%(amount)s above %(minimum)s"
+msgstr "%(amount)s 高于 %(minimum)s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:379
+msgid "The button of the flow %s belongs to another model."
+msgstr "流程 %s 的按钮属于另一个模型。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:381
+msgid "Choose the button the flow %(flow)s stops: %(model)s has no approval of its own."
+msgstr "请选择流程 %(flow)s 要阻止的按钮：%(model)s 没有自带的审批。"
+
+# ── approval.step 字段 ────────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__flow_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__flow_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__flow_id
+msgid "Flow"
+msgstr "流程"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__approver_type
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__user_id
+msgid "Approver"
+msgstr "审批人"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approver_type__user
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__escalate_type__user
+msgid "Specific People"
+msgstr "指定人员"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approver_type__group
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__escalate_type__group
+msgid "Users of a Group"
+msgstr "用户组的用户"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approver_type__field
+msgid "Person on the Record"
+msgstr "记录上的人员"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__group_id
+msgid "Group"
+msgstr "用户组"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__user_ids
+msgid "Users"
+msgstr "用户"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__field_path
+msgid "Field"
+msgstr "字段"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__field_path
+msgid "The field of the record naming the approver, e.g. user_id for the salesperson of a sale order, or team_id.user_id for the leader of its sales team."
+msgstr "记录上指定审批人的字段，例如销售订单的销售员 user_id，或其销售团队负责人 team_id.user_id。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__domain
+msgid "Only When"
+msgstr "仅当"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__domain
+msgid "The step is skipped for the records outside this domain, e.g. an amount above a threshold."
+msgstr "不满足此条件的记录跳过该步骤，例如金额超过某个阈值。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__remind_days
+msgid "Remind After"
+msgstr "提醒于"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__remind_days
+msgid "Days before the approvers are reminded, then again every as many days. 0 for no reminder."
+msgstr "多少天后提醒审批人，之后每隔相同天数再次提醒。0 表示不提醒。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__escalate_days
+msgid "Escalate After"
+msgstr "升级于"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__escalate_days
+msgid "Days before other users are asked to decide too. 0 for no escalation."
+msgstr "多少天后邀请其他用户一同决定。0 表示不升级。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__escalate_type
+msgid "Escalate To"
+msgstr "升级为"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__escalate_type__fallback
+msgid "Fallback Group of the Flow"
+msgstr "流程的备用审批组"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__escalate_user_ids
+msgid "Escalation Users"
+msgstr "升级审批人"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__amount_min
+msgid "Only Above"
+msgstr "仅高于"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__amount_min
+msgid "The step applies to the records whose amount, as the flow reads it, is above this. 0 for any amount."
+msgstr "步骤适用于金额（按流程口径）高于此值的记录。0 表示任意金额。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__approval_mode
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__approval_mode
+msgid "Who Must Approve"
+msgstr "审批方式"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__approval_mode
+msgid "Any one: the first approval decides. All: each approver approves. A number: that many approve. A refusal refuses the step."
+msgstr "任一人：第一个批准即生效。所有人：每位审批人都须批准。指定人数：达到人数即批准。任何人拒绝即拒绝该步骤。"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approval_mode__any
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__approval_mode__any
+msgid "Any One of Them"
+msgstr "任一人"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approval_mode__all
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__approval_mode__all
+msgid "All of Them"
+msgstr "所有人"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approval_mode__count
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__approval_mode__count
+msgid "A Number of Them"
+msgstr "指定人数"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__approval_count
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__approval_count
+msgid "How Many"
+msgstr "人数"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__escalate_group_id
+msgid "Escalation Group"
+msgstr "升级用户组"
+
+# ── approval.step 代码 ────────────────────────────────────
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:473
+msgid "At least one person approves the step %s."
+msgstr "步骤 %s 至少需要一人批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:479
+msgid "Choose the group approving the step %s."
+msgstr "请选择批准步骤 %s 的用户组。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:481
+msgid "Choose the users approving the step %s."
+msgstr "请选择批准步骤 %s 的用户。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:492
+msgid "%(path)s is not a field path of %(model)s."
+msgstr "%(path)s 不是 %(model)s 的字段路径。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:495
+msgid "The field %s must lead to users, employees or contacts."
+msgstr "字段 %s 必须指向用户、员工或联系人。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:567
+msgid "only when %s"
+msgstr "仅当 %s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:569
+msgid "all of them approve"
+msgstr "所有人批准"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:571
+msgid "%s of them approve"
+msgstr "其中 %s 人批准"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:573
+msgid "reminded after %s"
+msgstr "%s 后提醒"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:575
+msgid "after %(days)s, %(users)s decide too"
+msgstr "%(days)s 后，%(users)s 也需决定"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:593
+msgid "1 day"
+msgstr "1 天"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:593
+msgid "%s days"
+msgstr "%s 天"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:599
+msgid "nobody chosen yet"
+msgstr "尚未选择人员"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:601
+#: code:addons/om_approval/models/approval_flow.py:613
+msgid "users of the group %s"
+msgstr "用户组 %s 的用户"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_flow.py:603
+msgid "the %s of the record"
+msgstr "记录的 %s"
+
+# ── approval.request 字段 ─────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__name
+msgid "Reference"
+msgstr "编号"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__res_id
+msgid "Record ID"
+msgstr "记录 ID"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__model_name
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Kind of Record"
+msgstr "记录类型"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__document_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__record_ref
+msgid "Record"
+msgstr "记录"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__method
+msgid "Button Method"
+msgstr "按钮方法"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__requester_id
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Requested By"
+msgstr "申请人"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__state
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__state
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__state
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Status"
+msgstr "状态"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__state
+msgid "Done: the button ran once approved."
+msgstr "已完成：批准的按钮已执行。"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__to_approve
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__to_approve
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__pending
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+#: model:ir.actions.act_window,name:om_approval.om_approval_request_action_to_approve
+msgid "To Approve"
+msgstr "待审批"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__approved
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__approved
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__approved
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+#: code:addons/om_approval/models/approval_request.py:315
+#: code:addons/om_approval/models/approval_request.py:325
+msgid "Approved"
+msgstr "已批准"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__done
+msgid "Done"
+msgstr "已完成"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__refused
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__refused
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__refused
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Refused"
+msgstr "已拒绝"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__cancel
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__cancel
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__cancel
+msgid "Cancelled"
+msgstr "已取消"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__line_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_line_ids
+msgid "Approvals"
+msgstr "审批明细"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__approval_step
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_step
+msgid "Waiting For"
+msgstr "等待步骤"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__can_approve
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__can_approve
+msgid "Can Approve"
+msgstr "可审批"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__note
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__message
+msgid "Message"
+msgstr "消息"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__lock_record
+msgid "Locks the Record"
+msgstr "锁定记录"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__lock_record
+msgid "The record stays read-only while it waits for this approval."
+msgstr "等待此审批期间记录保持只读。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__keep_locked
+msgid "Stays Locked Once Approved"
+msgstr "批准后保持锁定"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__keep_locked
+msgid "Once the button has run, the record stays read-only until an approval manager unlocks it."
+msgstr "按钮执行后，记录保持只读，直到审批管理员解锁。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__date_unlocked
+msgid "Unlocked On"
+msgstr "解锁时间"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__unlocked_by_id
+msgid "Unlocked By"
+msgstr "解锁人"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__is_locking
+msgid "Locking"
+msgstr "锁定中"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__is_locking
+msgid "The record is read-only because of this request."
+msgstr "记录因此申请而只读。"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__request_note
+msgid "Why the requester needs the approval."
+msgstr "申请人需要审批的原因。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__attachment_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__attachment_ids
+msgid "Files"
+msgstr "附件"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__refusal_dismissed
+msgid "Refusal Dismissed"
+msgstr "已忽略拒绝"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__refusal_dismissed
+msgid "The refusal no longer shows at the top of the record."
+msgstr "该拒绝不再显示在记录顶部。"
+
+# ── approval.request 代码 ─────────────────────────────────
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:29
+#: code:addons/om_approval/models/approval_request.py:129
+msgid "New"
+msgstr "新建"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:80
+msgid "Deleted record"
+msgstr "已删除的记录"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:144
+msgid "Approval asked: %s"
+msgstr "已发起审批：%s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:146
+msgid "Approval asked: %(request)s. %(note)s"
+msgstr "已发起审批：%(request)s。%(note)s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:201
+msgid "%s needs an approval asked with a note: ask for it in Odoo."
+msgstr "%s 需要附带备注发起审批：请在 Odoo 中发起。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:225
+msgid "%(record)s: approval asked (%(request)s), waiting for %(step)s."
+msgstr "%(record)s：已发起审批（%(request)s），等待 %(step)s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:226
+msgid "%(record)s: still waiting for %(step)s (%(request)s)."
+msgstr "%(record)s：仍在等待 %(step)s（%(request)s）。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:234
+msgid "Approval needed"
+msgstr "需要审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:278
+#: code:addons/om_approval/models/approval_request.py:291
+msgid "Approved by the requester, an approver of the step."
+msgstr "由申请人批准，申请人是该步骤的审批人。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:316
+msgid "%(user)s approved %(step)s (%(done)s of %(needed)s)%(note)s"
+msgstr "%(user)s 批准了 %(step)s（%(needed)s 人中的 %(done)s 人）%(note)s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:327
+msgid "%(user)s approved %(step)s: %(note)s"
+msgstr "%(user)s 批准了 %(step)s：%(note)s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:337
+msgid "Write a note to approve %s."
+msgstr "请填写备注以批准 %s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:338
+msgid "Write why %s is refused."
+msgstr "请填写拒绝 %s 的原因。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:349
+msgid "Refused by %(user)s at the step %(step)s: %(reason)s"
+msgstr "被 %(user)s 在步骤 %(step)s 拒绝：%(reason)s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:350
+msgid "no reason given"
+msgstr "未填写原因"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:373
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+#: model:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__decision__approve
+#: model:mail.activity.type,summary:om_approval.mail_act_approval
+msgid "Approve"
+msgstr "批准"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:373
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+#: model:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__decision__refuse
+msgid "Refuse"
+msgstr "拒绝"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:386
+msgid "Only %s, who asked, dismisses the refusal."
+msgstr "只有发起人 %s 可以忽略该拒绝。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:394
+#: code:addons/om_approval/models/approval_mixin.py:139
+msgid "%s can no longer be cancelled."
+msgstr "%s 无法再取消。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:397
+msgid "Only %(user)s, who asked, can cancel %(request)s."
+msgstr "只有发起人 %(user)s 可以取消 %(request)s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:437
+msgid "Approved."
+msgstr "已批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:438
+msgid "Approved: %s"
+msgstr "已批准：%s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:445
+msgid "Approve: %s"
+msgstr "审批：%s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:464
+msgid "Approved, but %(button)s could not run: %(error)s. Click the button again."
+msgstr "已批准，但 %(button)s 无法执行：%(error)s。请再次点击该按钮。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:474
+#: code:addons/om_approval/models/approval_mixin.py:151
+msgid "%s is not waiting for an approval."
+msgstr "%s 不在等待审批。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:477
+msgid "You are not an approver of %(request)s at the step %(step)s."
+msgstr "您不是 %(request)s 步骤 %(step)s 的审批人。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:517
+msgid "%(record)s is locked: it waits for the approval %(request)s (%(step)s). Withdraw the request to change it."
+msgstr "%(record)s 已锁定：正在等待审批 %(request)s（%(step)s）。撤回申请后才能修改。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:520
+msgid "%(record)s is locked: %(request)s is approved, and it unlocks once %(button)s has run."
+msgstr "%(record)s 已锁定：%(request)s 已批准，%(button)s 执行后解锁。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:522
+msgid "%(record)s is locked since %(request)s approved it: an approval manager unlocks it."
+msgstr "%(record)s 自 %(request)s 批准后锁定：由审批管理员解锁。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:528
+msgid "Only the approval managers unlock an approved record."
+msgstr "只有审批管理员可以解锁已批准的记录。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:531
+msgid "Unlocked by %(user)s: %(request)s no longer keeps it read-only."
+msgstr "已被 %(user)s 解锁：%(request)s 不再保持只读。"
+
+# ── approval.line 字段 ────────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__request_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__request_id
+msgid "Request"
+msgstr "申请"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__step_id
+#: code:addons/om_approval/models/approval_flow.py:270
+msgid "Step"
+msgstr "步骤"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__waiting
+msgid "Waiting"
+msgstr "等待中"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__user_id
+msgid "Decided By"
+msgstr "决定人"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__date
+msgid "Decided On"
+msgstr "决定时间"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__note
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__note
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__note
+msgid "Note"
+msgstr "备注"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__date_pending
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_list
+msgid "Asked On"
+msgstr "发起时间"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__substitutes
+msgid "Substitutes"
+msgstr "代审批人"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_line__substitutes
+msgid "The substitutes added, by user id: the names they stand for."
+msgstr "已添加的代审批人（按用户 ID）：他们所代替的人员。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__date_reminded
+msgid "Reminded On"
+msgstr "提醒时间"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__date_escalated
+msgid "Escalated On"
+msgstr "升级时间"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__required_user_ids
+msgid "Asked"
+msgstr "原审批人"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_line__required_user_ids
+msgid "The approvers the step asked first."
+msgstr "该步骤最初邀请的审批人。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__approved_user_ids
+msgid "Approved By"
+msgstr "批准人"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__progress
+msgid "Progress"
+msgstr "进度"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_line__progress
+msgid "How many approved, of how many needed."
+msgstr "已批准人数 / 所需人数。"
+
+# ── approval.line 代码 ────────────────────────────────────
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:756
+msgid "%(delegate)s approves %(step)s for %(users)s, away."
+msgstr "%(users)s 不在，%(delegate)s 代为审批 %(step)s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:767
+msgid "On behalf of %s."
+msgstr "代 %s 审批。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:780
+msgid "%(step)s is waiting since %(days)s days: %(users)s asked to decide too."
+msgstr "%(step)s 已等待 %(days)s 天：%(users)s 也被邀请决定。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_request.py:786
+msgid "Reminder: %(step)s is waiting for your decision."
+msgstr "提醒：%(step)s 正在等待您的决定。"
+
+# ── approval.delegation ───────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__delegate_id
+msgid "Substitute"
+msgstr "代审批人"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__date_from
+msgid "From"
+msgstr "开始日期"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__date_to
+msgid "To"
+msgstr "结束日期"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__flow_ids
+msgid "Only for"
+msgstr "仅适用于"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_delegation__flow_ids
+msgid "Leave empty for every approval flow."
+msgstr "留空表示适用于所有审批流程。"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_delegation__state__upcoming
+msgid "Upcoming"
+msgstr "未开始"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_delegation__state__ended
+msgid "Ended"
+msgstr "已结束"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_delegation.py:45
+msgid "Search the status with = or in."
+msgstr "请使用 = 或 in 搜索状态。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_delegation.py:51
+msgid "%(user)s to %(delegate)s"
+msgstr "%(user)s 委托给 %(delegate)s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_delegation.py:58
+msgid "The delegation ends before it starts."
+msgstr "委托的结束日期早于开始日期。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_delegation.py:60
+msgid "Choose a substitute other than the approver."
+msgstr "请选择审批人以外的代审批人。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_delegation.py:69
+msgid "Delegate your own approvals: the approval administrators delegate those of the others."
+msgstr "只能委托自己的审批：他人的委托由审批管理员设置。"
+
+# ── approval.button ───────────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__name
+msgid "Label"
+msgstr "标签"
+
+#. module: om_approval
+#: model:ir.model.constraint,message:om_approval.constraint_approval_button_model_method_uniq
+msgid "A button is listed once per model."
+msgstr "每个模型中一个按钮只列出一次。"
+
+# ── approval.mixin ────────────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_request_ids
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_list
+msgid "Approval Requests"
+msgstr "审批申请"
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__draft
+msgid "Draft"
+msgstr "草稿"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_mixin.py:85
+msgid "Only a draft can be submitted: %s is not."
+msgstr "只有草稿可以提交：%s 不是草稿。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_mixin.py:108
+msgid "%s needs a note to be approved: approve it on its own."
+msgstr "%s 需要备注才能批准：请单独批准它。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_mixin.py:127
+msgid "%s cannot be set back to draft."
+msgstr "%s 无法重置为草稿。"
+
+# ── approval.designer（代码）──────────────────────────────
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:22
+msgid "Quotations"
+msgstr "报价单"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:28
+msgid "Purchase Orders"
+msgstr "采购订单"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:33
+msgid "Vendor Bills"
+msgstr "供应商账单"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:39
+msgid "Transfers"
+msgstr "调拨单"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:77
+#: code:addons/om_approval/models/approval_designer.py:227
+msgid "This approval flow no longer exists."
+msgstr "该审批流程已不存在。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:80
+#: code:addons/om_approval/models/approval_designer.py:329
+msgid "Choose the kind of record the flow applies to."
+msgstr "请选择流程适用的记录类型。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:109
+msgid "Approval of %s"
+msgstr "%s 的审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:149
+msgid "%s above"
+msgstr "%s 高于"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:151
+msgid "A discount above (%)"
+msgstr "折扣高于（%）"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:173
+msgid "The summary shows once the flow is complete."
+msgstr "流程配置完整后显示摘要。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:234
+msgid "Only the approval managers set up the approval flows."
+msgstr "只有审批管理员可以设置审批流程。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:255
+msgid "Approval above an amount"
+msgstr "超金额审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:256
+msgid "Confirming a record above an amount, e.g. a quotation, waits for a manager."
+msgstr "确认超过一定金额的记录（如报价单）需等待经理批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:259
+msgid "Two-level approval"
+msgstr "两级审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:260
+msgid "A manager approves; above a higher amount, you approve too."
+msgstr "由经理批准；超过更高金额时还需您批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:262
+msgid "Approval by the person responsible"
+msgstr "负责人审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:263
+msgid "The team leader, or the person responsible for the record, approves it before it is confirmed."
+msgstr "确认前由团队负责人或记录负责人批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:266
+msgid "Approval of a discount"
+msgstr "折扣审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:267
+msgid "A quotation with a discount above a percentage waits for a manager."
+msgstr "折扣超过一定百分比的报价单需等待经理批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:269
+msgid "Approval to cancel"
+msgstr "取消审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:270
+msgid "Cancelling a confirmed record waits for a manager."
+msgstr "取消已确认的记录需等待经理批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:337
+#: code:addons/om_approval/models/approval_designer.py:445
+msgid "This template no longer exists."
+msgstr "该模板已不存在。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:341
+msgid "%(template)s does not fit %(model)s: it has no %(missing)s."
+msgstr "%(template)s 不适用于 %(model)s：缺少 %(missing)s。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:345
+msgid "%(template)s does not fit %(model)s: its button is not on its views."
+msgstr "%(template)s 不适用于 %(model)s：其按钮不在视图中。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:399
+msgid "Manager"
+msgstr "经理"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:404
+msgid "%(label)s above %(limit)s"
+msgstr "%(label)s 高于 %(limit)s"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:412
+msgid "%(label)s: two levels above %(limit)s"
+msgstr "%(label)s：高于 %(limit)s 需两级审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:414
+msgid "Director"
+msgstr "总监"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:416
+msgid "Above %(limit)s a manager approves; above %(high)s, the director too."
+msgstr "高于 %(limit)s 由经理批准；高于 %(high)s 还需总监批准。"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:422
+msgid "%s: approval by the person responsible"
+msgstr "%s：负责人审批"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:427
+msgid "Person Responsible"
+msgstr "负责人"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:432
+msgid "%(label)s with a discount above %(limit)s%%"
+msgstr "%(label)s 折扣高于 %(limit)s%%"
+
+#. module: om_approval
+#: code:addons/om_approval/models/approval_designer.py:440
+msgid "%s: approval to cancel"
+msgstr "%s：取消审批"
+
+# ── res.users ─────────────────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_res_users__approval_substitute_id
+msgid "Approval Substitute"
+msgstr "默认代审批人"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_res_users__approval_substitute_id
+msgid "Who approves for you when you are away: the substitute suggested for your delegations."
+msgstr "您不在时由谁代为审批：创建委托时默认推荐的代审批人。"
+
+# ── wizard: approval.ask ──────────────────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__res_model
+msgid "Res Model"
+msgstr "资源模型"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_ask__res_ids
+msgid "The records to ask the approval for."
+msgstr "要发起审批的记录。"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_ask__all_ids
+msgid "All the records the button was clicked for."
+msgstr "点击按钮时选中的全部记录。"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_ask__approved_ids
+msgid "The requests already approved, letting the button run."
+msgstr "已批准、允许按钮执行的申请。"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_ask__waiting_ids
+msgid "The requests already asked and waiting."
+msgstr "已发起并等待中的申请。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__note_required
+msgid "Note Required"
+msgstr "备注必填"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__note
+msgid "Why"
+msgstr "事由"
+
+#. module: om_approval
+#: code:addons/om_approval/wizard/approval_ask.py:30
+msgid "Approval asked for: %s"
+msgstr "为以下记录发起审批：%s"
+
+#. module: om_approval
+#: code:addons/om_approval/wizard/approval_ask.py:33
+msgid "%(record)s already waits for %(step)s (%(request)s)."
+msgstr "%(record)s 已在等待 %(step)s（%(request)s）。"
+
+#. module: om_approval
+#: code:addons/om_approval/wizard/approval_ask.py:42
+msgid "Write why the approval is needed."
+msgstr "请填写需要审批的原因。"
+
+# ── wizard: approval.decide / simulate ────────────────────
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__decision
+msgid "Decision"
+msgstr "决定"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__note_mode
+msgid "Note Mode"
+msgstr "备注模式"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__user_id
+msgid "Asked By"
+msgstr "发起人"
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_simulate__user_id
+msgid "Who clicks the button, or submits the document."
+msgstr "点击按钮或提交文档的人。"
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__result
+msgid "Result"
+msgstr "结果"
+
+#. module: om_approval
+#: code:addons/om_approval/wizard/approval_simulate.py:43
+msgid "Choose a %s to see what the flow does for it."
+msgstr "选择一个%s，查看流程对它的处理过程。"
+
+# ── 视图 ──────────────────────────────────────────────────
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_list
+#: model:ir.actions.act_window,name:om_approval.om_approval_flow_action
+msgid "Approval Flows"
+msgstr "审批流程"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_search
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_form
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+msgid "Archived"
+msgstr "已归档"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Open the Designer"
+msgstr "打开设计器"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Test on a Record"
+msgstr "在记录上测试"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "e.g. Sale orders above 10,000"
+msgstr "例如：超过 10,000 的销售订单"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "List the buttons of the model again"
+msgstr "重新列出模型的按钮"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "above"
+msgstr "高于"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Shown when the button is stopped"
+msgstr "按钮被阻止时显示"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "While It Waits"
+msgstr "等待期间"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Notes"
+msgstr "备注"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "e.g. user_id"
+msgstr "例如：user_id"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "The steps are approved in turn. A step finding nobody is approved by the approvers when nobody is found. Without a step, the approval administrators approve."
+msgstr "步骤按顺序审批。找不到审批人的步骤由“找不到审批人时的审批组”批准。没有步骤时，由审批管理员批准。"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "In short"
+msgstr "概要"
+
+#. module: om_approval
+#: model:ir.actions.act_window,help:om_approval.om_approval_flow_action
+msgid "Create an approval flow"
+msgstr "创建审批流程"
+
+#. module: om_approval
+#: model:ir.actions.act_window,help:om_approval.om_approval_flow_action
+msgid "Choose a button of any app, e.g. Confirm on the sale orders, and who approves it before it runs. Start from a template: the flow opens in the Approval Designer."
+msgstr "选择任意应用的一个按钮（如销售订单上的“确认”），并设置其执行前的审批人。也可以从模板开始：流程会在审批设计器中打开。"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Withdraw"
+msgstr "撤回"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Unlock"
+msgstr "解锁"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "The record becomes editable again. Unlock it?"
+msgstr "记录将恢复可编辑。确定解锁？"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Open"
+msgstr "打开"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Locked"
+msgstr "已锁定"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "To Approve by Me"
+msgstr "待我审批"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+#: model:ir.actions.act_window,name:om_approval.om_approval_request_action_my
+msgid "My Requests"
+msgstr "我的申请"
+
+#. module: om_approval
+#: model:ir.actions.act_window,help:om_approval.om_approval_request_action_to_approve
+msgid "Nothing to approve"
+msgstr "没有待审批的内容"
+
+#. module: om_approval
+#: model:ir.actions.act_window,help:om_approval.om_approval_request_action_to_approve
+msgid "What waits for your approval, from every app, shows here."
+msgstr "所有应用中等待您审批的内容都显示在这里。"
+
+#. module: om_approval
+#: model:ir.actions.act_window,help:om_approval.om_approval_request_action_my
+msgid "No approval asked"
+msgstr "尚未发起审批"
+
+#. module: om_approval
+#: model:ir.actions.act_window,help:om_approval.om_approval_request_action_my
+msgid "A button needing an approval asks for it when you click it. Follow your requests here."
+msgstr "需要审批的按钮会在您点击时发起申请。在此跟踪您的申请。"
+
+#. module: om_approval
+#: model:ir.actions.act_window,name:om_approval.om_approval_request_action
+msgid "All Requests"
+msgstr "全部申请"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_list
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+#: model:ir.actions.act_window,name:om_approval.approval_delegation_action
+msgid "Delegations"
+msgstr "委托"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_form
+msgid "Delegation"
+msgstr "委托"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_form
+msgid "e.g. On leave, back on the 20th."
+msgstr "例如：休假，20 日返岗。"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+msgid "Mine"
+msgstr "我的"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+msgid "For Me"
+msgstr "委托给我"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+msgid "Active or Upcoming"
+msgstr "生效中或未开始"
+
+#. module: om_approval
+#: model:ir.actions.act_window,name:om_approval.approval_delegation_action_my
+msgid "My Delegations"
+msgstr "我的委托"
+
+#. module: om_approval
+#: model:ir.actions.act_window,help:om_approval.approval_delegation_action_my
+msgid "Away soon?"
+msgstr "即将离开？"
+
+#. module: om_approval
+#: model:ir.actions.act_window,help:om_approval.approval_delegation_action_my
+msgid "Name who approves for you while you are away: they decide the approvals waiting for you meanwhile, and you still can."
+msgstr "指定您离开期间的代审批人：等待您的审批由他们决定，您自己也仍可决定。"
+
+#. module: om_approval
+#: model:ir.ui.menu,name:om_approval.menu_om_approval_root
+#: model:res.groups.privilege,name:om_approval.privilege_approval
+msgid "Approvals"
+msgstr "审批"
+
+#. module: om_approval
+#: model:ir.ui.menu,name:om_approval.menu_om_approval_configuration
+msgid "Configuration"
+msgstr "配置"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+msgid "A note for the requester and the other approvers."
+msgstr "给申请人和其他审批人的备注。"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+#: model:ir.ui.view,arch_db:om_approval.approval_ask_view_form
+msgid "Discard"
+msgstr "放弃"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_ask_view_form
+msgid "Why is this needed? The approvers read it."
+msgstr "为什么需要审批？审批人会看到。"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_simulate_view_form
+msgid "What the flow would do for a record, if this user asked. Nothing is asked nor changed."
+msgstr "模拟该用户发起时流程的处理过程。不会发起任何申请，也不修改数据。"
+
+#. module: om_approval
+#: model:ir.ui.view,arch_db:om_approval.approval_simulate_view_form
+msgid "Close"
+msgstr "关闭"
+
+# ── 数据与安全 ────────────────────────────────────────────
+
+#. module: om_approval
+#: model:ir.cron,name:om_approval.ir_cron_approval_follow_up
+msgid "Approvals: Substitutes, Reminders and Escalations"
+msgstr "审批：代审批、提醒与升级"
+
+#. module: om_approval
+#: model:res.groups,name:om_approval.group_approval_manager
+msgid "Administrator"
+msgstr "管理员"
+
+# ── JS：审批横幅 ──────────────────────────────────────────
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:85
+msgid "Approved."
+msgstr "已批准。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:89
+msgid "Refused."
+msgstr "已拒绝。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:121
+msgid "Withdraw %s? The record is no longer waiting for it, and becomes editable again."
+msgstr "撤回 %s？记录将不再等待审批，并恢复可编辑。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:122
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:64
+msgid "Withdraw"
+msgstr "撤回"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:123
+msgid "Withdrawn."
+msgstr "已撤回。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:130
+msgid "Unlock the record? It becomes editable again."
+msgstr "解锁记录？记录将恢复可编辑。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:131
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:66
+msgid "Unlock"
+msgstr "解锁"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:132
+msgid "Unlocked."
+msgstr "已解锁。"
+
+# ── JS：设计器 ────────────────────────────────────────────
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:99
+msgid "the button"
+msgstr "该按钮"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:104
+msgid "Button"
+msgstr "按钮"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:105
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:51
+msgid "Applies to"
+msgstr "适用范围"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:106
+msgid "Amount"
+msgstr "金额"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:107
+msgid "Message to the requester"
+msgstr "给申请人的提示"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:108
+msgid "While it waits"
+msgstr "等待期间"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:109
+msgid "Notes"
+msgstr "备注"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:110
+msgid "Advanced"
+msgstr "高级"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:111
+msgid "Who approves"
+msgstr "审批人"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:112
+msgid "How many approve"
+msgstr "审批人数"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:113
+msgid "When the step applies"
+msgstr "步骤适用条件"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:114
+msgid "If nobody decides"
+msgstr "无人决定时"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:115
+msgid "The button"
+msgstr "按钮"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:116
+msgid "The record"
+msgstr "记录"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:147
+#: code:addons/om_approval/static/src/designer/designer.xml:219
+msgid "Submit (its own approval)"
+msgstr "提交（自带审批）"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:147
+msgid "Not chosen yet"
+msgstr "尚未选择"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:153
+msgid "Every record"
+msgstr "所有记录"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:158
+msgid "Above %s"
+msgstr "高于 %s"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:159
+msgid "Any amount"
+msgstr "任意金额"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:163
+msgid "No message"
+msgstr "无提示信息"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:168
+msgid "Not locked"
+msgstr "不锁定"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:171
+msgid "Locked, until an approval manager unlocks it"
+msgstr "锁定，直到审批管理员解锁"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:172
+msgid "Locked until %s has run"
+msgstr "锁定，直到 %s 执行完毕"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:181
+msgid "The requester approves their own steps"
+msgstr "申请人批准自己的步骤"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:181
+msgid "Someone else approves"
+msgstr "由他人批准"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:185
+#: code:addons/om_approval/static/src/designer/designer.xml:490
+msgid "Runs by itself"
+msgstr "自动执行"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:185
+msgid "Clicked again by the requester"
+msgstr "由申请人再次点击"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:190
+msgid "%s of them"
+msgstr "其中 %s 人"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:197
+msgid "Always"
+msgstr "总是"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:203
+msgid "reminded after %s d"
+msgstr "%s 天后提醒"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:206
+msgid "escalated after %s d"
+msgstr "%s 天后升级"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:208
+msgid "Nothing"
+msgstr "无"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:213
+msgid "Approver approves"
+msgstr "审批人批准时"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:214
+msgid "Approver refuses"
+msgstr "审批人拒绝时"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:216
+msgid "Requester asks"
+msgstr "申请人发起时"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:242
+msgid "Name the flow."
+msgstr "为流程命名。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:245
+msgid "Choose the button the flow stops."
+msgstr "选择流程要阻止的按钮。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:253
+msgid "Name the step."
+msgstr "为步骤命名。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:256
+msgid "Choose the group approving."
+msgstr "选择批准的用户组。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:259
+msgid "Choose the people approving."
+msgstr "选择批准的人员。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:262
+msgid "Choose the field naming the approver."
+msgstr "选择指定审批人的字段。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:265
+msgid "Choose the people asked when it waits too long."
+msgstr "选择等待过久时被邀请的人员。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:268
+msgid "Say how many approve."
+msgstr "说明需要几人批准。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:271
+msgid "Choose the group asked when it waits too long."
+msgstr "选择等待过久时被邀请的用户组。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:319
+msgid "Approval %s"
+msgstr "审批 %s"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:319
+msgid "Manager"
+msgstr "经理"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:358
+msgid "The buttons of %s are listed again."
+msgstr "已重新列出 %s 的按钮。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:420
+msgid "Saved."
+msgstr "已保存。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:429
+msgid "Complete the cards marked in red before activating the flow."
+msgstr "请先完成标红的卡片，再启用流程。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:438
+msgid "The flow is active."
+msgstr "流程已启用。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:438
+msgid "The flow is inactive."
+msgstr "流程已停用。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:473
+msgid "Unsaved Changes"
+msgstr "未保存的更改"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:474
+msgid "Save the changes to the approval flow before leaving?"
+msgstr "离开前是否保存对审批流程的更改？"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:475
+#: code:addons/om_approval/static/src/designer/designer.xml:71
+msgid "Save"
+msgstr "保存"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.js:481
+msgid "Discard"
+msgstr "放弃"
+
+# ── JS：模板库 ────────────────────────────────────────────
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.js:33
+msgid "New Approval Flow"
+msgstr "新建审批流程"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.js:47
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:31
+msgid "Start from blank"
+msgstr "从空白开始"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.js:48
+msgid "A button, and the steps you add."
+msgstr "一个按钮，以及您添加的步骤。"
+
+# ── XML 模板：审批横幅 ────────────────────────────────────
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:12
+msgid "waits for approval:"
+msgstr "等待审批："
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:14
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:25
+msgid " by "
+msgstr " 由 "
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:16
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:81
+msgid "approved"
+msgstr "已批准"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:19
+msgid "asked by"
+msgstr "发起人"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:19
+#: code:addons/om_approval/static/src/designer/designer.xml:102
+msgid "on"
+msgstr "于"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:20
+#: code:addons/om_approval/static/src/designer/designer.xml:126
+msgid "Step"
+msgstr "步骤"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:20
+#: code:addons/om_approval/static/src/designer/designer.xml:357
+msgid "of"
+msgstr "/"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:24
+msgid "was refused"
+msgstr "被拒绝"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:26
+msgid " at "
+msgstr "，步骤 "
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:29
+msgid "Change what is needed, then click"
+msgstr "修改所需内容，然后再次点击"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:29
+msgid "again to ask anew."
+msgstr "以重新发起。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:32
+#: code:addons/om_approval/static/src/designer/designer.xml:169
+msgid "is approved"
+msgstr "已批准"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:33
+msgid "clicks"
+msgstr "点击"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:33
+msgid "to finish."
+msgstr "以完成。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:36
+msgid "Approved with"
+msgstr "已通过"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:36
+msgid ", and kept locked."
+msgstr "批准，并保持锁定。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:48
+msgid "The record is read-only until an approval manager unlocks it."
+msgstr "记录为只读，直到审批管理员解锁。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:49
+msgid "The record is read-only, and stays so once approved until an approval manager unlocks it."
+msgstr "记录为只读，批准后仍保持只读，直到审批管理员解锁。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:50
+msgid "The record is read-only until"
+msgstr "记录为只读，直到"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:50
+#: code:addons/om_approval/static/src/designer/designer.xml:175
+#: code:addons/om_approval/static/src/designer/designer.xml:508
+msgid "has run."
+msgstr "执行完毕。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:56
+msgid "Approve"
+msgstr "批准"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:60
+msgid "Refuse"
+msgstr "拒绝"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:68
+msgid "Dismiss"
+msgstr "忽略"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:70
+msgid "Details"
+msgstr "详情"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:89
+msgid "Open"
+msgstr "打开"
+
+# ── XML 模板：设计器 ──────────────────────────────────────
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:18
+msgid "In short"
+msgstr "概要"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:19
+msgid "Updated as you edit"
+msgstr "随编辑实时更新"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:43
+msgid "Back to the approval flows"
+msgstr "返回审批流程列表"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:48
+msgid "e.g. Quotations above 10,000"
+msgstr "例如：超过 10,000 的报价单"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:48
+msgid "Name of the flow"
+msgstr "流程名称"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:49
+msgid "Click to rename the flow"
+msgstr "点击重命名流程"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:54
+msgid "Active"
+msgstr "已启用"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:55
+msgid "Inactive"
+msgstr "未启用"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:56
+msgid "Unsaved"
+msgstr "未保存"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:61
+msgid "The usual form of the flow"
+msgstr "流程的常规表单"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:62
+msgid "Form View"
+msgstr "表单视图"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:65
+msgid "See what the flow does for a record, without asking anything"
+msgstr "查看流程对某条记录的处理过程，不实际发起"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:67
+msgid "Test on a Record"
+msgstr "在记录上测试"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:75
+msgid "Deactivate"
+msgstr "停用"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:80
+msgid "Activate"
+msgstr "启用"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:78
+msgid "Save the flow and let it stop its button"
+msgstr "保存流程并使其阻止对应按钮"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:96
+#: code:addons/om_approval/static/src/designer/designer.xml:208
+msgid "Trigger"
+msgstr "触发"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:98
+msgid "When a"
+msgstr "当"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:98
+msgid "is submitted"
+msgstr "被提交时"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:99
+msgid "When"
+msgstr "当"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:99
+msgid "is clicked"
+msgstr "被点击时"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:103
+msgid "with"
+msgstr "，且"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:106
+#: code:addons/om_approval/static/src/designer/designer.xml:302
+msgid "Locks the record"
+msgstr "锁定记录"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:134
+msgid "only when"
+msgstr "仅当"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:137
+msgid "all of them"
+msgstr "所有人"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:140
+msgid "of them"
+msgstr "人"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:143
+msgid "reminded after"
+msgstr "提醒于"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:146
+msgid "escalated after"
+msgstr "升级于"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:159
+msgid "No step: the approval administrators, or the fallback group, approve."
+msgstr "没有步骤：由审批管理员或备用审批组批准。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:167
+#: code:addons/om_approval/static/src/designer/designer.xml:476
+msgid "Outcome"
+msgstr "结果"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:170
+msgid "runs as the requester"
+msgstr "以申请人身份执行"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:171
+#: code:addons/om_approval/static/src/designer/designer.xml:495
+msgid "The requester clicks"
+msgstr "申请人再次点击"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:174
+msgid "The record stays locked until an approval manager unlocks it."
+msgstr "记录保持锁定，直到审批管理员解锁。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:175
+msgid "The record unlocks once"
+msgstr "记录在执行后解锁："
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:184
+msgid "Add a step here"
+msgstr "在此处添加步骤"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:208
+msgid "When it asks for approval"
+msgstr "何时发起审批"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:226
+msgid "more"
+msgstr "更多"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:230
+msgid "A button is missing? List them again"
+msgstr "缺少按钮？重新列出"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:249
+msgid "Apply"
+msgstr "应用"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:253
+msgid "Empty: every record. The first active flow matching a record is used."
+msgstr "留空：所有记录。使用第一个匹配记录的有效流程。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:266
+msgid "above"
+msgstr "高于"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:269
+msgid "No amount"
+msgstr "无金额"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:277
+msgid "In the currency of the flow; other currencies are converted first."
+msgstr "以流程的币种计；其他币种会先换算。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:287
+msgid "Message shown when the button is stopped"
+msgstr "按钮被阻止时显示的提示信息"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:289
+msgid "e.g. Orders above 10,000 need the approval of the sales director."
+msgstr "例如：超过 10,000 的订单需要销售总监批准。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:302
+msgid "Lock the record: nobody changes it"
+msgstr "锁定记录：任何人无法修改"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:304
+msgid "Once approved: set on the Outcome card."
+msgstr "批准后的行为：在“结果”卡片上设置。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:323
+msgid "The requester can attach files with the note."
+msgstr "申请人可以在备注中添加附件。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:332
+msgid "When a step finds nobody"
+msgstr "当步骤找不到审批人时"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:340
+msgid "The requester approves the steps they are an approver of"
+msgstr "申请人批准自己作为审批人的步骤"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:344
+msgid "Company"
+msgstr "公司"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:347
+msgid "Empty: every company."
+msgstr "留空：所有公司。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:359
+msgid "Name of the step"
+msgstr "步骤名称"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:359
+msgid "Click to rename the step"
+msgstr "点击重命名步骤"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:363
+msgid "Move up"
+msgstr "上移"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:365
+msgid "Move down"
+msgstr "下移"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:368
+msgid "Remove the step"
+msgstr "删除步骤"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:393
+msgid "A field leading to a user or a contact, e.g. Sales Team › Team Leader."
+msgstr "指向用户或联系人的字段，例如：销售团队 › 团队负责人。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:411
+msgid "of them approve"
+msgstr "人批准"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:413
+msgid "A refusal by any of them refuses the step."
+msgstr "其中任何人拒绝即拒绝该步骤。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:423
+msgid "Only above"
+msgstr "仅高于"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:427
+msgid "0: any amount"
+msgstr "0：任意金额"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:430
+msgid "Only for the records"
+msgstr "仅适用于以下记录"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:433
+msgid "Empty: always. The records outside skip the step."
+msgstr "留空：总是适用。不满足条件的记录跳过该步骤。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:443
+msgid "Remind after"
+msgstr "提醒于"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:449
+msgid "Escalate after"
+msgstr "升级于"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:446
+#: code:addons/om_approval/static/src/designer/designer.xml:452
+msgid "days"
+msgstr "天"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:455
+msgid "Then ask"
+msgstr "然后邀请"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:468
+msgid "0: never. Escalating asks other people to decide too."
+msgstr "0：从不。升级会邀请其他人一同决定。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:476
+msgid "Once approved"
+msgstr "批准后"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:479
+msgid "is approved, as its app decides."
+msgstr "被批准，具体行为由其应用决定。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:490
+msgid "runs as the requester once the last approval comes."
+msgstr "在最后一个批准到来时以申请人身份执行。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:494
+msgid "Clicked again"
+msgstr "再次点击"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:508
+msgid "Unlocks"
+msgstr "解锁"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:508
+msgid "Editable again once"
+msgstr "恢复可编辑："
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:513
+msgid "Stays locked"
+msgstr "保持锁定"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:513
+msgid "Until an approval manager unlocks it."
+msgstr "直到审批管理员解锁。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/designer/designer.xml:516
+msgid "The record is not locked: lock it on the Trigger card."
+msgstr "记录未锁定：在“触发”卡片上开启锁定。"
+
+# ── XML 模板：模板库与菜单 ────────────────────────────────
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:12
+msgid "Create and Open the Designer"
+msgstr "创建并打开设计器"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:14
+msgid "Back"
+msgstr "返回"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:16
+msgid "Close"
+msgstr "关闭"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:22
+msgid "Start from a template, or from blank. The flow is created inactive: check it in the designer, then activate it."
+msgstr "从模板或空白开始。流程创建时为停用状态：请在设计器中检查后再启用。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:32
+msgid "Choose the button and add the steps yourself."
+msgstr "自己选择按钮并添加步骤。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:42
+msgid "Ready for"
+msgstr "适用于"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:61
+msgid "The button, the amounts and the approvers are set for the records listed above; for another kind of record they are guessed. You change them in the designer."
+msgstr "按钮、金额和审批人已按上述记录类型预置；选择其他记录类型时为推测值。您可以在设计器中修改。"
+
+#. module: om_approval
+#. openerp-web
+#: code:addons/om_approval/static/src/gallery/approval_cog_menu.xml:6
+msgid "Set up an approval"
+msgstr "设置审批"

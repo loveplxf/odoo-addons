@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="cux_mrp_progress_bar.WorkorderProgressRings">
+        <div class="o_cux_mrp_rings">
+            <div t-foreach="this.rings"
+                 t-as="ring"
+                 t-key="ring.id"
+                 t-att-class="this.getRingClass(ring)"
+                 t-att-title="this.getTitle(ring)">
+                <div class="o_cux_ring_circle">
+                    <svg class="o_cux_ring_svg" viewBox="0 0 32 32">
+                        <circle class="o_cux_ring_track" cx="16" cy="16" r="13"/>
+                        <circle t-if="!this.isDone(ring)"
+                                class="o_cux_ring_value"
+                                cx="16" cy="16" r="13"
+                                transform="rotate(-90 16 16)"
+                                t-att-style="this.getArcStyle(ring)"/>
+                        <path t-if="this.isDone(ring)"
+                              class="o_cux_ring_check"
+                              d="M10.5 16.6 L14.4 20.5 L21.5 12"/>
+                    </svg>
+                    <span t-if="!this.isDone(ring)"
+                          class="o_cux_ring_label"
+                          t-out="this.getLabel(ring)"/>
+                </div>
+                <span class="o_cux_ring_name" t-out="ring.name"/>
+            </div>
+        </div>
+    </t>
+
+</templates>

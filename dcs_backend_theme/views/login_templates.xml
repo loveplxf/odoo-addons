@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Login / reset-password / signup pages all call web.login_layout, so a
+        single inheritance restyles every authentication screen. The form
+        itself (web.login) is untouched: OAuth, 2FA, captcha and database
+        selection keep working.
+    -->
+    <template id="login_layout" inherit_id="web.login_layout" name="DevsCodespace Backend Theme: Login Layout">
+        <!-- Odoo 20 passes body_classname as a (formatted) t-call attribute -->
+        <xpath expr="//t[@t-call='web.frontend_layout']" position="attributes">
+            <attribute name="body_classname.f">cbt-login-body</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('container')][hasclass('py-5')]" position="replace">
+            <t t-set="cbt" t-value="request.env['cbt.theme.config'].sudo().get_login_values() if request and request.db else {}"/>
+            <t t-set="cbt_layout" t-value="cbt.get('layout') or 'split'"/>
+            <t t-set="cbt_logo" t-value="cbt.get('logo_url') or ('/web/binary/company_logo' + ('?dbname=' + db if db else ''))"/>
+            <div t-attf-class="cbt-login cbt-login--{{ cbt_layout }} cbt-login-bg--{{ cbt.get('background_style') or 'gradient' }}"
+                 t-attf-style="--cbt-login-primary: {{ cbt.get('primary_color') or '#4f46e5' }}; --cbt-login-accent: {{ cbt.get('background_color') or '#1e1b4b' }};{{ (' --cbt-login-image: url(%s);' % cbt['background_url']) if cbt.get('background_url') else '' }}">
+
+                <!-- Brand panel (corporate, split, illustration) -->
+                <aside t-if="cbt_layout != 'minimal'" class="cbt-login__brand" aria-hidden="false">
+                    <div class="cbt-login__brand-inner">
+                        <div class="cbt-login__brand-name" t-out="cbt.get('brand_name')"/>
+                        <t t-if="cbt_layout != 'corporate'">
+                            <h2 class="cbt-login__brand-title">
+                                <t t-if="cbt.get('title')" t-out="cbt['title']"/>
+                                <t t-else="">Everything your business runs on, in one place.</t>
+                            </h2>
+                            <p class="cbt-login__brand-text" t-if="cbt.get('subtitle')" t-out="cbt['subtitle']"/>
+                        </t>
+                        <t t-if="cbt_layout == 'illustration'" t-call="dcs_backend_theme.login_illustration"/>
+                    </div>
+                </aside>
+
+                <main class="cbt-login__main">
+                    <div class="cbt-login__card card border-0 o_database_list">
+                        <div class="card-body">
+                            <div class="cbt-login__logo">
+                                <img t-att-src="cbt_logo" alt="Logo"/>
+                            </div>
+                            <div class="cbt-login__intro">
+                                <h1 class="cbt-login__heading">
+                                    <t t-if="cbt_layout in ('minimal', 'corporate') and cbt.get('title')" t-out="cbt['title']"/>
+                                    <t t-else="">Welcome back</t>
+                                </h1>
+                                <p class="cbt-login__subheading" t-if="cbt_layout in ('minimal', 'corporate') and cbt.get('subtitle')" t-out="cbt['subtitle']"/>
+                                <p class="cbt-login__subheading" t-elif="cbt_layout in ('minimal', 'corporate')">Sign in to continue</p>
+                            </div>
+                            <t t-out="0"/>
+                            <div class="cbt-login__links" t-if="not disable_footer">
+                                <a t-if="not disable_database_manager" href="/web/database/manager">Manage Databases</a>
+                                <a t-if="cbt.get('show_powered_by', True)" href="https://www.odoo.com?utm_source=db&amp;utm_medium=auth" target="_blank" rel="noopener">Powered by <span>Odoo</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="cbt-login__footnote" t-if="cbt.get('footer_text')" t-out="cbt['footer_text']"/>
+                </main>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Original, theme-colored illustration (inline SVG, no external asset). -->
+    <template id="login_illustration" name="DevsCodespace Backend Theme: Login Illustration">
+        <svg class="cbt-login__illustration" viewBox="0 0 360 240" role="img" aria-label="Dashboard illustration" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="24" width="320" height="192" rx="18" fill="currentColor" opacity=".10"/>
+            <rect x="40" y="44" width="120" height="70" rx="12" fill="currentColor" opacity=".18"/>
+            <rect x="172" y="44" width="148" height="70" rx="12" fill="currentColor" opacity=".18"/>
+            <rect x="52" y="60" width="56" height="8" rx="4" fill="currentColor" opacity=".55"/>
+            <rect x="52" y="76" width="88" height="20" rx="6" fill="currentColor" opacity=".85"/>
+            <path d="M184 100 L214 82 L238 92 L266 64 L304 74" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="266" cy="64" r="7" fill="currentColor"/>
+            <rect x="40" y="128" width="280" height="72" rx="12" fill="currentColor" opacity=".14"/>
+            <rect x="60" y="168" width="22" height="20" rx="4" fill="currentColor" opacity=".55"/>
+            <rect x="96" y="150" width="22" height="38" rx="4" fill="currentColor" opacity=".75"/>
+            <rect x="132" y="158" width="22" height="30" rx="4" fill="currentColor" opacity=".55"/>
+            <rect x="168" y="140" width="22" height="48" rx="4" fill="currentColor" opacity=".95"/>
+            <rect x="204" y="154" width="22" height="34" rx="4" fill="currentColor" opacity=".55"/>
+            <circle cx="280" cy="164" r="22" fill="none" stroke="currentColor" stroke-width="8" opacity=".35"/>
+            <path d="M280 142 A22 22 0 0 1 300 172" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+        </svg>
+    </template>
+</odoo>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="dcs_backend_theme.ThemeSettingsAction">
+        <div class="o_action cbt-settings-page">
+            <div class="cbt-settings-page__inner">
+                <header class="cbt-settings-page__header">
+                    <h1 t-out="this.labels.title"/>
+                    <p t-out="this.labels.subtitle"/>
+                    <p class="cbt-settings-page__credit">
+                        <t t-out="this.labels.madeBy + ' '"/>
+                        <a href="https://devscodespace.com" target="_blank" rel="noopener noreferrer">DevsCodespace</a>
+                    </p>
+                </header>
+                <div class="cbt-settings-page__grid">
+                    <div class="cbt-card">
+                        <h2 class="cbt-card__title" t-out="this.labels.personal"/>
+                        <ThemeSettings/>
+                    </div>
+                    <div class="cbt-card" t-if="this.isSystem">
+                        <LoginSettings/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="dcs_backend_theme.LoginSettings">
+        <div class="cbt-login-settings" t-if="this.state.values">
+            <t t-set="v" t-value="this.state.values"/>
+            <h2 class="cbt-card__title" t-out="this.labels.title"/>
+            <p class="cbt-settings__help mb-3" t-out="this.labels.help"/>
+
+            <!-- Live schematic preview -->
+            <div class="cbt-login-preview" t-attf-class="cbt-login-preview--{{ v.layout }} cbt-login-preview--bg-{{ v.background_style }}"
+                 t-att-style="this.previewStyle" role="img" t-att-aria-label="this.labels.preview">
+                <div class="cbt-login-preview__brand">
+                    <span class="cbt-login-preview__pill" t-out="v.brand_name or 'Brand'"/>
+                    <span class="cbt-login-preview__line"/>
+                    <span class="cbt-login-preview__line cbt-login-preview__line--short"/>
+                </div>
+                <div class="cbt-login-preview__form">
+                    <div class="cbt-login-preview__card">
+                        <span class="cbt-login-preview__logo">
+                            <img t-if="v.logo_url" t-att-src="v.logo_url" alt=""/>
+                        </span>
+                        <span class="cbt-login-preview__input"/>
+                        <span class="cbt-login-preview__input"/>
+                        <span class="cbt-login-preview__btn"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cbt-settings__row">
+                <div class="cbt-settings__label" t-out="this.labels.layout"/>
+                <div class="cbt-seg" role="radiogroup" t-att-aria-label="this.labels.layout">
+                    <t t-foreach="this.layouts" t-as="layout" t-key="layout.value">
+                        <input type="radio" class="cbt-seg__input" t-att-id="'cbt_login_layout_' + layout.value" name="cbt_login_layout"
+                               t-att-checked="v.layout === layout.value" t-on-change="() => this.update('layout', layout.value)"/>
+                        <label class="cbt-seg__option" t-att-for="'cbt_login_layout_' + layout.value" t-out="layout.label"/>
+                    </t>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label class="form-label" for="cbt_login_brand" t-out="this.labels.brand"/>
+                    <input id="cbt_login_brand" class="form-control" maxlength="80" t-att-placeholder="this.labels.brandPlaceholder"
+                           t-att-value="v.brand_name" t-on-input="(ev) => this.update('brand_name', ev.target.value)"/>
+                </div>
+                <div class="col-sm-6">
+                    <label class="form-label" for="cbt_login_title" t-out="this.labels.heading"/>
+                    <input id="cbt_login_title" class="form-control" maxlength="120"
+                           t-att-value="v.title" t-on-input="(ev) => this.update('title', ev.target.value)"/>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="cbt_login_subtitle" t-out="this.labels.subtitle"/>
+                    <textarea id="cbt_login_subtitle" class="form-control" rows="2" maxlength="300"
+                              t-att-value="v.subtitle" t-on-input="(ev) => this.update('subtitle', ev.target.value)"/>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="cbt_login_footer" t-out="this.labels.footer"/>
+                    <input id="cbt_login_footer" class="form-control" maxlength="200"
+                           t-att-value="v.footer_text" t-on-input="(ev) => this.update('footer_text', ev.target.value)"/>
+                </div>
+                <div class="col-sm-6">
+                    <label class="form-label" for="cbt_login_primary" t-out="this.labels.primary"/>
+                    <input id="cbt_login_primary" type="color" class="form-control form-control-color w-100"
+                           t-att-value="v.primary_color" t-on-input="(ev) => this.onColor('primary_color', ev)"/>
+                </div>
+                <div class="col-sm-6">
+                    <label class="form-label" for="cbt_login_accent" t-out="this.labels.accent"/>
+                    <input id="cbt_login_accent" type="color" class="form-control form-control-color w-100"
+                           t-att-value="v.background_color" t-on-input="(ev) => this.onColor('background_color', ev)"/>
+                </div>
+                <div class="col-12">
+                    <div class="cbt-settings__label" t-out="this.labels.background"/>
+                    <div class="cbt-seg" role="radiogroup" t-att-aria-label="this.labels.background">
+                        <t t-foreach="this.backgroundStyles" t-as="bg" t-key="bg.value">
+                            <input type="radio" class="cbt-seg__input" t-att-id="'cbt_login_bg_' + bg.value" name="cbt_login_bg"
+                                   t-att-checked="v.background_style === bg.value" t-on-change="() => this.update('background_style', bg.value)"/>
+                            <label class="cbt-seg__option" t-att-for="'cbt_login_bg_' + bg.value" t-out="bg.label"/>
+                        </t>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label class="form-label" for="cbt_login_logo" t-out="this.labels.logo"/>
+                    <input id="cbt_login_logo" type="file" accept="image/*" class="form-control" t-on-change="(ev) => this.onImage('logo', ev)"/>
+                    <div class="form-text d-flex justify-content-between">
+                        <span t-out="this.labels.logoHelp"/>
+                        <button t-if="v.logo_url" type="button" class="btn btn-link btn-sm p-0" t-on-click="() => this.removeImage('logo')" t-out="this.labels.remove"/>
+                    </div>
+                </div>
+                <div class="col-sm-6" t-if="v.background_style === 'image'">
+                    <label class="form-label" for="cbt_login_bgimg" t-out="this.labels.image"/>
+                    <input id="cbt_login_bgimg" type="file" accept="image/*" class="form-control" t-on-change="(ev) => this.onImage('background', ev)"/>
+                    <div class="form-text text-end">
+                        <button t-if="v.background_url" type="button" class="btn btn-link btn-sm p-0" t-on-click="() => this.removeImage('background')" t-out="this.labels.remove"/>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="cbt_login_sysname" t-out="this.labels.systemName"/>
+                    <input id="cbt_login_sysname" class="form-control" maxlength="80" t-att-placeholder="this.labels.brandPlaceholder"
+                           t-att-value="v.system_name" t-on-input="(ev) => this.update('system_name', ev.target.value)"/>
+                </div>
+                <div class="col-12">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="cbt_login_powered"
+                               t-att-checked="v.show_powered_by" t-on-change="(ev) => this.update('show_powered_by', ev.target.checked)"/>
+                        <label class="form-check-label" for="cbt_login_powered" t-out="this.labels.powered"/>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="cbt_login_nav_brand"
+                               t-att-checked="v.show_nav_brand" t-on-change="(ev) => this.update('show_nav_brand', ev.target.checked)"/>
+                        <label class="form-check-label" for="cbt_login_nav_brand" t-out="this.labels.navBrand"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cbt-login-settings__actions">
+                <button type="button" class="btn btn-primary" t-att-disabled="this.state.saving or !this.state.dirty" t-on-click="this.save">
+                    <i t-if="this.state.saving" class="oi oi-spin me-2" data-icon="progress_activity" aria-hidden="true"/><t t-out="this.labels.save"/>
+                </button>
+                <a class="btn btn-secondary" href="/web/login" target="_blank" rel="noopener">
+                    <i class="oi me-1" data-icon="open_in_new" aria-hidden="true"/><t t-out="this.labels.open"/>
+                </a>
+            </div>
+        </div>
+    </t>
+</templates>

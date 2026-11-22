@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Work order list: the field goes right after "To Produce".
+         Both list variants (MO form tab / Work Orders menu) inherit this one. -->
+    <record id="mrp_production_workorder_tree_view_progress" model="ir.ui.view">
+        <field name="name">mrp.workorder.list.progress</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
+        <field name="arch" type="xml">
+            <field name="qty_to_produce" position="after">
+                <field name="mrp_workorder_progress" widget="progressbar" string="Progress" optional="show" readonly="1"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Work order form: new row right below the "produced / to produce" line. -->
+    <record id="mrp_production_workorder_form_view_progress" model="ir.ui.view">
+        <field name="name">mrp.workorder.form.progress</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='qty']" position="after">
+                <field name="mrp_workorder_progress" widget="progressbar" string="Progress" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

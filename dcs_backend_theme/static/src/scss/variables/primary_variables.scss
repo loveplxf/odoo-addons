@@ -1,0 +1,56 @@
+///
+/// DevsCodespace Backend Theme — compile-time defaults (light).
+///
+/// Inserted *before* web/static/src/scss/primary_variables.scss in backend
+/// bundles only (never frontend/website/report), so these `!default` values
+/// win over Odoo's. The dark file (primary_variables.dark.scss) is inserted
+/// before this one in the dark bundles and wins for every variable it sets.
+///
+/// Runtime choices (primary color, radius, font, density) are CSS custom
+/// properties (see tokens.scss); the values here are only the baseline.
+///
+
+// Brand ---------------------------------------------------------------------
+$cbt-brand-primary: #4f46e5 !default;
+$o-community-color: $cbt-brand-primary !default;
+$o-brand-odoo: $cbt-brand-primary !default;
+$o-brand-primary: $cbt-brand-primary !default;
+
+// Cool neutral scale ----------------------------------------------------------
+$o-gray-100: #f6f7f9 !default;
+$o-gray-200: #eceef2 !default;
+$o-gray-300: #e1e4ea !default;
+$o-gray-400: #cdd2db !default;
+$o-gray-500: #a3aab8 !default;
+$o-gray-600: #6b7385 !default;
+$o-gray-700: #4a5163 !default;
+$o-gray-800: #2f3442 !default;
+$o-gray-900: #1b1f29 !default;
+
+$o-webclient-background-color: #f3f4f7 !default;
+$o-view-background-color: #ffffff !default;
+$o-main-text-color: #262b37 !default;
+
+// Shape ---------------------------------------------------------------------
+$o-border-radius: o-to-rem(8px) !default;
+$o-border-radius-sm: o-to-rem(6px) !default;
+$o-border-radius-lg: o-to-rem(12px) !default;
+
+// Theme-specific tokens (consumed by tokens.scss) ----------------------------
+$cbt-scheme: light !default;
+$cbt-surface: $o-view-background-color !default;
+$cbt-surface-raised: #ffffff !default;
+$cbt-surface-sunken: #f1f3f6 !default;
+$cbt-surface-hover: #f4f5f8 !default;
+$cbt-border: #e3e6ec !default;
+$cbt-border-strong: #d0d5de !default;
+$cbt-text: $o-main-text-color !default;
+$cbt-text-strong: #10131a !default;
+$cbt-text-muted: #687083 !default;
+$cbt-navbar-bg: rgba(255, 255, 255, .86) !default;
+$cbt-overlay: rgba(15, 18, 26, .38) !default;
+$cbt-shadow-sm: 0 1px 2px rgba(16, 24, 40, .05), 0 1px 3px rgba(16, 24, 40, .07) !default;
+$cbt-shadow-md: 0 6px 16px -4px rgba(16, 24, 40, .12), 0 2px 6px -2px rgba(16, 24, 40, .06) !default;
+$cbt-shadow-lg: 0 24px 48px -12px rgba(16, 24, 40, .22) !default;
+$cbt-sidebar-ink-bg: #151826 !default;
+$cbt-sidebar-ink-text: #c9cede !default;

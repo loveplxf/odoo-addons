@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dcs_backend_theme.OverlayHostGate">
+        <OverlayHostImpl t-if="this.env.cbtInWebClient"/>
+    </t>
+
+    <t t-name="dcs_backend_theme.OverlayHost">
+        <div class="cbt-overlay-root" t-if="this.themeUi.panel">
+            <AppDrawer t-if="this.themeUi.panel === 'drawer'"/>
+            <GlobalSearch t-elif="this.themeUi.panel === 'search'"/>
+            <BookmarksPanel t-elif="this.themeUi.panel === 'bookmarks'"/>
+            <ThemePanel t-elif="this.themeUi.panel === 'settings'"/>
+        </div>
+    </t>
+</templates>

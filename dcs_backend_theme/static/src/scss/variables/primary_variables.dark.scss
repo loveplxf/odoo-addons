@@ -1,0 +1,70 @@
+///
+/// DevsCodespace Backend Theme — dark variables.
+///
+/// Only compiled into web.assets_web_dark / web.assets_backend_lazy_dark,
+/// inserted before the light defaults. Every Odoo component (forms, lists,
+/// kanban, dialogs, date pickers, chatter, notifications…) is recompiled
+/// with these values — a designed dark palette, not an inversion.
+///
+/// Like Odoo's own dark mode, white/black are swapped because the code base
+/// uses $o-white for surfaces and $o-black for strong text.
+///
+
+$o-webclient-color-scheme: dark !default;
+$cbt-scheme: dark !default;
+
+$o-white: #0f1218 !default;
+$o-black: #f3f5fa !default;
+
+$o-gray-100: #161a22 !default;
+$o-gray-200: #1f2430 !default;
+$o-gray-300: #2b313e !default;
+$o-gray-400: #3b4251 !default;
+$o-gray-500: #5c6577 !default;
+$o-gray-600: #8a93a6 !default;
+$o-gray-700: #b2b9c7 !default;
+$o-gray-800: #d3d8e1 !default;
+$o-gray-900: #e9ecf2 !default;
+
+$o-webclient-background-color: #11141b !default;
+$o-view-background-color: #191d26 !default;
+$o-main-text-color: #d7dce6 !default;
+$o-main-headings-color: #f3f5fa !default;
+$o-main-color-muted: rgba(#b2b9c7, .76) !default;
+$o-main-link-color: #a5b0ff !default;
+$o-shadow-color: #000000 !default;
+
+$o-brand-lightsecondary: #1f2430 !default;
+$o-form-lightsecondary: #3b4251 !default;
+$o-component-active-color: #f3f5fa !default;
+$o-component-active-bg: #262c45 !default;
+$o-list-group-active-color: #f3f5fa !default;
+$o-list-group-active-bg: #262c45 !default;
+
+$o-success: #3fb97a !default;
+$o-info: #38a9c7 !default;
+$o-warning: #f0ad3c !default;
+$o-danger: #f0626b !default;
+$o-theme-text-colors: (
+    "success": #5fd39a,
+    "info": #6cc6df,
+    "warning": #f5c06a,
+    "danger": #ff8c93,
+) !default;
+
+$cbt-surface: #191d26 !default;
+$cbt-surface-raised: #1f2430 !default;
+$cbt-surface-sunken: #141820 !default;
+$cbt-surface-hover: #222836 !default;
+$cbt-border: #2a303d !default;
+$cbt-border-strong: #3a4150 !default;
+$cbt-text: #d7dce6 !default;
+$cbt-text-strong: #f3f5fa !default;
+$cbt-text-muted: #8f98ab !default;
+$cbt-navbar-bg: rgba(20, 24, 32, .86) !default;
+$cbt-overlay: rgba(0, 0, 0, .55) !default;
+$cbt-shadow-sm: 0 1px 2px rgba(0, 0, 0, .35), 0 0 0 1px rgba(255, 255, 255, .02) !default;
+$cbt-shadow-md: 0 8px 20px -6px rgba(0, 0, 0, .55), 0 0 0 1px rgba(255, 255, 255, .03) !default;
+$cbt-shadow-lg: 0 28px 56px -12px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .04) !default;
+$cbt-sidebar-ink-bg: #0c0f15 !default;
+$cbt-sidebar-ink-text: #b9bfcd !default;

@@ -1,0 +1,116 @@
+// =============================================================================
+// Design tokens
+// -----------------------------------------------------------------------------
+// Compiled once per bundle: the light bundle gets light values, the dark
+// bundle gets dark values from the very same source. Runtime preferences are
+// applied by the theme service as `data-cbt-*` attributes on <html> and as
+// the --cbt-primary* inline custom properties.
+// =============================================================================
+
+:root {
+    --cbt-scheme: #{$cbt-scheme};
+    color-scheme: #{$cbt-scheme};
+
+    // Primary (overridden inline at runtime by the theme service)
+    --cbt-primary: #{$cbt-brand-primary};
+    --cbt-primary-rgb: #{to-rgb($cbt-brand-primary)};
+    --cbt-on-primary: #ffffff;
+    --cbt-primary-hover: color-mix(in srgb, var(--cbt-primary) 86%, #000);
+    --cbt-primary-active: color-mix(in srgb, var(--cbt-primary) 74%, #000);
+    --cbt-primary-soft: color-mix(in srgb, var(--cbt-primary) 13%, var(--cbt-surface));
+    --cbt-primary-softer: color-mix(in srgb, var(--cbt-primary) 7%, var(--cbt-surface));
+    --cbt-primary-text: color-mix(in srgb, var(--cbt-primary) 82%, var(--cbt-text-strong));
+    --cbt-focus-ring: 0 0 0 3px rgba(var(--cbt-primary-rgb), .28);
+
+    // Surfaces & text
+    --cbt-bg: #{$o-webclient-background-color};
+    --cbt-surface: #{$cbt-surface};
+    --cbt-surface-raised: #{$cbt-surface-raised};
+    --cbt-surface-sunken: #{$cbt-surface-sunken};
+    --cbt-surface-hover: #{$cbt-surface-hover};
+    --cbt-border: #{$cbt-border};
+    --cbt-border-strong: #{$cbt-border-strong};
+    --cbt-text: #{$cbt-text};
+    --cbt-text-strong: #{$cbt-text-strong};
+    --cbt-text-muted: #{$cbt-text-muted};
+    --cbt-navbar-bg: #{$cbt-navbar-bg};
+    --cbt-overlay: #{$cbt-overlay};
+    --cbt-shadow-sm: #{$cbt-shadow-sm};
+    --cbt-shadow-md: #{$cbt-shadow-md};
+    --cbt-shadow-lg: #{$cbt-shadow-lg};
+
+    // Shape
+    --cbt-radius: .5rem;
+    --cbt-radius-sm: .375rem;
+    --cbt-radius-lg: .75rem;
+    --cbt-radius-xl: 1rem;
+
+    // Layout
+    --cbt-navbar-height: 52px;
+    --cbt-sidebar-width: 264px;
+    --cbt-sidebar-mini-width: 68px;
+    --cbt-sidebar-current-width: 0px;
+
+    // Density
+    --cbt-row-py: .55rem;
+    --cbt-row-px: .75rem;
+    --cbt-gap: 1rem;
+
+    // Motion
+    --cbt-ease: cubic-bezier(.2, .8, .2, 1);
+    --cbt-duration: 180ms;
+    --cbt-duration-slow: 280ms;
+
+    // Fonts
+    --cbt-font: var(--#{$prefix}body-font-family);
+
+    // Bootstrap bridge: utilities & components follow the runtime primary.
+    --#{$prefix}primary: var(--cbt-primary);
+    --#{$prefix}primary-rgb: var(--cbt-primary-rgb);
+    --#{$prefix}link-color: var(--cbt-primary-text);
+    --#{$prefix}link-color-rgb: var(--cbt-primary-rgb);
+    --#{$prefix}link-hover-color: var(--cbt-primary-hover);
+    --#{$prefix}link-hover-color-rgb: var(--cbt-primary-rgb);
+    --#{$prefix}primary-text-emphasis: var(--cbt-primary-text);
+    --#{$prefix}primary-bg-subtle: var(--cbt-primary-soft);
+    --#{$prefix}primary-border-subtle: color-mix(in srgb, var(--cbt-primary) 35%, var(--cbt-surface));
+    --#{$prefix}focus-ring-color: rgba(var(--cbt-primary-rgb), .28);
+    --#{$prefix}border-radius: var(--cbt-radius);
+    --#{$prefix}border-radius-sm: var(--cbt-radius-sm);
+    --#{$prefix}border-radius-lg: var(--cbt-radius-lg);
+    --#{$prefix}border-radius-xl: var(--cbt-radius-xl);
+    --#{$prefix}border-color: var(--cbt-border);
+}
+
+// Radius -----------------------------------------------------------------------
+:root[data-cbt-radius="none"] { --cbt-radius: 0; --cbt-radius-sm: 0; --cbt-radius-lg: 0; --cbt-radius-xl: 0; }
+:root[data-cbt-radius="sm"]   { --cbt-radius: .25rem; --cbt-radius-sm: .1875rem; --cbt-radius-lg: .375rem; --cbt-radius-xl: .5rem; }
+:root[data-cbt-radius="lg"]   { --cbt-radius: .75rem; --cbt-radius-sm: .5rem; --cbt-radius-lg: 1rem; --cbt-radius-xl: 1.375rem; }
+
+// Font size (the whole UI is rem based: scale the root) ------------------------
+:root[data-cbt-font-size="sm"] { font-size: 15px; }
+:root[data-cbt-font-size="md"] { font-size: 16px; }
+:root[data-cbt-font-size="lg"] { font-size: 17px; }
+:root[data-cbt-font-size="xl"] { font-size: 18px; }
+
+// Density ------------------------------------------------------------------------
+:root[data-cbt-density="compact"]  { --cbt-row-py: .3rem; --cbt-row-px: .6rem; --cbt-gap: .65rem; --cbt-navbar-height: 46px; }
+:root[data-cbt-density="spacious"] { --cbt-row-py: .8rem; --cbt-row-px: .9rem; --cbt-gap: 1.35rem; --cbt-navbar-height: 58px; }
+
+// Motion -----------------------------------------------------------------------
+:root[data-cbt-animation="reduced"] { --cbt-duration: 90ms; --cbt-duration-slow: 120ms; }
+:root[data-cbt-animation="none"]    { --cbt-duration: 0ms; --cbt-duration-slow: 0ms; }
+@media (prefers-reduced-motion: reduce) {
+    :root { --cbt-duration: 0ms; --cbt-duration-slow: 0ms; }
+}
+
+// Fonts (all shipped locally by Odoo, loaded only when selected) --------------
+:root[data-cbt-font="roboto"]     { --cbt-font: "Roboto", #{$o-font-family-sans-serif}; }
+:root[data-cbt-font="open_sans"]  { --cbt-font: "Open Sans", #{$o-font-family-sans-serif}; }
+:root[data-cbt-font="montserrat"] { --cbt-font: "Montserrat", #{$o-font-family-sans-serif}; }
+:root[data-cbt-font="raleway"]    { --cbt-font: "Raleway", #{$o-font-family-sans-serif}; }
+:root[data-cbt-font="tajawal"]    { --cbt-font: "Tajawal", #{$o-font-family-sans-serif}; }
+:root[data-cbt-font]:not([data-cbt-font="system"]) {
+    --#{$prefix}body-font-family: var(--cbt-font);
+    --#{$prefix}font-sans-serif: var(--cbt-font);
+}

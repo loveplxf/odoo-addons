@@ -1,0 +1,1459 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dcs_backend_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e-20261101\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-08 15:50+0000\n"
+"PO-Revision-Date: 2026-11-08 15:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dcs_backend_theme
+#: model:ir.module.module,description:base.module_dcs_backend_theme
+msgid ""
+"\n"
+"DevsCodespace Backend Theme\n"
+"===========================\n"
+"A modern, configurable backend theme for Odoo 20 Community, built with OWL 3,\n"
+"services, registries and isolated patches. Per-user preferences are stored on\n"
+"``res.users.settings`` and shipped with the session, so the theme costs no\n"
+"extra RPC at start-up.\n"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "Aa"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/navigation_service.js:0
+msgid "Action"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Add to favorites"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Administration"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "All applications"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_animation
+msgid "Animations"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "App"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_drawer_style
+msgid "App Drawer Style"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_icon_style
+msgid "App Icon Style"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_nav_mode__drawer
+msgid "App drawer"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "App icons"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Appearance"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Applications"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Applications & menus"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid ""
+"Applies to everyone on this database: sign-in, password reset and sign-up "
+"pages."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/navbar_patch.js:0
+msgid "Apps"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_chatter_position__auto
+msgid "Automatic"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.ui.menu,name:dcs_backend_theme.menu_theme_settings
+msgid "Backend Theme"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model,name:dcs_backend_theme.model_cbt_theme_config
+msgid "Backend Theme Configuration"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Backend theme"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Background image"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__blue
+msgid "Blue"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Bookmark"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid ""
+"Bookmark menus, views and records you use often. They follow you on every "
+"device."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Bookmark this page"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+#: code:addons/dcs_backend_theme/static/src/components/systray/systray_items.js:0
+#: code:addons/dcs_backend_theme/static/src/core/navigation_service.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_bookmarks
+msgid "Bookmarks"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_chatter_position__bottom
+msgid "Bottom"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Brand name"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Brand panel"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Button color"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_drawer_style__categories
+msgid "Categories"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_chatter_position
+msgid "Chatter Position"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Chatter position"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_icon_style__circle
+msgid "Circle"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Clear"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_panel.js:0
+#: code:addons/dcs_backend_theme/static/src/patches/list_split_view.js:0
+msgid "Close"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Collapse sidebar"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_mode__collapsed
+msgid "Collapsed"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_palette
+msgid "Color Palette"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Colors must be #RRGGBB hex values."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_density__comfortable
+msgid "Comfortable"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_density__compact
+msgid "Compact"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_nav_mode__compact
+msgid "Compact (icon rail + top bar)"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_radius
+msgid "Corner Radius"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Corners"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Corporate"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__custom
+msgid "Custom"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_primary_color
+msgid "Custom Primary Color"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Custom color"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_theme_mode__dark
+msgid "Dark"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_illustration
+msgid "Dashboard illustration"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_size__md
+msgid "Default"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Defaults to the company logo"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Defaults to the company name"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Delete"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_density
+msgid "Density"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.xml:0
+msgid "DevsCodespace"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.module.module,shortdesc:base.module_dcs_backend_theme
+msgid "DevsCodespace Backend Theme"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_cbt_theme_config__display_name
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_ir_http__display_name
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Drawer layout"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_position__end
+msgid "End"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.xml:0
+msgid "Enter"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.xml:0
+msgid "Esc"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Everything your business runs on, in one place."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Expand on hover"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Expand sidebar"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_mode__expanded
+msgid "Expanded"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_size__xl
+msgid "Extra large"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_favorite_apps
+msgid "Favorite Apps"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Favorites"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Filter menus"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Finance"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_icon_style__flat
+msgid "Flat"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_font_family
+msgid "Font"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_font_size
+msgid "Font Size"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Font size"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Footer text"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_animation__full
+msgid "Full"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Gradient"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__green
+msgid "Green"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_drawer_style__grid
+msgid "Grid"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model,name:dcs_backend_theme.model_ir_http
+msgid "HTTP Routing"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Headline"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Hex value"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/navbar_patch.js:0
+msgid "Home Menu"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_nav_mode__horizontal
+msgid "Horizontal (top bar)"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_cbt_theme_config__id
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_ir_http__id
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Illustration"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Image"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Images must be smaller than 4 MB."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__indigo
+msgid "Indigo"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_style__ink
+msgid "Ink"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/res_users_settings.py:0
+msgid "Invalid bookmark entry."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/res_users_settings.py:0
+msgid "Invalid bookmarks."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/res_users_settings.py:0
+msgid "Invalid favorite applications."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Invalid settings."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Invalid value for %s."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Keep sidebar fixed (don't expand on hover)"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Keep sidebar open (don't expand on hover)"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "L"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_size__lg
+msgid "Large"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Layout"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_style__light
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_theme_mode__light
+msgid "Light"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_drawer_style__list
+msgid "List"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "List + form split view"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_split_view
+msgid "List/Form Split View"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Login page"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_panel.js:0
+msgid "Login page & full settings"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Login page updated."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Logo"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "M"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Main navigation"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Manage Databases"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Menu"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Menus"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_mode__mini
+msgid "Mini"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Minimal"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.module.module,summary:base.module_dcs_backend_theme
+msgid ""
+"Modern, responsive backend theme for Odoo 20 Community: sidebar, app drawer,"
+" global search, bookmarks, dark mode, color palettes, split view, chatter "
+"position and login page layouts."
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__montserrat
+msgid "Montserrat"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "More"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Motion"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Move down"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Move up"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "My preferences"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_nav_mode
+msgid "Navigation"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Navigation style"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "No application matches your search."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "No bookmarks yet"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "No matching menu"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_animation__none
+msgid "None"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Nothing found. Try another word."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Off"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Only administrators can change the login page."
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__open_sans
+msgid "Open Sans"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/list_split_view.js:0
+msgid "Open full form"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Open login page"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Open records next to the list on large screens."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Operations"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__orange
+msgid "Orange"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_icon_style__original
+msgid "Original"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Other"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Panel color"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "People"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid ""
+"Personal preferences are saved to your user and follow you on every device."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Plain"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Please choose an image smaller than 4 MB."
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Powered by <span>Odoo</span>"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Preview"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Primary color"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Productivity"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__purple
+msgid "Purple"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__raleway
+msgid "Raleway"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+msgid "Recent"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Recent searches"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Recently used"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+#: code:addons/dcs_backend_theme/static/src/core/navigation_service.js:0
+msgid "Record"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/list_split_view.js:0
+msgid "Record preview"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__red
+msgid "Red"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_animation__reduced
+msgid "Reduced"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Remove"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Remove from favorites"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Remove this page"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Removed from bookmarks"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "Rename"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Reset to defaults"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__roboto
+msgid "Roboto"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_radius__md
+msgid "Rounded"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_icon_style__rounded
+msgid "Rounded tile"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "S"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Sales & CRM"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Save login page"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Search"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/app_drawer/app_drawer.js:0
+msgid "Search applications and menus…"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Search apps, menus and bookmarks…"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Search records and commands for"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Show logo and system name in the top-left corner"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Show “Powered by Odoo”"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_chatter_position__side
+msgid "Side"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_sidebar_mode
+msgid "Sidebar"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_sidebar_locked
+msgid "Sidebar Locked"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_sidebar_position
+msgid "Sidebar Position"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_sidebar_style
+msgid "Sidebar Style"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Sidebar position"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Sidebar style"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Sign in to continue"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__slate
+msgid "Slate"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_size__sm
+msgid "Small"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_radius__lg
+msgid "Soft"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_density__spacious
+msgid "Spacious"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Split screen"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_radius__none
+msgid "Square"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_position__start
+msgid "Start"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_radius__sm
+msgid "Subtle"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "Suggestions"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Supporting text"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Switching between light and dark reloads the page once."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_theme_mode__system
+msgid "System"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__system
+msgid "System UI"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "System name"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_font_family__tajawal
+msgid "Tajawal"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_palette__teal
+msgid "Teal"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "The image could not be read."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/res_users_settings.py:0
+msgid "The primary color must be a #RRGGBB hex value."
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields,field_description:dcs_backend_theme.field_res_users_settings__cbt_theme_mode
+msgid "Theme Mode"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.actions.client,name:dcs_backend_theme.action_theme_settings
+msgid "Theme Settings"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Theme by"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Theme mode"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/sidebar/sidebar.js:0
+#: code:addons/dcs_backend_theme/static/src/components/systray/systray_items.js:0
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_panel.js:0
+msgid "Theme settings"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "This page cannot be bookmarked"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_sidebar_style__tinted
+msgid "Tinted"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/patches/navbar_patch.js:0
+msgid "Toggle sidebar"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Top bar"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Typography"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-python
+#: code:addons/dcs_backend_theme/models/theme_config.py:0
+msgid "Unsupported image type."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings_action.js:0
+msgid "Upload"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model,name:dcs_backend_theme.model_res_users_settings
+msgid "User Settings"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model:ir.model.fields.selection,name:dcs_backend_theme.selection__res_users_settings__cbt_nav_mode__vertical
+msgid "Vertical (sidebar)"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "View"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "Website & Marketing"
+msgstr ""
+
+#. module: dcs_backend_theme
+#: model_terms:ir.ui.view,arch_db:dcs_backend_theme.login_layout
+msgid "Welcome back"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/core/constants.js:0
+msgid "XL"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.js:0
+msgid "Your system's reduced-motion setting is always respected."
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "row[1]"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "this.labels.animation"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "this.labels.fontSize"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "this.labels.mode"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "this.labels.sidebar"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "this.labels.sidebarPos"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/theme_settings/theme_settings.xml:0
+msgid "this.labels.sidebarStyle"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "to close"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "to navigate"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/global_search/global_search.js:0
+msgid "to open"
+msgstr ""
+
+#. module: dcs_backend_theme
+#. odoo-javascript
+#: code:addons/dcs_backend_theme/static/src/components/bookmarks/bookmarks_panel.js:0
+msgid "“%s” added to bookmarks"
+msgstr ""
