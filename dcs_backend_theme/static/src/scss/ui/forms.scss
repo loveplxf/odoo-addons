@@ -146,6 +146,23 @@
     }
 }
 
+// Dialogs: restore Odoo's own layout, which already handles this case
+// (form_controller.scss sets --formView-sheetBg-padding-x to
+// $modal-inner-padding and drops the sheet's padding, margin, border and
+// radius). The card look above would otherwise paint a page-coloured band on
+// both sides of the dialog and a second rounded frame inside it.
+.modal .modal-dialog .o_form_view .o_form_sheet_bg {
+    background-color: transparent;
+}
+
+.modal .modal-dialog .o_form_view .o_form_sheet_bg > .o_form_sheet,
+.modal .modal-dialog .o_form_view .o_form_sheet_bg > div > .o_form_sheet {
+    border: 0 !important;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
 // Avatar / image fields
 .o_field_image img, .oe_avatar img {
     border-radius: var(--cbt-radius-lg);
