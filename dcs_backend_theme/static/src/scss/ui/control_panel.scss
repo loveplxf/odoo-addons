@@ -1,0 +1,146 @@
+// =============================================================================
+// Control panel: breadcrumbs, search bar, view switcher, pager
+// =============================================================================
+
+.o_action_manager > .o_action > .o_control_panel,
+.o_control_panel {
+    padding-block: .7rem .6rem;
+    padding-inline: calc(var(--cbt-gap) + .25rem);
+    background-color: var(--cbt-surface);
+    border-bottom: 1px solid var(--cbt-border);
+    gap: .5rem;
+}
+
+.o_control_panel_breadcrumbs {
+    .o_breadcrumb {
+        .breadcrumb-item {
+            font-size: 1rem;
+            color: var(--cbt-text-muted);
+            a { color: var(--cbt-text-muted); text-decoration: none; &:hover { color: var(--cbt-primary-text); } }
+            + .breadcrumb-item::before { color: var(--cbt-border-strong); }
+        }
+        .o_last_breadcrumb_item, .o_last_breadcrumb_item span {
+            font-size: 1.15rem;
+            font-weight: 650;
+            letter-spacing: -.015em;
+            color: var(--cbt-text-strong);
+        }
+    }
+}
+
+// Search bar
+// The frame lives on the input group, so the input and its options button read
+// as one control: one border, one radius and one focus ring. Odoo drops the
+// inner borders of the group, which otherwise cuts the ring at the join.
+.o_cp_searchview.input-group.rounded-pill {
+    border: 1px solid var(--cbt-border);
+    border-radius: var(--cbt-radius);
+    background-color: var(--cbt-surface-sunken);
+    overflow: hidden;
+    transition: border-color var(--cbt-duration) var(--cbt-ease),
+                box-shadow var(--cbt-duration) var(--cbt-ease),
+                background-color var(--cbt-duration) var(--cbt-ease);
+    &:focus-within {
+        border-color: var(--cbt-primary);
+        box-shadow: var(--cbt-focus-ring);
+        background-color: var(--cbt-surface);
+    }
+
+    // The elements inside only draw content: no frame, no background.
+    .o_searchview {
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+    }
+
+    .o_searchview_dropdown_toggler {
+        border: 0 !important;
+        border-radius: 0 !important;
+        // Core puts a `bg-view` utility on the button: force the group background.
+        background-color: transparent !important;
+        color: var(--cbt-text-muted);
+        &:hover {
+            background-color: var(--cbt-surface-hover) !important;
+            color: var(--cbt-text-strong);
+        }
+    }
+}
+
+// The sidebar is fixed and the web client is padded by its width, so views are
+// laid out on the content area. Fixed popovers are positioned against the
+// viewport instead: the search menu (centred with start-50/translate-middle-x)
+// lands half a sidebar to the left of the search bar. Push it back.
+:root[data-cbt-sidebar-pos="start"] .o_search_bar_menu {
+    inset-inline-start: calc(50% + var(--cbt-sidebar-current-width) / 2) !important;
+}
+
+:root[data-cbt-sidebar-pos="end"] .o_search_bar_menu {
+    inset-inline-start: calc(50% - var(--cbt-sidebar-current-width) / 2) !important;
+}
+
+.o_searchview {
+    .o_searchview_input { background: transparent; }
+    .o_searchview_facet {
+        border-radius: 999px;
+        overflow: hidden;
+        border: 0;
+        background: var(--cbt-primary-soft);
+        .o_searchview_facet_label {
+            background-color: var(--cbt-primary) !important;
+            color: var(--cbt-on-primary) !important;
+            border-radius: 999px 0 0 999px;
+        }
+        .o_facet_values { color: var(--cbt-primary-text); }
+    }
+}
+
+// View switcher
+.o_cp_switch_buttons {
+    padding: .15rem;
+    gap: .1rem;
+    border-radius: var(--cbt-radius);
+    background-color: var(--cbt-surface-sunken);
+    border: 1px solid var(--cbt-border);
+    .btn {
+        border: 0 !important;
+        box-shadow: none;
+        border-radius: calc(var(--cbt-radius) - 2px) !important;
+        color: var(--cbt-text-muted);
+        background: transparent;
+        &:hover { color: var(--cbt-text-strong); }
+        &.active {
+            background-color: var(--cbt-surface);
+            color: var(--cbt-primary-text);
+            box-shadow: var(--cbt-shadow-sm);
+        }
+    }
+}
+
+// Pager
+.o_pager {
+    .o_pager_counter { color: var(--cbt-text-muted); font-variant-numeric: tabular-nums; }
+    .btn { border-radius: var(--cbt-radius-sm); }
+    .o_pager_value { font-weight: 600; color: var(--cbt-text); }
+}
+
+// Search panel (left filters)
+.o_search_panel {
+    background-color: var(--cbt-surface);
+    border-inline-end: 1px solid var(--cbt-border);
+    .o_search_panel_section_header { color: var(--cbt-text-muted); letter-spacing: .04em; font-size: .75rem; }
+    .o_search_panel_category_value header, .o_search_panel_filter_value {
+        border-radius: var(--cbt-radius-sm);
+    }
+    .active > header, .o_search_panel_category_value .active {
+        background-color: var(--cbt-primary-soft) !important;
+        color: var(--cbt-primary-text);
+    }
+}
+
+// Selection bar shown in list views
+.o_selection_container .o_list_selection_box {
+    background-color: var(--cbt-primary-soft);
+    border-color: transparent;
+    color: var(--cbt-primary-text);
+}

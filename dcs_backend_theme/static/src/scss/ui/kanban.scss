@@ -1,0 +1,87 @@
+// =============================================================================
+// Kanban views
+// =============================================================================
+
+.o_kanban_renderer {
+    --KanbanRecord-padding-h: .85rem;
+    --KanbanRecord-padding-v: .75rem;
+    --KanbanRecord-margin-v: .55rem;
+    --KanbanRecord-margin-h: .45rem;
+    background-color: var(--cbt-bg);
+
+    .o_kanban_record:not(.o_kanban_ghost):not(.o_kanban_muted_record) {
+        border: 1px solid var(--cbt-border);
+        border-radius: var(--cbt-radius-lg);
+        background-color: var(--cbt-surface);
+        box-shadow: var(--cbt-shadow-sm);
+        transition: box-shadow var(--cbt-duration) var(--cbt-ease),
+                    transform var(--cbt-duration) var(--cbt-ease),
+                    border-color var(--cbt-duration) var(--cbt-ease);
+
+        &:hover {
+            border-color: var(--cbt-border-strong);
+            box-shadow: var(--cbt-shadow-md);
+        }
+        &:focus-visible, &:focus-within {
+            border-color: var(--cbt-primary);
+            outline: none;
+        }
+        // Kanban color bar (oe_kanban_color_X) stays visible on the start edge
+        &[class*="oe_kanban_color_"] { border-inline-start-width: 3px; }
+
+        .o_kanban_record_title, .o_kanban_record_top strong, .fw-bold, .fw-bolder {
+            color: var(--cbt-text-strong);
+        }
+        .o_tag, .badge { border-radius: 999px; }
+        .o_dropdown_kanban, .o-dropdown.o_dropdown_kanban {
+            .dropdown-toggle { border-radius: var(--cbt-radius-sm); }
+        }
+        .o_kanban_card_manage_pane { border-radius: var(--cbt-radius); }
+    }
+
+    // Grouped kanban
+    &.o_kanban_grouped {
+        gap: .25rem;
+        .o_kanban_group {
+            background-color: transparent;
+            border-radius: var(--cbt-radius-lg);
+            &.o_kanban_hover, &:hover { background-color: color-mix(in srgb, var(--cbt-surface-sunken) 60%, transparent); }
+        }
+        .o_kanban_header {
+            .o_column_title, .o_kanban_header_title { font-weight: 650; color: var(--cbt-text-strong); }
+        }
+        .o_kanban_counter .progress { border-radius: 999px; background-color: var(--cbt-surface-sunken); }
+        .o_kanban_quick_add { border-radius: var(--cbt-radius-sm); }
+    }
+
+    .o_kanban_quick_create {
+        border-radius: var(--cbt-radius-lg);
+        box-shadow: var(--cbt-shadow-md);
+    }
+}
+
+// Cards in non-grouped grids keep a pleasant minimum width on large screens
+@media (min-width: 1400px) {
+    .o_kanban_renderer:not(.o_kanban_grouped) {
+        --KanbanRecord-width: 300px;
+    }
+}
+
+// Other multi-record views get matching surfaces ------------------------------
+.o_pivot, .o_graph_renderer, .o_calendar_renderer, .o_activity_view {
+    background-color: var(--cbt-surface);
+}
+.o_pivot table {
+    thead th, tbody th { background-color: var(--cbt-surface-sunken); }
+    .o_pivot_header_cell_opened, .o_pivot_header_cell_closed { &:hover { background-color: var(--cbt-surface-hover); } }
+}
+.o_calendar_renderer {
+    .fc-event, .o_event { border-radius: var(--cbt-radius-sm); }
+    .fc-day-today, .fc .fc-daygrid-day.fc-day-today { background-color: var(--cbt-primary-softer) !important; }
+}
+.o_view_nocontent {
+    .o_nocontent_help { color: var(--cbt-text-muted); }
+    .o_view_nocontent_smiling_face::before, .o_view_nocontent_empty_folder::before {
+        filter: saturate(.9);
+    }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Full-page theme settings (personal preferences for everyone,
+         login page branding for administrators). -->
+    <record id="action_theme_settings" model="ir.actions.client">
+        <field name="name">Theme Settings</field>
+        <field name="tag">dcs_backend_theme.theme_settings</field>
+        <field name="path">theme-settings</field>
+    </record>
+
+    <menuitem id="menu_theme_settings"
+              name="Backend Theme"
+              parent="base.menu_administration"
+              action="action_theme_settings"
+              groups="base.group_system"
+              sequence="90"/>
+</odoo>

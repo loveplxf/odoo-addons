@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="dcs_backend_theme.SidebarHost">
+        <Sidebar t-if="this.enabled"/>
+    </t>
+
+    <t t-name="dcs_backend_theme.Sidebar">
+        <nav t-if="this.isVisible"
+             class="cbt-sidebar d-print-none"
+             t-att-class="this.rootClass"
+             t-ref="this.rootRef"
+             t-att-aria-label="this.labels.nav"
+             t-on-mouseenter="this.onMouseEnter"
+             t-on-mouseleave="this.onMouseLeave"
+             t-on-focusout="this.onFocusOut"
+             t-on-keydown="this.onKeydown">
+
+            <!-- Header -->
+            <div class="cbt-sidebar__header">
+                <button type="button" class="cbt-sidebar__item cbt-sidebar__brand"
+                        t-att-class="{ 'cbt-sidebar__brand--system': this.showSystemBrand }"
+                        t-on-click="this.openDrawer"
+                        t-att-aria-label="this.labels.allApps"
+                        t-att-data-tooltip="this.tooltip(this.labels.allApps)"
+                        t-att-data-tooltip-position="this.tooltipPosition">
+                    <img t-if="this.showSystemBrand and this.systemLogoSrc" class="cbt-sidebar__brand-logo"
+                         t-att-src="this.systemLogoSrc" t-att-alt="this.systemName"/>
+                    <span t-elif="this.showSystemBrand" class="cbt-sidebar__brand-initial" t-out="this.systemName.slice(0, 1)"/>
+                    <span t-else="" class="cbt-sidebar__brand-mark" aria-hidden="true">
+                        <i/><i/><i/><i/>
+                    </span>
+                    <span class="cbt-sidebar__label" t-if="this.showLabels" t-out="this.showSystemBrand ? this.systemName : this.labels.apps"/>
+                </button>
+                <button t-if="this.showLabels and this.prefs.cbt_nav_mode === 'vertical' and this.prefs.cbt_sidebar_mode !== 'expanded'"
+                        type="button" class="cbt-icon-btn cbt-sidebar__lock"
+                        t-att-aria-pressed="this.prefs.cbt_sidebar_locked ? 'true' : 'false'"
+                        t-att-title="this.prefs.cbt_sidebar_locked ? this.labels.unlock : this.labels.lock"
+                        t-att-aria-label="this.prefs.cbt_sidebar_locked ? this.labels.unlock : this.labels.lock"
+                        t-on-click="this.toggleLock">
+                    <i class="oi" t-att-data-icon="this.prefs.cbt_sidebar_locked ? 'lock' : 'lock_open'" aria-hidden="true"/>
+                </button>
+            </div>
+
+            <!-- Filter -->
+            <!-- <div class="cbt-sidebar__search" t-if="this.showLabels">
+                <i class="oi" data-icon="search" aria-hidden="true"/>
+                <input type="search" class="cbt-sidebar__search-input"
+                       t-att-placeholder="this.labels.filter"
+                       t-att-aria-label="this.labels.filter"
+                       t-att-value="this.state.query" t-on-input="(ev) => this.state.query = ev.target.value"/>
+            </div> -->
+
+            <div class="cbt-sidebar__scroll">
+                <!-- Filter results -->
+                <t t-if="this.state.query.trim() and this.showLabels">
+                    <ul class="cbt-sidebar__list" role="list">
+                        <li t-foreach="this.filteredEntries" t-as="entry" t-key="entry.key">
+                            <a class="cbt-sidebar__item cbt-sidebar__result"
+                               t-att-href="this.nav.getHref(entry.menu)"
+                               t-on-click="(ev) => this.onEntryClick(entry, ev)">
+                                <AppIcon app="entry.app" size="'sm'"/>
+                                <span class="cbt-sidebar__label">
+                                    <span class="cbt-sidebar__result-name" t-out="entry.name"/>
+                                    <span class="cbt-sidebar__result-path" t-if="entry.path.length" t-out="entry.path.join(' / ')"/>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p t-if="!this.filteredEntries.length" class="cbt-sidebar__empty" t-out="this.labels.noResult"/>
+                </t>
+                <t t-else="">
+                    <!-- Favorites -->
+                    <section t-if="this.favoriteApps.length and !this.isVerticalNav" class="cbt-sidebar__section">
+                        <h6 class="cbt-sidebar__heading" t-if="this.showLabels" t-out="this.labels.favorites"/>
+                        <ul class="cbt-sidebar__list" role="list">
+                            <li t-foreach="this.favoriteApps" t-as="app" t-key="'fav_' + app.id">
+                                <t t-call="dcs_backend_theme.SidebarAppRow"/>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Menus of the open app (sidebar mode) -->
+                    <section t-if="this.isVerticalNav and this.currentApp" class="cbt-sidebar__section">
+                        <h6 class="cbt-sidebar__heading" t-if="this.showLabels" t-out="this.currentApp.name"/>
+                        <ul class="cbt-sidebar__tree cbt-sidebar__tree--root" role="tree" t-att-aria-label="this.currentApp.name">
+                            <t t-call="dcs_backend_theme.SidebarTree" nodes="this.getTree(this.currentApp)" depth="0"/>
+                        </ul>
+                    </section>
+
+                    <!-- Applications -->
+                    <section t-if="!this.isVerticalNav or !this.currentApp" class="cbt-sidebar__section">
+                        <h6 class="cbt-sidebar__heading" t-if="this.showLabels" t-out="this.labels.apps"/>
+                        <ul class="cbt-sidebar__list" role="tree" t-att-aria-label="this.labels.apps">
+                            <li t-foreach="this.apps" t-as="app" t-key="app.id" role="none">
+                                <t t-call="dcs_backend_theme.SidebarAppRow"/>
+                                <t t-if="this.showTree and this.state.expandedAppId === app.id">
+                                    <ul class="cbt-sidebar__tree" role="group">
+                                        <t t-call="dcs_backend_theme.SidebarTree" nodes="this.getTree(app)" depth="1"/>
+                                    </ul>
+                                </t>
+                            </li>
+                        </ul>
+                    </section>
+                </t>
+            </div>
+
+            <!-- Footer -->
+            <div class="cbt-sidebar__footer">
+                <button type="button" class="cbt-sidebar__item"
+                        t-on-click="this.openSettings"
+                        t-att-aria-label="this.labels.settings"
+                        t-att-data-tooltip="this.tooltip(this.labels.settings)"
+                        t-att-data-tooltip-position="this.tooltipPosition">
+                    <i class="oi cbt-sidebar__leaf-icon" data-icon="tune" aria-hidden="true"/>
+                    <span class="cbt-sidebar__label" t-if="this.showLabels" t-out="this.labels.settings"/>
+                </button>
+                <button t-if="this.isVerticalNav or this.isCompact" type="button" class="cbt-sidebar__item"
+                        t-on-click="this.toggleMode"
+                        t-att-aria-label="this.isCompact ? this.labels.expand : this.labels.collapse"
+                        t-att-data-tooltip="this.tooltip(this.isCompact ? this.labels.expand : this.labels.collapse)"
+                        t-att-data-tooltip-position="this.tooltipPosition">
+                    <i class="oi cbt-sidebar__leaf-icon cbt-sidebar__collapse-icon" t-att-data-icon="this.isCompact ? 'keyboard_double_arrow_right' : 'keyboard_double_arrow_left'" aria-hidden="true"/>
+                    <span class="cbt-sidebar__label" t-if="this.showLabels" t-out="this.isCompact ? this.labels.expand : this.labels.collapse"/>
+                </button>
+            </div>
+        </nav>
+        <!-- Hover edge to reveal a collapsed, unlocked sidebar -->
+        <div t-if="this.isVisible and this.prefs.cbt_nav_mode === 'vertical' and this.prefs.cbt_sidebar_mode === 'collapsed' and !this.themeUi.sidebarPeek and !this.prefs.cbt_sidebar_locked"
+             t-attf-class="cbt-sidebar-edge cbt-sidebar-edge--{{ this.prefs.cbt_sidebar_position }}"
+             t-on-mouseenter="this.onMouseEnter" aria-hidden="true"/>
+        <div t-if="this.isVisible and this.themeUi.sidebarPeek and this.prefs.cbt_sidebar_mode === 'collapsed'"
+             class="cbt-sidebar-scrim" t-on-click="this.endPeek" aria-hidden="true"/>
+    </t>
+
+    <t t-name="dcs_backend_theme.SidebarAppRow">
+        <t t-set="isCurrentApp" t-value="this.currentApp and this.currentApp.id === app.id"/>
+        <a class="cbt-sidebar__item cbt-sidebar__app"
+           role="treeitem"
+           t-att-class="{ active: isCurrentApp }"
+           t-att-href="this.nav.getHref(app)"
+           t-att-aria-current="isCurrentApp ? 'true' : false"
+           t-att-aria-expanded="this.showTree and isCurrentApp ? (this.state.expandedAppId === app.id ? 'true' : 'false') : false"
+           t-att-aria-label="app.name"
+           t-att-data-tooltip="this.tooltip(app.name)"
+           t-att-data-tooltip-position="this.tooltipPosition"
+           t-att-data-menu-xmlid="app.xmlid"
+           t-on-click="(ev) => this.onAppClick(app, ev)">
+            <AppIcon app="app" size="'sm'"/>
+            <span class="cbt-sidebar__label" t-if="this.showLabels" t-out="app.name"/>
+            <i t-if="this.showTree and isCurrentApp" class="oi cbt-sidebar__chevron" data-icon="keyboard_arrow_down"
+               t-att-class="{ 'cbt-sidebar__chevron--open': this.state.expandedAppId === app.id }" aria-hidden="true"/>
+        </a>
+    </t>
+
+    <t t-name="dcs_backend_theme.SidebarTree">
+        <t t-foreach="nodes" t-as="node" t-key="node.id">
+            <li role="none" t-att-style="'--cbt-depth: ' + depth">
+                <t t-if="node.childrenTree and node.childrenTree.length">
+                    <button type="button" class="cbt-sidebar__item cbt-sidebar__section-toggle"
+                            role="treeitem"
+                            t-att-aria-expanded="this.state.openSections[node.id] ? 'true' : 'false'"
+                            t-att-data-menu-xmlid="node.xmlid"
+                            t-on-click="() => this.toggleSection(node)">
+                        <span class="cbt-sidebar__label" t-out="node.name"/>
+                        <i class="oi cbt-sidebar__chevron" data-icon="keyboard_arrow_down"
+                           t-att-class="{ 'cbt-sidebar__chevron--open': this.state.openSections[node.id] }" aria-hidden="true"/>
+                    </button>
+                    <ul t-if="this.state.openSections[node.id]" class="cbt-sidebar__tree" role="group">
+                        <t t-call="dcs_backend_theme.SidebarTree" nodes="node.childrenTree" depth="depth + 1"/>
+                    </ul>
+                </t>
+                <a t-elif="node.actionID"
+                   class="cbt-sidebar__item cbt-sidebar__leaf"
+                   role="treeitem"
+                   t-att-class="{ active: this.isActive(node) }"
+                   t-att-href="this.nav.getHref(node)"
+                   t-att-aria-current="this.isActive(node) ? 'page' : false"
+                   t-att-data-menu-xmlid="node.xmlid"
+                   t-on-click="(ev) => this.onMenuClick(node, ev)">
+                    <span class="cbt-sidebar__label" t-out="node.name"/>
+                </a>
+            </li>
+        </t>
+    </t>
+</templates>

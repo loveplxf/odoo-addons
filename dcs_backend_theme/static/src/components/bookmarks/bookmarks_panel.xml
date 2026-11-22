@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dcs_backend_theme.BookmarksPanel">
+        <div class="cbt-overlay cbt-sheet-overlay" t-on-click.self="this.close">
+            <aside class="cbt-sheet" t-ref="this.rootRef" role="dialog" aria-modal="true" t-att-aria-label="this.labels.title">
+                <header class="cbt-sheet__header">
+                    <h2 class="cbt-sheet__title"><i class="oi oi-filled me-2" data-icon="bookmark" aria-hidden="true"/><t t-out="this.labels.title"/></h2>
+                    <button type="button" class="cbt-icon-btn" t-att-aria-label="this.labels.close" t-att-title="this.labels.close" t-on-click="this.close">
+                        <i class="oi" data-icon="close" aria-hidden="true"/>
+                    </button>
+                </header>
+                <div class="visually-hidden" aria-live="polite" t-out="this.state.announce"/>
+
+                <div class="cbt-sheet__toolbar">
+                    <button t-if="this.current" type="button" data-autofocus="1"
+                            t-attf-class="btn w-100 {{ this.currentBookmark ? 'btn-secondary' : 'btn-primary' }}"
+                            t-on-click="this.toggleCurrent">
+                        <i t-attf-class="oi me-2 {{ this.currentBookmark ? 'oi-filled' : '' }}" data-icon="bookmark" aria-hidden="true"/>
+                        <t t-out="this.currentBookmark ? this.labels.remove : this.labels.add"/>
+                        <span class="cbt-bookmark-current" t-out="this.current.label"/>
+                    </button>
+                    <p t-else="" class="text-muted small m-0" t-out="this.labels.notBookmarkable"/>
+                </div>
+
+                <div class="cbt-sheet__body">
+                    <ul class="cbt-bookmarks" t-if="this.bookmarks.length">
+                        <li t-foreach="this.bookmarks" t-as="bookmark" t-key="bookmark.id" class="cbt-bookmark">
+                            <t t-if="this.state.editingId === bookmark.id">
+                                <input class="form-control form-control-sm" t-att-value="this.state.draft" t-on-input="(ev) => this.state.draft = ev.target.value"
+                                       t-on-keydown="this.onRenameKeydown" t-on-blur="this.commitRename"
+                                       t-att-aria-label="this.labels.rename" maxlength="120" data-autofocus="1"/>
+                            </t>
+                            <t t-else="">
+                                <button type="button" class="cbt-bookmark__open" t-on-click="() => this.open(bookmark)">
+                                    <t t-set="app" t-value="this.appOf(bookmark)"/>
+                                    <AppIcon t-if="app" app="app" size="'sm'"/>
+                                    <span t-else="" class="cbt-bookmark__icon"><i class="oi" data-icon="bookmark" aria-hidden="true"/></span>
+                                    <span class="cbt-bookmark__text">
+                                        <span class="cbt-bookmark__label" t-out="bookmark.label"/>
+                                        <span class="cbt-bookmark__meta">
+                                            <t t-out="this.typeLabel(bookmark)"/>
+                                            <t t-if="app"> · <t t-out="app.name"/></t>
+                                        </span>
+                                    </span>
+                                </button>
+                                <div class="cbt-bookmark__actions">
+                                    <button type="button" class="cbt-icon-btn" t-att-title="this.labels.rename" t-att-aria-label="this.labels.rename + ': ' + bookmark.label" t-on-click="() => this.startRename(bookmark)"><i class="oi" data-icon="edit" aria-hidden="true"/></button>
+                                    <button type="button" class="cbt-icon-btn" t-att-title="this.labels.up" t-att-aria-label="this.labels.up" t-att-disabled="bookmark_first" t-on-click="() => this.move(bookmark, -1)"><i class="oi" data-icon="arrow_upward" aria-hidden="true"/></button>
+                                    <button type="button" class="cbt-icon-btn" t-att-title="this.labels.down" t-att-aria-label="this.labels.down" t-att-disabled="bookmark_last" t-on-click="() => this.move(bookmark, 1)"><i class="oi" data-icon="arrow_downward" aria-hidden="true"/></button>
+                                    <button type="button" class="cbt-icon-btn cbt-icon-btn--danger" t-att-title="this.labels.delete" t-att-aria-label="this.labels.delete + ': ' + bookmark.label" t-on-click="() => this.remove(bookmark)"><i class="oi" data-icon="delete" aria-hidden="true"/></button>
+                                </div>
+                            </t>
+                        </li>
+                    </ul>
+                    <div t-else="" class="cbt-sheet__empty">
+                        <div class="cbt-sheet__empty-icon"><i class="oi" data-icon="bookmark" aria-hidden="true"/></div>
+                        <h3 t-out="this.labels.empty"/>
+                        <p t-out="this.labels.emptyHelp"/>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </t>
+</templates>

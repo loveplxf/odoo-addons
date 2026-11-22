@@ -1,0 +1,83 @@
+// =============================================================================
+// Dark mode refinements
+// -----------------------------------------------------------------------------
+// The dark bundle already recompiles all Odoo and theme styles with the dark
+// variables (primary_variables.dark.scss). This file only adjusts details
+// that rely on literal colors rather than variables.
+// =============================================================================
+
+:root {
+    // Primary needs a lighter tone for readable text on dark surfaces.
+    --cbt-primary-text: color-mix(in srgb, var(--cbt-primary) 62%, #ffffff);
+    --cbt-primary-soft: color-mix(in srgb, var(--cbt-primary) 22%, var(--cbt-surface));
+    --cbt-primary-softer: color-mix(in srgb, var(--cbt-primary) 11%, var(--cbt-surface));
+    --cbt-primary-hover: color-mix(in srgb, var(--cbt-primary) 85%, #ffffff);
+    --cbt-primary-active: color-mix(in srgb, var(--cbt-primary) 72%, #ffffff);
+}
+
+// $o-white is a dark color in this bundle; literal "white text" utilities
+// must stay white.
+.text-white { color: #ffffff !important; }
+.text-bg-dark { background-color: #2b313e !important; color: #f3f5fa !important; }
+.bg-white { background-color: var(--cbt-surface) !important; }
+.bg-light { background-color: var(--cbt-surface-raised) !important; }
+
+// Images and logos designed for white backgrounds get a subtle plate.
+.o_field_image img[src*="/web/image/res.company"],
+.o_kanban_record .o_kanban_image img {
+    background-color: rgba(255, 255, 255, .92);
+    border-radius: var(--cbt-radius-sm);
+}
+
+// Odoo's default app icons are colorful PNGs: avoid harsh edges.
+.cbt-app-icon img { filter: saturate(.95) brightness(.98); }
+
+// Inputs: a faint fill helps locate fields on dark sheets.
+.o_form_view .o_field_widget:not(.o_readonly_modifier) .o_input:not(:focus) {
+    background-color: rgba(255, 255, 255, .02);
+}
+
+// Code / HTML fields keep readable contrast
+.o_field_html .note-editable, .odoo-editor-editable {
+    color: var(--cbt-text);
+}
+
+// Calendar: FullCalendar ships light overlay colors as CSS variables.
+.o_calendar_renderer {
+    --fc-non-business-color: rgba(0, 0, 0, .28);
+    --fc-neutral-bg-color: var(--cbt-surface-raised);
+    --fc-page-bg-color: var(--cbt-surface);
+    --fc-border-color: var(--cbt-border);
+    --fc-highlight-color: rgba(var(--cbt-primary-rgb), .18);
+    .fc-theme-standard td, .fc-theme-standard th {
+        border-color: var(--cbt-border);
+    }
+}
+
+// Flat app icons: keep monochrome glyphs legible on dark tiles.
+:root[data-cbt-icons="flat"] .cbt-app-icon img {
+    mix-blend-mode: normal;
+    filter: grayscale(1) brightness(1.7);
+}
+
+// Odoo 20 dashboard cards (Sales, …) expose their colors as CSS variables;
+// the defaults are light pastels that would carry light text in this theme.
+.o_dashboard_card {
+    --DashboardCard__purple-bg-color: rgba(168, 85, 247, .2);
+    --DashboardCard__purple-bg-color--active: rgba(168, 85, 247, .32);
+    --DashboardCard__purple-color: #d8b4fe;
+    --DashboardCard__purple-color--active: #ead7ff;
+    --DashboardCard__orange-bg-color: rgba(249, 115, 22, .2);
+    --DashboardCard__orange-bg-color--active: rgba(249, 115, 22, .32);
+    --DashboardCard__orange-color: #fdba74;
+    --DashboardCard__orange-color--active: #fed7aa;
+    --DashboardCard__cyan-bg-color: rgba(6, 182, 212, .2);
+    --DashboardCard__cyan-bg-color--active: rgba(6, 182, 212, .32);
+    --DashboardCard__cyan-color: #67e8f9;
+    --DashboardCard__cyan-color--active: #a5f3fc;
+    --DashboardCard__red-bg-color: rgba(239, 68, 68, .2);
+    --DashboardCard__red-bg-color--active: rgba(239, 68, 68, .32);
+    --DashboardCard__red-color: #fca5a5;
+    --DashboardCard__red-color--active: #fecaca;
+    color: var(--cbt-text);
+}

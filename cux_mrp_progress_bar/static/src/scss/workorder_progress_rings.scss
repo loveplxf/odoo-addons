@@ -1,0 +1,84 @@
+.o_cux_mrp_rings {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 2px 0;
+}
+
+.o_cux_ring {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 46px;
+}
+
+.o_cux_ring_circle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.o_cux_ring_svg {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.o_cux_ring_track {
+    fill: none;
+    stroke: #e3e6eb;
+    stroke-width: 2.5;
+}
+
+.o_cux_ring_value {
+    fill: none;
+    stroke: #1f6fd0;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+.o_cux_ring_label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 600;
+    color: #1f6fd0;
+}
+
+.o_cux_ring_zero .o_cux_ring_label {
+    color: #6c757d;
+}
+
+.o_cux_ring_done {
+    .o_cux_ring_track {
+        fill: #2fb344;
+        stroke: #2fb344;
+    }
+
+    .o_cux_ring_check {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+}
+
+.o_cux_ring_name {
+    display: block;
+    width: 100%;
+    margin-top: 2px;
+    font-size: 10px;
+    line-height: 1.2;
+    text-align: center;
+    color: #6c757d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

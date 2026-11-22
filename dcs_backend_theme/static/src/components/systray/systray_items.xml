@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dcs_backend_theme.BookmarksSystray">
+        <div class="o-dropdown cbt-systray-item">
+            <button type="button" class="cbt-systray-btn" t-on-click="this.open" t-att-title="this.label" t-att-aria-label="this.label"
+                    aria-haspopup="dialog" t-att-aria-expanded="this.themeUi.panel === 'bookmarks' ? 'true' : 'false'">
+                <i class="oi" data-icon="bookmark" aria-hidden="true"/>
+            </button>
+        </div>
+    </t>
+
+    <t t-name="dcs_backend_theme.ThemeSettingsSystray">
+        <div class="o-dropdown cbt-systray-item">
+            <button type="button" class="cbt-systray-btn" t-on-click="this.open" t-att-title="this.label" t-att-aria-label="this.label"
+                    aria-haspopup="dialog" t-att-aria-expanded="this.themeUi.panel === 'settings' ? 'true' : 'false'">
+                <i class="oi" data-icon="tune" aria-hidden="true"/>
+            </button>
+        </div>
+    </t>
+</templates>

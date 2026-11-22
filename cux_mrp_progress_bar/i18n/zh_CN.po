@@ -1,0 +1,59 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * cux_mrp_progress_bar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-22 00:00+0000\n"
+"PO-Revision-Date: 2026-11-22 00:00+0000\n"
+"Last-Translator: Hubin\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: cux_mrp_progress_bar
+#: model:ir.module.module,shortdesc:base.module_cux_mrp_progress_bar
+msgid "MRP Progress Bar"
+msgstr "制造进度条"
+
+#. module: cux_mrp_progress_bar
+#: model:ir.module.module,summary:base.module_cux_mrp_progress_bar
+msgid "Show the manufacturing order progress as a progress bar"
+msgstr "以进度条展示制造订单与工单的进度"
+
+#. module: cux_mrp_progress_bar
+#: model:ir.model.fields,field_description:cux_mrp_progress_bar.field_mrp_workorder__mrp_workorder_progress
+#: model_terms:ir.ui.view,arch_db:cux_mrp_progress_bar.mrp_production_form_view_progress
+#: model_terms:ir.ui.view,arch_db:cux_mrp_progress_bar.mrp_production_workorder_form_view_progress
+#: model_terms:ir.ui.view,arch_db:cux_mrp_progress_bar.mrp_production_workorder_tree_view_progress
+msgid "Progress"
+msgstr "进度"
+
+#. module: cux_mrp_progress_bar
+#: model:ir.model.fields,help:cux_mrp_progress_bar.field_mrp_workorder__mrp_workorder_progress
+msgid ""
+"Percentage of the work order quantity already produced (produced / quantity "
+"to produce)."
+msgstr "工单已生产数量占工单总数量（应生产数量）的百分比。"
+
+#. module: cux_mrp_progress_bar
+#: model:ir.model.fields,field_description:cux_mrp_progress_bar.field_mrp_production__cux_workorder_progress
+#: model_terms:ir.ui.view,arch_db:cux_mrp_progress_bar.mrp_production_tree_view_progress
+msgid "Operations Progress"
+msgstr "工序进度"
+
+#. module: cux_mrp_progress_bar
+#: model:ir.model.fields,help:cux_mrp_progress_bar.field_mrp_production__cux_workorder_progress
+msgid "Progress of every work order of the order, drawn as rings in the list view."
+msgstr "订单下每道工序工单的进度，在列表中以环形展示。"
+
+#. module: cux_mrp_progress_bar
+#: code:addons/cux_mrp_progress_bar/static/src/js/workorder_progress_rings.js:0
+#, python-format
+msgid "Work Order Progress Rings"
+msgstr "工单进度环"

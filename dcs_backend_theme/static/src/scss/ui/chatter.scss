@@ -1,0 +1,97 @@
+// =============================================================================
+// Chatter, messages, composer, attachments, activities
+// =============================================================================
+
+.o-mail-Form-chatter, .o-mail-ChatterContainer {
+    background-color: var(--cbt-bg);
+
+    &.o-aside {
+        border-inline-start: 1px solid var(--cbt-border);
+    }
+}
+
+.o-mail-Chatter {
+    .o-mail-Chatter-top {
+        background-color: color-mix(in srgb, var(--cbt-bg) 88%, transparent);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--cbt-border);
+        // Give the action row (send message / log note / activity) the same
+        // breathing room as the status bar instead of hugging the divider.
+        padding-block-start: .60rem;
+    }
+
+    .o-mail-Chatter-topbar .btn, .o-mail-Chatter-top .btn {
+        border-radius: var(--cbt-radius);
+    }
+    .o-mail-Chatter-sendMessage.active, .o-mail-Chatter-logNote.active {
+        background-color: var(--cbt-primary);
+        border-color: var(--cbt-primary);
+        color: var(--cbt-on-primary);
+    }
+}
+
+// Composer
+.o-mail-Composer {
+    .o-mail-Composer-coreMain, .o-mail-Composer-inputContainer {
+        border-radius: var(--cbt-radius-lg);
+    }
+    .o-mail-Composer-input, .o-mail-Composer-inputStyle {
+        border-radius: var(--cbt-radius-lg);
+    }
+}
+
+// Messages as soft cards
+.o-mail-Chatter .o-mail-Message {
+    border-radius: var(--cbt-radius-lg);
+    transition: background-color var(--cbt-duration) var(--cbt-ease);
+    &:hover { background-color: var(--cbt-surface-hover); }
+    .o-mail-Message-bubble { border-radius: var(--cbt-radius-lg); }
+    .o-mail-Message-author { font-weight: 650; color: var(--cbt-text-strong); }
+    .o-mail-Message-date { color: var(--cbt-text-muted); }
+}
+.o-mail-DateSection {
+    .o-mail-DateSection-date, span {
+        font-size: .72rem;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        color: var(--cbt-text-muted);
+    }
+}
+
+// Attachments
+.o-mail-AttachmentCard, .o-mail-AttachmentImage {
+    border-radius: var(--cbt-radius) !important;
+    border: 1px solid var(--cbt-border);
+    overflow: hidden;
+    background-color: var(--cbt-surface);
+    box-shadow: var(--cbt-shadow-sm);
+    transition: box-shadow var(--cbt-duration) var(--cbt-ease);
+    &:hover { box-shadow: var(--cbt-shadow-md); }
+}
+
+// Activities
+.o-mail-Activity {
+    border-radius: var(--cbt-radius);
+    .o-mail-Activity-user { font-weight: 600; }
+}
+.o-mail-ActivityList, .o-mail-Chatter-activity {
+    .o-mail-Activity:hover { background-color: var(--cbt-surface-hover); }
+}
+
+// Followers / systray counters follow the primary color
+.o-mail-Followers-counter, .o-mail-ChatWindow-counter {
+    background-color: var(--cbt-primary) !important;
+    color: var(--cbt-on-primary) !important;
+}
+
+// Bottom chatter forced on XXL screens: the renderer is a flex row there, so
+// stack the sheet and the chatter, and let the whole form scroll as one.
+.o_form_view.o_xxl_form_view .o_form_renderer:has(> .o_form_sheet_bg + .o-mail-Form-chatter:not(.o-aside)) {
+    flex-direction: column;
+    overflow: auto;
+    > .o_form_sheet_bg { flex: 0 0 auto; overflow: visible; }
+    > .o-mail-Form-chatter { flex: 0 0 auto; }
+}
+:root[data-cbt-chatter="bottom"] .o_form_view .o-mail-Form-chatter:not(.o-aside) {
+    .o-mail-Chatter { max-inline-size: 1140px; margin-inline: auto; }
+}

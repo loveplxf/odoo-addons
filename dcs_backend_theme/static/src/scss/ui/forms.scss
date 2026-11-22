@@ -1,0 +1,155 @@
+// =============================================================================
+// Form views
+// =============================================================================
+
+.o_form_view {
+    .o_form_sheet_bg {
+        background-color: var(--cbt-bg);
+    }
+
+    .o_form_sheet_bg > .o_form_sheet,
+    .o_form_sheet_bg > div > .o_form_sheet {
+        border: 1px solid var(--cbt-border) !important;
+        border-radius: var(--cbt-radius-xl);
+        box-shadow: var(--cbt-shadow-sm);
+        background-color: var(--cbt-surface);
+    }
+
+    // Header bar with action buttons and the statusbar
+    .o_form_statusbar {
+        gap: .5rem;
+        padding-block: .5rem;
+        .o_statusbar_buttons .btn { border-radius: var(--cbt-radius); }
+    }
+
+    // Statusbar: pill segments instead of arrows
+    .o_statusbar_status {
+        gap: .2rem;
+        padding: .2rem;
+        border-radius: 999px;
+        background-color: var(--cbt-surface-sunken);
+        border: 1px solid var(--cbt-border);
+
+        .o_arrow_button {
+            // Odoo draws the chevrons with a clip-path polygon and overlaps the
+            // buttons with a negative margin. Both must go, otherwise they cut
+            // the rounded pill (visible on the left of the current status).
+            clip-path: none !important;
+            margin-inline-start: 0 !important;
+            border: 0 !important;
+            border-radius: 999px !important;
+            padding-inline: .9rem !important;
+            color: var(--cbt-text-muted);
+            background: transparent;
+            font-weight: 500;
+            &::before, &::after { display: none !important; }
+            &:not(.o_arrow_button_current):not(:disabled):hover {
+                background-color: var(--cbt-surface-hover);
+                color: var(--cbt-text-strong);
+            }
+        }
+        .o_arrow_button_current, .o_arrow_button.o_arrow_button_current:disabled {
+            background-color: var(--cbt-primary) !important;
+            color: var(--cbt-on-primary) !important;
+            opacity: 1;
+            box-shadow: 0 1px 2px rgba(var(--cbt-primary-rgb), .3);
+        }
+    }
+
+    // Titles
+    .oe_title h1, .oe_title .o_field_widget[name="name"] {
+        font-weight: 700;
+        letter-spacing: -.02em;
+    }
+
+    // Labels and groups
+    .o_form_label {
+        color: var(--cbt-text-muted);
+        font-weight: 500;
+    }
+    .o_horizontal_separator, .o_group .o_horizontal_separator {
+        color: var(--cbt-text-strong);
+        font-weight: 650;
+        letter-spacing: .01em;
+        border-color: var(--cbt-border) !important;
+    }
+    .o_inner_group > .o_wrap_field, .o_inner_group > div { row-gap: .15rem; }
+
+    // Inputs: quiet until hovered/focused
+    .o_field_widget .o_input,
+    .o_field_widget input.o_input,
+    .o_field_widget textarea.o_input,
+    .o_field_widget select.o_input {
+        border-radius: var(--cbt-radius-sm);
+        transition: border-color var(--cbt-duration) var(--cbt-ease), background-color var(--cbt-duration) var(--cbt-ease);
+    }
+    .o_field_widget:not(.o_readonly_modifier):hover .o_input:not(:focus) {
+        border-color: var(--cbt-border-strong);
+    }
+    .o_required_modifier .o_input {
+        border-bottom-color: color-mix(in srgb, var(--cbt-primary) 55%, var(--cbt-border));
+    }
+
+    // Relational fields & tags
+    .o_field_many2many_tags .o_tag, .o_field_tags .o_tag {
+        border-radius: 999px;
+        padding-inline: .55rem;
+    }
+    .o_field_many2one .o_external_button { border-radius: var(--cbt-radius-sm); }
+
+    // Notebook
+    .o_notebook {
+        .o_notebook_headers {
+            border-bottom: 1px solid var(--cbt-border);
+        }
+        .nav-tabs {
+            border-bottom: 0;
+            gap: .25rem;
+            .nav-link {
+                border: 0;
+                border-bottom: 2px solid transparent;
+                border-radius: 0;
+                color: var(--cbt-text-muted);
+                font-weight: 500;
+                padding-inline: .9rem;
+                transition: color var(--cbt-duration) var(--cbt-ease), border-color var(--cbt-duration) var(--cbt-ease);
+                &:hover { color: var(--cbt-text-strong); border-bottom-color: var(--cbt-border-strong); }
+                &.active {
+                    color: var(--cbt-primary-text);
+                    border-bottom-color: var(--cbt-primary);
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    // Smart buttons
+    .oe_button_box {
+        gap: 0;
+        .oe_stat_button {
+            border-color: var(--cbt-border) !important;
+            color: var(--cbt-text);
+            transition: background-color var(--cbt-duration) var(--cbt-ease);
+            &:hover { background-color: var(--cbt-primary-softer); }
+            .o_button_icon { color: var(--cbt-primary-text); }
+            .o_stat_value { font-weight: 650; color: var(--cbt-text-strong); }
+        }
+    }
+
+    // Ribbons keep their semantic color; soften the shadow only
+    .ribbon span { box-shadow: var(--cbt-shadow-sm); }
+
+    // One2many lists inside forms
+    .o_field_x2many .o_list_renderer {
+        border: 1px solid var(--cbt-border);
+        border-radius: var(--cbt-radius);
+    }
+}
+
+// Avatar / image fields
+.o_field_image img, .oe_avatar img {
+    border-radius: var(--cbt-radius-lg);
+}
+
+// Attachments indicator in forms
+.o_form_view .o_attachment_preview { border-radius: var(--cbt-radius-lg); }

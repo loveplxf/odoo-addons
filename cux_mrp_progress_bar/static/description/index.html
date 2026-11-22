@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MRP Progress Bar for Odoo 20</title>
+</head>
+<body style="margin:0;background:#ffffff;color:#2b2b33;font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;">
+<div style="max-width:1080px;margin:0 auto;padding:0 20px;">
+
+    <!-- Header -->
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:20px 0;border-bottom:1px solid #ece8ef;font-size:14px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+            <img src="./icon.png" alt="" width="32" height="32" style="border-radius:7px;"/>
+            <strong style="font-size:15px;">MRP Progress Bar</strong>
+            <span style="color:#8a8590;">for Odoo 20</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;color:#55525c;">
+            <span style="padding:3px 10px;border:1px solid #ece8ef;border-radius:20px;">Community &amp; Enterprise</span>
+            <span style="padding:3px 10px;border:1px solid #d6eedd;border-radius:20px;color:#2e7d32;">&#10003; On-premise</span>
+            <span style="padding:3px 10px;border:1px solid #d6eedd;border-radius:20px;color:#2e7d32;">&#10003; Odoo.sh</span>
+            <span style="padding:3px 10px;border:1px solid #f3d9d9;border-radius:20px;color:#b3261e;">&#10007; Odoo Online</span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div style="text-align:center;padding:56px 0 20px;">
+        <div style="display:inline-block;padding:4px 14px;border-radius:20px;background:#f4eef3;color:#714b67;font-size:13px;font-weight:600;margin-bottom:18px;">
+            Order progress bar &middot; Operation rings &middot; No configuration &middot; 简体中文
+        </div>
+        <h1 style="font-size:42px;line-height:1.15;margin:0 0 14px;font-weight:700;letter-spacing:-0.02em;">
+            See how far every manufacturing order <span style="color:#714b67;">has gone</span>
+        </h1>
+        <p style="font-size:19px;color:#55525c;max-width:720px;margin:0 auto;">
+            A progress bar on the order form, a percentage on every work order, and a row of rings in the order
+            list: one ring per operation, so the shop floor status is readable without opening anything.
+        </p>
+    </div>
+    <img src="./image.jpg" alt="Operations progress rings in the manufacturing order list"
+         style="display:block;width:100%;border:1px solid #e4dfe8;border-radius:10px;box-shadow:0 12px 40px rgba(43,43,51,.08);"/>
+
+    <!-- At a glance -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px;margin:40px 0 8px;">
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <div style="font-weight:700;margin-bottom:4px;">Order progress</div>
+            <div style="color:#55525c;font-size:15px;">The order form compares the produced quantity with the quantity to produce, for instance <em>8 / 12</em>.</div>
+        </div>
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <div style="font-weight:700;margin-bottom:4px;">Operation progress</div>
+            <div style="color:#55525c;font-size:15px;">Every work order carries its own percentage: produced quantity divided by its quantity to produce.</div>
+        </div>
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <div style="font-weight:700;margin-bottom:4px;">Rings in the list</div>
+            <div style="color:#55525c;font-size:15px;">One ring per operation, right after the quantity: a blue arc while it runs, a green check when it is done.</div>
+        </div>
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <div style="font-weight:700;margin-bottom:4px;">Read without clicking</div>
+            <div style="color:#55525c;font-size:15px;">Operation names sit under the rings; hover one to get the exact percentage.</div>
+        </div>
+    </div>
+
+    <!-- How it works -->
+    <h2 style="font-size:28px;margin:64px 0 8px;letter-spacing:-0.01em;">How it works</h2>
+    <p style="color:#55525c;margin:0 0 24px;">Three places to look, nothing to set up.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:16px;margin-bottom:8px;">
+        <div><div style="width:30px;height:30px;border-radius:50%;background:#714b67;color:#fff;text-align:center;line-height:30px;font-weight:700;margin-bottom:8px;">1</div>
+            <strong>Open an order</strong><br/><span style="color:#55525c;font-size:15px;">The bar sits under the header: it starts at <em>0 / 12</em> and fills up as finished moves are validated.</span></div>
+        <div><div style="width:30px;height:30px;border-radius:50%;background:#714b67;color:#fff;text-align:center;line-height:30px;font-weight:700;margin-bottom:8px;">2</div>
+            <strong>Check the work orders</strong><br/><span style="color:#55525c;font-size:15px;">Each operation shows its own progress, both as a column in the list and as a row on the form.</span></div>
+        <div><div style="width:30px;height:30px;border-radius:50%;background:#714b67;color:#fff;text-align:center;line-height:30px;font-weight:700;margin-bottom:8px;">3</div>
+            <strong>Scan the order list</strong><br/><span style="color:#55525c;font-size:15px;">The ring row after the quantity tells you which operations are done, running, or still waiting.</span></div>
+        <div><div style="width:30px;height:30px;border-radius:50%;background:#714b67;color:#fff;text-align:center;line-height:30px;font-weight:700;margin-bottom:8px;">4</div>
+            <strong>Hover a ring</strong><br/><span style="color:#55525c;font-size:15px;">The tooltip repeats the operation name and its percentage, even when the label is truncated.</span></div>
+    </div>
+
+    <!-- The order -->
+    <h2 style="font-size:28px;margin:64px 0 8px;">The manufacturing order</h2>
+    <p style="color:#55525c;margin:0 0 24px;">Order level and work order level, both computed from the real quantities.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:28px;">
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <h3 style="font-size:18px;margin:0 0 4px;">One bar, two numbers</h3>
+            <p style="color:#55525c;margin:0;font-size:15px;">The form bar reuses the standard progress bar widget with the quantity to produce as its maximum, so it displays <em>produced / total</em> and not just a percentage.</p>
+        </div>
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <h3 style="font-size:18px;margin:0 0 4px;">Driven by the finished moves</h3>
+            <p style="color:#55525c;margin:0;font-size:15px;">The produced quantity comes from the validated finished moves of the order: no manual field to maintain, no drift between the bar and the stock.</p>
+        </div>
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <h3 style="font-size:18px;margin:0 0 4px;">Every work order</h3>
+            <p style="color:#55525c;margin:0;font-size:15px;"><em>mrp_workorder_progress</em> equals the produced quantity divided by the work order quantity to produce, in percent, capped at 100%.</p>
+        </div>
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <h3 style="font-size:18px;margin:0 0 4px;">List and form</h3>
+            <p style="color:#55525c;margin:0;font-size:15px;">The work order progress is added right after <em>Quantity To Produce</em> in the list, and below the quantity line on the work order form.</p>
+        </div>
+    </div>
+    <img src="./image_2.jpg" alt="Work order progress column on the manufacturing order form"
+         style="display:block;width:100%;border:1px solid #e4dfe8;border-radius:10px;box-shadow:0 12px 40px rgba(43,43,51,.08);margin-top:28px;"/>
+    <p style="color:#8a8590;font-size:14px;text-align:center;margin:10px 0 0;">Each work order shows its own progress, right after the quantity to produce &mdash; 100%, 50%, 10% or still 0%.</p>
+
+    <!-- The rings -->
+    <h2 style="font-size:28px;margin:64px 0 8px;">The rings</h2>
+    <p style="color:#55525c;margin:0 0 24px;">In the manufacturing order list, one ring per operation, in the order of the routing.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px;">
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <strong>Running</strong>
+            <ul style="margin:8px 0 0;padding-left:18px;color:#55525c;font-size:14px;">
+                <li>a blue arc on a light grey track</li>
+                <li>the percentage in blue, inside the ring</li>
+                <li>the arc length matches the progress</li>
+            </ul>
+        </div>
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <strong>Done and waiting</strong>
+            <ul style="margin:8px 0 0;padding-left:18px;color:#55525c;font-size:14px;">
+                <li>100%: a solid green disc with a white check</li>
+                <li>0%: a grey ring with a grey <em>0%</em></li>
+                <li>anything in between: the blue arc</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <h2 style="font-size:28px;margin:64px 0 8px;">Everything it does</h2>
+    <p style="color:#55525c;margin:0 0 8px;">Small additions, no changes to the standard flow.</p>
+
+    <h3 style="font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:#714b67;margin:28px 0 12px;">Order level</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:20px;">
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Progress bar</strong><br/><span style="color:#55525c;font-size:14px;">Under the header of the form, with the produced and total quantities side by side.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Ring row</strong><br/><span style="color:#55525c;font-size:14px;">In the list, after the quantity: the whole routing at a glance.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Read-only</strong><br/><span style="color:#55525c;font-size:14px;">Both views are computed: nobody can overwrite a progress by typing in it.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>No configuration</strong><br/><span style="color:#55525c;font-size:14px;">Install the module and the bar and rings are there; the column can still be hidden like any other.</span></div>
+    </div>
+
+    <h3 style="font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:#714b67;margin:32px 0 12px;">Operation level</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:20px;">
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Percentage field</strong><br/><span style="color:#55525c;font-size:14px;"><em>mrp_workorder_progress</em>, computed from the produced and to produce quantities.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>List column</strong><br/><span style="color:#55525c;font-size:14px;">Right after <em>To Produce</em>, in both the order's Operations tab and the Work Orders menu.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Form row</strong><br/><span style="color:#55525c;font-size:14px;">Below the produced / to produce line of the work order form.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Capped at 100%</strong><br/><span style="color:#55525c;font-size:14px;">Over-production never draws a ring or a bar past full.</span></div>
+    </div>
+
+    <h3 style="font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:#714b67;margin:32px 0 12px;">Compatibility</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:20px;">
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Odoo 20</strong><br/><span style="color:#55525c;font-size:14px;">Built on the Odoo 20 web client: a standard field widget, no theme dependency.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Community &amp; Enterprise</strong><br/><span style="color:#55525c;font-size:14px;">Manufacturing is all it needs; Shop Floor records inherit the same fields.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Translation ready</strong><br/><span style="color:#55525c;font-size:14px;">The labels are translatable and <strong>Simplified Chinese</strong> ships with the module.</span></div>
+        <div style="padding:16px;border:1px solid #ece8ef;border-radius:8px;"><strong>Light footprint</strong><br/><span style="color:#55525c;font-size:14px;">Depends only on <em>mrp</em>: one field, one widget, four view inheritances.</span></div>
+    </div>
+
+    <!-- Compatibility table -->
+    <h2 style="font-size:28px;margin:64px 0 8px;">Where it runs</h2>
+    <p style="color:#55525c;margin:0 0 20px;">A small add-on on top of Manufacturing: nothing on the stock or accounting side.</p>
+    <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:15px;min-width:560px;">
+            <tr style="text-align:left;border-bottom:2px solid #ece8ef;">
+                <th style="padding:10px 12px;">Edition</th><th style="padding:10px 12px;">Order bar</th><th style="padding:10px 12px;">Operation rings</th><th style="padding:10px 12px;">Notes</th>
+            </tr>
+            <tr style="border-bottom:1px solid #ece8ef;">
+                <td style="padding:10px 12px;font-weight:600;">Community</td>
+                <td style="padding:10px 12px;color:#55525c;">&#10003;</td>
+                <td style="padding:10px 12px;color:#55525c;">&#10003;</td>
+                <td style="padding:10px 12px;color:#55525c;">Only depends on <em>mrp</em></td>
+            </tr>
+            <tr style="border-bottom:1px solid #ece8ef;">
+                <td style="padding:10px 12px;font-weight:600;">Enterprise</td>
+                <td style="padding:10px 12px;color:#55525c;">&#10003;</td>
+                <td style="padding:10px 12px;color:#55525c;">&#10003;</td>
+                <td style="padding:10px 12px;color:#55525c;">Works with the Shop Floor tablet as well</td>
+            </tr>
+            <tr>
+                <td style="padding:10px 12px;font-weight:600;">Odoo Online</td>
+                <td style="padding:10px 12px;color:#55525c;">&#10007;</td>
+                <td style="padding:10px 12px;color:#55525c;">&#10007;</td>
+                <td style="padding:10px 12px;color:#55525c;">Custom modules cannot be installed</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Getting started -->
+    <h2 style="font-size:28px;margin:64px 0 16px;">Getting started</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;">
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <strong>Install</strong>
+            <ol style="color:#55525c;margin:8px 0 0;padding-left:18px;font-size:15px;">
+                <li>Copy the module to your addons path.</li>
+                <li>Update the apps list and install <em>MRP Progress Bar</em>.</li>
+                <li>Reload the browser page.</li>
+                <li>Open Manufacturing &rsaquo; Operations &rsaquo; Manufacturing Orders.</li>
+            </ol>
+        </div>
+        <div style="padding:18px;border:1px solid #ece8ef;border-radius:10px;">
+            <strong>Good to know</strong>
+            <ul style="color:#55525c;margin:8px 0 0;padding-left:18px;font-size:15px;">
+                <li>After a change to the widget, restart the server or upgrade the module: asset bundles are cached.</li>
+                <li>The ring column makes the order rows a bit taller; it can be hidden from the column selector.</li>
+                <li>An order without operations simply has an empty ring cell.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align:center;padding:48px 0 40px;margin-top:56px;border-top:1px solid #ece8ef;">
+        <p style="margin:0 0 6px;font-weight:600;">MRP Progress Bar &mdash; order and operation progress for Odoo 20</p>
+        <p style="margin:18px 0 0;color:#8a8590;font-size:13px;">Hubin &middot; LGPL-3</p>
+    </div>
+
+</div>
+</body>
+</html>

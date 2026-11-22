@@ -1,0 +1,3563 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* om_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e-20261101\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-06 15:24+0000\n"
+"PO-Revision-Date: 2026-11-06 15:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%(amount)s above %(minimum)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%(count)s of %(names)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "%(delegate)s approves %(step)s for %(users)s, away."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%(field)s of %(record)s: %(amount)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%(intro)s with %(conditions)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%(intro)s, it waits for the approval of %(group)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "%(label)s above %(limit)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "%(label)s with a discount above %(limit)s%%"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "%(label)s: two levels above %(limit)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%(names)s. Approved at once: %(user)s asks and is one of them."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid ""
+"%(other)s applies to %(record)s first: it comes before this flow in the "
+"list."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%(path)s is not a field path of %(model)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%(path)s is not an amount of %(model)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/wizard/approval_ask.py:0
+msgid "%(record)s already waits for %(step)s (%(request)s)."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid ""
+"%(record)s is locked since %(request)s approved it: an approval manager "
+"unlocks it."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid ""
+"%(record)s is locked: %(request)s is approved, and it unlocks once "
+"%(button)s has run."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid ""
+"%(record)s is locked: it waits for the approval %(request)s (%(step)s). "
+"Withdraw the request to change it."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid ""
+"%(record)s would be read-only from the request until %(button)s has run."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "%(record)s: approval asked (%(request)s), waiting for %(step)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "%(record)s: still waiting for %(step)s (%(request)s)."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid ""
+"%(step)s is waiting since %(days)s days: %(users)s asked to decide too."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "%(template)s does not fit %(model)s: it has no %(missing)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "%(template)s does not fit %(model)s: its button is not on its views."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "%(user)s approved %(step)s (%(done)s of %(needed)s)%(note)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "%(user)s approved %(step)s: %(note)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_delegation.py:0
+msgid "%(user)s to %(delegate)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "%s above"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_mixin.py:0
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "%s can no longer be cancelled."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_mixin.py:0
+msgid "%s cannot be set back to draft."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s days"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s is not set"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_mixin.py:0
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "%s is not waiting for an approval."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s is set"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_mixin.py:0
+msgid "%s needs a note to be approved: approve it on its own."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "%s needs an approval asked with a note: ask for it in Odoo."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "%s of them"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s of them approve"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s runs without an approval"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s when approving"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s when refusing"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid ""
+"%s would be read-only from the request, and stay so once approved until an "
+"approval manager unlocks it."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s, all of them"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "%s, it waits for:"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "%s: approval by the person responsible"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "%s: approval to cancel"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid ", and kept locked."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "0: any amount"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "0: never. Escalating asks other people to decide too."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "1 day"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "<span class=\"o_stat_text\">Open</span>"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "<span invisible=\"not amount_field\">above</span>"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.module.module,description:base.module_om_approval
+msgid ""
+"=========\n"
+"Approvals\n"
+"=========\n"
+"\n"
+"Approval flows for any app: put a button of any model under approval, e.g.\n"
+"Confirm on the sale orders above 10,000, and it waits for its approvals before\n"
+"it runs. Other modules use the same flows to approve their own documents, such\n"
+"as the HR requests and the loans.\n"
+"\n"
+"Features\n"
+"========\n"
+"\n"
+"* An approval flow per button of any model, chosen from the buttons of its form\n"
+"  and list views, without any development.\n"
+"* The Approval Designer: a flow is a chain of cards, from the button stopped to\n"
+"  the button running, with its steps in between. Click a card to edit it on\n"
+"  the side: the button among the buttons of the model, the records it applies\n"
+"  to (with one-click conditions such as Total above), who approves each step\n"
+"  (people, a group, or a person on the record chosen field by field, e.g.\n"
+"  Sales Team > Team Leader), when a step applies, reminders and escalation.\n"
+"  Insert a step with +, move it up or down. Each change describes the flow\n"
+"  again in words below the chain, and the cards say what is missing; a flow\n"
+"  with something missing cannot be activated.\n"
+"* New opens a gallery: approval above an amount, two-level approval, approval\n"
+"  by the person responsible, approval of a discount, approval to cancel, or\n"
+"  blank. The templates come ready for quotations, purchase orders, vendor\n"
+"  bills and transfers when their apps are installed, and guess the button, the\n"
+"  amount and the person responsible of the other records. A flow made from the\n"
+"  gallery or the designer starts inactive.\n"
+"* Set up an approval, in the gear menu of any form, opens the gallery for that\n"
+"  kind of record, for the approval managers.\n"
+"* Demo data: with demo data, the templates of Sales, Purchase, Invoicing and\n"
+"  Inventory are added as inactive flows for the apps installed, also when an\n"
+"  app is installed later; each app gets them once, so deleted ones stay\n"
+"  deleted. Activate one to try it.\n"
+"* A flow applies to the records matching its domain and above an amount, and\n"
+"  to one company or all of them. The first matching flow is used.\n"
+"* Amounts in a currency: the flow compares an amount of the record, e.g. the\n"
+"  total of a sale order, with its threshold in the currency of the flow; an\n"
+"  amount in another currency is converted first. A step can apply only above a\n"
+"  higher amount, e.g. the director above 20,000.\n"
+"* Steps approved in turn, by given users, by the users of a group, or by the\n"
+"  user a field of the record names, e.g. ``user_id`` for the salesperson. A\n"
+"  step can apply only to some records.\n"
+"* Who must approve a step: any one of its approvers, all of them, or a number\n"
+"  of them, e.g. two directors of three. A refusal by any of them refuses the\n"
+"  step; an approval manager decides for the whole step. The record shows how\n"
+"  many approved so far.\n"
+"* Notes, set per flow as not asked, optional or required: the requester's note\n"
+"  when clicking the button, with files, the approver's note when approving,\n"
+"  and when refusing. The approvers read the requester's note and open the files\n"
+"  on the record.\n"
+"* A step finding nobody is approved by the fallback group of the flow, by\n"
+"  default the approval administrators.\n"
+"* The requester may approve their own steps, or leave them to somebody else.\n"
+"* Clicking the button asks for the approval and tells the user who it waits\n"
+"  for, with the message of the flow. Once approved, the button runs as the\n"
+"  requester, or the requester clicks it again.\n"
+"* Each approver gets an Approval activity; the record and the requester are\n"
+"  told of the decisions.\n"
+"* A refusal shows at the top of the record, with who refused and why, until\n"
+"  the requester dismisses it or asks again.\n"
+"* Clicked for several records, the button runs only once all of them may run:\n"
+"  the approvals already given are kept for the next click.\n"
+"* The record is locked from the request on: read-only in its form and refused\n"
+"  by the server, for its lines too when they are saved with it, so nothing\n"
+"  changes between the request and the button running. A flow can leave the\n"
+"  record editable instead. Once approved, the record unlocks when the button\n"
+"  has run, or, as the flow chooses, stays locked until an approval manager\n"
+"  unlocks it. A refusal or a withdrawal unlocks it.\n"
+"* A banner at the top of the form says what the record waits for, which step\n"
+"  and who approves it, with Approve and Refuse for the approvers, Withdraw for\n"
+"  the requester, Unlock for the approval managers, and the steps in Details.\n"
+"* Each flow says in a few lines what it does, and Test on a Record shows, for a\n"
+"  record and a requester, whether the flow applies, which steps are skipped,\n"
+"  who would approve, and whether the record would be locked, without asking\n"
+"  anything.\n"
+"* Approvals > To Approve lists what waits for you, from every app; My Requests\n"
+"  follows the approvals you asked for; All Requests shows them all to the\n"
+"  approval administrators.\n"
+"* Delegations: an approver away names a substitute for a period, for every\n"
+"  flow or some of them (Approvals > My Delegations); the approval\n"
+"  administrators delegate for anyone. The substitute is asked the steps waiting\n"
+"  for the approver, decides \"on behalf of\" them, and the approver still can:\n"
+"  the first decision counts. The substitute of a substitute is followed too;\n"
+"  the requester never stands in for their own request unless the flow lets\n"
+"  them approve it.\n"
+"* A substitute set in the preferences of each user, suggested on their\n"
+"  delegations.\n"
+"* Reminders and escalation per step: the approvers are reminded after some\n"
+"  days, then other users are asked to decide too: given users, a group, or the\n"
+"  fallback group of the flow.\n"
+"* For developers: a model inheriting ``approval.mixin`` gets an approval of\n"
+"  its own, submitted, approved, refused, cancelled or set back to draft.\n"
+"\n"
+"Configuration\n"
+"=============\n"
+"\n"
+"* Give the Administrator access of Approvals to the people who set up the\n"
+"  flows; they can also approve any step.\n"
+"* Create the flows in Approvals > Configuration > Approval Flows: New starts\n"
+"  from a template, a flow opens in the Approval Designer. Set the button, the\n"
+"  records it applies to, the steps, the message shown to the requester and\n"
+"  whether the record is locked; on the last card, whether the button runs by\n"
+"  itself and whether the record stays locked once approved. Check the flow\n"
+"  with Test on a Record, then activate it. The usual form stays available\n"
+"  (Form View in the designer).\n"
+"\n"
+"Usage\n"
+"=====\n"
+"\n"
+"* Click a button under approval: a notification says the approval is asked.\n"
+"* The approvers open Approvals > To Approve and approve or refuse.\n"
+"* Approval rules stop the buttons clicked in the web client and the same\n"
+"  methods called through the web client's RPC, and the external APIs too:\n"
+"  JSON-2, XML-RPC and JSON-RPC answer that the approval is asked instead of\n"
+"  running the button. A flow requiring the requester's note cannot be asked\n"
+"  through an API: the call fails, telling to ask in Odoo. Server code calling\n"
+"  the method directly is not stopped.\n"
+"* The lock refuses the changes of the users, whatever the way; the chatter,\n"
+"  the activities and the followers of a locked record still work, and code\n"
+"  running as the super user is not stopped. Archiving a flow, or switching its\n"
+"  lock off, unlocks the records it locked. Developers list more fields a\n"
+"  locked record still lets change in ``_approval_lock_exempt_fields``.\n"
+"\n"
+"Editions\n"
+"========\n"
+"\n"
+"Works with Odoo 20 Community and Odoo 20 Enterprise. On Enterprise, it cannot\n"
+"be installed together with the Enterprise Approvals app (``approvals``): both define\n"
+"the same records. Use one or the other.\n"
+"\n"
+"Dependencies\n"
+"============\n"
+"\n"
+"* Base (``base``), Discuss (``mail``), Web (``web``) and the RPC endpoints of Odoo\n"
+"  (``rpc``), all installed with Odoo by default\n"
+"\n"
+"Support\n"
+"=======\n"
+"\n"
+"Odoo Mates, odoomates@gmail.com\n"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__approval_mode__count
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approval_mode__count
+msgid "A Number of Them"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.constraint,message:om_approval.constraint_approval_button_model_method_uniq
+msgid "A button is listed once per model."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "A button is missing? List them again"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.actions.act_window,help:om_approval.om_approval_request_action_my
+msgid ""
+"A button needing an approval asks for it when you click it. Follow your "
+"requests here."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.js:0
+msgid "A button, and the steps you add."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "A discount above (%)"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "A field leading to a user or a contact, e.g. Sales Team › Team Leader."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "A manager approves; above a higher amount, you approve too."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+msgid "A note for the requester and the other approvers."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "A quotation with a discount above a percentage waits for a manager."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "A refusal by any of them refuses the step."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__amount_min
+msgid "Above"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Above %(limit)s a manager approves; above %(high)s, the director too."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Above %s"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_needaction
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_needaction
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Activate"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__active
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__active
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_delegation__state__active
+msgid "Active"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+msgid "Active or Upcoming"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_exception_decoration
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_plans_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_plans_ids
+msgid "Activity Plans"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_state
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_type_icon
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Add a step here"
+msgstr ""
+
+#. module: om_approval
+#: model:res.groups,name:om_approval.group_approval_manager
+msgid "Administrator"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Advanced"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__all_ids
+msgid "All"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.actions.act_window,name:om_approval.om_approval_request_action
+#: model:ir.ui.menu,name:om_approval.menu_om_approval_all
+msgid "All Requests"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__approval_mode__all
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approval_mode__all
+msgid "All of Them"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_ask__all_ids
+msgid "All the records the button was clicked for."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Always"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__amount_field
+msgid "Amount"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__approval_mode__any
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approval_mode__any
+msgid "Any One of Them"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Any amount"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__approval_mode
+msgid ""
+"Any one: the first approval decides. All: each approver approves. A number: "
+"that many approve. A refusal refuses the step."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__domain
+msgid "Applies To"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+msgid "Applies to"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Apply"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+#: code:addons/om_approval/models/approval_flow.py:0
+#: code:addons/om_approval/models/approval_request.py:0
+#: model:ir.model,name:om_approval.model_approval_line
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__name
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_state
+#: model:mail.activity.type,name:om_approval.mail_act_approval
+msgid "Approval"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Approval %s"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_button
+msgid "Approval Button"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__approval_count
+msgid "Approval Count"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_delegation
+msgid "Approval Delegation"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_rule
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Approval Flow"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.actions.act_window,name:om_approval.om_approval_flow_action
+#: model:ir.ui.menu,name:om_approval.menu_om_approval_flow
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_list
+msgid "Approval Flows"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_mixin
+msgid "Approval Mixin"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__approval_mode
+msgid "Approval Mode"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_request
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_request_id
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Approval Request"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_request_ids
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_list
+msgid "Approval Requests"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_step
+msgid "Approval Step"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_res_users__approval_substitute_id
+msgid "Approval Substitute"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Approval above an amount"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/wizard/approval_ask.py:0
+msgid "Approval asked for: %s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Approval asked: %(request)s. %(note)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Approval asked: %s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Approval by the person responsible"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.module.module,summary:base.module_om_approval
+msgid ""
+"Approval flows for any app: a button waits for its approval before it runs, "
+"e.g. confirming a sale order above an amount"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Approval needed"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Approval of %s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Approval of a discount"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Approval to cancel"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_line_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__line_ids
+#: model:ir.module.module,shortdesc:base.module_om_approval
+#: model:ir.ui.menu,name:om_approval.menu_om_approval_root
+#: model:res.groups.privilege,name:om_approval.privilege_approval
+msgid "Approvals"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.actions.server,name:om_approval.ir_cron_approval_follow_up_ir_actions_server
+msgid "Approvals: Substitutes, Reminders and Escalations"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__decision__approve
+#: model:mail.activity.type,summary:om_approval.mail_act_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__fallback_group_id
+msgid "Approve a step finding nobody, e.g. an employee without a manager."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_decide
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+msgid "Approve or Refuse"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Approve: %s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__approved_ids
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__approved
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__approved
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__approved
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Approved"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__approved_user_ids
+msgid "Approved By"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Approved by the requester, an approver of the step."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "Approved with"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid ""
+"Approved, but %(button)s could not run: %(error)s. Click the button again."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:0
+msgid "Approved."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Approved: %s"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__user_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__approver_type
+msgid "Approver"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Approver approves"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Approver refuses"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__approver_user_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approver_user_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__approver_user_ids
+msgid "Approvers"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__fallback_group_id
+msgid "Approvers When Nobody Is Found"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_form
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_search
+msgid "Archived"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+#: model:ir.model,name:om_approval.model_approval_ask
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_ask_view_form
+msgid "Ask for Approval"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__required_user_ids
+msgid "Asked"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__user_id
+msgid "Asked By"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__date_pending
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_list
+msgid "Asked On"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__request_note
+msgid ""
+"Asked when the button is clicked: why the approval is needed, with files."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "At least one person approves the step %s."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_attachment_count
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_attachment_count
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.actions.act_window,help:om_approval.approval_delegation_action_my
+msgid "Away soon?"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+msgid "Back"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Back to the approval flows"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_base
+msgid "Base"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__button_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__button_id
+msgid "Button"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__method
+msgid "Button Method"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__can_approve
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__can_approve
+msgid "Can Approve"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__cancel
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__cancel
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Cancelling a confirmed record waits for a manager."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "Change what is needed, then click"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/wizard/approval_simulate.py:0
+msgid "Choose a %s to see what the flow does for it."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.actions.act_window,help:om_approval.om_approval_flow_action
+msgid ""
+"Choose a button of any app, e.g. Confirm on the sale orders, and who approves it before it runs.\n"
+"               Start from a template: the flow opens in the Approval Designer."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_delegation.py:0
+msgid "Choose a substitute other than the approver."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+msgid "Choose the button and add the steps yourself."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid ""
+"Choose the button the flow %(flow)s stops: %(model)s has no approval of its "
+"own."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Choose the button the flow stops."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Choose the field naming the approver."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "Choose the group approving the step %s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Choose the group approving."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Choose the group asked when it waits too long."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Choose the kind of record the flow applies to."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Choose the people approving."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Choose the people asked when it waits too long."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "Choose the users approving the step %s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Click to rename the flow"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Click to rename the step"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Clicked again"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Clicked again by the requester"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_simulate_view_form
+msgid "Close"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__company_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__company_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__company_id
+msgid "Company"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Complete the cards marked in red before activating the flow."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.ui.menu,name:om_approval.menu_om_approval_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid ""
+"Confirming a record above an amount, e.g. a quotation, waits for a manager."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.actions.act_window,help:om_approval.om_approval_flow_action
+msgid "Create an approval flow"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+msgid "Create and Open the Designer"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__create_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__create_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__create_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__create_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__create_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__create_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__create_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__create_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__create_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__create_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__create_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__create_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__create_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__create_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__create_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__create_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__amount_currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__escalate_days
+msgid "Days before other users are asked to decide too. 0 for no escalation."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__remind_days
+msgid ""
+"Days before the approvers are reminded, then again every as many days. 0 for"
+" no reminder."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Deactivate"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__user_id
+msgid "Decided By"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__date
+msgid "Decided On"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__decision
+msgid "Decision"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_delegation.py:0
+msgid ""
+"Delegate your own approvals: the approval administrators delegate those of "
+"the others."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_form
+msgid "Delegation"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.actions.act_window,name:om_approval.approval_delegation_action
+#: model:ir.ui.menu,name:om_approval.menu_approval_delegation
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_list
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+msgid "Delegations"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Deleted record"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "Details"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Director"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_ask_view_form
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+msgid "Discard"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "Dismiss"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__display_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__display_name
+#: model:ir.model.fields,field_description:om_approval.field_res_users__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__done
+msgid "Done"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__state
+msgid "Done: the button ran once approved."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Editable again once"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Empty: always. The records outside skip the step."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Empty: every company."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Empty: every record. The first active flow matching a record is used."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__company_id
+msgid "Empty: the flow applies to every company."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_delegation__state__ended
+msgid "Ended"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__escalate_days
+msgid "Escalate After"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__escalate_type
+msgid "Escalate To"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Escalate after"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__date_escalated
+msgid "Escalated On"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__escalate_group_id
+msgid "Escalation Group"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__escalate_user_ids
+msgid "Escalation Users"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Every record"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__escalate_type__fallback
+msgid "Fallback Group of the Flow"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__field_path
+msgid "Field"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__attachment_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__attachment_ids
+msgid "Files"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__flow_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__flow_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__flow_id
+msgid "Flow"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_follower_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_follower_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_partner_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_partner_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+msgid "For Me"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Form View"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__date_from
+msgid "From"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__group_id
+msgid "Group"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__has_message
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__has_message
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__approval_count
+msgid "How Many"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "How many approve"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_line__progress
+msgid "How many approved, of how many needed."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__id
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__id
+#: model:ir.model.fields,field_description:om_approval.field_res_users__id
+msgid "ID"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_exception_icon
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__activity_exception_icon
+#: model:ir.model.fields,help:om_approval.field_approval_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "If %(user)s asked for %(record)s, it would wait for:"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_delegation__message_needaction
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__message_needaction
+#: model:ir.model.fields,help:om_approval.field_approval_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_delegation__message_has_error
+#: model:ir.model.fields,help:om_approval.field_approval_delegation__message_has_sms_error
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__message_has_error
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__message_has_sms_error
+#: model:ir.model.fields,help:om_approval.field_approval_request__message_has_error
+#: model:ir.model.fields,help:om_approval.field_approval_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "If nobody decides"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "In short"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "In the currency of the flow; other currencies are converted first."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Inactive"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__is_document
+msgid "Is Document"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_is_follower
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_is_follower
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__lock_after__keep
+msgid "Keep It Locked"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__model_name
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Kind of Record"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__name
+msgid "Label"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__write_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__write_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__write_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__write_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__write_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__write_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__write_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__write_uid
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__write_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__write_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__write_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__write_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__write_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__write_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__write_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__write_date
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_delegation__flow_ids
+msgid "Leave empty for every approval flow."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "List the buttons of the model again"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__lock_record
+msgid "Lock the Record"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Lock the record: nobody changes it"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Locked"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Locked until %s has run"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Locked, until an approval manager unlocks it"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__is_locking
+msgid "Locking"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__lock_record
+msgid "Locks the Record"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Locks the record"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Manager"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__activity_type_icon
+#: model:ir.model.fields,help:om_approval.field_approval_request__activity_type_icon
+msgid "Material Symbols icon e.g. checklist"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__message
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__note
+msgid "Message"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_has_error
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_has_error
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Message shown when the button is stopped"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__note
+msgid "Message to the Requester"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Message to the requester"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_ids
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__method
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__method
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__method
+msgid "Method"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_search
+msgid "Mine"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__model_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__res_model
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__model_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__model_id
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_search
+msgid "Model"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_button__model
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__model
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__model
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__model
+msgid "Model Name"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Move down"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Move up"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__my_activity_date_deadline
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.actions.act_window,name:om_approval.approval_delegation_action_my
+#: model:ir.ui.menu,name:om_approval.menu_approval_delegation_my
+msgid "My Delegations"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.actions.act_window,name:om_approval.om_approval_request_action_my
+#: model:ir.ui.menu,name:om_approval.menu_om_approval_my
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "My Requests"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__name
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__name
+msgid "Name"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Name of the flow"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Name of the step"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Name the flow."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Name the step."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.actions.act_window,help:om_approval.approval_delegation_action_my
+msgid ""
+"Name who approves for you while you are away: they decide the approvals waiting for you meanwhile,\n"
+"                and you still can."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "New"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.js:0
+msgid "New Approval Flow"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_date_deadline
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_summary
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_type_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: om_approval
+#: model:res.groups.privilege,placeholder:om_approval.privilege_approval
+msgid "No"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "No amount"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.actions.act_window,help:om_approval.om_approval_request_action_my
+msgid "No approval asked"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "No message"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "No step: the approval administrators, or the fallback group, approve."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__note_mode__none
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__approve_note__none
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__refuse_note__none
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__request_note__none
+msgid "Not Asked"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Not chosen yet"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Not locked"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__note
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__note
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__note
+msgid "Note"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__note_mode
+msgid "Note Mode"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__note_required
+msgid "Note Required"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__approve_note
+msgid "Note When Approving"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__refuse_note
+msgid "Note When Refusing"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Nothing"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.actions.act_window,help:om_approval.om_approval_request_action_to_approve
+msgid "Nothing to approve"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_needaction_counter
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_needaction_counter
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_has_error_counter
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_has_error_counter
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_delegation__message_needaction_counter
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__message_needaction_counter
+#: model:ir.model.fields,help:om_approval.field_approval_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_delegation__message_has_error_counter
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__message_has_error_counter
+#: model:ir.model.fields,help:om_approval.field_approval_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "On behalf of %s."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__lock_after
+msgid "Once Approved"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Once approved"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "Once approved, %s runs by itself as the requester."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__run_on_approval
+msgid ""
+"Once approved, the button runs as the requester. Otherwise the requester "
+"clicks it again."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "Once approved, the requester clicks %s again."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Once approved: set on the Outcome card."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__keep_locked
+msgid ""
+"Once the button has run, the record stays read-only until an approval "
+"manager unlocks it."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Only %(user)s, who asked, can cancel %(request)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Only %s, who asked, dismisses the refusal."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__amount_min
+msgid "Only Above"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__domain
+msgid "Only When"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_mixin.py:0
+msgid "Only a draft can be submitted: %s is not."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Only above"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__flow_ids
+msgid "Only for"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Only for the records"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Only the approval managers set up the approval flows."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Only the approval managers unlock an approved record."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "Open"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Open the Designer"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__note_mode__optional
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__approve_note__optional
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__refuse_note__optional
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__request_note__optional
+msgid "Optional"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Outcome"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Person Responsible"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approver_type__field
+msgid "Person on the Record"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__progress
+msgid "Progress"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Purchase Orders"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Quotations"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+msgid "Ready for"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__document_name
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__record_ref
+msgid "Record"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__res_id
+msgid "Record ID"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__name
+msgid "Reference"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__refusal_dismissed
+msgid "Refusal Dismissed"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__decision__refuse
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_decide_view_form
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Refuse"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__refused
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__refused
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__refused
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Refused"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Refused by %(user)s at the step %(step)s: %(reason)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:0
+msgid "Refused."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__remind_days
+msgid "Remind After"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Remind after"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__date_reminded
+msgid "Reminded On"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Reminder: %(step)s is waiting for your decision."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Remove the step"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_decide__request_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__request_id
+msgid "Request"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__requester_id
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Requested By"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__self_approve
+msgid "Requester Approves Their Steps"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Requester asks"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__request_note
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__request_note
+msgid "Requester's Note"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_decide__note_mode__required
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__approve_note__required
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__refuse_note__required
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__request_note__required
+msgid "Required"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__res_ids
+msgid "Res"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__res_model
+msgid "Res Model"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__activity_user_id
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_simulate__result
+msgid "Result"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__run_on_approval
+msgid "Run the Button Once Approved"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Runs by itself"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__message_has_sms_error
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__message_has_sms_error
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Save"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Save the changes to the approval flow before leaving?"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Save the flow and let it stop its button"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Saved."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Say how many approve."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_delegation.py:0
+msgid "Search the status with = or in."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "See what the flow does for a record, without asking anything"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__sequence
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__sequence
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/approval_cog_menu.xml:0
+msgid "Set up an approval"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Shown when the button is stopped"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__note
+#: model:ir.model.fields,help:om_approval.field_approval_rule__note
+msgid ""
+"Shown when the button is stopped, e.g. \"Orders above 10,000 need the "
+"approval of the sales director.\""
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "Skipped: %s is outside its condition."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Someone else approves"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approver_type__user
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__escalate_type__user
+msgid "Specific People"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+msgid ""
+"Start from a template, or from blank. The flow is created inactive: check it in the designer, then\n"
+"            activate it."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.js:0
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+msgid "Start from blank"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__state
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__state
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__state
+msgid "State"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "Status"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__activity_state
+#: model:ir.model.fields,help:om_approval.field_approval_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__keep_locked
+msgid "Stays Locked Once Approved"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Stays locked"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__step_id
+msgid "Step"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__step_ids
+msgid "Steps"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Submit (its own approval)"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__delegate_id
+msgid "Substitute"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_line__substitutes
+msgid "Substitutes"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__summary
+#: model:ir.model.fields,field_description:om_approval.field_approval_rule__summary
+msgid "Summary"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "Test %s"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_approval_simulate
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_simulate_view_form
+msgid "Test an Approval Flow"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "Test on a Record"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "The"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__amount_field
+msgid ""
+"The amount the flow and its steps compare, e.g. amount_total for the total "
+"of a sale order. It is converted from the currency of the record into the "
+"currency of the flow."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "The approver's note: %s."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_line__required_user_ids
+msgid "The approvers the step asked first."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "The button"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "The button of the flow %s belongs to another model."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__button_id
+msgid ""
+"The button stopped until the approval is given. Leave it empty on a document"
+" approved by its own Submit button, such as an HR request."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/gallery/gallery_dialog.xml:0
+msgid ""
+"The button, the amounts and the approvers are set for the records listed above; for another kind of\n"
+"            record they are guessed. You change them in the designer."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "The buttons of %s are listed again."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__amount_currency_id
+msgid "The currency of the amounts of the flow and of its steps."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_delegation.py:0
+msgid "The delegation ends before it starts."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "The field %s must lead to users, employees or contacts."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__field_path
+msgid ""
+"The field of the record naming the approver, e.g. user_id for the "
+"salesperson of a sale order, or team_id.user_id for the leader of its sales "
+"team."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__amount_min
+msgid "The flow applies to the records whose amount is above this."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid ""
+"The flow does not apply to %(record)s: it is outside Applies To, so "
+"%(action)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "The flow is active."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "The flow is inactive."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "The record"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "The record becomes editable again. Unlock it?"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "The record can still be changed while it waits."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "The record is not locked: lock it on the Trigger card."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__is_locking
+msgid "The record is read-only because of this request."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__lock_record
+msgid ""
+"The record is read-only from the approval request: nobody changes it while "
+"it waits, nor once it is approved."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid ""
+"The record is read-only from the request on, and stays so once approved, "
+"until an approval manager unlocks it."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "The record is read-only from the request until %s has run."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "The record is read-only until"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "The record is read-only until an approval manager unlocks it."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid ""
+"The record is read-only, and stays so once approved until an approval "
+"manager unlocks it."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "The record stays locked until an approval manager unlocks it."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__lock_record
+msgid "The record stays read-only while it waits for this approval."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "The record unlocks once"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__domain
+msgid ""
+"The records the flow applies to, e.g. the sale orders above 10,000. The "
+"first matching flow is used."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_ask__res_ids
+msgid "The records to ask the approval for."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__refusal_dismissed
+msgid "The refusal no longer shows at the top of the record."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "The requester approves the steps they are an approver of"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "The requester approves the steps they are an approver of."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "The requester approves their own steps"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "The requester can attach files with the note."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "The requester clicks"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "The requester does not approve their own request."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "The requester's note, with files: %s."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_ask__approved_ids
+msgid "The requests already approved, letting the button run."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_ask__waiting_ids
+msgid "The requests already asked and waiting."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__amount_min
+msgid ""
+"The step applies to the records whose amount, as the flow reads it, is above"
+" this. 0 for any amount."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_step__domain
+msgid ""
+"The step is skipped for the records outside this domain, e.g. an amount "
+"above a threshold."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid ""
+"The steps are approved in turn. A step finding nobody is approved by the approvers when\n"
+"                        nobody is found. Without a step, the approval administrators approve."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__self_approve
+msgid ""
+"The steps the requester is an approver of are approved as they ask, e.g. a "
+"sales manager confirming their own order. Otherwise somebody else approves "
+"them."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_line__substitutes
+msgid "The substitutes added, by user id: the names they stand for."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "The summary shows once the flow is complete."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid ""
+"The team leader, or the person responsible for the record, approves it "
+"before it is confirmed."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "The usual form of the flow"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Then ask"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "This approval flow no longer exists."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "This template no longer exists."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_delegation__date_to
+msgid "To"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.actions.act_window,name:om_approval.om_approval_request_action_to_approve
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__pending
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_mixin__approval_state__to_approve
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_request__state__to_approve
+#: model:ir.ui.menu,name:om_approval.menu_om_approval_to_approve
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "To Approve"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_search
+msgid "To Approve by Me"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Transfers"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Trigger"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Two-level approval"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_mixin__activity_exception_decoration
+#: model:ir.model.fields,help:om_approval.field_approval_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:0
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Unlock"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_rule__lock_after__unlock
+msgid "Unlock Once the Button Has Run"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:0
+msgid "Unlock the record? It becomes editable again."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__lock_after
+msgid ""
+"Unlock: the record is editable again once the approved button has run, as "
+"the button leaves it. Keep it locked: it stays read-only until an approval "
+"manager unlocks it."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__unlocked_by_id
+msgid "Unlocked By"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__date_unlocked
+msgid "Unlocked On"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Unlocked by %(user)s: %(request)s no longer keeps it read-only."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:0
+msgid "Unlocked."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Unlocks"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Unsaved"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Unsaved Changes"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Until an approval manager unlocks it."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_delegation__state__upcoming
+msgid "Upcoming"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "Updated as you edit"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model,name:om_approval.model_res_users
+msgid "User"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__user_ids
+msgid "Users"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__approver_type__group
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_step__escalate_type__group
+msgid "Users of a Group"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "Vendor Bills"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__waiting_ids
+#: model:ir.model.fields.selection,name:om_approval.selection__approval_line__state__waiting
+msgid "Waiting"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_mixin__approval_step
+#: model:ir.model.fields,field_description:om_approval.field_approval_request__approval_step
+msgid "Waiting For"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_rule__summary
+msgid "What the flow does, in words."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_simulate_view_form
+msgid ""
+"What the flow would do for a record, if this user asked. Nothing is asked "
+"nor changed."
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.actions.act_window,help:om_approval.om_approval_request_action_to_approve
+msgid "What waits for your approval, from every app, shows here."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "When"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "When %(button)s is clicked on a %(model)s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "When a"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "When a %(model)s is submitted"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "When a step finds nobody"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "When a step finds nobody: %s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "When it asks for approval"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "When the step applies"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "While It Waits"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "While it waits"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_step__approval_mode
+msgid "Who Must Approve"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "Who approves"
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_res_users__approval_substitute_id
+msgid ""
+"Who approves for you when you are away: the substitute suggested for your "
+"delegations."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_simulate__user_id
+msgid "Who clicks the button, or submits the document."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,field_description:om_approval.field_approval_ask__note
+msgid "Why"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_ask_view_form
+msgid "Why is this needed? The approvers read it."
+msgstr ""
+
+#. module: om_approval
+#: model:ir.model.fields,help:om_approval.field_approval_request__request_note
+msgid "Why the requester needs the approval."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:0
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_request_view_form
+msgid "Withdraw"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:0
+msgid ""
+"Withdraw %s? The record is no longer waiting for it, and becomes editable "
+"again."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.js:0
+msgid "Withdrawn."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Write a note to approve %s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "Write why %s is refused."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/wizard/approval_ask.py:0
+msgid "Write why the approval is needed."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "You are not an approver of %(request)s at the step %(step)s."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "above"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "after %(days)s, %(users)s decide too"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "again"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "again to ask anew."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "again."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "all of them"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "all of them approve"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "and"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "approved"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "at"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "by"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "cancel"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "clicks"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "confirm"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "d"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "days"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "done"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.approval_delegation_view_form
+msgid "e.g. On leave, back on the 20th."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "e.g. Orders above 10,000 need the approval of the sales director."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "e.g. Quotations above 10,000"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "e.g. Sale orders above 10,000"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "e.g. amount_total"
+msgstr ""
+
+#. module: om_approval
+#: model_terms:ir.ui.view,arch_db:om_approval.om_approval_flow_view_form
+msgid "e.g. user_id"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "escalated after"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "escalated after %s d"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "has run."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "is approved"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "is approved ("
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "is approved, as its app decides."
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "is clicked"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "is submitted"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "it is approved by the approval administrators"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "more"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "move_type"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_request.py:0
+msgid "no reason given"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "nobody"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "nobody chosen yet"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "of"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "of them"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "of them approve"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "on"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "only when"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "only when %s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "optional"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "reminded after"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "reminded after %s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "reminded after %s d"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "required"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "runs as the requester"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "runs as the requester once the last approval comes."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_designer.py:0
+msgid "state"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "the %s of the record"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "the approval administrators"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.js:0
+msgid "the button"
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "the conditions of Applies To"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "to finish."
+msgstr ""
+
+#. module: om_approval
+#. odoo-python
+#: code:addons/om_approval/models/approval_flow.py:0
+msgid "users of the group %s"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "waits for approval:"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "was refused"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/designer/designer.xml:0
+msgid "with"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "· asked by"
+msgstr ""
+
+#. module: om_approval
+#. odoo-javascript
+#: code:addons/om_approval/static/src/approval_banner/approval_banner.xml:0
+msgid "· step"
+msgstr ""

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dcs_backend_theme.ThemePanel">
+        <div class="cbt-overlay cbt-sheet-overlay cbt-sheet-overlay--settings" t-on-click.self="this.close">
+            <aside class="cbt-sheet cbt-sheet--settings" t-ref="this.rootRef" role="dialog" aria-modal="true" t-att-aria-label="this.labels.title">
+                <header class="cbt-sheet__header">
+                    <h2 class="cbt-sheet__title"><i class="oi me-2" data-icon="tune" aria-hidden="true"/><t t-out="this.labels.title"/></h2>
+                    <button type="button" class="cbt-icon-btn" data-autofocus="1" t-att-aria-label="this.labels.close" t-att-title="this.labels.close" t-on-click="this.close">
+                        <i class="oi" data-icon="close" aria-hidden="true"/>
+                    </button>
+                </header>
+                <div class="cbt-sheet__body">
+                    <ThemeSettings compact="true"/>
+                </div>
+                <footer class="cbt-sheet__footer" t-if="this.isSystem">
+                    <button type="button" class="btn btn-secondary w-100" t-on-click="this.openFullPage">
+                        <i class="oi me-2" data-icon="brush" aria-hidden="true"/><t t-out="this.labels.more"/>
+                    </button>
+                </footer>
+            </aside>
+        </div>
+    </t>
+</templates>

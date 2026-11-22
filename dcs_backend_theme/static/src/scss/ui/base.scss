@@ -1,0 +1,300 @@
+// =============================================================================
+// Global foundations: typography, primary color bridge, controls, overlays.
+// Everything uses tokens so light/dark/radius/density/primary are runtime.
+// =============================================================================
+
+.o_web_client {
+    background-color: var(--cbt-bg);
+    font-family: var(--#{$prefix}body-font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+:root[data-cbt-font]:not([data-cbt-font="system"]) {
+    :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .oe_title, .o_form_label) {
+        font-family: var(--cbt-font);
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Focus: a visible, consistent ring for keyboard users only
+// ---------------------------------------------------------------------------
+.o_web_client {
+    // Text fields are excluded: they always match :focus-visible and already
+    // show focus through their own border (or their container's, e.g. the
+    // chatter composer), which would otherwise get a second ring.
+    :is(a, button, .btn, [role="button"], [role="menuitem"], [role="option"], [tabindex]):not(input, textarea, select, [contenteditable="true"]):focus-visible {
+        outline: 2px solid var(--cbt-primary);
+        outline-offset: 2px;
+        box-shadow: none;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Buttons
+// ---------------------------------------------------------------------------
+.btn {
+    --#{$prefix}btn-font-weight: 500;
+    transition: background-color var(--cbt-duration) var(--cbt-ease),
+                border-color var(--cbt-duration) var(--cbt-ease),
+                color var(--cbt-duration) var(--cbt-ease),
+                box-shadow var(--cbt-duration) var(--cbt-ease);
+}
+
+.btn-primary {
+    --#{$prefix}btn-color: var(--cbt-on-primary);
+    --#{$prefix}btn-bg: var(--cbt-primary);
+    --#{$prefix}btn-border-color: var(--cbt-primary);
+    --#{$prefix}btn-hover-color: var(--cbt-on-primary);
+    --#{$prefix}btn-hover-bg: var(--cbt-primary-hover);
+    --#{$prefix}btn-hover-border-color: var(--cbt-primary-hover);
+    --#{$prefix}btn-focus-shadow-rgb: var(--cbt-primary-rgb);
+    --#{$prefix}btn-active-color: var(--cbt-on-primary);
+    --#{$prefix}btn-active-bg: var(--cbt-primary-active);
+    --#{$prefix}btn-active-border-color: var(--cbt-primary-active);
+    --#{$prefix}btn-disabled-color: var(--cbt-on-primary);
+    --#{$prefix}btn-disabled-bg: var(--cbt-primary);
+    --#{$prefix}btn-disabled-border-color: var(--cbt-primary);
+    box-shadow: 0 1px 2px rgba(var(--cbt-primary-rgb), .25);
+}
+
+.btn-outline-primary {
+    --#{$prefix}btn-color: var(--cbt-primary-text);
+    --#{$prefix}btn-border-color: var(--cbt-primary);
+    --#{$prefix}btn-hover-color: var(--cbt-on-primary);
+    --#{$prefix}btn-hover-bg: var(--cbt-primary);
+    --#{$prefix}btn-hover-border-color: var(--cbt-primary);
+    --#{$prefix}btn-active-color: var(--cbt-on-primary);
+    --#{$prefix}btn-active-bg: var(--cbt-primary-active);
+    --#{$prefix}btn-active-border-color: var(--cbt-primary-active);
+    --#{$prefix}btn-focus-shadow-rgb: var(--cbt-primary-rgb);
+}
+
+.btn-secondary {
+    --#{$prefix}btn-bg: var(--cbt-surface);
+    --#{$prefix}btn-border-color: var(--cbt-border-strong);
+    --#{$prefix}btn-color: var(--cbt-text);
+    --#{$prefix}btn-hover-bg: var(--cbt-surface-hover);
+    --#{$prefix}btn-hover-border-color: var(--cbt-border-strong);
+    --#{$prefix}btn-hover-color: var(--cbt-text-strong);
+    --#{$prefix}btn-active-bg: var(--cbt-primary-soft);
+    --#{$prefix}btn-active-border-color: var(--cbt-primary);
+    --#{$prefix}btn-active-color: var(--cbt-primary-text);
+    // Odoo reuses .btn-secondary as a "ghost" item (border-0 / bg-inherit /
+    // bg-transparent, e.g. Discuss sidebar, chatter toolbars): no lift there.
+    &:not(.border-0, .bg-inherit, .bg-transparent, .o-mail-DiscussSidebar-item) {
+        box-shadow: var(--cbt-shadow-sm);
+    }
+}
+
+.btn-link {
+    --#{$prefix}btn-color: var(--cbt-primary-text);
+    --#{$prefix}btn-hover-color: var(--cbt-primary-hover);
+    --#{$prefix}btn-active-color: var(--cbt-primary-active);
+}
+
+.text-primary, .text-action, .link-primary { color: var(--cbt-primary-text) !important; }
+.bg-primary, .text-bg-primary { background-color: var(--cbt-primary) !important; color: var(--cbt-on-primary) !important; }
+.border-primary { border-color: var(--cbt-primary) !important; }
+.bg-primary-subtle { background-color: var(--cbt-primary-soft) !important; }
+
+// ---------------------------------------------------------------------------
+// Inputs
+// ---------------------------------------------------------------------------
+.o_web_client {
+    .form-control:not(.o-mail-Composer-input), .form-select {
+        border-color: var(--cbt-border-strong);
+        &:focus {
+            border-color: var(--cbt-primary);
+            box-shadow: var(--cbt-focus-ring);
+        }
+    }
+    .form-check-input {
+        &:checked {
+            background-color: var(--cbt-primary);
+            border-color: var(--cbt-primary);
+        }
+        &:focus {
+            border-color: var(--cbt-primary);
+            box-shadow: var(--cbt-focus-ring);
+        }
+    }
+    .o_input:focus, .o_input:focus-within,
+    .o_field_widget:focus-within > .o_input {
+        border-color: var(--cbt-primary);
+    }
+    .progress-bar { background-color: var(--cbt-primary); }
+    .page-link { color: var(--cbt-primary-text); }
+    .page-item.active .page-link { background-color: var(--cbt-primary); border-color: var(--cbt-primary); }
+}
+
+// ---------------------------------------------------------------------------
+// Dropdowns & popovers
+// ---------------------------------------------------------------------------
+.o-dropdown--menu.dropdown-menu, .o_popover.popover, .o-overlay-item .dropdown-menu {
+    --#{$prefix}dropdown-border-color: var(--cbt-border);
+    --#{$prefix}dropdown-border-radius: var(--cbt-radius-lg);
+    --#{$prefix}dropdown-link-active-bg: var(--cbt-primary-soft);
+    --#{$prefix}dropdown-link-active-color: var(--cbt-primary-text);
+    border-color: var(--cbt-border);
+    box-shadow: var(--cbt-shadow-lg);
+}
+.o-dropdown--menu.dropdown-menu {
+    padding: .35rem;
+    animation: cbt-pop-in var(--cbt-duration) var(--cbt-ease);
+
+    .dropdown-item, .o-dropdown-item {
+        border-radius: var(--cbt-radius-sm);
+        padding-block: .4rem;
+        &:hover, &.focus { background-color: var(--cbt-surface-hover); }
+        &.active, &.selected, &:active {
+            background-color: var(--cbt-primary-soft);
+            color: var(--cbt-primary-text);
+        }
+    }
+    .dropdown-divider { margin-block: .3rem; border-color: var(--cbt-border); }
+    .dropdown-header { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--cbt-text-muted); }
+}
+
+// ---------------------------------------------------------------------------
+// Dialogs
+// ---------------------------------------------------------------------------
+.modal {
+    --#{$prefix}modal-border-radius: var(--cbt-radius-xl);
+    --#{$prefix}modal-inner-border-radius: var(--cbt-radius-xl);
+    --#{$prefix}modal-header-border-color: var(--cbt-border);
+    --#{$prefix}modal-footer-border-color: var(--cbt-border);
+    --#{$prefix}modal-box-shadow: var(--cbt-shadow-lg);
+}
+.modal-content {
+    border: 1px solid var(--cbt-border);
+    box-shadow: var(--cbt-shadow-lg);
+    overflow: hidden;
+}
+.modal.show .modal-dialog { animation: cbt-dialog-in var(--cbt-duration-slow) var(--cbt-ease); }
+.modal-header .modal-title { font-weight: 600; letter-spacing: -.01em; }
+.modal-backdrop.show { backdrop-filter: blur(2px); }
+
+// ---------------------------------------------------------------------------
+// Notifications
+// ---------------------------------------------------------------------------
+.o_notification {
+    border-radius: var(--cbt-radius-lg) !important;
+    box-shadow: var(--cbt-shadow-lg) !important;
+    border: 1px solid var(--cbt-border);
+    overflow: hidden;
+    animation: cbt-slide-in var(--cbt-duration-slow) var(--cbt-ease);
+}
+
+// ---------------------------------------------------------------------------
+// Date / time picker
+// ---------------------------------------------------------------------------
+.o_datetime_picker {
+    .o_date_item_cell {
+        border-radius: var(--cbt-radius-sm);
+        &.o_today:not(.o_selected) { box-shadow: inset 0 0 0 1px var(--cbt-primary); }
+        &.o_selected, &.o_select_start, &.o_select_end {
+            background-color: var(--cbt-primary) !important;
+            color: var(--cbt-on-primary) !important;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Badges, tags, tabs
+// ---------------------------------------------------------------------------
+.badge { font-weight: 600; letter-spacing: .01em; }
+.o_tag { border-radius: 999px; }
+
+.nav-tabs {
+    --#{$prefix}nav-tabs-border-color: var(--cbt-border);
+    --#{$prefix}nav-tabs-link-active-color: var(--cbt-primary-text);
+}
+.nav-pills {
+    --#{$prefix}nav-pills-link-active-bg: var(--cbt-primary);
+    --#{$prefix}nav-pills-link-active-color: var(--cbt-on-primary);
+}
+
+// ---------------------------------------------------------------------------
+// Scrollbars (thin, theme aware)
+// ---------------------------------------------------------------------------
+.o_web_client {
+    scrollbar-color: var(--cbt-border-strong) transparent;
+    *::-webkit-scrollbar { width: 10px; height: 10px; }
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--cbt-border-strong);
+        border-radius: 999px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Shared component primitives used by the theme's own components
+// ---------------------------------------------------------------------------
+.cbt-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 2.25rem;
+    block-size: 2.25rem;
+    padding: 0;
+    border: 0;
+    border-radius: var(--cbt-radius);
+    background: transparent;
+    color: var(--cbt-text-muted);
+    transition: background-color var(--cbt-duration) var(--cbt-ease), color var(--cbt-duration) var(--cbt-ease);
+    &:hover { background-color: var(--cbt-surface-hover); color: var(--cbt-text-strong); }
+    &.active, &[aria-pressed="true"] { background-color: var(--cbt-primary-soft); color: var(--cbt-primary-text); }
+}
+
+.cbt-kbd {
+    display: inline-flex;
+    align-items: center;
+    padding: .05rem .4rem;
+    font: 600 .7rem/1.4 var(--#{$prefix}font-monospace);
+    color: var(--cbt-text-muted);
+    background: var(--cbt-surface-sunken);
+    border: 1px solid var(--cbt-border);
+    border-block-end-width: 2px;
+    border-radius: var(--cbt-radius-sm);
+}
+
+.cbt-visually-hidden {
+    position: absolute !important;
+    inline-size: 1px; block-size: 1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+// ---------------------------------------------------------------------------
+// Motion
+// ---------------------------------------------------------------------------
+@keyframes cbt-pop-in {
+    from { opacity: 0; transform: translateY(-4px) scale(.98); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes cbt-dialog-in {
+    from { opacity: 0; transform: translateY(12px) scale(.98); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes cbt-slide-in {
+    from { opacity: 0; transform: translateX(16px); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes cbt-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+// Respect the user's animation level everywhere (spinners stay functional).
+:root[data-cbt-animation="none"] *:not(.oi-spin):not(.spinner-border):not(.spinner-grow),
+:root[data-cbt-animation="none"] *::before,
+:root[data-cbt-animation="none"] *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+}
+@media (prefers-reduced-motion: reduce) {
+    .o-dropdown--menu.dropdown-menu, .modal.show .modal-dialog, .o_notification { animation: none; }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- Hosted in the Layout (see SplitPaneHost in list_split_view.js). -->
+    <t t-inherit="web.Layout" t-inherit-mode="extension">
+        <xpath expr="//main" position="after">
+            <t t-if="this.env.cbtSplitHost" t-component="this.env.cbtSplitHost.cbtSplitPaneHost"/>
+        </xpath>
+    </t>
+
+    <t t-name="dcs_backend_theme.SplitPaneHost">
+        <SplitFormPane t-if="this.split.resId"
+                       t-key="this.split.resId"
+                       resModel="this.host.props.resModel"
+                       resId="this.split.resId"
+                       resIds="this.split.resIds"
+                       formViewId="this.host.cbtFormViewId"
+                       context="this.host.props.context"
+                       actionId="this.host.env.config.actionId"
+                       recorder="this.split.recorder"
+                       onClose="() => this.host.cbtCloseSplit()"
+                       onExpand="() => this.host.cbtExpandSplit()"/>
+    </t>
+
+    <t t-name="dcs_backend_theme.SplitFormPane">
+        <section class="cbt-split-pane" t-att-aria-label="this.labels.title">
+            <div class="cbt-split-pane__header">
+                <span class="cbt-split-pane__title text-truncate" t-out="this.labels.title"/>
+                <button type="button" class="cbt-icon-btn" t-att-title="this.labels.expand" t-att-aria-label="this.labels.expand" t-on-click="this.props.onExpand">
+                    <i class="oi" data-icon="fullscreen" aria-hidden="true"/>
+                </button>
+                <button type="button" class="cbt-icon-btn" t-att-title="this.labels.close" t-att-aria-label="this.labels.close" t-on-click="this.props.onClose">
+                    <i class="oi" data-icon="close" aria-hidden="true"/>
+                </button>
+            </div>
+            <div class="cbt-split-pane__body">
+                <View t-props="this.viewProps"/>
+            </div>
+        </section>
+    </t>
+</templates>

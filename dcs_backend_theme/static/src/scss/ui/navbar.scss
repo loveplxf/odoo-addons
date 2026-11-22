@@ -1,0 +1,181 @@
+// =============================================================================
+// Top bar + global layout offsets for the sidebar
+// =============================================================================
+
+// Layout: the sidebar is position:fixed; the web client is padded by the
+// space it occupies. Nothing in Odoo's own flex layout is rewrapped.
+:root[data-cbt-has-sidebar] {
+    &[data-cbt-sidebar="expanded"] { --cbt-sidebar-current-width: var(--cbt-sidebar-width); }
+    &[data-cbt-sidebar="mini"] { --cbt-sidebar-current-width: var(--cbt-sidebar-mini-width); }
+    &[data-cbt-sidebar="collapsed"] { --cbt-sidebar-current-width: 0px; }
+    &[data-cbt-nav="compact"] { --cbt-sidebar-current-width: var(--cbt-sidebar-mini-width); }
+
+    body.o_web_client {
+        transition: padding var(--cbt-duration-slow) var(--cbt-ease);
+    }
+    &[data-cbt-sidebar-pos="start"] body.o_web_client { padding-inline-start: var(--cbt-sidebar-current-width); }
+    &[data-cbt-sidebar-pos="end"] body.o_web_client { padding-inline-end: var(--cbt-sidebar-current-width); }
+}
+
+.o_main_navbar {
+    --o-navbar-height: var(--cbt-navbar-height);
+    --NavBar-entry-color: var(--cbt-text);
+    --NavBar-entry-color--hover: var(--cbt-text-strong);
+    --NavBar-entry-padding-left: .7rem;
+    --NavBar-entry-padding-right: .7rem;
+    --NavBar-entry-backgroundColor: transparent;
+    --NavBar-entry-backgroundColor--hover: var(--cbt-surface-hover);
+    --NavBar-entry-backgroundColor--focus: var(--cbt-surface-hover);
+    --NavBar-entry-backgroundColor--active: var(--cbt-primary-soft);
+    --NavBar-entry-color--active: var(--cbt-primary-text);
+    --o-navbar-badge-bg: var(--cbt-primary);
+
+    position: relative;
+    z-index: 10;
+    gap: .25rem;
+    padding-inline: .5rem;
+    background: var(--cbt-surface);
+    border-bottom: 0;
+    color: var(--cbt-text);
+
+    // Hairline drawn above the entries (which use `bg-inherit` and the full
+    // navbar height, so a regular border would be covered).
+    &::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        inset-block-end: 0;
+        block-size: 1px;
+        background: var(--cbt-border);
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .o_menu_brand {
+        font-weight: 650;
+        letter-spacing: -.01em;
+        color: var(--cbt-text-strong) !important;
+    }
+
+    // Section entries become soft pills
+    .o_menu_sections {
+        gap: .15rem;
+        align-items: center;
+
+        > .dropdown-toggle, > button, .o_nav_entry, > .o-dropdown {
+            border-radius: var(--cbt-radius);
+        }
+        .o_nav_entry, .dropdown-toggle {
+            height: calc(var(--cbt-navbar-height) - 16px);
+            line-height: calc(var(--cbt-navbar-height) - 16px);
+            border-radius: var(--cbt-radius);
+            color: var(--cbt-text);
+            &:hover, &.show { background-color: var(--cbt-surface-hover); color: var(--cbt-text-strong); }
+        }
+    }
+
+    .o_menu_systray {
+        align-items: center;
+        gap: .15rem;
+        > div > .o-dropdown > .dropdown-toggle,
+        > div > button, .o_nav_entry {
+            border-radius: var(--cbt-radius);
+        }
+        .o-mail-MessagingMenu-counter, .badge {
+            background-color: var(--cbt-primary) !important;
+            color: var(--cbt-on-primary);
+            text-shadow: none;
+        }
+    }
+
+    .o_navbar_breadcrumbs .breadcrumb { margin-block: 0; }
+}
+
+// Navigation modes ---------------------------------------------------------------
+// Vertical: the sidebar owns app sections.
+:root[data-cbt-nav="vertical"][data-cbt-has-sidebar] .o_main_navbar .o_menu_sections {
+    visibility: hidden;
+    inline-size: 0;
+    flex-grow: 1;
+}
+
+// Apps launcher button (replaces the default apps dropdown on desktop)
+.cbt-apps-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    block-size: calc(var(--cbt-navbar-height) - 14px);
+    padding-inline: .55rem;
+    border: 0;
+    border-radius: var(--cbt-radius);
+    background: transparent;
+    color: var(--cbt-text);
+    font-weight: 600;
+    &:hover, &[aria-expanded="true"] { background: var(--cbt-surface-hover); color: var(--cbt-text-strong); }
+    .cbt-apps-toggle__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 4px);
+        gap: 3px;
+        > i { inline-size: 4px; block-size: 4px; border-radius: 1px; background: currentColor; display: block; }
+    }
+    &--company {
+        padding-inline: .4rem;
+        max-inline-size: 16rem;
+    }
+    .cbt-apps-toggle__logo {
+        inline-size: 2rem;
+        block-size: 2rem;
+        object-fit: contain;
+        border-radius: 7px;
+    }
+    .cbt-apps-toggle__name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+.cbt-sidebar-toggle {
+    margin-inline-end: .1rem;
+}
+
+// Systray items contributed by the theme
+.cbt-systray-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    block-size: calc(var(--cbt-navbar-height) - 16px);
+    min-inline-size: calc(var(--cbt-navbar-height) - 16px);
+    padding-inline: .5rem;
+    border: 0;
+    border-radius: var(--cbt-radius);
+    background: transparent;
+    color: var(--cbt-text-muted);
+    &:hover { background: var(--cbt-surface-hover); color: var(--cbt-text-strong); }
+    &.cbt-systray-search {
+        min-inline-size: 15rem;
+        justify-content: flex-start;
+        margin-inline-end: .35rem;
+        border: 1px solid var(--cbt-border);
+        background: var(--cbt-surface-sunken);
+        .cbt-kbd { margin-inline-start: auto; }
+        @media (max-width: 1199.98px) {
+            min-inline-size: 0;
+            border: 0;
+            background: transparent;
+            .cbt-systray-search__label, .cbt-kbd { display: none; }
+        }
+    }
+}
+
+// Odoo paints the navbar with the (compile-time) brand color in a couple of
+// mobile states; keep the themed surface instead.
+.o_web_client.o-mail-discuss-systray-menu-open .o_main_navbar {
+    background-color: var(--cbt-surface) !important;
+}
+.bottom-sheet-open:not(.o_home_menu_background) .o_main_navbar {
+    box-shadow: 20px 0 0 var(--cbt-surface), -20px 0 0 var(--cbt-surface);
+}

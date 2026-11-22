@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Manufacturing order list: one ring per work order, right after the quantity. -->
+    <record id="mrp_production_tree_view_progress" model="ir.ui.view">
+        <field name="name">mrp.production.list.progress</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="product_qty" position="after">
+                <field name="cux_workorder_progress"
+                       widget="workorder_progress_rings"
+                       string="Operations Progress"
+                       width="360px"
+                       optional="show"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

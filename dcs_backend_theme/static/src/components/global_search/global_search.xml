@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dcs_backend_theme.GlobalSearch">
+        <div class="cbt-overlay cbt-search-overlay" t-on-click.self="this.close">
+            <div class="cbt-search" t-ref="this.rootRef" role="dialog" aria-modal="true" t-att-aria-label="this.labels.dialog">
+                <div class="cbt-search__field">
+                    <i class="oi" data-icon="search" aria-hidden="true"/>
+                    <input type="text" class="cbt-search__input" data-autofocus="1"
+                           role="combobox" aria-autocomplete="list" aria-expanded="true"
+                           t-att-aria-controls="this.listId"
+                           t-att-aria-activedescendant="this.items.length ? this.optionId(this.state.activeIndex) : false"
+                           t-att-placeholder="this.labels.placeholder" t-att-aria-label="this.labels.placeholder"
+                           autocomplete="off" spellcheck="false"
+                           t-att-value="this.state.query" t-on-input="this.onInput" t-on-keydown="this.onKeydown"/>
+                    <span class="cbt-kbd">Esc</span>
+                </div>
+
+                <div class="cbt-search__results" t-att-id="this.listId" role="listbox" t-att-aria-label="this.labels.dialog">
+                    <t t-foreach="this.groups" t-as="group" t-key="group.id">
+                        <div class="cbt-search__group" role="group" t-att-aria-label="group.title">
+                            <div class="cbt-search__group-title">
+                                <span t-out="group.title"/>
+                                <button t-if="group.id === 'history'" type="button" class="btn btn-link btn-sm p-0" t-on-click="this.clearHistory" t-out="this.labels.clear"/>
+                            </div>
+                            <t t-foreach="group.items" t-as="item" t-key="item.key">
+                                <div class="cbt-search__option" role="option"
+                                     t-att-id="this.optionId(item.index)"
+                                     t-att-aria-selected="this.state.activeIndex === item.index ? 'true' : 'false'"
+                                     t-att-class="{ 'cbt-search__option--active': this.state.activeIndex === item.index }"
+                                     t-on-mousemove="() => this.hover(item.index)"
+                                     t-on-click="() => this.select(item)">
+                                    <span class="cbt-search__option-icon">
+                                        <AppIcon t-if="item.app" app="item.app" size="'sm'"/>
+                                        <i t-elif="item.kind === 'history'" class="oi" data-icon="history" aria-hidden="true"/>
+                                        <i t-elif="item.kind === 'palette'" class="oi" data-icon="terminal" aria-hidden="true"/>
+                                        <i t-else="" class="oi" data-icon="bookmark" aria-hidden="true"/>
+                                    </span>
+                                    <span class="cbt-search__option-label">
+                                        <t t-if="item.kind === 'palette'"><t t-out="this.labels.palette"/> “<b t-out="item.label"/>”</t>
+                                        <t t-else="" t-out="item.label"/>
+                                    </span>
+                                    <span class="cbt-search__option-meta" t-out="this.typeLabel(item)"/>
+                                    <i class="oi cbt-search__option-enter" data-icon="subdirectory_arrow_right" aria-hidden="true"/>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                    <p class="cbt-search__empty" t-if="this.query and this.items.length lte 1" t-out="this.labels.empty"/>
+                </div>
+
+                <div class="cbt-search__footer" aria-hidden="true">
+                    <span><span class="cbt-kbd"><i class="oi" data-icon="arrow_upward"/></span><span class="cbt-kbd"><i class="oi" data-icon="arrow_downward"/></span> <t t-out="this.labels.navigate"/></span>
+                    <span><span class="cbt-kbd">Enter</span> <t t-out="this.labels.open"/></span>
+                    <span><span class="cbt-kbd">Esc</span> <t t-out="this.labels.close"/></span>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

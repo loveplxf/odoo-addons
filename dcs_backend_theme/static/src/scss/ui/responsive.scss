@@ -1,0 +1,37 @@
+// =============================================================================
+// Responsive behaviour
+// -----------------------------------------------------------------------------
+// Below the `md` breakpoint Odoo switches to its own mobile UI (burger menu,
+// bottom sheets). The theme's sidebar is not rendered there (see sidebar.js),
+// so we only soften spacing and never fight Odoo's mobile layout.
+// =============================================================================
+
+@include media-breakpoint-down(md) {
+    :root { --cbt-sidebar-current-width: 0px !important; }
+    body.o_web_client { padding-inline: 0 !important; }
+
+    .o_control_panel { padding-inline: .75rem; }
+    .o_form_view .o_form_sheet_bg > .o_form_sheet { border-radius: 0; border-inline: 0 !important; }
+    .cbt-systray-btn.cbt-systray-search { min-inline-size: 0; }
+}
+
+// Tablets: keep the sidebar but default it to the icon rail width when the
+// user picked "expanded" and space is tight.
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    :root[data-cbt-has-sidebar][data-cbt-sidebar="expanded"]:not([data-cbt-sidebar-forced]) {
+        --cbt-sidebar-width: 232px;
+    }
+    .o_form_view .o_form_sheet_bg { padding-inline: .5rem; }
+}
+
+// Touch devices: larger hit targets for theme controls
+@media (pointer: coarse) {
+    .cbt-icon-btn, .cbt-systray-btn { min-inline-size: 2.6rem; block-size: 2.6rem; }
+    .cbt-sidebar .cbt-sidebar__item { min-block-size: 2.6rem; }
+}
+
+// Print: never print theme chrome
+@media print {
+    .cbt-sidebar, .cbt-overlay-root { display: none !important; }
+    body.o_web_client { padding: 0 !important; }
+}
