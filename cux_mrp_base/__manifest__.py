@@ -20,7 +20,7 @@ MRP Base Extension
     'category': 'Supply Chain/Manufacturing',
     'license': 'LGPL-3',
     'data': [
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'views/mrp_production_line_views.xml',
         'views/mrp_workcenter_views.xml',
         'views/menu.xml',
