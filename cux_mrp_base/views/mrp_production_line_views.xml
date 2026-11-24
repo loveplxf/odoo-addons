@@ -72,10 +72,8 @@
                                 <field name="code"/>
                                 <field name="type"/>
                                 <field name="parent_id"
-                                       attrs="{
-                                           'invisible': [('type', '=', 'factory')],
-                                           'readonly': [('type', '=', 'factory')],
-                                       }"
+                                       invisible="type == 'factory'"
+                                       readonly="type == 'factory'"
                                        placeholder="无（顶级）"/>
                                 <field name="company_id" groups="base.group_multi_company"/>
                             </group>
