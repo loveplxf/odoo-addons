@@ -1,3 +1,12 @@
 id,name,model_id,group_id/id,operation,domain
-access_mrp_production_line_user,mrp.production.line.user,mrp.production.line,mrp.group_mrp_user,r,,
-access_mrp_production_line_manager,mrp.production.line.manager,mrp.production.line,mrp.group_mrp_manager,crud,,
+access_mrp_production_line_user,mrp.production.line.user,mrp.production.line,mrp.group_mrp_user,r,
+access_mrp_production_line_manager,mrp.production.line.manager,mrp.production.line,mrp.group_mrp_manager,crud,
+access_mrp_team_user,mrp.team.user,mrp.team,mrp.group_mrp_user,r,
+access_mrp_team_manager,mrp.team.manager,mrp.team,mrp.group_mrp_manager,crud,
+access_mrp_shift_user,mrp.shift.user,mrp.shift,mrp.group_mrp_user,r,
+access_mrp_shift_manager,mrp.shift.manager,mrp.shift,mrp.group_mrp_manager,crud,
+access_mrp_shift_worktime_user,mrp.shift.worktime.user,mrp.shift.worktime,mrp.group_mrp_user,r,
+access_mrp_shift_worktime_manager,mrp.shift.worktime.manager,mrp.shift.worktime,mrp.group_mrp_manager,crud,
+rule_mrp_shift_company,mrp.shift multi-company,mrp.shift,,crud,"[('company_id', 'in', company_ids + [False])]"
+rule_mrp_production_line_company,mrp.production.line multi-company,mrp.production.line,,crud,"[('company_id', 'in', company_ids + [False])]"
+rule_mrp_team_company,mrp.team multi-company,mrp.team,,crud,"[('company_id', 'in', company_ids + [False])]"

@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class MrpProductionLine(models.Model):
     _name = "mrp.production.line"
     _description = "Production Line"
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    _order = "parent_path"
+    _order = "sequence, parent_path"
     _parent_name = "parent_id"
     _parent_store = True
     _rec_name = 'complete_name'
@@ -19,6 +20,10 @@ class MrpProductionLine(models.Model):
     code = fields.Char(
         string='Code',
         copy=False,
+    )
+    sequence = fields.Integer(
+        string='Sequence',
+        default=10,
     )
     complete_name = fields.Char(
         string='Complete Name',
@@ -115,7 +120,7 @@ class MrpProductionLine(models.Model):
             current = record
             while current and current.parent_id:
                 if current.parent_id.id in seen or current.parent_id.id == record.id:
-                    raise models.ValidationError(_('Circular parent reference is not allowed.'))
+                    raise ValidationError(_('Circular parent reference is not allowed.'))
                 seen.add(current.id)
                 current = current.parent_id
 
@@ -128,12 +133,12 @@ class MrpProductionLine(models.Model):
         """
         for record in self:
             if record.type == 'factory' and record.parent_id:
-                raise models.ValidationError(_('A factory cannot have a parent.'))
+                raise ValidationError(_('A factory cannot have a parent.'))
             if record.type == 'shop_floor' and record.parent_id and record.parent_id.type != 'factory':
-                raise models.ValidationError(_('The parent of a shop floor must be a factory.'))
+                raise ValidationError(_('The parent of a shop floor must be a factory.'))
             if record.type == 'production_line' and record.parent_id:
                 if record.parent_id.type != 'shop_floor':
-                    raise models.ValidationError(_('The parent of a production line must be a shop floor.'))
+                    raise ValidationError(_('The parent of a production line must be a shop floor.'))
 
     def action_view_children(self):
         """Open child records"""
@@ -158,9 +163,3 @@ class MrpProductionLine(models.Model):
             'domain': [('production_line_id', '=', self.id)],
             'context': {'default_production_line_id': self.id},
         }
-
-    def toggle_active(self):
-        """Toggle active/inactive state"""
-        for record in self:
-            record.active = not record.active
-        return True

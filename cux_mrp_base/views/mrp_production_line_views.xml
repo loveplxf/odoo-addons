@@ -24,6 +24,7 @@
             <field name="model">mrp.production.line</field>
             <field name="arch" type="xml">
                 <list string="Production Lines" decoration-info="type=='factory'" decoration-success="type=='shop_floor'" decoration-warning="type=='production_line'">
+                    <field name="sequence" widget="handle"/>
                     <field name="name"/>
                     <field name="code"/>
                     <field name="type"/>
@@ -43,27 +44,23 @@
             <field name="model">mrp.production.line</field>
             <field name="arch" type="xml">
                 <form string="Production Line">
-                    <header>
-                        <button name="action_view_children"
-                                type="object"
-                                string="Children"
-                                class="btn-secondary"
-                                invisible="child_count == 0"/>
-                        <button name="action_view_workcenters"
-                                type="object"
-                                string="Work Centers"
-                                class="btn-secondary"
-                                invisible="workcenter_count == 0"/>
-                        <button name="toggle_active"
-                                type="object"
-                                string="Disable"
-                                invisible="active == False"/>
-                        <button name="toggle_active"
-                                type="object"
-                                string="Enable"
-                                invisible="active == True"/>
-                    </header>
                     <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_children"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="list_alt"
+                                    invisible="child_count == 0">
+                                <field name="child_count" widget="statinfo" string="Children"/>
+                            </button>
+                            <button name="action_view_workcenters"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="business"
+                                    invisible="workcenter_count == 0">
+                                <field name="workcenter_count" widget="statinfo" string="Work Centers"/>
+                            </button>
+                        </div>
                         <div class="oe_title">
                             <h1>
                                 <field name="name" placeholder="Name"/>

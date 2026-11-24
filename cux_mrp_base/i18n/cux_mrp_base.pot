@@ -32,6 +32,12 @@ msgstr ""
 
 #. module: cux_mrp_base
 #. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_shift.py:0
+msgid "%s (copy)"
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
 #: code:addons/cux_mrp_base/models/mrp_production_line.py:0
 msgid "A factory cannot have a parent."
 msgstr ""
@@ -42,6 +48,7 @@ msgid "Action Needed"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__active
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__active
 msgid "Active"
 msgstr ""
@@ -72,8 +79,28 @@ msgid "Activity Type Icon"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_shift_worktime__day_period__afternoon
+msgid "Afternoon"
+msgstr ""
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_attachment_count
 msgid "Attachment Count"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_shift_worktime__day_period__break
+msgid "Break"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__break_hours
+msgid "Break Hours"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_shift_worktime__next_day
+msgid "Check if the shift crosses midnight"
 msgstr ""
 
 #. module: cux_mrp_base
@@ -108,12 +135,15 @@ msgid ""
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__code
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__code
 msgid "Code"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__company_id
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__company_id
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__company_id
 msgid "Company"
 msgstr ""
 
@@ -133,24 +163,27 @@ msgid "Created on"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__day_period
+msgid "Day Period"
+msgstr ""
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__description
 msgid "Description"
 msgstr ""
 
 #. module: cux_mrp_base
-#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
-msgid "Disable"
-msgstr ""
-
-#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__display_name
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__display_name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__display_name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__display_name
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: cux_mrp_base
-#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
-msgid "Enable"
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_shift_worktime__day_period__evening
+msgid "Evening"
 msgstr ""
 
 #. module: cux_mrp_base
@@ -170,12 +203,31 @@ msgid "Followers (Partners)"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_shift_worktime__hour_from
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_shift_worktime__hour_to
+msgid "Format is hh:mm, 24:00 is interpreted as 23:59:59.999999."
+msgstr ""
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__has_message
 msgid "Has Message"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__hour_from
+msgid "Hour From"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__hour_to
+msgid "Hour To"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__id
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__id
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__id
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__id
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__id
 msgid "ID"
 msgstr ""
@@ -217,6 +269,11 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_team__leader_id
+msgid "Leader of the production team"
+msgstr ""
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__factory_id
 msgid "Linked factory (auto-derived from shop floor)"
 msgstr ""
@@ -244,6 +301,11 @@ msgid "Material Symbols icon e.g. checklist"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_team__member_ids
+msgid "Members of the production team"
+msgstr ""
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_error
 msgid "Message Delivery error"
 msgstr ""
@@ -251,6 +313,11 @@ msgstr ""
 #. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_ids
 msgid "Messages"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_shift_worktime__day_period__morning
+msgid "Morning"
 msgstr ""
 
 #. module: cux_mrp_base
@@ -264,7 +331,10 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__name
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__name
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
 msgid "Name"
 msgstr ""
@@ -282,6 +352,11 @@ msgstr ""
 #. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_type_id
 msgid "Next Activity Type"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__next_day
+msgid "Next Day"
 msgstr ""
 
 #. module: cux_mrp_base
@@ -344,6 +419,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__production_line_id
 #: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__production_line
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_workcenter_search_inherit_production_line
 msgid "Production Line"
 msgstr ""
 
@@ -356,6 +432,16 @@ msgid "Production Lines"
 msgstr ""
 
 #. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_team
+msgid "Production Team"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__team_ids
+msgid "Production teams assigned to this work center"
+msgstr ""
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_user_id
 msgid "Responsible User"
 msgstr ""
@@ -363,6 +449,39 @@ msgstr ""
 #. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_sms_error
 msgid "SMS Delivery error"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__sequence
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__sequence
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_shift
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__shift_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_shift_form
+msgid "Shift"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_shift_worktime
+msgid "Shift Worktime"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.actions.act_window,name:cux_mrp_base.action_mrp_shift
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__shift_ids
+#: model:ir.ui.menu,name:cux_mrp_base.menu_mrp_shift
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_shift_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_shift_tree
+msgid "Shifts"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__shift_ids
+msgid "Shifts available for this work center"
 msgstr ""
 
 #. module: cux_mrp_base
@@ -378,6 +497,27 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__leader_id
+msgid "Team Leader"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__member_ids
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_team_form
+msgid "Team Members"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.actions.act_window,name:cux_mrp_base.action_mrp_team
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__team_ids
+#: model:ir.ui.menu,name:cux_mrp_base.menu_mrp_team
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_team_form
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_team_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_team_tree
+msgid "Teams"
 msgstr ""
 
 #. module: cux_mrp_base
@@ -423,6 +563,26 @@ msgstr ""
 #. module: cux_mrp_base
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_kanban
 msgid "Work Centers:"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__hour_to
+msgid "Work End"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__work_hours
+msgid "Work Hours"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__hour_from
+msgid "Work Start"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__worktime_ids
+msgid "Work Times"
 msgstr ""
 
 #. module: cux_mrp_base

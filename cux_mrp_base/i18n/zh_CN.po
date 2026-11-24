@@ -42,6 +42,12 @@ msgstr ""
 
 #. module: cux_mrp_base
 #. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_shift.py:0
+msgid "%s (copy)"
+msgstr "%s（副本）"
+
+#. module: cux_mrp_base
+#. odoo-python
 #: code:addons/cux_mrp_base/models/mrp_production_line.py:0
 msgid "A factory cannot have a parent."
 msgstr "工厂不能有上级。"
@@ -52,6 +58,7 @@ msgid "Action Needed"
 msgstr "待处理"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__active
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__active
 msgid "Active"
 msgstr "启用"
@@ -82,9 +89,29 @@ msgid "Activity Type Icon"
 msgstr "活动类型图标"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_shift_worktime__day_period__afternoon
+msgid "Afternoon"
+msgstr "下午"
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_attachment_count
 msgid "Attachment Count"
 msgstr "附件数"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_shift_worktime__day_period__break
+msgid "Break"
+msgstr "休息"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__break_hours
+msgid "Break Hours"
+msgstr "休息时长"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_shift_worktime__next_day
+msgid "Check if the shift crosses midnight"
+msgstr "若班次跨天，请勾选"
 
 #. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__child_count
@@ -111,12 +138,15 @@ msgid "Circular parent reference is not allowed."
 msgstr "不允许循环引用父级。"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__code
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__code
 msgid "Code"
 msgstr "编码"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__company_id
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__company_id
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__company_id
 msgid "Company"
 msgstr "公司"
 
@@ -145,25 +175,28 @@ msgstr ""
 "工厂 → 车间 → 产线的多级结构。"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__day_period
+msgid "Day Period"
+msgstr "类别"
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__description
 msgid "Description"
 msgstr "说明"
 
 #. module: cux_mrp_base
-#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
-msgid "Disable"
-msgstr "禁用"
-
-#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__display_name
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__display_name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__display_name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__display_name
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__display_name
 msgid "Display Name"
 msgstr "显示名称"
 
 #. module: cux_mrp_base
-#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
-msgid "Enable"
-msgstr "启用"
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_shift_worktime__day_period__evening
+msgid "Evening"
+msgstr "晚上"
 
 #. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__factory_id
@@ -182,12 +215,31 @@ msgid "Followers (Partners)"
 msgstr "关注者（联系人）"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_shift_worktime__hour_from
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_shift_worktime__hour_to
+msgid "Format is hh:mm, 24:00 is interpreted as 23:59:59.999999."
+msgstr "格式为 hh:mm，24:00 被理解为 23:59:59.999999。"
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__has_message
 msgid "Has Message"
 msgstr "包含消息"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__hour_from
+msgid "Hour From"
+msgstr "起始时间"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__hour_to
+msgid "Hour To"
+msgstr "截止时间"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__id
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__id
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__id
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__id
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__id
 msgid "ID"
 msgstr "ID"
@@ -229,6 +281,11 @@ msgid "Last Updated on"
 msgstr "最后更新时间"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_team__leader_id
+msgid "Leader of the production team"
+msgstr "班组的负责人"
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__factory_id
 msgid "Linked factory (auto-derived from shop floor)"
 msgstr "所属工厂（由车间自动带出）"
@@ -256,6 +313,11 @@ msgid "Material Symbols icon e.g. checklist"
 msgstr "物料符号图标，如：检查清单"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_team__member_ids
+msgid "Members of the production team"
+msgstr "班组的成员"
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_error
 msgid "Message Delivery error"
 msgstr "消息发送错误"
@@ -264,6 +326,11 @@ msgstr "消息发送错误"
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_ids
 msgid "Messages"
 msgstr "消息"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_shift_worktime__day_period__morning
+msgid "Morning"
+msgstr "上午"
 
 #. module: cux_mrp_base
 #: model:ir.module.module,summary:base.module_cux_mrp_base
@@ -276,7 +343,10 @@ msgid "My Activity Deadline"
 msgstr "我的活动截止日期"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__name
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__name
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
 msgid "Name"
 msgstr "名称"
@@ -295,6 +365,11 @@ msgstr "下一活动摘要"
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_type_id
 msgid "Next Activity Type"
 msgstr "下一活动类型"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__next_day
+msgid "Next Day"
+msgstr "次日"
 
 #. module: cux_mrp_base
 #: model_terms:ir.actions.act_window,help:cux_mrp_base.action_mrp_production_line
@@ -356,6 +431,7 @@ msgstr "上级产线 / 车间 / 工厂"
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__production_line_id
 #: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__production_line
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_workcenter_search_inherit_production_line
 msgid "Production Line"
 msgstr "产线"
 
@@ -368,6 +444,16 @@ msgid "Production Lines"
 msgstr "产线"
 
 #. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_team
+msgid "Production Team"
+msgstr "班组"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__team_ids
+msgid "Production teams assigned to this work center"
+msgstr "该工作中心所属的班组"
+
+#. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_user_id
 msgid "Responsible User"
 msgstr "负责人"
@@ -376,6 +462,39 @@ msgstr "负责人"
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr "短信发送错误"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__sequence
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__sequence
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__sequence
+msgid "Sequence"
+msgstr "序列"
+
+#. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_shift
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__shift_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_shift_form
+msgid "Shift"
+msgstr "班次"
+
+#. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_shift_worktime
+msgid "Shift Worktime"
+msgstr "班次工作时间"
+
+#. module: cux_mrp_base
+#: model:ir.actions.act_window,name:cux_mrp_base.action_mrp_shift
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__shift_ids
+#: model:ir.ui.menu,name:cux_mrp_base.menu_mrp_shift
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_shift_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_shift_tree
+msgid "Shifts"
+msgstr "班次"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__shift_ids
+msgid "Shifts available for this work center"
+msgstr "该工作中心可用的班次"
 
 #. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__shop_floor_id
@@ -395,6 +514,27 @@ msgstr ""
 "逾期：截止日期已过\n"
 "今天：活动日期为今天\n"
 "计划：未来的活动。"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__leader_id
+msgid "Team Leader"
+msgstr "班组长"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_team__member_ids
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_team_form
+msgid "Team Members"
+msgstr "班组成员"
+
+#. module: cux_mrp_base
+#: model:ir.actions.act_window,name:cux_mrp_base.action_mrp_team
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__team_ids
+#: model:ir.ui.menu,name:cux_mrp_base.menu_mrp_team
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_team_form
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_team_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_team_tree
+msgid "Teams"
+msgstr "班组"
 
 #. module: cux_mrp_base
 #. odoo-python
@@ -440,3 +580,23 @@ msgstr "工作中心："
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
 msgid "Work Centers"
 msgstr "工作中心"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__hour_to
+msgid "Work End"
+msgstr "工作截止"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__work_hours
+msgid "Work Hours"
+msgstr "工作时长"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift_worktime__hour_from
+msgid "Work Start"
+msgstr "工作起始"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_shift__worktime_ids
+msgid "Work Times"
+msgstr "工作时间明细"

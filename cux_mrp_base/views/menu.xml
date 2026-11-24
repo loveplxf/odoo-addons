@@ -14,5 +14,19 @@
                   groups="mrp.group_mrp_manager"
                   sequence="89"/>
 
+        <menuitem id="menu_mrp_team"
+                  name="Teams"
+                  parent="mrp.menu_mrp_configuration"
+                  action="action_mrp_team"
+                  groups="mrp.group_mrp_manager"
+                  sequence="88"/>
+
+        <menuitem id="menu_mrp_shift"
+                  name="Shifts"
+                  parent="mrp.menu_mrp_configuration"
+                  action="action_mrp_shift"
+                  groups="mrp.group_mrp_manager"
+                  sequence="87"/>
+
     </data>
 </odoo>

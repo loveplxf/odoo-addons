@@ -9,29 +9,11 @@
             <field name="arch" type="xml">
                 <field name="name" position="after">
                     <field name="production_line_id" optional="show"/>
+                    <field name="team_ids" widget="many2many_tags" optional="hide"/>
+                    <field name="shift_ids" widget="many2many_tags" optional="hide"/>
                     <field name="shop_floor_id" optional="hide"/>
                     <field name="factory_id" optional="hide"/>
                 </field>
-            </field>
-        </record>
-
-        <!-- 为 mrp.workcenter 增加搜索视图（含 searchpanel），mrp 原模块无搜索视图 -->
-        <record id="view_mrp_workcenter_search_production_line" model="ir.ui.view">
-            <field name="name">mrp.workcenter.search.production.line</field>
-            <field name="model">mrp.workcenter</field>
-            <field name="arch" type="xml">
-                <search string="Work Centers">
-                    <field name="name"/>
-                    <field name="code"/>
-                    <field name="production_line_id"/>
-                    <field name="shop_floor_id"/>
-                    <field name="factory_id"/>
-                    <searchpanel>
-                        <field name="factory_id" string="Factory" icon="fa-building" enable_counters="1"/>
-                        <field name="shop_floor_id" string="Shop Floor" icon="fa-th-large" enable_counters="1"/>
-                        <field name="production_line_id" string="Production Line" icon="fa-industry" enable_counters="1"/>
-                    </searchpanel>
-                </search>
             </field>
         </record>
 
@@ -43,7 +25,23 @@
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="production_line_id"/>
+                    <field name="team_ids" widget="many2many_tags"/>
+                    <field name="shift_ids" widget="many2many_tags"/>
                 </field>
+            </field>
+        </record>
+
+        <!-- 在 mrp.workcenter 的搜索视图增加 searchpanel（工厂 / 车间 / 产线） -->
+        <record id="view_mrp_workcenter_search_inherit_production_line" model="ir.ui.view">
+            <field name="name">mrp.workcenter.search.inherit.production.line</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.view_mrp_workcenter_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <searchpanel>
+                        <field name="production_line_id" string="Production Line" icon="factory" enable_counters="1" depth="3"/>
+                    </searchpanel>
+                </xpath>
             </field>
         </record>
 

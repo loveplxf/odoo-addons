@@ -13,8 +13,8 @@ supporting a multi-level parent-child hierarchy:
 - Shop Floor (level 2)
 - Production Line (level 3)
     """,
-    'version': '20.0.1.0.0',
-    'depends': ['mrp'],
+    'version': '20.0.1.2.0',
+    'depends': ['mrp', 'hr'],
     'installable': True,
     'application': False,
     'auto_install': False,
@@ -24,6 +24,8 @@ supporting a multi-level parent-child hierarchy:
     'data': [
         'security/ir.access.csv',
         'views/mrp_production_line_views.xml',
+        'views/mrp_team_views.xml',
+        'views/mrp_shift_views.xml',
         'views/mrp_workcenter_views.xml',
         'views/menu.xml',
     ],
