@@ -113,17 +113,6 @@
                     <field name="name"/>
                     <field name="code"/>
                     <field name="complete_name"/>
-                    <filter name="factory" string="工厂" domain="[('type', '=', 'factory')]"/>
-                    <filter name="shop_floor" string="车间" domain="[('type', '=', 'shop_floor')]"/>
-                    <filter name="production_line" string="产线" domain="[('type', '=', 'production_line')]"/>
-                    <separator/>
-                    <filter name="active" string="启用" domain="[('active', '=', True)]"/>
-                    <filter name="inactive" string="禁用" domain="[('active', '=', False)]"/>
-                    <group expand="0" string="分组">
-                        <filter name="group_type" string="类型" context="{'group_by': 'type'}"/>
-                        <filter name="group_parent" string="上级" context="{'group_by': 'parent_id'}"/>
-                        <filter name="group_company" string="公司" context="{'group_by': 'company_id'}"/>
-                    </group>
                 </search>
             </field>
         </record>
