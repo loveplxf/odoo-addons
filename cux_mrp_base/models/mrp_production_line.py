@@ -110,8 +110,14 @@ class MrpProductionLine(models.Model):
 
     @api.constrains('parent_id')
     def _check_parent_id(self):
-        if not self._check_recursion():
-            raise models.ValidationError(_('不允许循环引用父级。'))
+        for record in self:
+            seen = set()
+            current = record
+            while current and current.parent_id:
+                if current.parent_id.id in seen or current.parent_id.id == record.id:
+                    raise models.ValidationError(_('不允许循环引用父级。'))
+                seen.add(current.id)
+                current = current.parent_id
 
     @api.constrains('type', 'parent_id')
     def _check_type_parent_consistency(self):
