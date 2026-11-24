@@ -152,3 +152,9 @@ class MrpProductionLine(models.Model):
             'domain': [('production_line_id', '=', self.id)],
             'context': {'default_production_line_id': self.id},
         }
+
+    def toggle_active(self):
+        """切换启用/禁用状态"""
+        for record in self:
+            record.active = not record.active
+        return True
