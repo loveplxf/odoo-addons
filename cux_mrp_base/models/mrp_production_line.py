@@ -12,34 +12,34 @@ class MrpProductionLine(models.Model):
     _rec_name = 'complete_name'
 
     name = fields.Char(
-        string='名称',
+        string='Name',
         required=True,
         tracking=True,
     )
     code = fields.Char(
-        string='编码',
+        string='Code',
         copy=False,
     )
     complete_name = fields.Char(
-        string='全名',
+        string='Complete Name',
         compute='_compute_complete_name',
         recursive=True,
         store=True,
     )
     type = fields.Selection([
-        ('factory', '工厂'),
-        ('shop_floor', '车间'),
-        ('production_line', '产线'),
-    ], string='类型', required=True, default='production_line', tracking=True)
+        ('factory', 'Factory'),
+        ('shop_floor', 'Shop Floor'),
+        ('production_line', 'Production Line'),
+    ], string='Type', required=True, default='production_line', tracking=True)
 
-    # 父子关系
+    # Parent-child hierarchy
     parent_id = fields.Many2one(
         'mrp.production.line',
-        string='上级',
+        string='Parent',
         index=True,
         ondelete='cascade',
         tracking=True,
-        help='上级生产线/车间/工厂',
+        help='Parent production line / shop floor / factory',
     )
     parent_path = fields.Char(
         index=True,
@@ -48,40 +48,39 @@ class MrpProductionLine(models.Model):
     child_ids = fields.One2many(
         'mrp.production.line',
         'parent_id',
-        string='下级',
+        string='Children',
     )
     child_count = fields.Integer(
-        string='下级数量',
+        string='Child Count',
         compute='_compute_child_count',
     )
     parent_type = fields.Selection(
         [
-            ('factory', '工厂'),
-            ('shop_floor', '车间'),
-            ('production_line', '产线'),
+            ('factory', 'Factory'),
+            ('shop_floor', 'Shop Floor'),
+            ('production_line', 'Production Line'),
         ],
         related='parent_id.type',
-        string='上级类型',
+        string='Parent Type',
         store=True,
     )
 
-    # 关联工作中心
+    # Linked work centers
     workcenter_ids = fields.One2many(
         'mrp.workcenter',
         'production_line_id',
-        string='工作中心',
+        string='Work Centers',
     )
     workcenter_count = fields.Integer(
-        string='工作中心数',
+        string='Work Center Count',
         compute='_compute_workcenter_count',
     )
 
-    # 其他字段
-    description = fields.Text(string='描述')
-    active = fields.Boolean(string='启用', default=True)
+    description = fields.Text(string='Description')
+    active = fields.Boolean(string='Active', default=True)
     company_id = fields.Many2one(
         'res.company',
-        string='公司',
+        string='Company',
         default=lambda self: self.env.company,
     )
 
@@ -105,41 +104,42 @@ class MrpProductionLine(models.Model):
 
     @api.onchange('type')
     def _onchange_type(self):
-        """根据类型自动限制 parent_id 的可选项"""
+        """Clear parent_id when type changes"""
         self.parent_id = False
 
     @api.constrains('parent_id')
     def _check_parent_id(self):
+        """Prevent circular parent references"""
         for record in self:
             seen = set()
             current = record
             while current and current.parent_id:
                 if current.parent_id.id in seen or current.parent_id.id == record.id:
-                    raise models.ValidationError(_('不允许循环引用父级。'))
+                    raise models.ValidationError(_('Circular parent reference is not allowed.'))
                 seen.add(current.id)
                 current = current.parent_id
 
     @api.constrains('type', 'parent_id')
     def _check_type_parent_consistency(self):
-        """校验父子类型的一致性：
-        - factory 的 parent_id 必须为空
-        - shop_floor 的 parent_id 必须是 factory
-        - production_line 的 parent_id 必须是 shop_floor
+        """Validate parent-child type rules:
+        - factory: no parent allowed
+        - shop_floor: parent must be factory
+        - production_line: parent must be shop_floor
         """
         for record in self:
             if record.type == 'factory' and record.parent_id:
-                raise models.ValidationError(_('工厂不能有上级。'))
+                raise models.ValidationError(_('A factory cannot have a parent.'))
             if record.type == 'shop_floor' and record.parent_id and record.parent_id.type != 'factory':
-                raise models.ValidationError(_('车间的上级必须是工厂。'))
+                raise models.ValidationError(_('The parent of a shop floor must be a factory.'))
             if record.type == 'production_line' and record.parent_id:
                 if record.parent_id.type != 'shop_floor':
-                    raise models.ValidationError(_('产线的上级必须是车间。'))
+                    raise models.ValidationError(_('The parent of a production line must be a shop floor.'))
 
     def action_view_children(self):
-        """查看下级记录"""
+        """Open child records"""
         self.ensure_one()
         return {
-            'name': _('下级'),
+            'name': _('Children'),
             'type': 'ir.actions.act_window',
             'res_model': 'mrp.production.line',
             'view_mode': 'list,form',
@@ -148,10 +148,10 @@ class MrpProductionLine(models.Model):
         }
 
     def action_view_workcenters(self):
-        """查看关联的工作中心"""
+        """Open linked work centers"""
         self.ensure_one()
         return {
-            'name': _('工作中心'),
+            'name': _('Work Centers'),
             'type': 'ir.actions.act_window',
             'res_model': 'mrp.workcenter',
             'view_mode': 'list,form',
@@ -160,7 +160,7 @@ class MrpProductionLine(models.Model):
         }
 
     def toggle_active(self):
-        """切换启用/禁用状态"""
+        """Toggle active/inactive state"""
         for record in self:
             record.active = not record.active
         return True

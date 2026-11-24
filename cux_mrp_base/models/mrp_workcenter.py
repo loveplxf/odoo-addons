@@ -7,21 +7,21 @@ class MrpWorkcenter(models.Model):
 
     production_line_id = fields.Many2one(
         'mrp.production.line',
-        string='生产线',
+        string='Production Line',
         domain="[('type', '=', 'production_line')]",
-        help='所属产线（仅允许选择类型为"产线"的记录）',
+        help='Linked production line (only records of type "Production Line" are allowed)',
     )
     shop_floor_id = fields.Many2one(
         'mrp.production.line',
-        string='车间',
+        string='Shop Floor',
         related='production_line_id.parent_id',
         store=True,
-        help='所属车间（由产线自动带出）',
+        help='Linked shop floor (auto-derived from production line)',
     )
     factory_id = fields.Many2one(
         'mrp.production.line',
-        string='工厂',
+        string='Factory',
         related='shop_floor_id.parent_id',
         store=True,
-        help='所属工厂（由车间自动带出）',
+        help='Linked factory (auto-derived from shop floor)',
     )

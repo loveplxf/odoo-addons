@@ -23,8 +23,6 @@
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="production_line_id"/>
-                    <field name="shop_floor_id" readonly="1"/>
-                    <field name="factory_id" readonly="1"/>
                 </field>
             </field>
         </record>

@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 {
     'name': "MRP Base Extension",
-    'summary': "生产线/工厂/车间多级父子结构管理",
+    'summary': "Multi-level Production Line / Factory / Shop Floor hierarchy",
     'description': """
 MRP Base Extension
 ==================
 
-在制造模块中增加"生产线"基础数据模型，支持多级父子结构：
-- 工厂 (factory)
-- 车间 (shop_floor)
-- 产线 (production_line)
+Adds a "Production Line" master data model to the Manufacturing app,
+supporting a multi-level parent-child hierarchy:
+
+- Factory (level 1, top)
+- Shop Floor (level 2)
+- Production Line (level 3)
     """,
     'version': '20.0.1.0.0',
     'depends': ['mrp'],
@@ -25,4 +27,5 @@ MRP Base Extension
         'views/mrp_workcenter_views.xml',
         'views/menu.xml',
     ],
+    'assets': {},
 }

@@ -3,15 +3,17 @@
     <data>
         <!-- Action -->
         <record id="action_mrp_production_line" model="ir.actions.act_window">
-            <field name="name">生产线</field>
+            <field name="name">Production Lines</field>
             <field name="res_model">mrp.production.line</field>
             <field name="view_mode">list,form</field>
+            <field name="context">{'active_test': False}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    还没有生产线！
+                    No production lines yet!
                 </p>
                 <p>
-                    点击创建第一条生产线数据，支持工厂 → 车间 → 产线的多级结构。
+                    Click to create your first production line, supporting a
+                    Factory → Shop Floor → Production Line hierarchy.
                 </p>
             </field>
         </record>
@@ -21,7 +23,7 @@
             <field name="name">mrp.production.line.list</field>
             <field name="model">mrp.production.line</field>
             <field name="arch" type="xml">
-                <list string="生产线" decoration-info="type=='factory'" decoration-success="type=='shop_floor'" decoration-warning="type=='production_line'">
+                <list string="Production Lines" decoration-info="type=='factory'" decoration-success="type=='shop_floor'" decoration-warning="type=='production_line'">
                     <field name="name"/>
                     <field name="code"/>
                     <field name="type"/>
@@ -40,31 +42,31 @@
             <field name="name">mrp.production.line.form</field>
             <field name="model">mrp.production.line</field>
             <field name="arch" type="xml">
-                <form string="生产线">
+                <form string="Production Line">
                     <header>
                         <button name="action_view_children"
                                 type="object"
-                                string="下级"
+                                string="Children"
                                 class="btn-secondary"
                                 invisible="child_count == 0"/>
                         <button name="action_view_workcenters"
                                 type="object"
-                                string="工作中心"
+                                string="Work Centers"
                                 class="btn-secondary"
                                 invisible="workcenter_count == 0"/>
                         <button name="toggle_active"
                                 type="object"
-                                string="禁用"
+                                string="Disable"
                                 invisible="active == False"/>
                         <button name="toggle_active"
                                 type="object"
-                                string="启用"
+                                string="Enable"
                                 invisible="active == True"/>
                     </header>
                     <sheet>
                         <div class="oe_title">
                             <h1>
-                                <field name="name" placeholder="名称"/>
+                                <field name="name" placeholder="Name"/>
                             </h1>
                         </div>
                         <group>
@@ -74,7 +76,7 @@
                                 <field name="parent_id"
                                        invisible="type == 'factory'"
                                        readonly="type == 'factory'"
-                                       placeholder="无（顶级）"/>
+                                       placeholder="None (Top Level)"/>
                                 <field name="company_id" groups="base.group_multi_company"/>
                             </group>
                             <group>
@@ -85,10 +87,10 @@
                             </group>
                         </group>
                         <notebook>
-                            <page string="说明" name="description">
+                            <page string="Notes" name="description">
                                 <field name="description" nolabel="1"/>
                             </page>
-                            <page string="下级" name="children">
+                            <page string="Children" name="children">
                                 <field name="child_ids">
                                     <list editable="bottom">
                                         <field name="name"/>
@@ -109,7 +111,7 @@
             <field name="name">mrp.production.line.search</field>
             <field name="model">mrp.production.line</field>
             <field name="arch" type="xml">
-                <search string="生产线">
+                <search string="Production Lines">
                     <field name="name"/>
                     <field name="code"/>
                     <field name="complete_name"/>
@@ -141,10 +143,10 @@
                                 </div>
                                 <div class="mt8">
                                     <span class="badge rounded-pill text-bg-secondary" t-if="record.child_count.raw_value">
-                                        下级: <field name="child_count"/>
+                                        Children: <field name="child_count"/>
                                     </span>
                                     <span class="badge rounded-pill text-bg-info" t-if="record.workcenter_count.raw_value">
-                                        工作中心: <field name="workcenter_count"/>
+                                        Work Centers: <field name="workcenter_count"/>
                                     </span>
                                 </div>
                             </div>
