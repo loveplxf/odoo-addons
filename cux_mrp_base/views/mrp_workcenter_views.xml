@@ -19,13 +19,13 @@
         <record id="view_mrp_workcenter_form_inherit_production_line" model="ir.ui.view">
             <field name="name">mrp.workcenter.form.inherit.production.line</field>
             <field name="model">mrp.workcenter</field>
-            <field name="inherit_id" ref="mrp.mrp_workcenter_form_view"/>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//notebook/page[@name='general']//group" position="inside">
+                <field name="code" position="after">
                     <field name="production_line_id"/>
                     <field name="shop_floor_id" readonly="1"/>
                     <field name="factory_id" readonly="1"/>
-                </xpath>
+                </field>
             </field>
         </record>
 
