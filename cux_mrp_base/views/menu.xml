@@ -5,14 +5,14 @@
             Menu path: Manufacturing / Configuration / Production Lines
             parent: mrp.menu_mrp_configuration  = Manufacturing / Configuration
             sequence 90  = Work Centers menu (menu_view_resource_search_mrp)
-            sequence 91  = Production Lines (right after Work Centers)
+            sequence 89  = Production Lines (before the Work Centers)
         -->
         <menuitem id="menu_mrp_production_line"
                   name="Production Lines"
                   parent="mrp.menu_mrp_configuration"
                   action="action_mrp_production_line"
                   groups="mrp.group_mrp_manager"
-                  sequence="91"/>
+                  sequence="89"/>
 
     </data>
 </odoo>

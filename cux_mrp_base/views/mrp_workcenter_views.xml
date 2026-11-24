@@ -15,6 +15,26 @@
             </field>
         </record>
 
+        <!-- 为 mrp.workcenter 增加搜索视图（含 searchpanel），mrp 原模块无搜索视图 -->
+        <record id="view_mrp_workcenter_search_production_line" model="ir.ui.view">
+            <field name="name">mrp.workcenter.search.production.line</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="arch" type="xml">
+                <search string="Work Centers">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="production_line_id"/>
+                    <field name="shop_floor_id"/>
+                    <field name="factory_id"/>
+                    <searchpanel>
+                        <field name="factory_id" string="Factory" icon="fa-building" enable_counters="1"/>
+                        <field name="shop_floor_id" string="Shop Floor" icon="fa-th-large" enable_counters="1"/>
+                        <field name="production_line_id" string="Production Line" icon="fa-industry" enable_counters="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
         <!-- 在 mrp.workcenter 的表单视图增加生产线字段 -->
         <record id="view_mrp_workcenter_form_inherit_production_line" model="ir.ui.view">
             <field name="name">mrp.workcenter.form.inherit.production.line</field>

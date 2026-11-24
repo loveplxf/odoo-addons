@@ -34,7 +34,7 @@ msgstr ""
 "制造基础扩展\n"
 "==================\n"
 "\n"
-"在制造应用中增加“生产线”基础数据模型，支持多级父子结构：\n"
+"在制造应用中增加“产线”基础数据模型，支持多级父子结构：\n"
 "\n"
 "- 工厂（第 1 级，顶级）\n"
 "- 车间（第 2 级）\n"
@@ -141,7 +141,7 @@ msgid ""
 "Click to create your first production line, supporting a\n"
 "                    Factory → Shop Floor → Production Line hierarchy."
 msgstr ""
-"点击创建你的第一条生产线，支持\n"
+"点击创建你的第一条产线，支持\n"
 "工厂 → 车间 → 产线的多级结构。"
 
 #. module: cux_mrp_base
@@ -268,7 +268,7 @@ msgstr "消息"
 #. module: cux_mrp_base
 #: model:ir.module.module,summary:base.module_cux_mrp_base
 msgid "Multi-level Production Line / Factory / Shop Floor hierarchy"
-msgstr "生产线 / 工厂 / 车间多级父子结构管理"
+msgstr "产线 / 工厂 / 车间多级父子结构管理"
 
 #. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__my_activity_date_deadline
@@ -299,7 +299,7 @@ msgstr "下一活动类型"
 #. module: cux_mrp_base
 #: model_terms:ir.actions.act_window,help:cux_mrp_base.action_mrp_production_line
 msgid "No production lines yet!"
-msgstr "还没有生产线！"
+msgstr "还没有产线！"
 
 #. module: cux_mrp_base
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
@@ -349,7 +349,7 @@ msgstr "上级类型"
 #. module: cux_mrp_base
 #: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__parent_id
 msgid "Parent production line / shop floor / factory"
-msgstr "上级生产线 / 车间 / 工厂"
+msgstr "上级产线 / 车间 / 工厂"
 
 #. module: cux_mrp_base
 #: model:ir.model,name:cux_mrp_base.model_mrp_production_line
@@ -357,7 +357,7 @@ msgstr "上级生产线 / 车间 / 工厂"
 #: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__production_line
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
 msgid "Production Line"
-msgstr "生产线"
+msgstr "产线"
 
 #. module: cux_mrp_base
 #: model:ir.actions.act_window,name:cux_mrp_base.action_mrp_production_line
@@ -365,7 +365,7 @@ msgstr "生产线"
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_search
 #: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_tree
 msgid "Production Lines"
-msgstr "生产线"
+msgstr "产线"
 
 #. module: cux_mrp_base
 #: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_user_id
