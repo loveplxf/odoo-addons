@@ -1,0 +1,438 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cux_mrp_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e-20261101\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 03:38+0000\n"
+"PO-Revision-Date: 2026-11-24 03:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cux_mrp_base
+#: model:ir.module.module,description:base.module_cux_mrp_base
+msgid ""
+"\n"
+"MRP Base Extension\n"
+"==================\n"
+"\n"
+"Adds a \"Production Line\" master data model to the Manufacturing app,\n"
+"supporting a multi-level parent-child hierarchy:\n"
+"\n"
+"- Factory (level 1, top)\n"
+"- Shop Floor (level 2)\n"
+"- Production Line (level 3)\n"
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "A factory cannot have a parent."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__active
+msgid "Active"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_plans_ids
+msgid "Activity Plans"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__child_count
+msgid "Child Count"
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__child_ids
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Children"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_kanban
+msgid "Children:"
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "Circular parent reference is not allowed."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model_terms:ir.actions.act_window,help:cux_mrp_base.action_mrp_production_line
+msgid ""
+"Click to create your first production line, supporting a\n"
+"                    Factory → Shop Floor → Production Line hierarchy."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__code
+msgid "Code"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__company_id
+msgid "Company"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__description
+msgid "Description"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Disable"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__display_name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Enable"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__factory_id
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__factory
+msgid "Factory"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__id
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__id
+msgid "ID"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_has_error
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__factory_id
+msgid "Linked factory (auto-derived from shop floor)"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__production_line_id
+msgid ""
+"Linked production line (only records of type \"Production Line\" are "
+"allowed)"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__shop_floor_id
+msgid "Linked shop floor (auto-derived from production line)"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.module.module,shortdesc:base.module_cux_mrp_base
+msgid "MRP Base Extension"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__activity_type_icon
+msgid "Material Symbols icon e.g. checklist"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.module.module,summary:base.module_cux_mrp_base
+msgid "Multi-level Production Line / Factory / Shop Floor hierarchy"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__name
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Name"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model_terms:ir.actions.act_window,help:cux_mrp_base.action_mrp_production_line
+msgid "No production lines yet!"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "None (Top Level)"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Notes"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__parent_type
+msgid "Parent Type"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__parent_id
+msgid "Parent production line / shop floor / factory"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_production_line
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__production_line_id
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__production_line
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Production Line"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.actions.act_window,name:cux_mrp_base.action_mrp_production_line
+#: model:ir.ui.menu,name:cux_mrp_base.menu_mrp_production_line
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_tree
+msgid "Production Lines"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__shop_floor_id
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__shop_floor
+msgid "Shop Floor"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "The parent of a production line must be a shop floor."
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "The parent of a shop floor must be a factory."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__type
+msgid "Type"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_workcenter
+msgid "Work Center"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__workcenter_count
+msgid "Work Center Count"
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__workcenter_ids
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Work Centers"
+msgstr ""
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_kanban
+msgid "Work Centers:"
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "parent_id"
+msgstr ""
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "production_line_id"
+msgstr ""

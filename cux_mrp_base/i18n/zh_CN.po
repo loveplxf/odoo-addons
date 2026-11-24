@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * cux_mrp_base
+# 	* cux_mrp_base
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 20.0\n"
+"Project-Id-Version: Odoo Server 20.0+e-20261101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-24 00:00+0000\n"
-"PO-Revision-Date: 2026-11-24 00:00+0000\n"
+"POT-Creation-Date: 2026-11-24 03:38+0000\n"
+"PO-Revision-Date: 2026-11-24 03:38+0000\n"
 "Last-Translator: Hubin\n"
 "Language-Team: Chinese (Simplified)\n"
 "Language: zh_CN\n"
@@ -17,121 +17,426 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: cux_mrp_base
-msgid "MRP Base Extension"
-msgstr "制造基础扩展"
+#: model:ir.module.module,description:base.module_cux_mrp_base
+msgid ""
+"\n"
+"MRP Base Extension\n"
+"==================\n"
+"\n"
+"Adds a \"Production Line\" master data model to the Manufacturing app,\n"
+"supporting a multi-level parent-child hierarchy:\n"
+"\n"
+"- Factory (level 1, top)\n"
+"- Shop Floor (level 2)\n"
+"- Production Line (level 3)\n"
+msgstr ""
+"\n"
+"制造基础扩展\n"
+"==================\n"
+"\n"
+"在制造应用中增加"生产线"基础数据模型，支持多级父子结构：\n"
+"\n"
+"- 工厂（第 1 级，顶级）\n"
+"- 车间（第 2 级）\n"
+"- 产线（第 3 级）\n"
 
 #. module: cux_mrp_base
-msgid "Multi-level Production Line / Factory / Shop Floor hierarchy"
-msgstr "生产线 / 工厂 / 车间多级父子结构管理"
-
-#. module: cux_mrp_base
-msgid "Production Line"
-msgstr "生产线"
-
-#. module: cux_mrp_base
-msgid "Name"
-msgstr "名称"
-
-#. module: cux_mrp_base
-msgid "Code"
-msgstr "编码"
-
-#. module: cux_mrp_base
-msgid "Complete Name"
-msgstr "全名"
-
-#. module: cux_mrp_base
-msgid "Type"
-msgstr "类型"
-
-#. module: cux_mrp_base
-msgid "Factory"
-msgstr "工厂"
-
-#. module: cux_mrp_base
-msgid "Shop Floor"
-msgstr "车间"
-
-#. module: cux_mrp_base
-msgid "Parent"
-msgstr "上级"
-
-#. module: cux_mrp_base
-msgid "Parent production line / shop floor / factory"
-msgstr "上级生产线 / 车间 / 工厂"
-
-#. module: cux_mrp_base
-msgid "Children"
-msgstr "下级"
-
-#. module: cux_mrp_base
-msgid "Child Count"
-msgstr "下级数量"
-
-#. module: cux_mrp_base
-msgid "Parent Type"
-msgstr "上级类型"
-
-#. module: cux_mrp_base
-msgid "Work Centers"
-msgstr "工作中心"
-
-#. module: cux_mrp_base
-msgid "Work Center Count"
-msgstr "工作中心数"
-
-#. module: cux_mrp_base
-msgid "Description"
-msgstr "说明"
-
-#. module: cux_mrp_base
-msgid "Active"
-msgstr "启用"
-
-#. module: cux_mrp_base
-msgid "Company"
-msgstr "公司"
-
-#. module: cux_mrp_base
-msgid "Linked production line (only records of type \"Production Line\" are allowed)"
-msgstr "所属产线（仅允许选择类型为“产线”的记录）"
-
-#. module: cux_mrp_base
-msgid "Linked shop floor (auto-derived from production line)"
-msgstr "所属车间（由产线自动带出）"
-
-#. module: cux_mrp_base
-msgid "Linked factory (auto-derived from shop floor)"
-msgstr "所属工厂（由车间自动带出）"
-
-#. module: cux_mrp_base
-msgid "Circular parent reference is not allowed."
-msgstr "不允许循环引用父级。"
-
-#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
 msgid "A factory cannot have a parent."
 msgstr "工厂不能有上级。"
 
 #. module: cux_mrp_base
-msgid "The parent of a shop floor must be a factory."
-msgstr "车间的上级必须是工厂。"
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_needaction
+msgid "Action Needed"
+msgstr "待处理"
 
 #. module: cux_mrp_base
-msgid "The parent of a production line must be a shop floor."
-msgstr "产线的上级必须是车间。"
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__active
+msgid "Active"
+msgstr "启用"
 
 #. module: cux_mrp_base
-msgid "Production Lines"
-msgstr "生产线"
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_ids
+msgid "Activities"
+msgstr "活动"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "活动异常标识"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_plans_ids
+msgid "Activity Plans"
+msgstr "活动计划"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_state
+msgid "Activity State"
+msgstr "活动状态"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "活动类型图标"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_attachment_count
+msgid "Attachment Count"
+msgstr "附件数"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__child_count
+msgid "Child Count"
+msgstr "下级数量"
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_kanban
+msgid "Children:"
+msgstr "下级："
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__child_ids
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Children"
+msgstr "下级"
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "Circular parent reference is not allowed."
+msgstr "不允许循环引用父级。"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__code
+msgid "Code"
+msgstr "编码"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__complete_name
+msgid "Complete Name"
+msgstr "全名"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cux_mrp_base
+#: model_terms:ir.actions.act_window,help:cux_mrp_base.action_mrp_production_line
+msgid ""
+"Click to create your first production line, supporting a\n"
+"                    Factory → Shop Floor → Production Line hierarchy."
+msgstr ""
+"点击创建你的第一条生产线，支持\n"
+"工厂 → 车间 → 产线的多级结构。"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__description
+msgid "Description"
+msgstr "说明"
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
 msgid "Disable"
 msgstr "禁用"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__display_name
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
 msgid "Enable"
 msgstr "启用"
 
 #. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__factory_id
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__factory
+msgid "Factory"
+msgstr "工厂"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_follower_ids
+msgid "Followers"
+msgstr "关注者"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "关注者（联系人）"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__has_message
+msgid "Has Message"
+msgstr "包含消息"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__id
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__id
+msgid "ID"
+msgstr "ID"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_exception_icon
+msgid "Icon"
+msgstr "图标"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "标识异常活动的图标。"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "如果勾选，则新消息需要您处理。"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_has_error
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "如果勾选，则部分消息发送失败。"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_is_follower
+msgid "Is Follower"
+msgstr "是否为关注者"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__factory_id
+msgid "Linked factory (auto-derived from shop floor)"
+msgstr "所属工厂（由车间自动带出）"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__production_line_id
+msgid ""
+"Linked production line (only records of type \"Production Line\" are "
+"allowed)"
+msgstr "所属产线（仅允许选择类型为"产线"的记录）"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__shop_floor_id
+msgid "Linked shop floor (auto-derived from production line)"
+msgstr "所属车间（由产线自动带出）"
+
+#. module: cux_mrp_base
+#: model:ir.module.module,shortdesc:base.module_cux_mrp_base
+msgid "MRP Base Extension"
+msgstr "制造基础扩展"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__activity_type_icon
+msgid "Material Symbols icon e.g. checklist"
+msgstr "物料符号图标，如：检查清单"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_error
+msgid "Message Delivery error"
+msgstr "消息发送错误"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_ids
+msgid "Messages"
+msgstr "消息"
+
+#. module: cux_mrp_base
+#: model:ir.module.module,summary:base.module_cux_mrp_base
+msgid "Multi-level Production Line / Factory / Shop Floor hierarchy"
+msgstr "生产线 / 工厂 / 车间多级父子结构管理"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "我的活动截止日期"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__name
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Name"
+msgstr "名称"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "下一活动截止日期"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_summary
+msgid "Next Activity Summary"
+msgstr "下一活动摘要"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_type_id
+msgid "Next Activity Type"
+msgstr "下一活动类型"
+
+#. module: cux_mrp_base
+#: model_terms:ir.actions.act_window,help:cux_mrp_base.action_mrp_production_line
+msgid "No production lines yet!"
+msgstr "还没有生产线！"
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "None (Top Level)"
+msgstr "无（顶级）"
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
 msgid "Notes"
 msgstr "说明"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_needaction_counter
+msgid "Number of Actions"
+msgstr "待处理数量"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_error_counter
+msgid "Number of errors"
+msgstr "错误数量"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "需要处理的消息数量"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "发送失败的消息数量"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__parent_id
+msgid "Parent"
+msgstr "上级"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__parent_path
+msgid "Parent Path"
+msgstr "上级路径"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__parent_type
+msgid "Parent Type"
+msgstr "上级类型"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__parent_id
+msgid "Parent production line / shop floor / factory"
+msgstr "上级生产线 / 车间 / 工厂"
+
+#. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_production_line
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__production_line_id
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__production_line
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Production Line"
+msgstr "生产线"
+
+#. module: cux_mrp_base
+#: model:ir.actions.act_window,name:cux_mrp_base.action_mrp_production_line
+#: model:ir.ui.menu,name:cux_mrp_base.menu_mrp_production_line
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_tree
+msgid "Production Lines"
+msgstr "生产线"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__activity_user_id
+msgid "Responsible User"
+msgstr "负责人"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "短信发送错误"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_workcenter__shop_floor_id
+#: model:ir.model.fields.selection,name:cux_mrp_base.selection__mrp_production_line__type__shop_floor
+msgid "Shop Floor"
+msgstr "车间"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"基于活动的状态\n"
+"逾期：截止日期已过\n"
+"今天：活动日期为今天\n"
+"计划：未来的活动。"
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "The parent of a production line must be a shop floor."
+msgstr "产线的上级必须是车间。"
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+msgid "The parent of a shop floor must be a factory."
+msgstr "车间的上级必须是工厂。"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__type
+msgid "Type"
+msgstr "类型"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,help:cux_mrp_base.field_mrp_production_line__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "记录上异常活动的类型。"
+
+#. module: cux_mrp_base
+#: model:ir.model,name:cux_mrp_base.model_mrp_workcenter
+msgid "Work Center"
+msgstr "工作中心"
+
+#. module: cux_mrp_base
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__workcenter_count
+msgid "Work Center Count"
+msgstr "工作中心数"
+
+#. module: cux_mrp_base
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_kanban
+msgid "Work Centers:"
+msgstr "工作中心："
+
+#. module: cux_mrp_base
+#. odoo-python
+#: code:addons/cux_mrp_base/models/mrp_production_line.py:0
+#: model:ir.model.fields,field_description:cux_mrp_base.field_mrp_production_line__workcenter_ids
+#: model_terms:ir.ui.view,arch_db:cux_mrp_base.view_mrp_production_line_form
+msgid "Work Centers"
+msgstr "工作中心"
