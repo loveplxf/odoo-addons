@@ -34,7 +34,7 @@ msgstr ""
 "制造基础扩展\n"
 "==================\n"
 "\n"
-"在制造应用中增加"生产线"基础数据模型，支持多级父子结构：\n"
+"在制造应用中增加“生产线”基础数据模型，支持多级父子结构：\n"
 "\n"
 "- 工厂（第 1 级，顶级）\n"
 "- 车间（第 2 级）\n"
@@ -238,7 +238,7 @@ msgstr "所属工厂（由车间自动带出）"
 msgid ""
 "Linked production line (only records of type \"Production Line\" are "
 "allowed)"
-msgstr "所属产线（仅允许选择类型为"产线"的记录）"
+msgstr "所属产线（仅允许选择类型为“产线”的记录）"
 
 #. module: cux_mrp_base
 #: model:ir.model.fields,help:cux_mrp_base.field_mrp_workcenter__shop_floor_id
