@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action -->
+        <record id="action_mrp_production_line" model="ir.actions.act_window">
+            <field name="name">生产线</field>
+            <field name="res_model">mrp.production.line</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    还没有生产线！
+                </p>
+                <p>
+                    点击创建第一条生产线数据，支持工厂 → 车间 → 产线的多级结构。
+                </p>
+            </field>
+        </record>
+
+        <!-- List View (Tree) -->
+        <record id="view_mrp_production_line_tree" model="ir.ui.view">
+            <field name="name">mrp.production.line.list</field>
+            <field name="model">mrp.production.line</field>
+            <field name="arch" type="xml">
+                <list string="生产线" decoration-info="type=='factory'" decoration-success="type=='shop_floor'" decoration-warning="type=='production_line'">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="type"/>
+                    <field name="complete_name"/>
+                    <field name="parent_id"/>
+                    <field name="child_count"/>
+                    <field name="workcenter_count"/>
+                    <field name="company_id" column_invisible="True"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_mrp_production_line_form" model="ir.ui.view">
+            <field name="name">mrp.production.line.form</field>
+            <field name="model">mrp.production.line</field>
+            <field name="arch" type="xml">
+                <form string="生产线">
+                    <header>
+                        <button name="action_view_children"
+                                type="object"
+                                string="下级"
+                                class="btn-secondary"
+                                invisible="child_count == 0"/>
+                        <button name="action_view_workcenters"
+                                type="object"
+                                string="工作中心"
+                                class="btn-secondary"
+                                invisible="workcenter_count == 0"/>
+                        <button name="toggle_active"
+                                type="object"
+                                string="禁用"
+                                invisible="active == False"/>
+                        <button name="toggle_active"
+                                type="object"
+                                string="启用"
+                                invisible="active == True"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="名称"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                                <field name="type"/>
+                                <field name="parent_id"
+                                       domain="[('type', '=', parent_type_allowed)]"
+                                       placeholder="无（顶级）"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                            <group>
+                                <field name="complete_name" readonly="1"/>
+                                <field name="child_count"/>
+                                <field name="workcenter_count"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="说明" name="description">
+                                <field name="description" nolabel="1"/>
+                            </page>
+                            <page string="下级" name="children">
+                                <field name="child_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="type"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_mrp_production_line_search" model="ir.ui.view">
+            <field name="name">mrp.production.line.search</field>
+            <field name="model">mrp.production.line</field>
+            <field name="arch" type="xml">
+                <search string="生产线">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="complete_name"/>
+                    <filter name="factory" string="工厂" domain="[('type', '=', 'factory')]"/>
+                    <filter name="shop_floor" string="车间" domain="[('type', '=', 'shop_floor')]"/>
+                    <filter name="production_line" string="产线" domain="[('type', '=', 'production_line')]"/>
+                    <separator/>
+                    <filter name="active" string="启用" domain="[('active', '=', True)]"/>
+                    <filter name="inactive" string="禁用" domain="[('active', '=', False)]"/>
+                    <group expand="0" string="分组">
+                        <filter name="group_type" string="类型" context="{'group_by': 'type'}"/>
+                        <filter name="group_parent" string="上级" context="{'group_by': 'parent_id'}"/>
+                        <filter name="group_company" string="公司" context="{'group_by': 'company_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Kanban View -->
+        <record id="view_mrp_production_line_kanban" model="ir.ui.view">
+            <field name="name">mrp.production.line.kanban</field>
+            <field name="model">mrp.production.line</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="type"/>
+                    <field name="complete_name"/>
+                    <field name="child_count"/>
+                    <field name="workcenter_count"/>
+                    <templates>
+                        <t t-name="card">
+                            <field name="type" widget="badge"/>
+                            <div class="oe_kanban_global_click o_kanban_record">
+                                <h3>
+                                    <field name="name"/>
+                                </h3>
+                                <div class="text-muted" t-if="record.code.raw_value">
+                                    <field name="code"/>
+                                </div>
+                                <div class="mt8">
+                                    <span class="badge rounded-pill text-bg-secondary" t-if="record.child_count.raw_value">
+                                        下级: <field name="child_count"/>
+                                    </span>
+                                    <span class="badge rounded-pill text-bg-info" t-if="record.workcenter_count.raw_value">
+                                        工作中心: <field name="workcenter_count"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    </data>
+</odoo>

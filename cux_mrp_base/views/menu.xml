@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--
+            菜单位置：制造 / 配置 / (就在"工作中心"菜单下面)
+            parent: menu_mrp_configuration  = 制造 / 配置
+            sequence 90 附近是工作中心菜单 (menu_view_resource_search_mrp 的 sequence=90)
+            我们放在 sequence=91，紧跟工作中心之后
+        -->
+        <menuitem id="menu_mrp_production_line"
+                  name="生产线"
+                  parent="mrp.menu_mrp_configuration"
+                  action="action_mrp_production_line"
+                  groups="mrp.group_mrp_manager"
+                  sequence="91"/>
+
+    </data>
+</odoo>
