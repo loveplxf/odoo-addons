@@ -190,13 +190,27 @@
 // ---------------------------------------------------------------------------
 // Date / time picker
 // ---------------------------------------------------------------------------
+// 注意：不要给 `.o_date_item_cell` 设置通用 border-radius，否则会覆盖
+// 原生的 `.o_today > div` 圆形、`.o_select_start`/`.o_select_end` 半圆效果。
+// today 未选中时的"外框"要画在 `::before` 伪元素上，原生已经给了
+// border-radius: 50%，保证是圆形。绝对不能在 cell 本体用 box-shadow。
 .o_datetime_picker {
     .o_date_item_cell {
-        border-radius: var(--cbt-radius-sm);
-        &.o_today:not(.o_selected) { box-shadow: inset 0 0 0 1px var(--cbt-primary); }
+        &.o_today:not(.o_selected):not([disabled])::before {
+            border-color: var(--cbt-primary) !important;
+        }
         &.o_selected, &.o_select_start, &.o_select_end {
             background-color: var(--cbt-primary) !important;
             color: var(--cbt-on-primary) !important;
+        }
+        // 恢复原生半圆（之前 border-radius: var(--cbt-radius-sm) 意外覆盖了 50%）
+        &.o_select_start {
+            border-top-left-radius: 50% !important;
+            border-bottom-left-radius: 50% !important;
+        }
+        &.o_select_end {
+            border-top-right-radius: 50% !important;
+            border-bottom-right-radius: 50% !important;
         }
     }
 }

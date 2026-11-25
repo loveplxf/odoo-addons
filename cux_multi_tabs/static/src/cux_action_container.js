@@ -4,7 +4,6 @@ import { CuxMultiTab } from "./components/multi_tab/cux_multi_tab";
 
 import { proxy, useListener, xml } from "@odoo/owl";
 import { render } from "@web/owl2/utils";
-import { browser } from "@web/core/browser/browser";
 import { router as _router } from "@web/core/browser/router";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -35,10 +34,12 @@ patch(ActionContainer.prototype, {
         super.setup();
         this.actionService = useService("action");
         this.menuService = useService("menu");
+
         this.tabs = proxy([]);
         this.blankInfo = null;
         this._pendingRoot = false;
         this._pendingFullscreen = false;
+        this._reactivatingTab = null;
         this._tabSeq = 0;
 
         useListener(this.env.bus, "ACTION_MANAGER:UPDATE", ({ detail: info }) => {
@@ -59,12 +60,26 @@ patch(ActionContainer.prototype, {
             const isHomeMenu = action?.tag === "menu";
             // The controller only mounts if we render it: assign the info to
             // the target tab immediately.
+            //
+            // Where the info goes:
+            //  - reactivating a tab (see _activate_tab): that exact tab;
+            //  - a new root action (preceded by the BlankComponent transition,
+            //    i.e. anything opened from a menu): a brand new tab;
+            //  - otherwise (view switch inside a tab, e.g. list → form): the
+            //    currently active tab.
             let tab;
-            if (isHomeMenu) {
-                // The home menu always lives in its own transient tab: going
-                // home is a plain doAction("menu") without clearBreadcrumbs, so
-                // reusing the active tab would wipe the app tab being left.
-                tab = this.tabs.find((t) => t.info?.componentProps?.action?.tag === "menu");
+            if (this._reactivatingTab) {
+                tab = this.tabs.find((t) => t.tid === this._reactivatingTab.tid);
+            } else if (isHomeMenu) {
+                // Menu client actions (tag="menu"): home menu has no action.id,
+                // every other app menu does — so two distinct tabs survive
+                // alongside each other.
+                tab = this.tabs.find(
+                    (t) =>
+                        t.info?.componentProps?.action?.tag === "menu" &&
+                        (t.info?.componentProps?.action?.id || undefined) ===
+                            (action?.id || undefined)
+                );
             } else if (!this._pendingRoot) {
                 tab = this.tabs.find((t) => t.active);
             }
@@ -158,6 +173,7 @@ patch(ActionContainer.prototype, {
         }
         tab.state = state;
         tab.actionId = controller.action?.id;
+        tab.controller = controller;
         if (app) {
             tab.appId = app.id;
         }
@@ -208,20 +224,48 @@ patch(ActionContainer.prototype, {
         return actionRegistry.contains("menu") ? "menu" : null;
     },
 
-    // The tab's controller is still mounted (just hidden), so activating a tab
-    // only flips the flag and syncs menu/url — no reload needed.
-    _activate_tab(tab) {
+    // Switching tabs is done the same way Odoo navigates back through the
+    // breadcrumbs: the action service is asked to restore the tab's own state
+    // (action ids, resId, views...). This is what makes the controllerStack —
+    // and therefore "New", buttons and breadcrumbs — point to the right
+    // model/action again.
+    //
+    // Restoring re-creates the tab's views from their state (it is exactly what
+    // a browser refresh or a breadcrumb click does), so the other tabs keep
+    // their mounted controllers and unsaved content, while the tab being
+    // activated is rebuilt from its saved state.
+    async _activate_tab(tab) {
+        if (!tab) {
+            return;
+        }
         this._setActiveTab(tab);
         if (tab.appId) {
             this.menuService.setCurrentMenu(tab.appId);
         }
-        if (tab.state) {
-            browser.history.pushState({}, "", _router.stateToUrl(tab.state));
+        if (!tab.state) {
+            return;
         }
-        // A tab switch keeps every controller mounted, so no controller ever
-        // fires ACTION_MANAGER:UI-UPDATED: announce it for components that
-        // mirror the current action (e.g. the dcs_backend_theme sidebar, which
-        // would otherwise keep highlighting the previous app's menu).
+        if (tab.controller && tab.controller === this.actionService.currentController) {
+            // The tab is already the one the action service is displaying (its
+            // controller is the stack top): a pure UI switch is enough, no need
+            // to reload anything.
+            this.env.bus.trigger("CUX_MULTI_TABS:TAB-ACTIVATED", {
+                actionId: tab.actionId,
+                appId: tab.appId,
+            });
+            return;
+        }
+        // Tell the UPDATE handler that the incoming controller belongs to this
+        // tab, even though it is a root action (a BlankComponent transition is
+        // emitted first, which would otherwise be read as a brand new tab).
+        this._reactivatingTab = tab;
+        try {
+            await this.actionService.loadState(tab.state);
+        } catch (e) {
+            console.warn("[cux_multi_tabs] could not restore tab:", e);
+        } finally {
+            this._reactivatingTab = null;
+        }
         this.env.bus.trigger("CUX_MULTI_TABS:TAB-ACTIVATED", {
             actionId: tab.actionId,
             appId: tab.appId,
