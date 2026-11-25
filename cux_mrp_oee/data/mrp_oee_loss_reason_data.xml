@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Normal production -->
+        <record id="loss_reason_productive" model="mrp.oee.loss.reason">
+            <field name="name">Normal Production</field>
+            <field name="loss_type">productive</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Planned stops -->
+        <record id="loss_reason_planned" model="mrp.oee.loss.reason">
+            <field name="name">Planned Stop</field>
+            <field name="loss_type">planned</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="loss_reason_meal" model="mrp.oee.loss.reason">
+            <field name="name">Meal Break</field>
+            <field name="loss_type">planned</field>
+            <field name="parent_id" ref="loss_reason_planned"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="loss_reason_rest" model="mrp.oee.loss.reason">
+            <field name="name">Rest</field>
+            <field name="loss_type">planned</field>
+            <field name="parent_id" ref="loss_reason_planned"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="loss_reason_no_demand" model="mrp.oee.loss.reason">
+            <field name="name">No Demand</field>
+            <field name="loss_type">planned</field>
+            <field name="parent_id" ref="loss_reason_planned"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="loss_reason_planned_repair" model="mrp.oee.loss.reason">
+            <field name="name">Planned Repair</field>
+            <field name="loss_type">planned</field>
+            <field name="parent_id" ref="loss_reason_planned"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="loss_reason_planned_maintenance" model="mrp.oee.loss.reason">
+            <field name="name">Planned Maintenance</field>
+            <field name="loss_type">planned</field>
+            <field name="parent_id" ref="loss_reason_planned"/>
+            <field name="sequence">50</field>
+        </record>
+
+        <!-- Unplanned stops -->
+        <record id="loss_reason_unplanned" model="mrp.oee.loss.reason">
+            <field name="name">Unplanned Stop</field>
+            <field name="loss_type">unplanned</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="loss_reason_equipment" model="mrp.oee.loss.reason">
+            <field name="name">Equipment</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_unplanned"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="loss_reason_operator" model="mrp.oee.loss.reason">
+            <field name="name">Operator</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_unplanned"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="loss_reason_material" model="mrp.oee.loss.reason">
+            <field name="name">Material</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_unplanned"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="loss_reason_method" model="mrp.oee.loss.reason">
+            <field name="name">Method / External</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_unplanned"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- Default reject reasons -->
+        <record id="reject_reason_dimensional" model="mrp.oee.reject.reason">
+            <field name="name">Dimensional Defect</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="reject_reason_surface" model="mrp.oee.reject.reason">
+            <field name="name">Surface Defect</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="reject_reason_assembly" model="mrp.oee.reject.reason">
+            <field name="name">Assembly Defect</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="reject_reason_startup" model="mrp.oee.reject.reason">
+            <field name="name">Start-up Defect</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="reject_reason_other" model="mrp.oee.reject.reason">
+            <field name="name">Other</field>
+            <field name="sequence">50</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_mrp_oee_snapshot_list" model="ir.ui.view">
+            <field name="name">mrp.oee.snapshot.list</field>
+            <field name="model">mrp.oee.snapshot</field>
+            <field name="arch" type="xml">
+                <list string="OEE Snapshots" create="0" decoration-danger="state == 'below'" decoration-success="state == 'on_target'">
+                    <field name="date"/>
+                    <field name="shift_id"/>
+                    <field name="workcenter_id"/>
+                    <field name="planned_minutes"/>
+                    <field name="run_minutes"/>
+                    <field name="unplanned_minutes"/>
+                    <field name="total_qty"/>
+                    <field name="good_qty"/>
+                    <field name="reject_qty"/>
+                    <field name="availability"/>
+                    <field name="performance"/>
+                    <field name="quality"/>
+                    <field name="oee"/>
+                    <field name="state"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_snapshot_form" model="ir.ui.view">
+            <field name="name">mrp.oee.snapshot.form</field>
+            <field name="model">mrp.oee.snapshot</field>
+            <field name="arch" type="xml">
+                <form string="OEE Snapshot" create="0" edit="0">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1><field name="display_name"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="shift_id"/>
+                                <field name="workcenter_id"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="state"/>
+                            </group>
+                            <group>
+                                <field name="availability"/>
+                                <field name="performance"/>
+                                <field name="quality"/>
+                                <field name="oee"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Time">
+                                <field name="shift_minutes"/>
+                                <field name="planned_minutes"/>
+                                <field name="planned_stop_minutes"/>
+                                <field name="unplanned_minutes"/>
+                                <field name="run_minutes"/>
+                                <field name="ideal_minutes"/>
+                            </group>
+                            <group string="Quantity">
+                                <field name="total_qty"/>
+                                <field name="good_qty"/>
+                                <field name="reject_qty"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_snapshot_search" model="ir.ui.view">
+            <field name="name">mrp.oee.snapshot.search</field>
+            <field name="model">mrp.oee.snapshot</field>
+            <field name="arch" type="xml">
+                <search string="OEE Snapshots">
+                    <field name="workcenter_id"/>
+                    <field name="shift_id"/>
+                    <field name="date"/>
+                    <filter name="filter_on_target" string="On Target" domain="[('state', '=', 'on_target')]"/>
+                    <filter name="filter_below" string="Below Target" domain="[('state', '=', 'below')]"/>
+                    <group>
+                        <filter name="group_workcenter" string="Work Center" context="{'group_by': 'workcenter_id'}"/>
+                        <filter name="group_shift" string="Shift" context="{'group_by': 'shift_id'}"/>
+                        <filter name="group_date" string="Date" context="{'group_by': 'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_snapshot_pivot" model="ir.ui.view">
+            <field name="name">mrp.oee.snapshot.pivot</field>
+            <field name="model">mrp.oee.snapshot</field>
+            <field name="arch" type="xml">
+                <pivot string="OEE Snapshots">
+                    <field name="workcenter_id" type="row"/>
+                    <field name="date" type="col"/>
+                    <field name="availability" type="measure"/>
+                    <field name="performance" type="measure"/>
+                    <field name="quality" type="measure"/>
+                    <field name="oee" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_snapshot_graph" model="ir.ui.view">
+            <field name="name">mrp.oee.snapshot.graph</field>
+            <field name="model">mrp.oee.snapshot</field>
+            <field name="arch" type="xml">
+                <graph string="OEE Trend" type="line">
+                    <field name="date" interval="day"/>
+                    <field name="oee" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_mrp_oee_snapshot" model="ir.actions.act_window">
+            <field name="name">OEE Snapshots</field>
+            <field name="res_model">mrp.oee.snapshot</field>
+            <field name="view_mode">list,pivot,graph,form</field>
+            <field name="search_view_id" ref="view_mrp_oee_snapshot_search"/>
+        </record>
+    </data>
+</odoo>

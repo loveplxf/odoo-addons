@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_mrp_oee_root"
+                  name="OEE"
+                  sequence="76"
+                  groups="mrp.group_mrp_user"/>
+
+        <menuitem id="menu_mrp_oee_overview"
+                  name="Overview"
+                  parent="menu_mrp_oee_root"
+                  action="action_mrp_oee_overview"
+                  sequence="10"/>
+
+        <menuitem id="menu_mrp_oee_operations"
+                  name="Operations"
+                  parent="menu_mrp_oee_root"
+                  sequence="20"/>
+        <menuitem id="menu_mrp_oee_productivity"
+                  name="Downtime Records"
+                  parent="menu_mrp_oee_operations"
+                  action="action_mrp_oee_productivity"
+                  sequence="10"/>
+        <menuitem id="menu_mrp_oee_production"
+                  name="Production Reports"
+                  parent="menu_mrp_oee_operations"
+                  action="action_mrp_oee_production"
+                  sequence="20"/>
+
+        <menuitem id="menu_mrp_oee_reporting"
+                  name="Reporting"
+                  parent="menu_mrp_oee_root"
+                  sequence="30"/>
+        <menuitem id="menu_mrp_oee_snapshot"
+                  name="OEE Snapshots"
+                  parent="menu_mrp_oee_reporting"
+                  action="action_mrp_oee_snapshot"
+                  sequence="10"/>
+        <menuitem id="menu_mrp_oee_snapshot_wizard"
+                  name="Generate Snapshots"
+                  parent="menu_mrp_oee_reporting"
+                  action="action_mrp_oee_snapshot_wizard"
+                  sequence="20"/>
+        <menuitem id="menu_mrp_oee_loss_report"
+                  name="Downtime Analysis"
+                  parent="menu_mrp_oee_reporting"
+                  action="action_mrp_oee_loss_report"
+                  sequence="30"/>
+        <menuitem id="menu_mrp_oee_reject_report"
+                  name="Reject Analysis"
+                  parent="menu_mrp_oee_reporting"
+                  action="action_mrp_oee_reject_report"
+                  sequence="40"/>
+
+        <menuitem id="menu_mrp_oee_configuration"
+                  name="Configuration"
+                  parent="menu_mrp_oee_root"
+                  sequence="40"
+                  groups="mrp.group_mrp_manager"/>
+        <menuitem id="menu_mrp_oee_shift"
+                  name="Shifts"
+                  parent="menu_mrp_oee_configuration"
+                  action="cux_mrp_base.action_mrp_shift"
+                  sequence="10"
+                  groups="mrp.group_mrp_manager"/>
+        <menuitem id="menu_mrp_oee_loss_reason"
+                  name="Downtime Reasons"
+                  parent="menu_mrp_oee_configuration"
+                  action="action_mrp_oee_loss_reason"
+                  sequence="20"
+                  groups="mrp.group_mrp_manager"/>
+        <menuitem id="menu_mrp_oee_reject_reason"
+                  name="Reject Reasons"
+                  parent="menu_mrp_oee_configuration"
+                  action="action_mrp_oee_reject_reason"
+                  sequence="30"
+                  groups="mrp.group_mrp_manager"/>
+        <menuitem id="menu_mrp_oee_theoretical_cycle"
+                  name="Theoretical Cycles"
+                  parent="menu_mrp_oee_configuration"
+                  action="action_mrp_oee_theoretical_cycle"
+                  sequence="40"
+                  groups="mrp.group_mrp_manager"/>
+    </data>
+</odoo>

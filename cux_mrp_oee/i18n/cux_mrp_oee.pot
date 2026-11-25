@@ -1,0 +1,775 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cux_mrp_oee
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e-20261101\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-25 01:07+0000\n"
+"PO-Revision-Date: 2026-11-25 01:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cux_mrp_oee
+#: model:ir.module.module,description:base.module_cux_mrp_oee
+msgid ""
+"\n"
+"OEE - Overall Equipment Effectiveness\n"
+"=====================================\n"
+"\n"
+"Compute the equipment effectiveness of work centers as:\n"
+"\n"
+"    OEE = Availability x Performance x Quality\n"
+"\n"
+"with dedicated menus:\n"
+"\n"
+"- Overview: work center OEE kanban\n"
+"- Operations: downtime records and production reports\n"
+"- Reporting: OEE snapshots, downtime analysis, reject analysis\n"
+"- Configuration: shifts, downtime reasons, reject reasons, theoretical cycles\n"
+msgstr ""
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/wizard/mrp_oee_snapshot_wizard.py:0
+msgid "%s snapshot(s) generated."
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "<span class=\"text-muted\">%</span>"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "A"
+msgstr ""
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/models/mrp_oee_loss_reason.py:0
+msgid "A downtime reason cannot be its own ancestor."
+msgstr ""
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/models/mrp_oee_reject_reason.py:0
+msgid "A reject reason cannot be its own ancestor."
+msgstr ""
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/models/mrp_oee_production.py:0
+msgid "A reject reason is required for rejected quantities."
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__active
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__active
+msgid "Active"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.constraint,message:cux_mrp_oee.constraint_mrp_oee_snapshot_uniq_snapshot
+msgid "An OEE snapshot already exists for this date, shift and work center."
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_search
+msgid "Archived"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_assembly
+msgid "Assembly Defect"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__availability
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_availability
+msgid "Availability (%)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_snapshot__state__below
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_workcenter__oee_state__below
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "Below Target"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__loss_type
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__loss_type
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+msgid "Category"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__child_ids
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__child_ids
+msgid "Children"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__company_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__company_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__company_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__company_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__company_id
+msgid "Company"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__complete_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__date
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+msgid "Date"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__date_from
+msgid "Date From"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_dimensional
+msgid "Dimensional Defect"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__duration
+msgid "Downtime"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__duration
+msgid "Downtime (h)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_loss_report
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_loss_report
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_graph
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_pivot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_search
+msgid "Downtime Analysis"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__loss_reason_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_reason_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_form
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+msgid "Downtime Reason"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_loss_reason
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_loss_reason
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+msgid "Downtime Reasons"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_form
+msgid "Downtime Record"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_productivity
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_productivity
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+msgid "Downtime Records"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__duration
+msgid "Duration in hours."
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__hour_to
+msgid "End Time"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_equipment
+msgid "Equipment"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__hour_from
+msgid "Format is hh:mm"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__hour_to
+msgid ""
+"Format is hh:mm, values lower than the start time are considered as the next"
+" day."
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_wizard_form
+msgid "Generate"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_snapshot_wizard
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_wizard_form
+msgid "Generate OEE Snapshots"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_snapshot_wizard
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_snapshot_wizard
+msgid "Generate Snapshots"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_production__report_type__good
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+msgid "Good"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__good_qty
+msgid "Good Quantity"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__id
+msgid "ID"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__ideal_minutes
+msgid "Ideal Time (min)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_snapshot__state__idle
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_workcenter__oee_state__idle
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "Idle"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_material
+msgid "Material"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_meal
+msgid "Meal Break"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_method
+msgid "Method / External"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__name
+msgid "Name"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_no_demand
+msgid "No Demand"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__productive
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__productive
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_productive
+msgid "Normal Production"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_root
+msgid "OEE"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_rate
+msgid "OEE (%)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.module.module,shortdesc:base.module_cux_mrp_oee
+msgid "OEE - Equipment Effectiveness"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_loss_report
+msgid "OEE Downtime Analysis"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_loss_reason
+msgid "OEE Downtime Reason"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_productivity
+msgid "OEE Downtime Record"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_production
+msgid "OEE Production Record"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_reject_report
+msgid "OEE Reject Analysis"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_reject_reason
+msgid "OEE Reject Reason"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_snapshot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_form
+msgid "OEE Snapshot"
+msgstr ""
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/wizard/mrp_oee_snapshot_wizard.py:0
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_snapshot
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_snapshot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_pivot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+msgid "OEE Snapshots"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_state
+msgid "OEE Status"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_graph
+msgid "OEE Trend"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.server,name:cux_mrp_oee.cron_oee_snapshots_ir_actions_server
+msgid "OEE: compute daily snapshots"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_snapshot__state__on_target
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_workcenter__oee_state__on_target
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "On Target"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_operations
+msgid "Operations"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_operator
+msgid "Operator"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_other
+msgid "Other"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.module.module,summary:base.module_cux_mrp_oee
+msgid "Overall Equipment Effectiveness for work centers"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_overview
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_overview
+msgid "Overview"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "P"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__parent_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__parent_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_search
+msgid "Parent"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__performance
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_performance
+msgid "Performance (%)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_planned_maintenance
+msgid "Planned Maintenance"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__planned_minutes
+msgid "Planned Production (min)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_planned_repair
+msgid "Planned Repair"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__planned
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__planned
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_planned
+msgid "Planned Stop"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__planned_stop_minutes
+msgid "Planned Stops (min)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_loss_reason__loss_type
+msgid ""
+"Planned stops are removed from the planned production time, unplanned stops "
+"reduce the availability."
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__product_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__product_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+msgid "Product"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_form
+msgid "Production Report"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_production
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_production
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+msgid "Production Reports"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "Q"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__quality
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_quality
+msgid "Quality (%)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_form
+msgid "Quantity"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_production__report_type__reject
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+msgid "Reject"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_reject_report
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_reject_report
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_graph
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_pivot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+msgid "Reject Analysis"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__reject_reason_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__reject_reason_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_form
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+msgid "Reject Reason"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_reject_reason
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_reject_reason
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_search
+msgid "Reject Reasons"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__qty
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__reject_qty
+msgid "Rejected Quantity"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__report_time
+msgid "Report Time"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__report_type
+msgid "Report Type"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__qty
+msgid "Reported Quantity"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_reporting
+msgid "Reporting"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_rest
+msgid "Rest"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__run_minutes
+msgid "Run Time (min)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__sequence
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__shift_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__shift_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__shift_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__shift_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__shift_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+msgid "Shift"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__shift_minutes
+msgid "Shift Time (min)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_shift
+msgid "Shifts"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__hour_from
+msgid "Start Time"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_startup
+msgid "Start-up Defect"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__state
+msgid "Status"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_surface
+msgid "Surface Defect"
+msgstr ""
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/wizard/mrp_oee_snapshot_wizard.py:0
+msgid "The end date must be after the start date."
+msgstr ""
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/models/mrp_oee_production.py:0
+msgid "The reported quantity must be positive."
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__cycle_time
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_theoretical_cycle_list
+msgid "Theoretical Cycle (min)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_theoretical_cycle
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_theoretical_cycle
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_theoretical_cycle_list
+msgid "Theoretical Cycles"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_production__cycle_time
+msgid ""
+"Theoretical cycle time in minutes, taken from the operation of the product "
+"on this work center."
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_form
+msgid "Time"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__total_qty
+msgid "Total Quantity"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__unplanned_minutes
+msgid "Unplanned Downtime (min)"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__unplanned
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__unplanned
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_unplanned
+msgid "Unplanned Stop"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_workcenter
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__workcenter_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__workcenter_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__workcenter_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__workcenter_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__workcenter_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+msgid "Work Center"
+msgstr ""

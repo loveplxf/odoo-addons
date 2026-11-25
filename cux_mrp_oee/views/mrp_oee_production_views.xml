@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_mrp_oee_production_list" model="ir.ui.view">
+            <field name="name">mrp.oee.production.list</field>
+            <field name="model">mrp.oee.production</field>
+            <field name="arch" type="xml">
+                <list string="Production Reports" decoration-danger="report_type == 'reject'">
+                    <field name="date"/>
+                    <field name="shift_id"/>
+                    <field name="workcenter_id"/>
+                    <field name="product_id"/>
+                    <field name="cycle_time"/>
+                    <field name="qty"/>
+                    <field name="report_type"/>
+                    <field name="reject_reason_id" optional="show"/>
+                    <field name="report_time"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_production_form" model="ir.ui.view">
+            <field name="name">mrp.oee.production.form</field>
+            <field name="model">mrp.oee.production</field>
+            <field name="arch" type="xml">
+                <form string="Production Report">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="shift_id"/>
+                                <field name="workcenter_id"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                            <group>
+                                <field name="product_id"/>
+                                <field name="cycle_time"/>
+                                <field name="qty"/>
+                                <field name="report_type"/>
+                                <field name="reject_reason_id"
+                                       invisible="report_type != 'reject'"
+                                       required="report_type == 'reject'"/>
+                                <field name="report_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_production_search" model="ir.ui.view">
+            <field name="name">mrp.oee.production.search</field>
+            <field name="model">mrp.oee.production</field>
+            <field name="arch" type="xml">
+                <search string="Production Reports">
+                    <field name="workcenter_id"/>
+                    <field name="shift_id"/>
+                    <field name="product_id"/>
+                    <field name="reject_reason_id"/>
+                    <field name="date"/>
+                    <filter name="filter_good" string="Good" domain="[('report_type', '=', 'good')]"/>
+                    <filter name="filter_reject" string="Reject" domain="[('report_type', '=', 'reject')]"/>
+                    <group>
+                        <filter name="group_workcenter" string="Work Center" context="{'group_by': 'workcenter_id'}"/>
+                        <filter name="group_shift" string="Shift" context="{'group_by': 'shift_id'}"/>
+                        <filter name="group_product" string="Product" context="{'group_by': 'product_id'}"/>
+                        <filter name="group_date" string="Date" context="{'group_by': 'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_mrp_oee_production" model="ir.actions.act_window">
+            <field name="name">Production Reports</field>
+            <field name="res_model">mrp.oee.production</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_mrp_oee_production_search"/>
+        </record>
+    </data>
+</odoo>

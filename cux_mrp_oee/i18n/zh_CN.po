@@ -1,0 +1,790 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cux_mrp_oee
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e-20261101\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-25 01:07+0000\n"
+"PO-Revision-Date: 2026-11-25 01:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cux_mrp_oee
+#: model:ir.module.module,description:base.module_cux_mrp_oee
+msgid ""
+"\n"
+"OEE - Overall Equipment Effectiveness\n"
+"=====================================\n"
+"\n"
+"Compute the equipment effectiveness of work centers as:\n"
+"\n"
+"    OEE = Availability x Performance x Quality\n"
+"\n"
+"with dedicated menus:\n"
+"\n"
+"- Overview: work center OEE kanban\n"
+"- Operations: downtime records and production reports\n"
+"- Reporting: OEE snapshots, downtime analysis, reject analysis\n"
+"- Configuration: shifts, downtime reasons, reject reasons, theoretical cycles\n"
+msgstr ""
+"\n"
+"OEE - 设备综合效率\n"
+"======================\n"
+"\n"
+"按以下公式计算工作中心的设备综合效率：\n"
+"\n"
+"    OEE = 时间可动率 x 性能可动率 x 质量可动率\n"
+"\n"
+"模块菜单：\n"
+"\n"
+"- 概览：工作中心 OEE 看板\n"
+"- 操作：停台记录、报工记录\n"
+"- 报表：OEE 快照、停台分析、不良分析\n"
+"- 配置：班次、停台原因、不良原因、理论节拍\n"
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/wizard/mrp_oee_snapshot_wizard.py:0
+msgid "%s snapshot(s) generated."
+msgstr "已生成 %s 条快照。"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "<span class=\"text-muted\">%</span>"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "A"
+msgstr ""
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/models/mrp_oee_loss_reason.py:0
+msgid "A downtime reason cannot be its own ancestor."
+msgstr "停台原因不能是自己的上级。"
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/models/mrp_oee_reject_reason.py:0
+msgid "A reject reason cannot be its own ancestor."
+msgstr "不良原因不能是自己的上级。"
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/models/mrp_oee_production.py:0
+msgid "A reject reason is required for rejected quantities."
+msgstr "不良品必须填写不良原因。"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__active
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__active
+msgid "Active"
+msgstr "启用"
+
+#. module: cux_mrp_oee
+#: model:ir.model.constraint,message:cux_mrp_oee.constraint_mrp_oee_snapshot_uniq_snapshot
+msgid "An OEE snapshot already exists for this date, shift and work center."
+msgstr "该日期、班次和工作中心已存在 OEE 快照。"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_search
+msgid "Archived"
+msgstr "已归档"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_assembly
+msgid "Assembly Defect"
+msgstr "装配不良"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__availability
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_availability
+msgid "Availability (%)"
+msgstr "时间可动率（%）"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_snapshot__state__below
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_workcenter__oee_state__below
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "Below Target"
+msgstr "低于目标"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_wizard_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__loss_type
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__loss_type
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+msgid "Category"
+msgstr "分类"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__child_ids
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__child_ids
+msgid "Children"
+msgstr "子级"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__company_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__company_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__company_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__company_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__complete_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__complete_name
+msgid "Complete Name"
+msgstr "完整名称"
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_configuration
+msgid "Configuration"
+msgstr "配置"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__create_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__create_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__date
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+msgid "Date"
+msgstr "日期"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__date_from
+msgid "Date From"
+msgstr "开始日期"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__date_to
+msgid "Date To"
+msgstr "结束日期"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_dimensional
+msgid "Dimensional Defect"
+msgstr "尺寸不良"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__display_name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__duration
+msgid "Downtime"
+msgstr "停台时长"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__duration
+msgid "Downtime (h)"
+msgstr "停台时长（小时）"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_loss_report
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_loss_report
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_graph
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_pivot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_search
+msgid "Downtime Analysis"
+msgstr "停台分析"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__loss_reason_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_reason_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_form
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+msgid "Downtime Reason"
+msgstr "停台原因"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_loss_reason
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_loss_reason
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+msgid "Downtime Reasons"
+msgstr "停台原因"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_form
+msgid "Downtime Record"
+msgstr "停台记录"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_productivity
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_productivity
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+msgid "Downtime Records"
+msgstr "停台记录"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__duration
+msgid "Duration in hours."
+msgstr "时长（小时）。"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__hour_to
+msgid "End Time"
+msgstr "结束时间"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_equipment
+msgid "Equipment"
+msgstr "设备因素"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__hour_from
+msgid "Format is hh:mm"
+msgstr "格式为 hh:mm"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__hour_to
+msgid ""
+"Format is hh:mm, values lower than the start time are considered as the next"
+" day."
+msgstr "格式为 hh:mm，结束时间小于开始时间时视为次日。"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_wizard_form
+msgid "Generate"
+msgstr "生成"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_snapshot_wizard
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_wizard_form
+msgid "Generate OEE Snapshots"
+msgstr "生成 OEE 快照"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_snapshot_wizard
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_snapshot_wizard
+msgid "Generate Snapshots"
+msgstr "生成快照"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_production__report_type__good
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+msgid "Good"
+msgstr "合格品"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__good_qty
+msgid "Good Quantity"
+msgstr "合格数量"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__id
+msgid "ID"
+msgstr "编号"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__ideal_minutes
+msgid "Ideal Time (min)"
+msgstr "理论用时（分钟）"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_snapshot__state__idle
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_workcenter__oee_state__idle
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "Idle"
+msgstr "空闲"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__write_uid
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__write_date
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot_wizard__write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_material
+msgid "Material"
+msgstr "物料因素"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_meal
+msgid "Meal Break"
+msgstr "吃饭"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_method
+msgid "Method / External"
+msgstr "方法/外部因素"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__name
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__name
+msgid "Name"
+msgstr "名称"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_no_demand
+msgid "No Demand"
+msgstr "无需求"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__productive
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__productive
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_productive
+msgid "Normal Production"
+msgstr "正常生产"
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_root
+msgid "OEE"
+msgstr "OEE"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_rate
+msgid "OEE (%)"
+msgstr "设备综合效率（%）"
+
+#. module: cux_mrp_oee
+#: model:ir.module.module,shortdesc:base.module_cux_mrp_oee
+msgid "OEE - Equipment Effectiveness"
+msgstr "设备综合效率"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_loss_report
+msgid "OEE Downtime Analysis"
+msgstr "停台分析"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_loss_reason
+msgid "OEE Downtime Reason"
+msgstr "停台原因"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_productivity
+msgid "OEE Downtime Record"
+msgstr "停台记录"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_production
+msgid "OEE Production Record"
+msgstr "报工记录"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_reject_report
+msgid "OEE Reject Analysis"
+msgstr "不良分析"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_reject_reason
+msgid "OEE Reject Reason"
+msgstr "不良原因"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_oee_snapshot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_form
+msgid "OEE Snapshot"
+msgstr "OEE 快照"
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/wizard/mrp_oee_snapshot_wizard.py:0
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_snapshot
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_snapshot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_pivot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+msgid "OEE Snapshots"
+msgstr "OEE 快照"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_state
+msgid "OEE Status"
+msgstr "OEE 状态"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_graph
+msgid "OEE Trend"
+msgstr "OEE 趋势"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.server,name:cux_mrp_oee.cron_oee_snapshots_ir_actions_server
+msgid "OEE: compute daily snapshots"
+msgstr "OEE：生成每日快照"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_snapshot__state__on_target
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_workcenter__oee_state__on_target
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "On Target"
+msgstr "达到目标"
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_operations
+msgid "Operations"
+msgstr "操作"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_operator
+msgid "Operator"
+msgstr "人员因素"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_other
+msgid "Other"
+msgstr "其他"
+
+#. module: cux_mrp_oee
+#: model:ir.module.module,summary:base.module_cux_mrp_oee
+msgid "Overall Equipment Effectiveness for work centers"
+msgstr "工作中心设备综合效率"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_overview
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_overview
+msgid "Overview"
+msgstr "概览"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "P"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__parent_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__parent_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_search
+msgid "Parent"
+msgstr "上级"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__performance
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_performance
+msgid "Performance (%)"
+msgstr "性能可动率（%）"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_planned_maintenance
+msgid "Planned Maintenance"
+msgstr "计划性保养"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__planned_minutes
+msgid "Planned Production (min)"
+msgstr "计划生产时间（分钟）"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_planned_repair
+msgid "Planned Repair"
+msgstr "计划性维修"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__planned
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__planned
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_planned
+msgid "Planned Stop"
+msgstr "计划性停台"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__planned_stop_minutes
+msgid "Planned Stops (min)"
+msgstr "计划性停台（分钟）"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_loss_reason__loss_type
+msgid ""
+"Planned stops are removed from the planned production time, unplanned stops "
+"reduce the availability."
+msgstr "计划性停台从计划生产时间中扣除，非计划性停台降低时间可动率。"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__product_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__product_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+msgid "Product"
+msgstr "产品"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_form
+msgid "Production Report"
+msgstr "报工记录"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_production
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_production
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+msgid "Production Reports"
+msgstr "报工记录"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_workcenter_kanban_oee
+msgid "Q"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__quality
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_workcenter__oee_quality
+msgid "Quality (%)"
+msgstr "质量可动率（%）"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_form
+msgid "Quantity"
+msgstr "数量"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_production__report_type__reject
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+msgid "Reject"
+msgstr "不良品"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_reject_report
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_reject_report
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_graph
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_pivot
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+msgid "Reject Analysis"
+msgstr "不良分析"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__reject_reason_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__reject_reason_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_form
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+msgid "Reject Reason"
+msgstr "不良原因"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_reject_reason
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_reject_reason
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_list
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_reason_search
+msgid "Reject Reasons"
+msgstr "不良原因"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__qty
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__reject_qty
+msgid "Rejected Quantity"
+msgstr "不良数量"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__report_time
+msgid "Report Time"
+msgstr "报工时间"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__report_type
+msgid "Report Type"
+msgstr "报工类型"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__qty
+msgid "Reported Quantity"
+msgstr "报工数量"
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_reporting
+msgid "Reporting"
+msgstr "报表"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_rest
+msgid "Rest"
+msgstr "休息"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__run_minutes
+msgid "Run Time (min)"
+msgstr "运行时间（分钟）"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__sequence
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_reason__sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__shift_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__shift_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__shift_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__shift_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__shift_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+msgid "Shift"
+msgstr "班次"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__shift_minutes
+msgid "Shift Time (min)"
+msgstr "班次时长（分钟）"
+
+#. module: cux_mrp_oee
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_shift
+msgid "Shifts"
+msgstr "班次"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__hour_from
+msgid "Start Time"
+msgstr "开始时间"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_startup
+msgid "Start-up Defect"
+msgstr "开机不良"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__state
+msgid "Status"
+msgstr "状态"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_surface
+msgid "Surface Defect"
+msgstr "外观不良"
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/wizard/mrp_oee_snapshot_wizard.py:0
+msgid "The end date must be after the start date."
+msgstr "结束日期必须晚于开始日期。"
+
+#. module: cux_mrp_oee
+#. odoo-python
+#: code:addons/cux_mrp_oee/models/mrp_oee_production.py:0
+msgid "The reported quantity must be positive."
+msgstr "报工数量必须大于 0。"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__cycle_time
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_theoretical_cycle_list
+msgid "Theoretical Cycle (min)"
+msgstr "理论节拍（分钟）"
+
+#. module: cux_mrp_oee
+#: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_theoretical_cycle
+#: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_theoretical_cycle
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_theoretical_cycle_list
+msgid "Theoretical Cycles"
+msgstr "理论节拍"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_production__cycle_time
+msgid ""
+"Theoretical cycle time in minutes, taken from the operation of the product "
+"on this work center."
+msgstr "理论节拍（分钟），取自该产品在此工作中心的工序。"
+
+#. module: cux_mrp_oee
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_form
+msgid "Time"
+msgstr "时间"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__total_qty
+msgid "Total Quantity"
+msgstr "总数量"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__unplanned_minutes
+msgid "Unplanned Downtime (min)"
+msgstr "非计划性停台（分钟）"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__unplanned
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__unplanned
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_unplanned
+msgid "Unplanned Stop"
+msgstr "非计划性停台"
+
+#. module: cux_mrp_oee
+#: model:ir.model,name:cux_mrp_oee.model_mrp_workcenter
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__workcenter_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__workcenter_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__workcenter_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_reject_report__workcenter_id
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_snapshot__workcenter_id
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_production_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
+msgid "Work Center"
+msgstr "工作中心"

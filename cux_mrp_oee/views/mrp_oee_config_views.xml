@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_mrp_oee_loss_reason_list" model="ir.ui.view">
+            <field name="name">mrp.oee.loss.reason.list</field>
+            <field name="model">mrp.oee.loss.reason</field>
+            <field name="arch" type="xml">
+                <list string="Downtime Reasons">
+                    <field name="sequence" widget="handle"/>
+                    <field name="complete_name"/>
+                    <field name="name" column_invisible="True"/>
+                    <field name="loss_type"/>
+                    <field name="active" optional="show" widget="boolean_toggle"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_loss_reason_form" model="ir.ui.view">
+            <field name="name">mrp.oee.loss.reason.form</field>
+            <field name="model">mrp.oee.loss.reason</field>
+            <field name="arch" type="xml">
+                <form string="Downtime Reason">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="loss_type"/>
+                                <field name="parent_id"/>
+                                <field name="sequence"/>
+                            </group>
+                            <group>
+                                <field name="complete_name"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_loss_reason_search" model="ir.ui.view">
+            <field name="name">mrp.oee.loss.reason.search</field>
+            <field name="model">mrp.oee.loss.reason</field>
+            <field name="arch" type="xml">
+                <search string="Downtime Reasons">
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <searchpanel>
+                        <field name="loss_type" string="Category" icon="settings" enable_counters="1"/>
+                    </searchpanel>
+                    <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+                    <group>
+                        <filter name="group_type" string="Category" context="{'group_by': 'loss_type'}"/>
+                        <filter name="group_parent" string="Parent" context="{'group_by': 'parent_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_mrp_oee_loss_reason" model="ir.actions.act_window">
+            <field name="name">Downtime Reasons</field>
+            <field name="res_model">mrp.oee.loss.reason</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_mrp_oee_loss_reason_search"/>
+        </record>
+
+        <record id="view_mrp_oee_reject_reason_list" model="ir.ui.view">
+            <field name="name">mrp.oee.reject.reason.list</field>
+            <field name="model">mrp.oee.reject.reason</field>
+            <field name="arch" type="xml">
+                <list string="Reject Reasons">
+                    <field name="sequence" widget="handle"/>
+                    <field name="complete_name"/>
+                    <field name="name" column_invisible="True"/>
+                    <field name="active" optional="show" widget="boolean_toggle"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_reject_reason_form" model="ir.ui.view">
+            <field name="name">mrp.oee.reject.reason.form</field>
+            <field name="model">mrp.oee.reject.reason</field>
+            <field name="arch" type="xml">
+                <form string="Reject Reason">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="parent_id"/>
+                                <field name="sequence"/>
+                            </group>
+                            <group>
+                                <field name="complete_name"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_reject_reason_search" model="ir.ui.view">
+            <field name="name">mrp.oee.reject.reason.search</field>
+            <field name="model">mrp.oee.reject.reason</field>
+            <field name="arch" type="xml">
+                <search string="Reject Reasons">
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <searchpanel>
+                        <field name="parent_id" string="Parent" icon="account_tree" enable_counters="1"/>
+                    </searchpanel>
+                    <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+                    <group>
+                        <filter name="group_parent" string="Parent" context="{'group_by': 'parent_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_mrp_oee_reject_reason" model="ir.actions.act_window">
+            <field name="name">Reject Reasons</field>
+            <field name="res_model">mrp.oee.reject.reason</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_mrp_oee_reject_reason_search"/>
+        </record>
+
+        <record id="view_mrp_oee_theoretical_cycle_list" model="ir.ui.view">
+            <field name="name">mrp.routing.workcenter.oee.list</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="arch" type="xml">
+                <list string="Theoretical Cycles" create="0">
+                    <field name="name"/>
+                    <field name="workcenter_id"/>
+                    <field name="bom_id"/>
+                    <field name="time_mode"/>
+                    <field name="time_cycle_manual" string="Theoretical Cycle (min)"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="action_mrp_oee_theoretical_cycle" model="ir.actions.act_window">
+            <field name="name">Theoretical Cycles</field>
+            <field name="res_model">mrp.routing.workcenter</field>
+            <field name="view_mode">list,form</field>
+            <field name="view_id" ref="view_mrp_oee_theoretical_cycle_list"/>
+        </record>
+    </data>
+</odoo>

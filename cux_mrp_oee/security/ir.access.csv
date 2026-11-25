@@ -1,0 +1,17 @@
+id,name,model_id,group_id/id,operation,domain
+access_mrp_oee_loss_reason_user,mrp.oee.loss.reason.user,mrp.oee.loss.reason,mrp.group_mrp_user,r,
+access_mrp_oee_loss_reason_manager,mrp.oee.loss.reason.manager,mrp.oee.loss.reason,mrp.group_mrp_manager,crud,
+access_mrp_oee_reject_reason_user,mrp.oee.reject.reason.user,mrp.oee.reject.reason,mrp.group_mrp_user,r,
+access_mrp_oee_reject_reason_manager,mrp.oee.reject.reason.manager,mrp.oee.reject.reason,mrp.group_mrp_manager,crud,
+access_mrp_oee_productivity_user,mrp.oee.productivity.user,mrp.oee.productivity,mrp.group_mrp_user,crud,
+access_mrp_oee_productivity_manager,mrp.oee.productivity.manager,mrp.oee.productivity,mrp.group_mrp_manager,crud,
+access_mrp_oee_production_user,mrp.oee.production.user,mrp.oee.production,mrp.group_mrp_user,crud,
+access_mrp_oee_production_manager,mrp.oee.production.manager,mrp.oee.production,mrp.group_mrp_manager,crud,
+access_mrp_oee_snapshot_user,mrp.oee.snapshot.user,mrp.oee.snapshot,mrp.group_mrp_user,r,
+access_mrp_oee_snapshot_manager,mrp.oee.snapshot.manager,mrp.oee.snapshot,mrp.group_mrp_manager,crud,
+access_mrp_oee_loss_report_user,mrp.oee.loss.report.user,mrp.oee.loss.report,mrp.group_mrp_user,r,
+access_mrp_oee_reject_report_user,mrp.oee.reject.report.user,mrp.oee.reject.report,mrp.group_mrp_user,r,
+access_mrp_oee_snapshot_wizard_user,mrp.oee.snapshot.wizard.user,mrp.oee.snapshot.wizard,mrp.group_mrp_user,crud,
+rule_mrp_oee_productivity_company,mrp.oee.productivity multi-company,mrp.oee.productivity,,crud,"[('company_id', 'in', company_ids + [False])]"
+rule_mrp_oee_production_company,mrp.oee.production multi-company,mrp.oee.production,,crud,"[('company_id', 'in', company_ids + [False])]"
+rule_mrp_oee_snapshot_company,mrp.oee.snapshot multi-company,mrp.oee.snapshot,,crud,"[('company_id', 'in', company_ids + [False])]"

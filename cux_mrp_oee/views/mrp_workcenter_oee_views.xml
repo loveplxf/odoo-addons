@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_mrp_workcenter_kanban_oee" model="ir.ui.view">
+            <field name="name">mrp.workcenter.kanban.oee</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" sample="1" create="0">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="oee_state"/>
+                    <field name="oee_rate"/>
+                    <field name="oee_availability"/>
+                    <field name="oee_performance"/>
+                    <field name="oee_quality"/>
+                    <templates>
+                        <t t-name="card">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <div>
+                                    <strong><field name="name"/></strong>
+                                    <div class="text-muted small"><field name="code"/></div>
+                                </div>
+                                <span t-if="record.oee_state.raw_value === 'on_target'"
+                                      class="badge text-bg-success">On Target</span>
+                                <span t-elif="record.oee_state.raw_value === 'below'"
+                                      class="badge text-bg-danger">Below Target</span>
+                                <span t-else="1" class="badge text-bg-secondary">Idle</span>
+                            </div>
+                            <div class="text-center my-2">
+                                <span style="font-size:32px;font-weight:600;"><field name="oee_rate"/></span>
+                                <span class="text-muted">%</span>
+                            </div>
+                            <div class="d-flex justify-content-between text-muted small">
+                                <span>A <field name="oee_availability"/>%</span>
+                                <span>P <field name="oee_performance"/>%</span>
+                                <span>Q <field name="oee_quality"/>%</span>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_mrp_oee_overview" model="ir.actions.act_window">
+            <field name="name">Overview</field>
+            <field name="res_model">mrp.workcenter</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_id" ref="view_mrp_workcenter_kanban_oee"/>
+            <field name="context">{'create': False}</field>
+        </record>
+    </data>
+</odoo>

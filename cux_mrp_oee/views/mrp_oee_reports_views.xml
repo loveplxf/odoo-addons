@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_mrp_oee_loss_report_pivot" model="ir.ui.view">
+            <field name="name">mrp.oee.loss.report.pivot</field>
+            <field name="model">mrp.oee.loss.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Downtime Analysis">
+                    <field name="loss_reason_id" type="row"/>
+                    <field name="workcenter_id" type="col"/>
+                    <field name="duration" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_loss_report_graph" model="ir.ui.view">
+            <field name="name">mrp.oee.loss.report.graph</field>
+            <field name="model">mrp.oee.loss.report</field>
+            <field name="arch" type="xml">
+                <graph string="Downtime Analysis" type="bar">
+                    <field name="loss_reason_id"/>
+                    <field name="duration" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_loss_report_list" model="ir.ui.view">
+            <field name="name">mrp.oee.loss.report.list</field>
+            <field name="model">mrp.oee.loss.report</field>
+            <field name="arch" type="xml">
+                <list string="Downtime Analysis" create="0">
+                    <field name="date"/>
+                    <field name="shift_id"/>
+                    <field name="workcenter_id"/>
+                    <field name="loss_reason_id"/>
+                    <field name="loss_type"/>
+                    <field name="duration"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_loss_report_search" model="ir.ui.view">
+            <field name="name">mrp.oee.loss.report.search</field>
+            <field name="model">mrp.oee.loss.report</field>
+            <field name="arch" type="xml">
+                <search string="Downtime Analysis">
+                    <field name="workcenter_id"/>
+                    <field name="loss_reason_id"/>
+                    <field name="date"/>
+                    <group>
+                        <filter name="group_reason" string="Downtime Reason" context="{'group_by': 'loss_reason_id'}"/>
+                        <filter name="group_workcenter" string="Work Center" context="{'group_by': 'workcenter_id'}"/>
+                        <filter name="group_date" string="Date" context="{'group_by': 'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_mrp_oee_loss_report" model="ir.actions.act_window">
+            <field name="name">Downtime Analysis</field>
+            <field name="res_model">mrp.oee.loss.report</field>
+            <field name="view_mode">pivot,graph,list</field>
+            <field name="search_view_id" ref="view_mrp_oee_loss_report_search"/>
+        </record>
+
+        <record id="view_mrp_oee_reject_report_pivot" model="ir.ui.view">
+            <field name="name">mrp.oee.reject.report.pivot</field>
+            <field name="model">mrp.oee.reject.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Reject Analysis">
+                    <field name="reject_reason_id" type="row"/>
+                    <field name="workcenter_id" type="col"/>
+                    <field name="qty" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_reject_report_graph" model="ir.ui.view">
+            <field name="name">mrp.oee.reject.report.graph</field>
+            <field name="model">mrp.oee.reject.report</field>
+            <field name="arch" type="xml">
+                <graph string="Reject Analysis" type="bar">
+                    <field name="reject_reason_id"/>
+                    <field name="qty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_reject_report_list" model="ir.ui.view">
+            <field name="name">mrp.oee.reject.report.list</field>
+            <field name="model">mrp.oee.reject.report</field>
+            <field name="arch" type="xml">
+                <list string="Reject Analysis" create="0">
+                    <field name="date"/>
+                    <field name="shift_id"/>
+                    <field name="workcenter_id"/>
+                    <field name="product_id"/>
+                    <field name="reject_reason_id"/>
+                    <field name="qty"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_mrp_oee_reject_report_search" model="ir.ui.view">
+            <field name="name">mrp.oee.reject.report.search</field>
+            <field name="model">mrp.oee.reject.report</field>
+            <field name="arch" type="xml">
+                <search string="Reject Analysis">
+                    <field name="workcenter_id"/>
+                    <field name="product_id"/>
+                    <field name="reject_reason_id"/>
+                    <field name="date"/>
+                    <group>
+                        <filter name="group_reason" string="Reject Reason" context="{'group_by': 'reject_reason_id'}"/>
+                        <filter name="group_product" string="Product" context="{'group_by': 'product_id'}"/>
+                        <filter name="group_workcenter" string="Work Center" context="{'group_by': 'workcenter_id'}"/>
+                        <filter name="group_date" string="Date" context="{'group_by': 'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_mrp_oee_reject_report" model="ir.actions.act_window">
+            <field name="name">Reject Analysis</field>
+            <field name="res_model">mrp.oee.reject.report</field>
+            <field name="view_mode">pivot,graph,list</field>
+            <field name="search_view_id" ref="view_mrp_oee_reject_report_search"/>
+        </record>
+    </data>
+</odoo>
