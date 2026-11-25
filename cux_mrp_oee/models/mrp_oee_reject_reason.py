@@ -6,7 +6,7 @@ from odoo.exceptions import ValidationError
 class MrpOeeRejectReason(models.Model):
     _name = 'mrp.oee.reject.reason'
     _description = 'OEE Reject Reason'
-    _order = 'sequence, complete_name'
+    _order = 'sequence, id'
 
     name = fields.Char(string='Name', required=True, translate=True)
     sequence = fields.Integer(default=10)
@@ -20,7 +20,7 @@ class MrpOeeRejectReason(models.Model):
         string='Complete Name',
         compute='_compute_complete_name',
         recursive=True,
-        store=True,
+        translate=True,
     )
     child_ids = fields.One2many(
         'mrp.oee.reject.reason',

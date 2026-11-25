@@ -9,9 +9,10 @@
                     <field name="date"/>
                     <field name="shift_id"/>
                     <field name="workcenter_id"/>
-                    <field name="hour_from" widget="float_time"/>
-                    <field name="hour_to" widget="float_time"/>
-                    <field name="duration" widget="float_time"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="duration"/>
+                    <field name="loss_type"/>
                     <field name="loss_reason_id"/>
                     <field name="company_id" groups="base.group_multi_company" optional="hide"/>
                 </list>
@@ -32,11 +33,18 @@
                                 <field name="company_id" groups="base.group_multi_company"/>
                             </group>
                             <group>
-                                <field name="loss_reason_id"/>
-                                <field name="hour_from" widget="float_time"/>
-                                <field name="hour_to" widget="float_time"/>
-                                <field name="duration" widget="float_time"/>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="duration" readonly="1"/>
                             </group>
+                        </group>
+                        <group>
+                            <field name="loss_type" widget="badges_selection"/>
+                            <field name="loss_reason_parent_id" widget="badges_many2one" required="1"/>
+                            <field name="loss_reason_child_id" widget="badges_many2one"
+                                   invisible="not loss_reason_has_children"/>
+                            <field name="loss_reason_has_children" invisible="1"/>
+                            <field name="loss_reason_id" invisible="1"/>
                         </group>
                     </sheet>
                 </form>
@@ -50,12 +58,16 @@
                 <search string="Downtime Records">
                     <field name="workcenter_id"/>
                     <field name="shift_id"/>
+                    <field name="loss_type"/>
                     <field name="loss_reason_id"/>
                     <field name="date"/>
                     <filter name="filter_date" string="Date" date="date"/>
+                    <filter name="filter_loss_reason_undefined" string="Undefined"
+                            domain="[('loss_reason_id', '=', %(cux_mrp_oee.loss_reason_undefined)d)]"/>
                     <group>
                         <filter name="group_workcenter" string="Work Center" context="{'group_by': 'workcenter_id'}"/>
                         <filter name="group_shift" string="Shift" context="{'group_by': 'shift_id'}"/>
+                        <filter name="group_type" string="Category" context="{'group_by': 'loss_type'}"/>
                         <filter name="group_reason" string="Downtime Reason" context="{'group_by': 'loss_reason_id'}"/>
                         <filter name="group_date" string="Date" context="{'group_by': 'date'}"/>
                     </group>

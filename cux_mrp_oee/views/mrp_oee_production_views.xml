@@ -31,18 +31,20 @@
                                 <field name="date"/>
                                 <field name="shift_id"/>
                                 <field name="workcenter_id"/>
-                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="product_id"/>
                             </group>
                             <group>
-                                <field name="product_id"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
                                 <field name="cycle_time"/>
-                                <field name="qty"/>
-                                <field name="report_type"/>
-                                <field name="reject_reason_id"
-                                       invisible="report_type != 'reject'"
-                                       required="report_type == 'reject'"/>
                                 <field name="report_time"/>
                             </group>
+                        </group>
+                        <group>
+                            <field name="report_type" widget="badges_selection"/>
+                            <field name="reject_reason_id"
+                                    invisible="report_type != 'reject'"
+                                    required="report_type == 'reject'"/>
+                            <field name="qty"/>
                         </group>
                     </sheet>
                 </form>

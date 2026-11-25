@@ -249,6 +249,21 @@ msgid "Downtime Reason"
 msgstr "停台原因"
 
 #. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_reason_child_id
+msgid "Reason"
+msgstr "原因"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_reason_parent_id
+msgid "Sub Category"
+msgstr "小类"
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_reason_has_children
+msgid "Has Sub Reasons"
+msgstr "包含子原因"
+
+#. module: cux_mrp_oee
 #: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_loss_reason
 #: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_loss_reason
 #: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_list
@@ -275,14 +290,19 @@ msgid "Duration in hours."
 msgstr "时长（小时）。"
 
 #. module: cux_mrp_oee
-#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__hour_to
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__date_end
 msgid "End Time"
 msgstr "结束时间"
 
 #. module: cux_mrp_oee
 #: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_equipment
 msgid "Equipment"
-msgstr "设备因素"
+msgstr "设备"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_environment
+msgid "Environment"
+msgstr "环境"
 
 #. module: cux_mrp_oee
 #: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__hour_from
@@ -372,17 +392,12 @@ msgstr "最后更新时间"
 #. module: cux_mrp_oee
 #: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_material
 msgid "Material"
-msgstr "物料因素"
+msgstr "物料"
 
 #. module: cux_mrp_oee
 #: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_meal
 msgid "Meal Break"
 msgstr "吃饭"
-
-#. module: cux_mrp_oee
-#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_method
-msgid "Method / External"
-msgstr "方法/外部因素"
 
 #. module: cux_mrp_oee
 #: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__name
@@ -496,9 +511,10 @@ msgstr "操作"
 #. module: cux_mrp_oee
 #: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_operator
 msgid "Operator"
-msgstr "人员因素"
+msgstr "人员"
 
 #. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_other
 #: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_other
 msgid "Other"
 msgstr "其他"
@@ -566,6 +582,11 @@ msgid ""
 "Planned stops are removed from the planned production time, unplanned stops "
 "reduce the availability."
 msgstr "计划性停台从计划生产时间中扣除，非计划性停台降低时间可动率。"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_process
+msgid "Process"
+msgstr "工艺"
 
 #. module: cux_mrp_oee
 #: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_production__product_id
@@ -701,7 +722,7 @@ msgid "Shifts"
 msgstr "班次"
 
 #. module: cux_mrp_oee
-#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__hour_from
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__date_start
 msgid "Start Time"
 msgstr "开始时间"
 
@@ -788,3 +809,108 @@ msgstr "非计划性停台"
 #: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
 msgid "Work Center"
 msgstr "工作中心"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_5s
+msgid "5S"
+msgstr "5S"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_training
+msgid "Training and Meetings"
+msgstr "培训和会议"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_shuttle
+msgid "Shuttle Bus Issue"
+msgstr "班车问题"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_warmup
+msgid "Warm-up Preparation"
+msgstr "开机暖机准备"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_pokayoke
+msgid "Error-proofing Verification"
+msgstr "防错验证"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_electrical
+msgid "Electrical Failure"
+msgstr "电气故障"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_mechanical
+msgid "Mechanical Failure"
+msgstr "机械故障"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_equip_adjust
+msgid "Equipment Adjustment"
+msgstr "设备调整"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_wait_upstream
+msgid "Waiting for Upstream Process"
+msgstr "等待前道工序"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_inspection
+msgid "Product Inspection"
+msgstr "产品检查"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_shortage
+msgid "Material Shortage"
+msgstr "材料短缺"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_incoming
+msgid "Incoming Material Issue"
+msgstr "来料问题"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_aux_tool
+msgid "Auxiliary Tool Shortage"
+msgstr "辅助器具短缺"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_defective
+msgid "Defective Product Issue"
+msgstr "不良品问题"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_mold_change
+msgid "Mold Changeover"
+msgstr "换模具调整"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_tool_change
+msgid "Tool Change"
+msgstr "刀具更换"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_process_change
+msgid "Process Change"
+msgstr "工艺更改"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_new_product
+msgid "New Product Production"
+msgstr "新产品生产"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_utilities
+msgid "Insufficient Utilities Supply"
+msgstr "水电气供应不足"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_network
+msgid "System or Network Failure"
+msgstr "系统或网络故障"
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_undefined
+msgid "Undefined"
+msgstr "未定义"

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_mrp_oee_productivity_gantt" model="ir.ui.view">
+            <field name="name">mrp.oee.productivity.gantt</field>
+            <field name="model">mrp.oee.productivity</field>
+            <field name="arch" type="xml">
+                <gantt string="Downtime Records"
+                       date_start="date_start"
+                       date_stop="date_end"
+                       default_group_by="workcenter_id"
+                       color="loss_reason_color"
+                       default_scale="day"
+                       groups_limit="20">
+                    <field name="workcenter_id"/>
+                    <field name="shift_id"/>
+                    <field name="loss_type"/>
+                    <field name="loss_reason_id"/>
+                    <field name="duration"/>
+                    <popover>
+                        <field name="loss_reason_has_children"/>
+                        <templates>
+                            <t t-name="popover-header">
+                                <field name="display_name"/>
+                            </t>
+                            <t t-name="popover-body">
+                                <div><strong>Start: </strong><field name="date_start"/></div>
+                                <div><strong>Stop: </strong><field name="date_end"/></div>
+                                <div><strong>Category: </strong><field name="loss_type"/></div>
+                                <div><strong>Sub Category: </strong><field name="loss_reason_parent_id"/></div>
+                                <div invisible="not loss_reason_has_children">
+                                    <strong>Reason: </strong><field name="loss_reason_child_id"/>
+                                </div>
+                            </t>
+                        </templates>
+                    </popover>
+                </gantt>
+            </field>
+        </record>
+
+        <record id="cux_mrp_oee.action_mrp_oee_productivity" model="ir.actions.act_window">
+            <field name="view_mode">gantt,list,form</field>
+        </record>
+    </data>
+</odoo>

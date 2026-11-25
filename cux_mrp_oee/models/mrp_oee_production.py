@@ -72,6 +72,15 @@ class MrpOeeProduction(models.Model):
         index=True,
     )
 
+    @api.depends('product_id', 'report_type', 'qty')
+    def _compute_display_name(self):
+        for record in self:
+            record.display_name = '%s-%s-%s' % (
+                record.product_id.name or '',
+                'OK' if record.report_type == 'good' else 'NG',
+                '%g' % record.qty,
+            )
+
     @api.depends('workcenter_id', 'product_id')
     def _compute_cycle_time(self):
         operation_model = self.env['mrp.routing.workcenter']

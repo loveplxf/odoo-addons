@@ -1,6 +1,6 @@
 {
     'name': 'OEE - Equipment Effectiveness',
-    'version': '20.0.1.0.0',
+    'version': '20.0.1.8.0',
     'summary': 'Overall Equipment Effectiveness for work centers',
     'description': """
 OEE - Overall Equipment Effectiveness

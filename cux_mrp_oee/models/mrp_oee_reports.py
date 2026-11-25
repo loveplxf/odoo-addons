@@ -15,7 +15,6 @@ class MrpOeeLossReport(models.Model):
     loss_reason_id = fields.Many2one('mrp.oee.loss.reason', string='Downtime Reason', readonly=True)
     loss_type = fields.Selection(
         selection=[
-            ('productive', 'Normal Production'),
             ('planned', 'Planned Stop'),
             ('unplanned', 'Unplanned Stop'),
         ],
@@ -35,7 +34,7 @@ class MrpOeeLossReport(models.Model):
                        p.workcenter_id AS workcenter_id,
                        p.loss_reason_id AS loss_reason_id,
                        r.loss_type AS loss_type,
-                       MOD(MOD((p.hour_to - p.hour_from)::numeric, 24) + 24, 24)::float AS duration,
+                       EXTRACT(EPOCH FROM (p.date_end - p.date_start)) / 3600.0 AS duration,
                        p.company_id AS company_id
                   FROM mrp_oee_productivity p
                   JOIN mrp_oee_loss_reason r ON r.id = p.loss_reason_id

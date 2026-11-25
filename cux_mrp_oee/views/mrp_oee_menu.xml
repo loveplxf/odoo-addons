@@ -4,6 +4,7 @@
         <menuitem id="menu_mrp_oee_root"
                   name="OEE"
                   sequence="76"
+                  web_icon="cux_mrp_oee,static/description/icon.png"
                   groups="mrp.group_mrp_user"/>
 
         <menuitem id="menu_mrp_oee_overview"
@@ -31,26 +32,28 @@
                   name="Reporting"
                   parent="menu_mrp_oee_root"
                   sequence="30"/>
-        <menuitem id="menu_mrp_oee_snapshot"
-                  name="OEE Snapshots"
-                  parent="menu_mrp_oee_reporting"
-                  action="action_mrp_oee_snapshot"
-                  sequence="10"/>
-        <menuitem id="menu_mrp_oee_snapshot_wizard"
-                  name="Generate Snapshots"
-                  parent="menu_mrp_oee_reporting"
-                  action="action_mrp_oee_snapshot_wizard"
-                  sequence="20"/>
+
         <menuitem id="menu_mrp_oee_loss_report"
                   name="Downtime Analysis"
                   parent="menu_mrp_oee_reporting"
                   action="action_mrp_oee_loss_report"
-                  sequence="30"/>
+                  sequence="10"/>
         <menuitem id="menu_mrp_oee_reject_report"
                   name="Reject Analysis"
                   parent="menu_mrp_oee_reporting"
                   action="action_mrp_oee_reject_report"
-                  sequence="40"/>
+                  sequence="20"/>
+        <menuitem id="menu_mrp_oee_snapshot"
+                  name="OEE Snapshots"
+                  parent="menu_mrp_oee_reporting"
+                  action="action_mrp_oee_snapshot"
+                  sequence="30"/>
+                  
+        <menuitem id="menu_mrp_oee_snapshot_wizard"
+                  name="Generate Snapshots"
+                  parent="menu_mrp_oee_reporting"
+                  action="action_mrp_oee_snapshot_wizard"
+                  sequence="40"/>                  
 
         <menuitem id="menu_mrp_oee_configuration"
                   name="Configuration"

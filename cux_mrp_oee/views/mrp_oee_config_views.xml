@@ -11,6 +11,7 @@
                     <field name="name" column_invisible="True"/>
                     <field name="loss_type"/>
                     <field name="active" optional="show" widget="boolean_toggle"/>
+                    <field name="color" optional="show" widget="color_picker"/>
                 </list>
             </field>
         </record>
@@ -24,14 +25,17 @@
                         <group>
                             <group>
                                 <field name="name"/>
-                                <field name="loss_type"/>
                                 <field name="parent_id"/>
                                 <field name="sequence"/>
                             </group>
                             <group>
                                 <field name="complete_name"/>
                                 <field name="active"/>
+                                <field name="color" widget="color_picker"/>
                             </group>
+                        </group>
+                        <group>
+                            <field name="loss_type" widget="badges_selection"/>
                         </group>
                     </sheet>
                 </form>
@@ -47,6 +51,7 @@
                     <field name="parent_id"/>
                     <searchpanel>
                         <field name="loss_type" string="Category" icon="settings" enable_counters="1"/>
+                        <field name="parent_id" string="Parent" icon="account_tree" enable_counters="1"/>
                     </searchpanel>
                     <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
                     <group>

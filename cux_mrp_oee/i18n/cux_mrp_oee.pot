@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 20.0+e-20261101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-25 01:07+0000\n"
-"PO-Revision-Date: 2026-11-25 01:07+0000\n"
+"POT-Creation-Date: 2026-11-25 04:15+0000\n"
+"PO-Revision-Date: 2026-11-25 04:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,9 @@ msgstr ""
 #. module: cux_mrp_oee
 #: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_reason__loss_type
 #: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_loss_report__loss_type
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_type
 #: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_search
+#: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_productivity_search
 msgid "Category"
 msgstr ""
 
@@ -234,6 +236,21 @@ msgid "Downtime Reason"
 msgstr ""
 
 #. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_reason_child_id
+msgid "Reason"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_reason_parent_id
+msgid "Sub Category"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__loss_reason_has_children
+msgid "Has Sub Reasons"
+msgstr ""
+
+#. module: cux_mrp_oee
 #: model:ir.actions.act_window,name:cux_mrp_oee.action_mrp_oee_loss_reason
 #: model:ir.ui.menu,name:cux_mrp_oee.menu_mrp_oee_loss_reason
 #: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_loss_reason_list
@@ -260,7 +277,7 @@ msgid "Duration in hours."
 msgstr ""
 
 #. module: cux_mrp_oee
-#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__hour_to
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__date_end
 msgid "End Time"
 msgstr ""
 
@@ -270,15 +287,8 @@ msgid "Equipment"
 msgstr ""
 
 #. module: cux_mrp_oee
-#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__hour_from
-msgid "Format is hh:mm"
-msgstr ""
-
-#. module: cux_mrp_oee
-#: model:ir.model.fields,help:cux_mrp_oee.field_mrp_oee_productivity__hour_to
-msgid ""
-"Format is hh:mm, values lower than the start time are considered as the next"
-" day."
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_environment
+msgid "Environment"
 msgstr ""
 
 #. module: cux_mrp_oee
@@ -365,8 +375,8 @@ msgid "Meal Break"
 msgstr ""
 
 #. module: cux_mrp_oee
-#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_method
-msgid "Method / External"
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_process
+msgid "Process"
 msgstr ""
 
 #. module: cux_mrp_oee
@@ -383,6 +393,7 @@ msgstr ""
 #. module: cux_mrp_oee
 #: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__productive
 #: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__productive
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_productivity__loss_type__productive
 #: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_productive
 msgid "Normal Production"
 msgstr ""
@@ -484,6 +495,7 @@ msgid "Operator"
 msgstr ""
 
 #. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_other
 #: model:mrp.oee.reject.reason,name:cux_mrp_oee.reject_reason_other
 msgid "Other"
 msgstr ""
@@ -536,6 +548,7 @@ msgstr ""
 #. module: cux_mrp_oee
 #: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__planned
 #: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__planned
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_productivity__loss_type__planned
 #: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_planned
 msgid "Planned Stop"
 msgstr ""
@@ -686,7 +699,7 @@ msgid "Shifts"
 msgstr ""
 
 #. module: cux_mrp_oee
-#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__hour_from
+#: model:ir.model.fields,field_description:cux_mrp_oee.field_mrp_oee_productivity__date_start
 msgid "Start Time"
 msgstr ""
 
@@ -755,6 +768,7 @@ msgstr ""
 #. module: cux_mrp_oee
 #: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_reason__loss_type__unplanned
 #: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_loss_report__loss_type__unplanned
+#: model:ir.model.fields.selection,name:cux_mrp_oee.selection__mrp_oee_productivity__loss_type__unplanned
 #: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_unplanned
 msgid "Unplanned Stop"
 msgstr ""
@@ -772,4 +786,109 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_reject_report_search
 #: model_terms:ir.ui.view,arch_db:cux_mrp_oee.view_mrp_oee_snapshot_search
 msgid "Work Center"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_5s
+msgid "5S"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_training
+msgid "Training and Meetings"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_shuttle
+msgid "Shuttle Bus Issue"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_warmup
+msgid "Warm-up Preparation"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_pokayoke
+msgid "Error-proofing Verification"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_electrical
+msgid "Electrical Failure"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_mechanical
+msgid "Mechanical Failure"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_equip_adjust
+msgid "Equipment Adjustment"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_wait_upstream
+msgid "Waiting for Upstream Process"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_inspection
+msgid "Product Inspection"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_shortage
+msgid "Material Shortage"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_incoming
+msgid "Incoming Material Issue"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_aux_tool
+msgid "Auxiliary Tool Shortage"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_defective
+msgid "Defective Product Issue"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_mold_change
+msgid "Mold Changeover"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_tool_change
+msgid "Tool Change"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_process_change
+msgid "Process Change"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_new_product
+msgid "New Product Production"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_utilities
+msgid "Insufficient Utilities Supply"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_network
+msgid "System or Network Failure"
+msgstr ""
+
+#. module: cux_mrp_oee
+#: model:mrp.oee.loss.reason,name:cux_mrp_oee.loss_reason_undefined
+msgid "Undefined"
 msgstr ""

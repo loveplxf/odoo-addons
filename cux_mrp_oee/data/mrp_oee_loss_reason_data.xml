@@ -1,79 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- Normal production -->
-        <record id="loss_reason_productive" model="mrp.oee.loss.reason">
-            <field name="name">Normal Production</field>
-            <field name="loss_type">productive</field>
-            <field name="sequence">10</field>
-        </record>
-
         <!-- Planned stops -->
-        <record id="loss_reason_planned" model="mrp.oee.loss.reason">
-            <field name="name">Planned Stop</field>
-            <field name="loss_type">planned</field>
-            <field name="sequence">20</field>
-        </record>
         <record id="loss_reason_meal" model="mrp.oee.loss.reason">
             <field name="name">Meal Break</field>
             <field name="loss_type">planned</field>
-            <field name="parent_id" ref="loss_reason_planned"/>
             <field name="sequence">10</field>
         </record>
         <record id="loss_reason_rest" model="mrp.oee.loss.reason">
             <field name="name">Rest</field>
             <field name="loss_type">planned</field>
-            <field name="parent_id" ref="loss_reason_planned"/>
-            <field name="sequence">20</field>
+            <field name="sequence">11</field>
+        </record>
+        <record id="loss_reason_5s" model="mrp.oee.loss.reason">
+            <field name="name">5S</field>
+            <field name="loss_type">planned</field>
+            <field name="sequence">12</field>
         </record>
         <record id="loss_reason_no_demand" model="mrp.oee.loss.reason">
             <field name="name">No Demand</field>
             <field name="loss_type">planned</field>
-            <field name="parent_id" ref="loss_reason_planned"/>
-            <field name="sequence">30</field>
+            <field name="sequence">13</field>
         </record>
         <record id="loss_reason_planned_repair" model="mrp.oee.loss.reason">
             <field name="name">Planned Repair</field>
             <field name="loss_type">planned</field>
-            <field name="parent_id" ref="loss_reason_planned"/>
-            <field name="sequence">40</field>
+            <field name="sequence">14</field>
         </record>
         <record id="loss_reason_planned_maintenance" model="mrp.oee.loss.reason">
             <field name="name">Planned Maintenance</field>
             <field name="loss_type">planned</field>
-            <field name="parent_id" ref="loss_reason_planned"/>
-            <field name="sequence">50</field>
+            <field name="sequence">15</field>
         </record>
 
-        <!-- Unplanned stops -->
-        <record id="loss_reason_unplanned" model="mrp.oee.loss.reason">
-            <field name="name">Unplanned Stop</field>
-            <field name="loss_type">unplanned</field>
-            <field name="sequence">30</field>
-        </record>
-        <record id="loss_reason_equipment" model="mrp.oee.loss.reason">
-            <field name="name">Equipment</field>
-            <field name="loss_type">unplanned</field>
-            <field name="parent_id" ref="loss_reason_unplanned"/>
-            <field name="sequence">10</field>
-        </record>
+        <!-- Unplanned stops: operator -->
         <record id="loss_reason_operator" model="mrp.oee.loss.reason">
             <field name="name">Operator</field>
             <field name="loss_type">unplanned</field>
-            <field name="parent_id" ref="loss_reason_unplanned"/>
             <field name="sequence">20</field>
         </record>
+        <record id="loss_reason_training" model="mrp.oee.loss.reason">
+            <field name="name">Training and Meetings</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_operator"/>
+            <field name="sequence">21</field>
+        </record>
+        <record id="loss_reason_shuttle" model="mrp.oee.loss.reason">
+            <field name="name">Shuttle Bus Issue</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_operator"/>
+            <field name="sequence">22</field>
+        </record>
+
+        <!-- Unplanned stops: equipment -->
+        <record id="loss_reason_equipment" model="mrp.oee.loss.reason">
+            <field name="name">Equipment</field>
+            <field name="loss_type">unplanned</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="loss_reason_warmup" model="mrp.oee.loss.reason">
+            <field name="name">Warm-up Preparation</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_equipment"/>
+            <field name="sequence">31</field>
+        </record>
+        <record id="loss_reason_pokayoke" model="mrp.oee.loss.reason">
+            <field name="name">Error-proofing Verification</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_equipment"/>
+            <field name="sequence">32</field>
+        </record>
+        <record id="loss_reason_electrical" model="mrp.oee.loss.reason">
+            <field name="name">Electrical Failure</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_equipment"/>
+            <field name="sequence">33</field>
+        </record>
+        <record id="loss_reason_mechanical" model="mrp.oee.loss.reason">
+            <field name="name">Mechanical Failure</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_equipment"/>
+            <field name="sequence">34</field>
+        </record>
+        <record id="loss_reason_equip_adjust" model="mrp.oee.loss.reason">
+            <field name="name">Equipment Adjustment</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_equipment"/>
+            <field name="sequence">35</field>
+        </record>
+        <record id="loss_reason_wait_upstream" model="mrp.oee.loss.reason">
+            <field name="name">Waiting for Upstream Process</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_equipment"/>
+            <field name="sequence">36</field>
+        </record>
+
+        <!-- Unplanned stops: material -->
         <record id="loss_reason_material" model="mrp.oee.loss.reason">
             <field name="name">Material</field>
             <field name="loss_type">unplanned</field>
-            <field name="parent_id" ref="loss_reason_unplanned"/>
-            <field name="sequence">30</field>
-        </record>
-        <record id="loss_reason_method" model="mrp.oee.loss.reason">
-            <field name="name">Method / External</field>
-            <field name="loss_type">unplanned</field>
-            <field name="parent_id" ref="loss_reason_unplanned"/>
             <field name="sequence">40</field>
+        </record>
+        <record id="loss_reason_inspection" model="mrp.oee.loss.reason">
+            <field name="name">Product Inspection</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_material"/>
+            <field name="sequence">41</field>
+        </record>
+        <record id="loss_reason_shortage" model="mrp.oee.loss.reason">
+            <field name="name">Material Shortage</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_material"/>
+            <field name="sequence">42</field>
+        </record>
+        <record id="loss_reason_incoming" model="mrp.oee.loss.reason">
+            <field name="name">Incoming Material Issue</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_material"/>
+            <field name="sequence">43</field>
+        </record>
+        <record id="loss_reason_aux_tool" model="mrp.oee.loss.reason">
+            <field name="name">Auxiliary Tool Shortage</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_material"/>
+            <field name="sequence">44</field>
+        </record>
+        <record id="loss_reason_defective" model="mrp.oee.loss.reason">
+            <field name="name">Defective Product Issue</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_material"/>
+            <field name="sequence">45</field>
+        </record>
+
+        <!-- Unplanned stops: process -->
+        <record id="loss_reason_process" model="mrp.oee.loss.reason">
+            <field name="name">Process</field>
+            <field name="loss_type">unplanned</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="loss_reason_mold_change" model="mrp.oee.loss.reason">
+            <field name="name">Mold Changeover</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_process"/>
+            <field name="sequence">51</field>
+        </record>
+        <record id="loss_reason_tool_change" model="mrp.oee.loss.reason">
+            <field name="name">Tool Change</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_process"/>
+            <field name="sequence">52</field>
+        </record>
+        <record id="loss_reason_process_change" model="mrp.oee.loss.reason">
+            <field name="name">Process Change</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_process"/>
+            <field name="sequence">53</field>
+        </record>
+        <record id="loss_reason_new_product" model="mrp.oee.loss.reason">
+            <field name="name">New Product Production</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_process"/>
+            <field name="sequence">54</field>
+        </record>
+
+        <!-- Unplanned stops: environment -->
+        <record id="loss_reason_environment" model="mrp.oee.loss.reason">
+            <field name="name">Environment</field>
+            <field name="loss_type">unplanned</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="loss_reason_utilities" model="mrp.oee.loss.reason">
+            <field name="name">Insufficient Utilities Supply</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_environment"/>
+            <field name="sequence">61</field>
+        </record>
+        <record id="loss_reason_network" model="mrp.oee.loss.reason">
+            <field name="name">System or Network Failure</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_environment"/>
+            <field name="sequence">62</field>
+        </record>
+
+        <!-- Unplanned stops: other -->
+        <record id="loss_reason_other" model="mrp.oee.loss.reason">
+            <field name="name">Other</field>
+            <field name="loss_type">unplanned</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="loss_reason_undefined" model="mrp.oee.loss.reason">
+            <field name="name">Undefined</field>
+            <field name="loss_type">unplanned</field>
+            <field name="parent_id" ref="loss_reason_other"/>
+            <field name="sequence">71</field>
         </record>
 
         <!-- Default reject reasons -->
